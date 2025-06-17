@@ -1,0 +1,19 @@
+TY  - JOUR
+JF  - Psychometrika
+DO  - 10.1007/s11336-019-09692-3
+PB  - Springer US
+Y1  - 2020
+JA  - Psychometrika
+VL  - 85
+ID  - cdi_pubmedcentral_primary_oai_pubmedcentral_nih_gov_8225521
+N2  - The analysis of covariance (ANCOVA) has notably proven to be an effective tool in a broad range of scientific applications. Despite the well-documented literature about its principal uses and statistical properties, the corresponding power analysis for the general linear hypothesis tests of treatment differences remains a less discussed issue. The frequently recommended procedure is a direct application of the ANOVA formula in combination with a reduced degrees of freedom and a correlation-adjusted variance. This article aims to explicate the conceptual problems and practical limitations of the common method. An exact approach is proposed for power and sample size calculations in ANCOVA with random assignment and multinormal covariates. Both theoretical examination and numerical simulation are presented to justify the advantages of the suggested technique over the current formula. The improved solution is illustrated with an example regarding the comparative effectiveness of interventions. In order to facilitate the application of the described power and sample size calculations, accompanying computer programs are also presented. 
+KW  - Algorithms ; Analysis of covariance ; Analysis of Variance ; Assessment ; Behavioral Science and Psychology ; Computer programs ; Computer Simulation - statistics & numerical data ; general linear hypothesis ; Humanities ; Humans ; Hypotheses ; Law ; Linear Models ; Mathematical models ; Models, Statistical ; omnibus test ; power ; Power, Psychological ; Psychology ; Psychometrics ; Regression analysis ; Research Design ; Sample Size ; Software - statistics & numerical data ; Statistical Theory and Methods ; Statistics for Social Sciences ; Testing and Evaluation ; Theory and Methods ; Variables ; Variance analysis
+EP  - 120
+AU  - Shieh, Gwowen
+SN  - 0033-3123
+CY  - New York
+SP  - 101
+IS  - 1
+T1  - Power Analysis and Sample Size Planning in ANCOVA Designs
+T2  - Psychometrika
+ER  -
