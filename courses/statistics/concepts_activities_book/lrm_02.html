@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A set of explanations, lectures, resources, and activities to complement the statistics curriculum that is part of Hunter College’s Ph.D.&nbsp;Program in Nursing Research and Health Equity and DNP Program.">
+
+<title>Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula - 9&nbsp; Linear Regression Modeling with SPSS, Part 2: More about ANOVAs and Dummy Coding</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./mlm.html" rel="next">
+<link href="./lrm_01.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./curricula.html">Applied Statistics Curriculum</a></li><li class="breadcrumb-item"><a href="./lrm_02.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 2: More about ANOVAs and Dummy Coding</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Companion-to-the-Nursing-Ph.D.---DNP-Statistics-Curricula.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./curricula.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applied Statistics Curriculum</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./60N.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 60<span style="font-size: .7em">N</span>: Foundations of Biostatistics for Nursing Research and Evidence-Based Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./915.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 915 &amp; 916: Applied Statistics 1 &amp; 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing_results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Writing Results Sections</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./significance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to Measuring Relationships and Building Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Variance_Covariance_Correlations_and_Partial_Correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Variance, Covariance, Correlations, and Partial Correlations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./effect_size.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Effect Size: Explanation and Guidelines</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./missing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lrm_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 1: Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lrm_02.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 2: More about ANOVAs and Dummy Coding</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mlm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Longitudinal Analyses: Why and How to Conduct Multilevel Linear Modeling</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Psychometrics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./925.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 925: Psychometrics Course</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./efa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Exploratory Factor Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Guides to Using Software</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Using_Templates_and_a_Reference_Manager.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Using Templates and a Reference Manager</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_Excel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Excel</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_SPSS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_GPower.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to Power and Sample Size Estimation Using Either G*Power or R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_exploration_with_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Exploration with R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common_statistical_symbols.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Common Statistical Symbols</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vocab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Common/Confusing Statistical &amp; Scientific Terms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decision_trees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Statistical Analysis Decision Trees and Guides</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">9.1</span> Overview</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">9.2</span> Data</a></li>
+  <li><a href="#relationships-between-dummy-variables-crosstabs-and-χ2-tests" id="toc-relationships-between-dummy-variables-crosstabs-and-χ2-tests" class="nav-link" data-scroll-target="#relationships-between-dummy-variables-crosstabs-and-χ2-tests"><span class="header-section-number">9.3</span> Relationships Between Dummy Variables: Crosstabs and <span class="math inline">\(χ\)</span><sup>2</sup> Tests </a>
+  <ul>
+  <li><a href="#relationships-with-ela-grades" id="toc-relationships-with-ela-grades" class="nav-link" data-scroll-target="#relationships-with-ela-grades"><span class="header-section-number">9.3.1</span> Relationships with ELA Grades</a></li>
+  </ul></li>
+  <li><a href="#using-an-anova-to-predict-ela-grades-with-gender-iep-status" id="toc-using-an-anova-to-predict-ela-grades-with-gender-iep-status" class="nav-link" data-scroll-target="#using-an-anova-to-predict-ela-grades-with-gender-iep-status"><span class="header-section-number">9.4</span> Using an ANOVA to Predict ELA Grades with Gender &amp; IEP Status</a>
+  <ul>
+  <li><a href="#anova-review" id="toc-anova-review" class="nav-link" data-scroll-target="#anova-review"><span class="header-section-number">9.4.1</span> ANOVA Review</a></li>
+  <li><a href="#graphical-review-of-the-variables" id="toc-graphical-review-of-the-variables" class="nav-link" data-scroll-target="#graphical-review-of-the-variables"><span class="header-section-number">9.4.2</span> Graphical Review of the Variables</a></li>
+  <li><a href="#using-an-anova-to-test-variables" id="toc-using-an-anova-to-test-variables" class="nav-link" data-scroll-target="#using-an-anova-to-test-variables"><span class="header-section-number">9.4.3</span> Using an ANOVA to Test Variables</a>
+  <ul>
+  <li><a href="#generating-the-anova-model" id="toc-generating-the-anova-model" class="nav-link" data-scroll-target="#generating-the-anova-model">Generating the ANOVA Model </a></li>
+  <li><a href="#anova-output" id="toc-anova-output" class="nav-link" data-scroll-target="#anova-output">ANOVA Output </a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#linear-regression" id="toc-linear-regression" class="nav-link" data-scroll-target="#linear-regression"><span class="header-section-number">9.5</span> Linear Regression </a>
+  <ul>
+  <li><a href="#creating-an-interaction-term" id="toc-creating-an-interaction-term" class="nav-link" data-scroll-target="#creating-an-interaction-term"><span class="header-section-number">9.5.1</span> Creating an Interaction Term</a></li>
+  <li><a href="#computing-a-linear-regression-with-an-interaction-term" id="toc-computing-a-linear-regression-with-an-interaction-term" class="nav-link" data-scroll-target="#computing-a-linear-regression-with-an-interaction-term"><span class="header-section-number">9.5.2</span> Computing a Linear Regression with an Interaction Term</a>
+  <ul>
+  <li><a href="#generating-the-linear-regression-model" id="toc-generating-the-linear-regression-model" class="nav-link" data-scroll-target="#generating-the-linear-regression-model">Generating the Linear Regression Model</a></li>
+  <li><a href="#linear-regression-output" id="toc-linear-regression-output" class="nav-link" data-scroll-target="#linear-regression-output">Linear Regression Output</a></li>
+  <li><a href="#scatterplot-of-the-data" id="toc-scatterplot-of-the-data" class="nav-link" data-scroll-target="#scatterplot-of-the-data">Scatterplot of the Data </a></li>
+  <li><a href="#use-of-dummy-variables-to-estimate-outcomes" id="toc-use-of-dummy-variables-to-estimate-outcomes" class="nav-link" data-scroll-target="#use-of-dummy-variables-to-estimate-outcomes">Use of Dummy Variables to Estimate Outcomes </a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-lrm_02" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 2: More about ANOVAs and Dummy Coding</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="overview" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">9.1</span> Overview</h2>
+<p>This chapter seeks to further demonstrate how to two correlated predictors can be handled with both an ANOVA and—more generally—with a linear regression model. It also presents more details about conducting an ANOVA and about interpreting dummy variables.</p>
+</section>
+<section id="data" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="data"><span class="header-section-number">9.2</span> Data</h2>
+<p>We will use the <code>EF_Slope_Data.sav</code> dataset for these additional analyses, focusing on a different set of variables within that data set. We’ll now be looking at the effects of both gender and special education status on English / language arts (ELA) grades.</p>
+<p><em>Please download this data file again from BlackBoard for use here</em>. These are “<a href="https://www.census.gov/about/what/synthetic-data.html">synthetic</a>” data, based on real data but changed to further help ensure the participants’ confidentiality. In addition to making it more secure, I have manipulated the data to make the relationships between gender, special education status, and ELA grades stronger for instruction here.</p>
+</section>
+<section id="relationships-between-dummy-variables-crosstabs-and-χ2-tests" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="relationships-between-dummy-variables-crosstabs-and-χ2-tests"><span class="header-section-number">9.3</span> Relationships Between Dummy Variables: Crosstabs and <span class="math inline">\(χ\)</span><sup>2</sup> Tests </h2>
+<p>Let us first look at the relationship between gender and special education status.</p>
+<p>Both gender and special education status are dummy variables. Gender is set here to indicate whether a student is female, so 0 = not female<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and 1 = female. Special education status here indicates whether a student has an individualized education program (IEP), so 0 = no IEP and 1 = has an IEP.</p>
+<p>We <em>could</em> compute a correlation between these two dummy variables (correlations per se are just descriptive), but more information and a more accurate representation of the variable is obtained by looking at a frequency table showing, e.g., how may females have or don’t have an IEP.</p>
+<ol type="1">
+<li><p>In SPSS, go to <code>Analyze &gt; Descriptive Statistics &gt; Crosstabs</code></p></li>
+<li><p>Place <code>Gender</code> in the <code>Row(s)</code> field and <code>Spec_Ed</code> in the <code>Column(s)</code> field. Since they are both nominal, SPSS knows to populate the table with frequency counts.</p></li>
+<li><p>In <code>Statistics...</code> ensure the <code>Chi-square</code> is selected; none of the other options pertain here, so click <code>Continue</code></p></li>
+<li><p>Under <code>Cells...</code>, in the <code>Counts</code> area, make sure that <code>Observed</code> is selected. The rest of the options in the <code>Cells...</code> dialogue can be interesting, but are pretty straight forward aren’t needed here.</p>
+<p>(Among the other options, I would normally also select <code>Expected</code> under <code>Counts</code> to see for myself how different the actual (observed) counts are from the expected: I can categorically say that it’s always a good idea to see the data for yourself and not just rely on a test to tell you what’s matters. However, I want to keep the output a bit clean to facilitate interpretation.)</p></li>
+<li><p>Under the list of variables to choose from, select <code>Display clustered bar charts</code> and make sure <code>Suppress tables</code> is <em>not</em> selected.</p></li>
+<li><p>Click <code>OK</code></p></li>
+<li><p>In the <code>Output</code>, let us first look at the <code>Bar Chart</code>. The chart shows exact values, so there is no need for confidence intervals.<br>
+<img src="images/lrm2_01.png" class="img-fluid"><br>
+Note that we could prettify this chart if we wanted to want to publish it, e.g., by creating better titles, including for the axes.</p></li>
+<li><p>The output starts with a summary of complete and missing data, including the <code>Gender * Spec_Ed Crosstabulation</code> (“crosstab”)</p></li>
+<li><p>The <code>Chi-Square Tests</code> table contains the following:</p>
+<ol type="1">
+<li><p><code>Pearson Chi-Square</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> is an uncorrected test for whether the counts in the cells differ from “expected” values. “Expected” here means that the proportions are the same, viz., that the proportion of students with IEPs is the same among the boys as it is among the girls. So, there may be more boys than girls, but the <em>percent</em> of boys with IEPs is not discernibly different than the percent of girls with IEPs.xxx</p>
+<p>Both of these variables have two levels (male/female, has / doesn’t have an IEP), so comparisons of counts between them craetes a 2 <span class="math inline">\(\times\)</span> 2 table. To compute the degrees of freedom for this test, we subtraddt 1 from the number of levels for each variable. We then multiply those values, or: <span class="math display">\[(2\ df_{Gender} - 1) \times (2\ df_{IEP\ Status} - 1) = 1 \times 1 = 1\]</span> We are therefore testing against a <span class="math inline">\(\chi\)</span><sup>2</sup> distibution of 1 <em>df</em>. The mean and standardi deviation of a <span class="math inline">\(\chi\)</span><sup>2</sup> is determined by the degrees of freedom; more specifically, the mean of a <span class="math inline">\(\chi\)</span><sup>2</sup> <em>is</em> the <em>df</em> and the standard deviation is 2 <span class="math inline">\(\times\)</span> <em>df</em>. So, We are testing this <code>Pearson Chi-Suare</code> values against a null <span class="math inline">\(\chi\)</span><sup>2</sup> with a mean of 1 and a <em>SD</em> of 2. Remember that values greater than about 2 <em>SD</em>s away from a mean<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> are usually considered significant. Since the mean for this null <span class="math inline">\(\chi\)</span><sup>2</sup> is 1 and the <em>SD</em> is 2, two <em>SD</em>s away would be 4 points away from the mean of 1. Therefore, any <span class="math inline">\(\chi\)</span><sup>2</sup> value that is greater than 5 would be considered significant.</p>
+<p>The <span class="math inline">\(χ\)</span><sup>2</sup> value here is 7.06, which is indeed larger than the critical value for a <span class="math inline">\(\chi\)</span><sup>2</sup> for 1 <em>df</em>; the counts are significantly different. We could report this by saying, e.g., “The proportion of students with IEPs was significantly different among those who identified as female than among those who did not (Pearson <span class="math inline">\(χ\)</span><sup>2</sup> = 7.06, <em>p</em> &gt; .001)” or perhaps more simply: “The proportion of students with IEPs differed between the genders.”</p>
+<p>Looking at the bar chart we generated shows us more clearly what this difference is: Fewer girls have been diagnosed with disabilities warranting IEPs than boys, and we could certainly report that instead. The Pearson <span class="math inline">\(χ\)</span><sup>2</sup> (and other <span class="math inline">\(χ\)</span><sup>2</sup> tests here) are inherently non-directional<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, but we can use that figure (or the table) to argue what this difference is.</p>
+<p>Having now seen how the proportion of IEPs differed, we could instead describe this and the <span class="math inline">\(\chi\)</span><sup>2</sup> test as, e.g., “A larger proportion of males students had IEPs than did female students (Pearson <span class="math inline">\(χ\)</span><sup>2</sup> = 7.06, <em>p</em> &gt; .001).”</p></li>
+<li><p><code>Continuity Correction</code> reports the Yates’ correction. This is only presented in SPSS 2 <span class="math inline">\(\times\)</span> 2 tables (and is only appropriate for such tables), like we have here. The Pearson <span class="math inline">\(χ\)</span><sup>2</sup> test tends to be biased “upwards” meaning it is overly optimistic and generates <a href="https://www.thoughtco.com/difference-between-type-i-and-type-ii-errors-3126414">Type 1</a> (false positive) errors. Yates’ correction attempts to adjust for this by making the test more conservative. You’ll see here that the <code>Value</code> (the <span class="math inline">\(χ\)</span><sup>2</sup>) under <code>Continuity Correction</code> is slightly smaller than that under <code>Pearson Chi-Square</code>. Both of these tests are appropriate when all cell counts are greater than 10 (some suggest greater than 5), and the Yates’ correction is generally advised.</p></li>
+<li><p>The <code>Linear-by-Linear</code> test is the Mantel-Haenszel test, which is useful when one wants to look at the association between two nominal variables while controlling for the effect of a third variable—akin to partialing out that third variable. We’re not doing that here, though, so this statistic isn’t interesting.</p></li>
+<li><p>The <code>Likelihood Ratio</code> test, also called the <em>G</em>-test, uses odds ratios to determine the likelihood that the given frequencies in the cells occur by chance. As you can see, this computes a very similar value to the unadjusted (Pearson) <span class="math inline">\(χ\)</span><sup>2</sup> value. We won’t consider this any more here, but will revisit likelihood ratios when we look at tests of whole linear models.</p></li>
+<li><p><code>Fisher's Exact Test</code> does not have a statistic like a <span class="math inline">\(χ\)</span><sup>2</sup> that is computed; it is simply a probability test of those frequencies themselves. Here as with the <span class="math inline">\(χ\)</span><sup>2</sup> tests, a <em>p</em> &lt; .05 (or whatever one sets for significance) indicates a significant difference in the actual cell counts from the expected.</p></li>
+</ol></li>
+</ol>
+<p>We have seen that whether a student has an IEP depends in part on the student’s gender. In other words, gender and IEP status are related; they share variance. Therefore, when I talk, e.g., about IEPs, I know I should also consider gender.</p>
+<section id="relationships-with-ela-grades" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="relationships-with-ela-grades"><span class="header-section-number">9.3.1</span> Relationships with ELA Grades</h3>
+<p>Let us now investigate whether gender and IEP status are related to students’ grades.</p>
+<ol type="1">
+<li><p>Go to <code>Analyze &gt; Correlate &gt; Bivariate...</code> and add <code>Gender</code> and <code>ELA_Grade</code> to the Variables field. We’ll be computing point biserial correlations (nominal vs.&nbsp;continuous) which are computationally equivalent to Pearson’s correlations, so leave that option selected under <code>Correlation Coefficients</code>.</p>
+<p>The resultant output shows that <em>r</em><sub>pb</sub> = .103 (<em>n</em> = 204, <em>p</em> = .144). These variables are not significantly correlated here, and gender accounts for ~1% (.103<sup>2</sup> = .0106 <span class="math inline">\(\approx\)</span> .01) of the variance in ELA grades, what <span class="citation" data-cites="cohen1988">Cohen (<a href="references.html#ref-cohen1988" role="doc-biblioref">1988</a>)</span> would call a “small” effect (q.v., <a href="effect_size.html"><span>Chapter&nbsp;6</span></a>).</p></li>
+<li><p>Looking now at IEP status, let’s remove <code>Gender</code> from the <code>Variables</code> field in <code>Analyze &gt; Correlate &gt; Bivariate...</code>, leave in <code>ELA_Grade</code>, and add <code>Spec_Ed</code>.</p></li>
+<li><p>The correlation is even stronger, <em>r</em><sub>pb</sub> = -.36. IEP status accounts for about 10% (-.36<sup>2</sup> = .13) of the variance in one’s grade. However, from our crosstabs work above, we know that the variance in <em>IEP status</em> is itself related to a student’s gender. In other words, some of that .13 variance is due to gender.</p>
+<p>So, we know that some of the variance in IEP status is due to gender. We also know that some of the variance in ELA grades is also due to gender. We don’t yet know, however, if the effect of gender on IEP status is from the same aspects of gender as the effect of gender on grades. The shared variances between these three variables could kind of be like this:<br>
+<img src="images/lrm2_02.png" class="img-fluid" style="width:75.0%"><br>
+Or perhaps more like this<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>:<br>
+<img src="images/lrm2_03.png" class="img-fluid" style="width:55.0%"><br>
+A little less abstractly, one reason why boys tend to be diagnosed with disabilities more often than girls is because boys tend to “act out” more than girls: Boys display externalizing behaviors more frequently and intensely than girls, and this encourages schools to try to figure out ways of helping the boys be less disruptive. Girls tend to suffer in silence.<br>
+However, it may well be that acting out isn’t what it is about being a boy that affect his grades. A boy may be the class clown or trouble maker, but he may be quiet bright and do well despite his disruptions of others—or at least attracting attention to oneself may not be what gets one a particular grade. Indeed, boys of any level of disruptiveness tend to be praised for successes in math courses while girls tend to be praised for successes in ELA courses—even the out-spoken ones.</p></li>
+</ol>
+<p>We will next look at the relationships between these three variables. We’ll first look at them through an ANOVA; the ANOVA should help set the stage since this is an analysis you’ve become familiar with and since this is a very common analysis used.</p>
+<p>After we review the ANOVA, we’ll look at the relationship through a more general linear regression analysis. We’ll see how it’s similar to an ANOVA and how it differs. The overall goal here is to help you learn the pros and cons of analyses you’re familiar with (viz., ANOVAs &amp; <em>t</em>-tests) and the reasons consider times to use some other linear regression analyses.</p>
+</section>
+</section>
+<section id="using-an-anova-to-predict-ela-grades-with-gender-iep-status" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="using-an-anova-to-predict-ela-grades-with-gender-iep-status"><span class="header-section-number">9.4</span> Using an ANOVA to Predict ELA Grades with Gender &amp; IEP Status</h2>
+<section id="anova-review" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="anova-review"><span class="header-section-number">9.4.1</span> ANOVA Review</h3>
+<p>Remember that an ANOVA is used to test whether one or more nominal variables (IVs) significantly predict a continuous outcome variable (DV). More specifically, an ANOVA tests whether the mean outcome score differs between one or more of the levels of a predictor. (Here, for example, if the mean ELA grades differ between girls and boys.)</p>
+<p>The ANOVA itself can’t say <em>which</em> levels of the predictor are different, though. (For example, it can say that there is a significant effect for gender, but not which has greater scores). To find which levels differ, we usually conduct a post hoc analysis.</p>
+<p>Done well, a reason conduct an ANOVA first is to help control for Type 1 errors: Instead of running a whole bunch of pairwise tests between all levels of a variable (in all variables added to the ANOVA)<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, we first run a few, overall tests. We then only conduct post hoc tests on variables that the ANOVA found significant, further limiting the number of tests we run and thus the chances of a false positive effect<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p>
+<p>Of course, since we only have two levels for each of the predictors here, the ANOVA can tell us if there is a significant difference and then we can simply look at the variable’s means to see which is greater.</p>
+</section>
+<section id="graphical-review-of-the-variables" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="graphical-review-of-the-variables"><span class="header-section-number">9.4.2</span> Graphical Review of the Variables</h3>
+<p>Let’s start with looking at graphical representations of these variables and then explore them through an ANOVA.</p>
+<ol type="1">
+<li><p>SPSS’s <code>Graph &gt; Chart Builder</code> interface is quite useful, even if spreadsheet programs like Excel &amp; <a href="https://www.libreoffice.org/discover/calc/">Calc</a> have mostly caught up to it.</p></li>
+<li><p>In that dialogue box that opens, drag the beige bar graph near the bottom under <code>Choose from</code> into the main window under <code>Variables:</code></p></li>
+</ol>
+<p><img src="images/lrm2_04.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Drag <code>ELA_Grade</code> to the <code>Y-Axis?</code> box in the bar graph that appears in the main window, drag <code>Gender</code> to the <code>X-Axis?</code>, and drag <code>Spec_Ed</code> to the <code>Cluster on X: Set colors</code> area to the upper right of the graph. That main area should now look like this:</li>
+</ol>
+<p><img src="images/lrm2_05.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li><p>The current bar graph purposely resembles the one we created previously while building our crosstabs. However, then we presented absolute counts whereas now we’re showing means, so it’s worth also showing how well the means represent the sample. In the <code>Edit Properties of:</code> area, select <code>Bar1</code>. The area below that will change, allowing you now to select to <code>Display error bars</code>. <code>Confidence intervals</code> is selected by default; leave that selected, and leave <code>Level (%)</code> set to <code>95</code>, the value every social scientist (and—more importantly—reviewer) knows and loves.</p></li>
+<li><p>Both the <code>Element Properties</code> and the <code>Chart Appearance</code> tabs have reasonable sets of options for customizing figures, but more can be done when it is generated in the <code>Output</code> window and via syntax.</p></li>
+<li><p>Ways of handling missing data appear under the <code>Options</code> tab. <code>Excluding User-Missing Values</code> is nearly always advisable—the only time I can think to <code>Include</code> them is if you want to report information about the missing cases in the figure.</p>
+<p>Under <code>Summary Statistics</code> and <code>Case Values</code>, select to <code>Exclude variable-by-variable</code>, which is tantamount to excluding missing data pairwise instead of listwise.</p></li>
+<li><p>Clicking <code>OK</code> will generate this figure:</p></li>
+</ol>
+<p><img src="images/lrm2_06.png" class="img-fluid"></p>
+<ol start="8" type="1">
+<li><p>The figure shows the difference IEP status made and that girls may have had higher ELA grades than boys—at least among those without IEPs. The 95% confidence interval bars suggest which of these differences are significant<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</p></li>
+<li><p>In the <code>Output</code> window, we can modify the figure more. Double-click on it in the <code>Output</code>, to open the figure up in another window with many (Excel-like) options to modify parts of it.</p></li>
+<li><p>The bar chart will now appear as well in its own window; in that window, single-click on one of the <code>No Diagnosed Disability</code> bars (double-clicking can highlight all of the bars, including the <code>Has Diagnosed Disability</code> ones).</p></li>
+<li><p>In the menu bar, choose to change the <code>Fill Color</code> to, e.g., grey<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>:<br>
+<img src="images/lrm2_07.png" class="img-fluid"><br>
+We could also change the <code>No Diagnosed Disability</code> bars to white and increase the thickness of the borders (with the next menu item to the right) to create a slightly more manuscript-ready figure:<br>
+<img src="images/lrm2_08.png" class="img-fluid"><br>
+We can similarly change the fonts, the title contents, etc. Note that once you’ve tweaked your figure to your (and your committee’s) liking, you can click on <code>File &gt; Save Chart Template</code> to create a template that you can later <code>File &gt; Apply Chart Template</code> to other figures to create a nice, consistent look.</p></li>
+</ol>
+</section>
+<section id="using-an-anova-to-test-variables" class="level3" data-number="9.4.3">
+<h3 data-number="9.4.3" class="anchored" data-anchor-id="using-an-anova-to-test-variables"><span class="header-section-number">9.4.3</span> Using an ANOVA to Test Variables</h3>
+<section id="generating-the-anova-model" class="level4">
+<h4 class="anchored" data-anchor-id="generating-the-anova-model">Generating the ANOVA Model </h4>
+<ol type="1">
+<li><p>SPSS categorizes ANOVAs under general linear models (<code>Analyze &gt; General Linear Models</code>)<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>, which can be taken to emphasize that they are a type of linear regression. The <a href="https://www.ibm.com/support/knowledgecenter/en/SSLVMB_23.0.0/spss/base/idh_glmu.html"><code>Univariate</code></a> option under <code>Analyze &gt; General Linear Models</code> is for any model that has one outcome (criterion) variable; <a href="https://www.ibm.com/support/knowledgecenter/en/SSLVMB_23.0.0/spss/advanced/idh_glm_multivariate.html"><code>Multivariate</code></a> is for when there are more than one criterion (e.g., a MANOVA). We have one criterion, <code>ELA_Grade</code>, so choose <code>Univariate</code> and add <code>ELA_Grade</code> to the <code>Dependent Variable</code> field.</p></li>
+<li><p>Choosing whether to place predictors in the <code>Fixed Factor(s)</code> field or the <code>Covariates</code> field matters affects the assumptions that are made by the model about that variable and a bit how we interpret the results. It suffices to say that nominal variables should be added as fixed factors and that ordinal, interval, and ratio variables should be added as covariates<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. Since both of our variables are fixed factors, place <code>Gender</code> and <code>Spec_Ed</code> in the <code>Fixed Factor(s)</code> field.</p></li>
+<li><p>By default, SPSS adds in interaction terms for all fixed effects. (So, if we had three fixed factors—say A, B, and C—SPSS would include the A<span class="math inline">\(\times\)</span>B, B<span class="math inline">\(\times\)</span>C, A<span class="math inline">\(\times\)</span>C, and A<span class="math inline">\(\times\)</span>B<span class="math inline">\(\times\)</span>C interactions.) We do indeed want to look at both the main effects and the gender <span class="math inline">\(\times\)</span> IEP status interaction, so we want a “full” model. Even though SPSS would create that by default, let’s build it anyway just so you can see how to do it (and thus how to build other models):</p>
+<ol type="1">
+<li>Under the <code>Model</code> dialogue, first click on the <code>Build Terms</code> button.</li>
+<li>Change the <code>Build Term(s) Type</code> to <code>Main Effects</code> and then move both <code>Gender</code> and <code>Spec_Ed</code> to the <code>Model</code> field.</li>
+<li>Now change the <code>Build Term(s) Type</code> to <code>Interactions</code>. With <em>both</em> <code>Gender</code> and <code>Spec_Ed</code> selected, click on the arrow under <code>Type</code> to create a <code>Gender</code> <span class="math inline">\(\times\)</span> <code>Spec_Ed</code> interaction term. That dialogue box should now look like this:<br>
+<img src="images/lrm2_09.png" class="img-fluid"><br>
+</li>
+<li>Let me reiterate that, by default, SPSS creates a full factorial model for all fixed factors, so we didn’t need to do this here (and could have done it more automatically through this dialogue). I did want to show you how so you can modify your models term-by-term rather easily through this particular dialogue.</li>
+</ol></li>
+<li><p>The <code>Contrasts</code> dialogue lets us determine if and how SPSS tests differences between levels of the variables. The default is to compare None (and since ours are dichotomous (dummy) variables, any effect of a variable is a difference between those two levels). The options are explained in more detail, e.g., <a href="https://www.ibm.com/support/knowledgecenter/en/SSLVMB_24.0.0/spss/advanced/syn_glm_univariate_contrast.html">here</a>, but suffice it to say that <code>Deviation</code>—in which each level is compared against the overall mean—is common, that the other options depend which differences matter most of a given study, and that contrasting differences between levels is often better handled via post hoc analyses anyway.</p></li>
+<li><p><code>Plots</code> would allow us to create figures quite like we did with <code>Graphs &gt; Chart Builder</code>, but with fewer options made though a more streamlined interface.</p></li>
+<li><p>The <code>Post Hoc</code> dialogue allows one to compute those. Again, <span class="citation" data-cites="kao2008">Kao &amp; Green (<a href="references.html#ref-kao2008" role="doc-biblioref">2008</a>)</span> <a href="https://articles.viriya.net/analysis_of_variance_is_there_a_difference_in_means_and_what_does_it_mean.pdf#page=7">provide</a> nice, terse explanations and recommendations of commonly-used ones.</p></li>
+<li><p>The <code>EM Means</code> dialogue is useful for our purposes here. This area lets us generate estimated marginal means; these are the means for one factor when other variable(s) are partialed out.</p></li>
+<li><p>Under <code>Options</code>, please select <code>Estimates of effect size</code> and <code>Observed power</code>.</p></li>
+<li><p>Click <code>OK</code>.</p></li>
+</ol>
+</section>
+<section id="anova-output" class="level4">
+<h4 class="anchored" data-anchor-id="anova-output">ANOVA Output </h4>
+<ol type="1">
+<li>After reporting the numbers of cases for each variable, SPSS outputs the source table as <code>Tests of Between-Subjects Effects</code>:</li>
+</ol>
+<p><img src="images/lrm2_10.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li><p>A familiar sight (I hope), we can see from this table that all of the terms—the intercept, gender, IEP status, and the gender <span class="math inline">\(\times\)</span> IEP status interaction—are all significant at α = .05. Now, however, a few other parts of this table are of interest (and others perhaps simply worth explaining / refreshing):</p>
+<ol type="1">
+<li><p>The <code>Corrected Model</code> term is a test of the whole model—yes, like we are doing with linear regressions.</p></li>
+<li><p>The <code>Type III of Sum of Squares</code> indicates how the terms were added to the model. The math is a bit eldritch (even I have to look it up to remember it), but a summary should suffice. The type used here, Type III, is computed by having all of the terms added to the model at once so that their variances are computed in light of all other terms; in essence all terms are partial regressions, even the intercept and interaction. Given our interests here in partial regressions, this is appropriate<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>.</p></li>
+<li><p>The <code>Partial Eta Squareds</code> are measures of effect sizes for the given terms. As researchers move uneasily away from up-or-down significance tests, they are often using effect sizes as rather sturdy canes for support. Personally, I’m among them, and I report them even as I regularly report <em>p</em>-values, e.g., as “The main effect for gender was significant (<em>F</em><sub>1,</sub> <sub>155</sub> = 2.28, <em>p</em> = .049, <span class="math inline">\(\eta\)</span><sup>2</sup> = 0.025).”</p>
+<p>A bit ironically, people have looked for “tests” of effect sizes. Nearly always, this is a hearkening to the original work on them by Jacob <span class="citation" data-cites="cohen1988">Cohen (<a href="references.html#ref-cohen1988" role="doc-biblioref">1988</a>)</span>, where he <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=380">suggested</a> for <span class="math inline">\(\eta\)</span><sup>2</sup> that .1 could be considered “small,” .25 could be considered “medium,” and .4 considered “large”<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>. By that standard, gender has a rather small effect that is nonetheless significant here.</p></li>
+<li><p>The <a href="https://replicationindex.com/tag/observed-power/"><code>Observed Power</code></a> is the <a href="https://stats.stackexchange.com/questions/347627/how-is-spss-calculating-observed-power">estimated power</a> of the <em>F</em>-test of the given parameter based on the data. It is the estimated probability that a real effect would be detected; it is affected by the sample distribution and size. SPSS computes the <code>Observed Power</code> with the <code>Noncent. Parameter</code>, a statistics that follows a, well, non-central (skewed) distribution that is a composite of <span class="math inline">\(χ\)</span><sup>2</sup> and Poisson distributions. In other words, don’t worry about it, just know it’s used to compute <code>Observed Power</code>—which itself is really <a href="https://laptrinhx.com/observed-power-and-what-to-do-if-your-editor-asks-for-post-hoc-power-analyses-3792651594/">a useless statistic</a>.</p></li>
+<li><p>Most importantly right now, note that the <em>R</em><sup>2</sup> reported under the table is .195 and that the adjusted <em>R</em><sup>2</sup> = .179<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>.</p></li>
+</ol></li>
+<li><p>Although we could generate parameter estimates and marginal means (means for variable levels adjusted for other variables in the model), they are easier to interpret when we compute the results through a linear regression which we will do now.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="linear-regression" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="linear-regression"><span class="header-section-number">9.5</span> Linear Regression </h2>
+<section id="creating-an-interaction-term" class="level3" data-number="9.5.1">
+<h3 data-number="9.5.1" class="anchored" data-anchor-id="creating-an-interaction-term"><span class="header-section-number">9.5.1</span> Creating an Interaction Term</h3>
+<p>We will use the same model for a linear regression that we did for an ANOVA. SPSS doesn’t automatically compute interaction terms for linear regression models like it does ANOVAs. Fortunately, this is quite easy to do:</p>
+<ol type="1">
+<li><p>Click on <code>Transform &gt; Compute Variable</code>.</p></li>
+<li><p>In the <code>Target Variable</code> field, type, e.g., <code>Gender_IEP_Interaction</code>.</p></li>
+<li><p>Move <code>Gender</code> to the <code>Numeric Expression</code> field.</p></li>
+<li><p>Click on the <code>*</code> (asterisk) button in the “number pad” below the <code>Numeric Expression</code> field.</p></li>
+<li><p>Move <code>Spec_Ed</code> to the <code>Numeric Expression</code> field. The top of that dialogue box should now look like this:</p></li>
+</ol>
+<p><img src="images/lrm2_11.png" class="img-fluid"></p>
+<ol start="6" type="1">
+<li>Click <code>OK</code> to create this variable. It will appear at the far end (right of the <code>Data View</code>, bottom of the <code>Variable View</code>) of the data matrix; you may want to move it to the left / top of the set for easier access.</li>
+</ol>
+<p>Yes, all we did was multiply <code>Gender</code> by <code>Spec_Ed</code>. That is all an interaction term is: the two variables multiplied by each other8. For a dummy variable like this, of course, 0 <span class="math inline">\(\times\)</span> 0 = 0, 1 <span class="math inline">\(\times\)</span> 0 = 0, 0 <span class="math inline">\(\times\)</span> 1 = 0, and 1 <span class="math inline">\(\times\)</span> 1 = 1, so the values for this interaction term are all zeros except when for females (<code>Gender</code> = 1) who also have IEPs (<code>Spec_Ed</code> = 1). I’ll explain this later, but simply note it now.</p>
+</section>
+<section id="computing-a-linear-regression-with-an-interaction-term" class="level3" data-number="9.5.2">
+<h3 data-number="9.5.2" class="anchored" data-anchor-id="computing-a-linear-regression-with-an-interaction-term"><span class="header-section-number">9.5.2</span> Computing a Linear Regression with an Interaction Term</h3>
+<section id="generating-the-linear-regression-model" class="level4">
+<h4 class="anchored" data-anchor-id="generating-the-linear-regression-model">Generating the Linear Regression Model</h4>
+<p>To present a similar model to the ANOVA above, let’s enter all of the terms together.</p>
+<ol type="1">
+<li><p>Click on <code>Analyze &gt; Regression &gt; Linear</code>.</p></li>
+<li><p>Enter <code>ELA_Grade</code> in the <code>Dependent</code> field and Gender, <code>Spec_Ed</code>, and <code>Gender_IEP_Interaction</code> to the <code>Independent(s)</code> field (and setting the <code>Method</code> is <code>Enter</code>).</p></li>
+<li><p>Under the <code>Statistics</code> area, make sure <code>Model fit</code> and <code>R squared change</code> are both selected.</p></li>
+<li><p>Under the <code>Options...</code> area, make sure <code>Include constant in equation</code> and <code>Exclude cases pairwise</code> are selected.</p></li>
+<li><p>Click OK.</p></li>
+</ol>
+</section>
+<section id="linear-regression-output" class="level4">
+<h4 class="anchored" data-anchor-id="linear-regression-output">Linear Regression Output</h4>
+<ol type="1">
+<li><p>The <code>Model Summary</code> shows that the model does account for significant amount of the variance in the data (<em>F</em><sub>3,</sub> <sub>157</sub> = 12.6, <em>p</em> &gt; .001):<br>
+<img src="images/lrm2_12.png" class="img-fluid"><br>
+Also note the the <em>R</em><sup>2</sup> and adjusted <em>R</em><sup>2</sup> are the same as we found with the ANOVA: This is the same model, just looked at in terms of the model fit instead of the significance of model parameters.</p></li>
+<li><p>The ANOVA table in the linear regression about shows similar statistics to the <code>Corrected Model</code> row in the source table for the ANOVA above: In the source table above, the <em>F</em>-score for the <code>Corrected Model</code> was 21.69; here, the similar statistic is the <em>F</em> = 12.643 in the <code>Regression</code> row:</p></li>
+</ol>
+<p><img src="images/lrm2_13.png" class="img-fluid"></p>
+<p>This is because the sums of squares are computed a bit differently here. Nonetheless, the outcome is the same.</p>
+<p>To show that the outcome is the same, remember that the model <em>R</em><sup>2</sup> is the proportion of total variance in the data that is accounted for by the model; in other words, <em>R</em><sup>2</sup> is the variance in the model divided by the total variance.</p>
+<p>Now, remember what a “sum of squares” here is: It’s the squared differences between the expected value and the actual value, all added up. So, if the blue line in the figure below is the regression line estimated by an entire model (not this ELA model, but just a made-up one between two <em>z</em>-score variables):</p>
+<p><img src="images/lrm2_14.png" class="img-fluid"></p>
+<p>Now, if we didn’t have that regression line to help us—if we had no information except the column of ELA grades—then the best guess we could make about the grade for each student would be the mean ELA grade for the whole sample. In that figure, both variables are z-scores, so the means are zero: If I didn’t use the values of the predictor to estimate that line, then the best guess we would have for that person’s score on the criterion would be the mean, zero. In this case, to get the “sum of squares,” we’d first get the difference of each predictor from the mean, then square and sum those values—this would be the sum of squares if we didn’t use any information in the predictor(s): This would be the <code>Total Sum of Squares</code> in the table: <code>89.556</code>.</p>
+<p>Then the red line shows one of the distances from an actual data point from that estimated line. If we squared this distance—and all of the distances of the dots from the line—and then added up those values, we would get the <code>Regression</code> (or, computed slightly differently, the <code>Corrected Model</code>) <code>Sum of Squares</code>, which here is 12.643.</p>
+<p>Remember that the <em>R</em><sup>2</sup> is the model sum of squares divided by the total sum of squares: Here, that is 17.426 / 89.556 = 0.195. In the ANOVA we computed above, this is 21.69 / 89.556 = 0.195. They both produce the same <em>R</em><sup>2</sup> value.</p>
+</section>
+<section id="scatterplot-of-the-data" class="level4">
+<h4 class="anchored" data-anchor-id="scatterplot-of-the-data">Scatterplot of the Data </h4>
+<p>What’s that? You say you’d rather see what a chart for these data would look like than an mock one of two made-up <em>z</em>-scores? Well, all right then:</p>
+<ol type="1">
+<li><p>Click on <code>Graphs &gt; Chart Builder</code> and select <code>Scatter/Dot</code> from the <code>Gallery</code> tab in the bottom left corner. (You may well see a warning dialogue when opening the <code>Chart Builder</code> saying that “Before you use this dialog, measurement level should be set properly…”; this is a good thing to check, and has been for these data, so it’s fine to click <code>OK</code>.)</p></li>
+<li><p>Drag the first figure image, <code>Scatter Plot</code>, up into the main field just under where it says <code>Chart preview uses example data</code>.</p></li>
+<li><p>Just as we did for the bar graph at the beginning of this handout, put <code>ELA_Grade</code> in the <code>Y-Axis</code> field, <code>Gender</code> in the <code>X-Axis</code>. Also add <code>Spec_Ed</code> into the <code>Set color?</code> field in the top right.</p></li>
+<li><p>Click <code>OK</code>. The default difference in color</p></li>
+<li><p>Double-click on the figure that’s generated, and click on the <code>Add interpolation line</code> button, which is the third button from the right:<br>
+<img src="images/lrm2_15.png" class="img-fluid"><br>
+This will add a regression line for the IEP status of the males and another for the IEP status of the females. It’s not so easy to tell, but the female’s line is the upper one.</p></li>
+<li><p>After clicking on elements and using either the tool bar or Properties dialogue (accessed, e.g., via <code>Ctl + T</code>), we can create a figure like this:<br>
+<img src="images/lrm2_16.png" class="img-fluid"><br>
+showing that having an IEP has more of an effect on males’ than females’ ELA grades (indeed, there is little overlap between the grades of males with and without IEPs, unlike the females). It also shows that there is a wider range of grades among the males—including that the best (and worst) ELA grades were earned by males.</p></li>
+<li><p>The output also provides the coefficients for the model terms:</p></li>
+</ol>
+<p><img src="images/lrm2_17.png" class="img-fluid"></p>
+</section>
+<section id="use-of-dummy-variables-to-estimate-outcomes" class="level4">
+<h4 class="anchored" data-anchor-id="use-of-dummy-variables-to-estimate-outcomes">Use of Dummy Variables to Estimate Outcomes </h4>
+<p>The coefficients for the model terms allow us to estimate the group means—and (hopefully) help explain a bit more about dummy variables. The equation for the linear model we analyzed can be written as:</p>
+<p>Estimated ELA Grade = Intercept + Gender + IEP Status + (Gender <span class="math inline">\(\times\)</span> IEP Status)</p>
+<p>or a bit more abstractly as:</p>
+<p><code>ELA_Grade'</code> = <em>b</em><sub>0</sub> + <em>b</em><sub>1</sub><code>Gender</code> + <em>b</em><sub>2</sub><code>Spec_Ed</code> + <em>b</em><sub>3</sub><code>Gender_IEP_Interaction</code></p>
+<p>where the tiny apostrophe (<code>'</code>) at next to <code>ELA_Grade</code> denotes that we are estimating—predicting—<code>ELA_Grade</code>, not simply reproducing it. So, the better the model, the more the predicted scores will replicate the actual ones.</p>
+<p>In that second equation, <em>b</em><sub>0</sub> is what is given in the <code>Unstandardized B</code> column<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a> of the (<code>Constant</code>) row of the <code>Coefficients</code> table, so we could rewrite that equation as:</p>
+<p><code>ELA_Grade'</code> = 2.983 + <em>b</em><sub>1</sub><code>Gender</code> + <em>b</em><sub>2</sub><code>Spec_Ed</code> + b<sub>3</sub><code>Gender_IEP_Interaction</code></p>
+<p>We can similarly fill in the values for <em>b</em><sub>1</sub>, <em>b</em><sub>2</sub>, and <em>b</em><sub>3</sub> from the <code>Unstandardized B</code> column to produce:</p>
+<p><code>ELA_Grade'</code> = 2.983 – 0.212(<code>Gender</code>) – 0.870(<code>Spec_Ed</code>) + 0.804(<code>Gender_IEP_Interaction</code>).</p>
+<p>Now, remember that <code>Gender</code>, <code>Spec_Ed</code>, and <code>Gender_IEP_Interaction</code> all have values of only either 0 or 1. <code>Gender_IEP_Interaction</code> is 1 if the student is a female (<code>Gender</code> = 1) with an IEP (<code>Spec_Ed</code> = 1); otherwise it’s a 0 since 0 <span class="math inline">\(\times\)</span> 1 = 0, 1 <span class="math inline">\(\times\)</span> 0 = 0, and 0 <span class="math inline">\(\times\)</span> 0 = 0.</p>
+<p>So, if we want to estimate the <code>ELA_Grade</code> score for a boy (<code>Gender</code> = 0) without an IEP (<code>Spec_Ed</code> = 0), the equation is:</p>
+<p><code>ELA_Grade'</code> = 2.983 – 0.212(0) – 0.870(0) + 0.804(0)</p>
+<p>or:</p>
+<p><code>ELA_Grade'</code> = 2.983 – 0 – 0 + 0</p>
+<p>or simply:</p>
+<p><code>ELA_Grade'</code> = 2.983.</p>
+<p>So, since we coded our variables as dummy variables, then the (<code>Constant</code>) coefficient is the estimated <code>ELA_Grade</code> score for boys without IEPs. Whatever condition in a set of data that has all 0s for all dummy variables is called the <strong>reference group</strong>: It is the group against which all effects are compared.</p>
+<p>If we wanted to estimate the <code>ELA_Grade</code> score for girls (<code>Gender</code> = 1) without an IEP (<code>Spec_Ed</code> = 0), the equation is:</p>
+<p><code>ELA_Grade</code>’ = 2.983 – 0.212(1) – 0.870(0) + 0.804(0)</p>
+<p>or:</p>
+<p><code>ELA_Grade</code>’ = 2.983 – 0.212 – 0 + 0</p>
+<p>or:</p>
+<p><code>ELA_Grade</code>’ = 2.771.</p>
+<p>It is unexpected that girls would have an estimated lower ELA grade than boys, but we also know from the bar graphs, scatterplot, and analyses that gender in fact has a rather weak effect: This estimated score is likely not strongly predictive (accurate) for any particular case.</p>
+<p>IEP status, however, was more predictive, having an <span class="math inline">\(\eta\)</span><sup>2</sup> = 0.129, compared to gender’s <span class="math inline">\(\eta\)</span><sup>2</sup> = 0.25. The estimated grade for a boy (<code>Gender</code> = 0) <em>with</em> an IEP (<code>Spec_Ed</code> = 1) is:</p>
+<p><code>ELA_Grade</code>’ = 2.983 – 0.212(0) – 0.870(1) + 0.804(0)</p>
+<p><code>ELA_Grade</code>’ = 2.983 – 0 – 0.870 + 0</p>
+<p><code>ELA_Grade</code>’ = 2.113.</p>
+<p>Having an IEP had a relatively strong effect on a boy’s ELA grade.</p>
+<p>The effect of an IEP on a girl’s grade must take into account not only that she’s a girl and that she has an IEP, but also the interaction effect of being a girl with an IEP:</p>
+<p><code>ELA_Grade</code>’ = 2.983 – 0.212(1) – 0.870(1) + 0.804(1)</p>
+<p><code>ELA_Grade</code>’ = 2.983 – 0.212 – 0.870 + 0.804</p>
+<p><code>ELA_Grade</code>’ = 2.705.</p>
+<p>We knew from our initial investigations into the correlations between these variables that gender and IEP status were themselves related, and this is where that is represented in a linear model.</p>
+<p>So, to summarize how the dummy variables here are set to work to create an estimated ELA grade (and to change the equation notation a bit):</p>
+<div id="tbl-dummies" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Table&nbsp;9.1: Example Interpretation of Dummy-Coded Variables</caption>
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Boy without IEP (Reference group):</td>
+<td style="text-align: left;"><code>ELA_Grade</code>’ = <em>b</em><sub><code>Constant</code></sub></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Girl without an IEP:</td>
+<td style="text-align: left;"><code>ELA_Grade</code>’ = b<sub><code>Constant</code></sub> + b<sub><code>Gender</code></sub></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Boy with IEP:</td>
+<td style="text-align: left;"><code>ELA_Grade</code>’ = <em>b</em><sub><code>Constant</code></sub> + <em>b</em><sub><code>Spec_Ed</code></sub></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Girl with IEP:</td>
+<td style="text-align: left;"><code>ELA_Grade</code>’ = <em>b</em><sub><code>Constant</code></sub> + <em>b</em><sub><code>Gender</code></sub> + <em>b</em><sub><code>Spec_Ed</code></sub> + <em>b</em><sub><code>Gender_IEP_Interaction</code></sub></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <em>b</em>-weights for the terms in each model determine the predicted score for that condition.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/pig.png" class="img-fluid figure-img" style="width:30.0%"></p>
+</figure>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-cohen1988" class="csl-entry" role="listitem">
+Cohen, J. (1988). <em>Statistical power analysis for the behavioral sciences (2nd ed.)</em>. <span>Lawrence Erlbaum Associates</span>.
+</div>
+<div id="ref-kao2008" class="csl-entry" role="listitem">
+Kao, L. S., &amp; Green, C. E. (2008). Analysis of variance: <span>Is</span> there a difference in means and what does it mean? <em>Journal of Surgical Research</em>, <em>144</em>(1), 158–170. <a href="https://doi.org/10.1016/j.jss.2007.02.053">https://doi.org/10.1016/j.jss.2007.02.053</a>
+</div>
+<div id="ref-visalakshi2014" class="csl-entry" role="listitem">
+Visalakshi, J., &amp; Jeyaseelan, L. (2014). Confidence interval for skewed distribution in outcome of change or difference between methods. <em>Clinical Epidemiology and Global Health</em>, <em>2</em>(3), 117–120. <a href="https://doi.org/10.1016/j.cegh.2013.07.006">https://doi.org/10.1016/j.cegh.2013.07.006</a>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>In collecting these data, students were asked to indicate whether they were male or female, so gender is dichotomized here.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Karl Peasron is the person who first devidsed using <span class="math inline">\(\chi\)</span><sup>2</sup> distributions in statistics, so SPSS calls this a <em>Pearson</em> <span class="math inline">\(\chi\)</span><sup>2</sup>. This is nonetheless just the same <span class="math inline">\(\chi\)</span><sup>2</sup> we used anywhere else. In other words, it’s redundant—or superfluous—to call this a “Pearson <span class="math inline">\(\chi\)</span><sup>2</sup>” instead of just “<span class="math inline">\(\chi\)</span><sup>2</sup>”.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Assuming it’s a normal or <span class="math inline">\(\chi\)</span><sup>2</sup> distribution—or one of the other distributions that are like them, such as the <em>t</em> or <em>F</em> distributions used to test <em>t</em>- and &amp;F&amp;-scores.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>In fact, it’s a one-tailed test, testing whether the proportion (viz., of IEPs) is the same or different, but it doesn’t test whether any differences in the proportions are due to larger or smaller proportions here. For our uses—and likely any you will encounter—considering it a non-directional test of differences <em>somewhere</em> suffices.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>A moment’s reflection will reveal that my Venn diagrams aren’t really reflective of the point I’m trying to make, but I decided to go with a simplified representation that hopefully still works.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>And yes, reducing Type 1 errors by conducting fewer significance tests can be seen as an ironic reason to conduct an ANOVA since it’s pretty common for researchers to run post hoc analyses on many or all of the nominal variables, and thus end up conducting <em>more</em> analyses after counting un-necessary post hocs.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><span class="citation" data-cites="kao2008">Kao &amp; Green (<a href="references.html#ref-kao2008" role="doc-biblioref">2008</a>)</span> provide an excellent review both of ANOVAs in general and of the uses of the several post hoc analyses.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>It’s worth noting as well that there is a growing trend—at least among leading statisticians if not general researchers—to rely more on more on less definitive measures like confidence intervals to convey one’s results than to rely on up-or-down significance tests. Right now, at least though, my experience has been that reviewers are not comfortable when one excludes significance tests, so I recommend presenting data both with, e.g., confidence intervals and with <em>p</em>-values. Note, too, that confidence intervals and <em>p</em>-values are not equivalent: The confidence intervals are computed making few assumptions about the data and do not consider, e.g., if the data are skewed unless you modify the intervals in light of skewness. If you want to account for skewness, the preferred methods is currently to use bootstrapped intervals as describe in, e.g., <span class="citation" data-cites="visalakshi2014">Visalakshi &amp; Jeyaseelan (<a href="references.html#ref-visalakshi2014" role="doc-biblioref">2014</a>)</span> or to use <a href="https://www.ibm.com/support/pages/can-you-perform-log-transformation-spss">log transformations</a>. The latter is more well-known and accepted, but the former is likely preferred since it doesn’t make any assumptions about the underlying population and is more generally use-able whereas log transformations are only useful for data that are nearly normal but simply skewed.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>Colors can be useful—and sometimes necessary—but grey scales print in hard copies well and often are more easily seen by people with colorblindness.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>The naming of analyses gets capricious and confusing from there, though. A “general linear model” is a type of “generalized linear model.” Multilevel models and logistic regression are also types of <em>generalized</em> linear models, but let’s leave it at that. The list of terms in <a href="decision_trees.html#tbl-stat-vocab">Table&nbsp;<span>C.1</span></a> in <a href="vocab.html"><span>Appendix&nbsp;B</span></a> is intended to help clarify this and other confusions.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>The non-simplified answer is that designating a variable as a fixed factor means we’re assuming that all possible levels of that variable are present. Both our variables are fixed factors since we have dichotomized them into “Is female” or “Is not female” (and “Has an IEP” or “Doesn’t have an IEP”). Whenever the levels of our variable exhaust all possible options, then a variable is fixed. The null we’re testing against is that the means are the same for all levels of the variable.<br>
+With <a href="https://www.biology.lu.se/sites/biology.lu.se/files/spss_anova_guide.pdf#page=2">random factors</a>, we’re assuming that not all levels are present in our data. For example, we may be testing differences between hospitals: We have data from a few hospitals, but certainly not <em>all</em> hospitals. The null hypothesis we’re testing against is that there is no variance between any levels in the population (i.e., it’s a test against inferred population variance, not differences in the sample means).<br>
+For covariates, we are computing the slope of that variable with the criterion—whether the slope differs from zero. Since we compute a slope, we could estimate the values on the criterion for values of the covariate that were not included in the model.<br>
+It is bit unfortunately that SPSS calls this a covariate since we often think of a covariate as something we are controlling for I a model—something we want to partial out so that we can see the effect of another variable more clearly. Covariates here can certainly be used to do that, but they don’t need to be: Variables placed in the covariates field can be interpreted as the main variables of interest and the fixed ones could be ones we’re partialing out. The math is the same regardless of which term we’re interpreting as the variable of interest and which we’re adding to the model to partial out its effect.<br>
+A further point to make is that SPSS doesn’t compute random factors efficiently in <code>Analyze &gt; General Linear Models</code>. It would be better to use the <code>Analyze &gt; Mixed Models &gt; Linear</code> dialogue for models with variables that are continuous a. Nonetheless, this isn’t absolutely necessary to do, and the output you get from adding random factors here won’t likely ever greatly differ from the results gained from the <code>Mixed Models</code> analyses.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>Type II sum of squares is similar in that the terms are all added together, but the main effects are partialed in light of each other but not in light of the interaction; if there are no interaction terms, then Types II and III are computational the same. In Type I, the terms are each added one after the other, like we did in the last handout for the linear regression model; the order they are entered is the order they’re listed in the <code>Fixed Factor(s)</code> field, and then the <code>Random Factor(s)</code> field, and finally the <code>Covariates(s)</code> field.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>Please see <a href="effect_size.html"><span>Chapter&nbsp;6</span></a> for more on effect size and guidelines for “small,” “medium,” and “large.”<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>Remember that adjusted <em>R</em><sup>2</sup> is adjusted for the number of terms in the model since having more terms—even non-significant ones—can increase the model <em>R</em><sup>2</sup>.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>If we were predicting the standardized <code>ELA_Grades</code>—which we’re not—we would use the values from the <code>Standardized Coefficients Beta</code> column.<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./lrm_01.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 1: Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./mlm.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Longitudinal Analyses: Why and How to Conduct Multilevel Linear Modeling</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+      <i class="bi bi-badge-cc" role="img">
+</i> 
+  </li>  
+    <li class="nav-item">
+ Creative Commons Attribution--NonCommercial--ShareAlike License
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A set of explanations, lectures, resources, and activities to complement the statistics curriculum that is part of Hunter College’s Ph.D.&nbsp;Program in Nursing Research and Health Equity and DNP Program.">
+
+<title>Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula - 5&nbsp; Variance, Covariance, Correlations, and Partial Correlations</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./effect_size.html" rel="next">
+<link href="./significance.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./curricula.html">Applied Statistics Curriculum</a></li><li class="breadcrumb-item"><a href="./Variance_Covariance_Correlations_and_Partial_Correlations.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Variance, Covariance, Correlations, and Partial Correlations</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Companion-to-the-Nursing-Ph.D.---DNP-Statistics-Curricula.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./curricula.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applied Statistics Curriculum</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./60N.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 60<span style="font-size: .7em">N</span>: Foundations of Biostatistics for Nursing Research and Evidence-Based Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./915.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 915 &amp; 916: Applied Statistics 1 &amp; 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing_results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Writing Results Sections</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./significance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to Measuring Relationships and Building Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Variance_Covariance_Correlations_and_Partial_Correlations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Variance, Covariance, Correlations, and Partial Correlations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./effect_size.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Effect Size: Explanation and Guidelines</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./missing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lrm_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 1: Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lrm_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 2: More about ANOVAs and Dummy Coding</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mlm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Longitudinal Analyses: Why and How to Conduct Multilevel Linear Modeling</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Psychometrics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./925.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 925: Psychometrics Course</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./efa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Exploratory Factor Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Guides to Using Software</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Using_Templates_and_a_Reference_Manager.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Using Templates and a Reference Manager</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_Excel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Excel</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_SPSS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_GPower.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to Power and Sample Size Estimation Using Either G*Power or R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_exploration_with_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Exploration with R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common_statistical_symbols.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Common Statistical Symbols</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vocab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Common/Confusing Statistical &amp; Scientific Terms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decision_trees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Statistical Analysis Decision Trees and Guides</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-roles-of-covariance-variance" id="toc-the-roles-of-covariance-variance" class="nav-link active" data-scroll-target="#the-roles-of-covariance-variance"><span class="header-section-number">5.1</span> The Roles of Covariance &amp; Variance </a></li>
+  <li><a href="#correlations" id="toc-correlations" class="nav-link" data-scroll-target="#correlations"><span class="header-section-number">5.2</span> Correlations </a></li>
+  <li><a href="#sec-partial_semipartial_correlations" id="toc-sec-partial_semipartial_correlations" class="nav-link" data-scroll-target="#sec-partial_semipartial_correlations"><span class="header-section-number">5.3</span> Partial &amp; Semipartial Correlations</a></li>
+  <li><a href="#investigating-why-dbt-works-or-doesnt-work" id="toc-investigating-why-dbt-works-or-doesnt-work" class="nav-link" data-scroll-target="#investigating-why-dbt-works-or-doesnt-work"><span class="header-section-number">5.4</span> Investigating Why DBT Works or Doesn’t Work</a>
+  <ul>
+  <li><a href="#your-task" id="toc-your-task" class="nav-link" data-scroll-target="#your-task"><span class="header-section-number">5.4.1</span> Your Task</a></li>
+  <li><a href="#description-of-the-data" id="toc-description-of-the-data" class="nav-link" data-scroll-target="#description-of-the-data"><span class="header-section-number">5.4.2</span> Description of the Data</a>
+  <ul>
+  <li><a href="#id" id="toc-id" class="nav-link" data-scroll-target="#id">ID</a></li>
+  <li><a href="#received-dbt-intervention" id="toc-received-dbt-intervention" class="nav-link" data-scroll-target="#received-dbt-intervention">Received DBT Intervention?</a></li>
+  <li><a href="#teacher-same-ethnicity" id="toc-teacher-same-ethnicity" class="nav-link" data-scroll-target="#teacher-same-ethnicity">Teacher Same Ethnicity?</a></li>
+  <li><a href="#teacher-same-gender" id="toc-teacher-same-gender" class="nav-link" data-scroll-target="#teacher-same-gender">Teacher Same Gender?</a></li>
+  <li><a href="#behavioral-regulation-slope-teacher-report" id="toc-behavioral-regulation-slope-teacher-report" class="nav-link" data-scroll-target="#behavioral-regulation-slope-teacher-report">Behavioral Regulation Slope – Teacher Report</a></li>
+  <li><a href="#meta-cognitive-slope-teacher-report" id="toc-meta-cognitive-slope-teacher-report" class="nav-link" data-scroll-target="#meta-cognitive-slope-teacher-report">Meta-Cognitive Slope – Teacher Report</a></li>
+  <li><a href="#all-executive-functions-slope-teacher-report" id="toc-all-executive-functions-slope-teacher-report" class="nav-link" data-scroll-target="#all-executive-functions-slope-teacher-report">All Executive Functions Slope – Teacher Report</a></li>
+  <li><a href="#behavioral-regulation-slope-student-self-report" id="toc-behavioral-regulation-slope-student-self-report" class="nav-link" data-scroll-target="#behavioral-regulation-slope-student-self-report">Behavioral Regulation Slope – Student Self-Report</a></li>
+  <li><a href="#meta-cognitive-slope-student-self-report" id="toc-meta-cognitive-slope-student-self-report" class="nav-link" data-scroll-target="#meta-cognitive-slope-student-self-report">Meta-Cognitive Slope – Student Self-Report</a></li>
+  <li><a href="#all-executive-functions-slope-student-self-report" id="toc-all-executive-functions-slope-student-self-report" class="nav-link" data-scroll-target="#all-executive-functions-slope-student-self-report">All Executive Functions Slope – Student Self-Report</a></li>
+  <li><a href="#mindfulness-slope" id="toc-mindfulness-slope" class="nav-link" data-scroll-target="#mindfulness-slope">Mindfulness Slope</a></li>
+  <li><a href="#emotional-regulation-slope" id="toc-emotional-regulation-slope" class="nav-link" data-scroll-target="#emotional-regulation-slope">Emotional Regulation Slope</a></li>
+  <li><a href="#discipline-incidents-slope" id="toc-discipline-incidents-slope" class="nav-link" data-scroll-target="#discipline-incidents-slope">Discipline Incidents Slope</a></li>
+  <li><a href="#self-reflection-slope" id="toc-self-reflection-slope" class="nav-link" data-scroll-target="#self-reflection-slope">Self-Reflection Slope</a></li>
+  <li><a href="#in-school-suspension-slope" id="toc-in-school-suspension-slope" class="nav-link" data-scroll-target="#in-school-suspension-slope">In-School Suspension Slope</a></li>
+  <li><a href="#out-of-school-suspension-slope" id="toc-out-of-school-suspension-slope" class="nav-link" data-scroll-target="#out-of-school-suspension-slope">Out-of-School Suspension Slope</a></li>
+  <li><a href="#ela-grade" id="toc-ela-grade" class="nav-link" data-scroll-target="#ela-grade">ELA Grade</a></li>
+  <li><a href="#math-grade" id="toc-math-grade" class="nav-link" data-scroll-target="#math-grade">Math Grade</a></li>
+  <li><a href="#female" id="toc-female" class="nav-link" data-scroll-target="#female">Female?</a></li>
+  <li><a href="#freereduced-school-lunch-group" id="toc-freereduced-school-lunch-group" class="nav-link" data-scroll-target="#freereduced-school-lunch-group">Free/Reduced School Lunch Group</a></li>
+  <li><a href="#economic-distress" id="toc-economic-distress" class="nav-link" data-scroll-target="#economic-distress">Economic Distress?</a></li>
+  <li><a href="#mother-at-home" id="toc-mother-at-home" class="nav-link" data-scroll-target="#mother-at-home">Mother at Home?</a></li>
+  <li><a href="#father-at-home" id="toc-father-at-home" class="nav-link" data-scroll-target="#father-at-home">Father at Home?</a></li>
+  <li><a href="#adult-brother-at-home" id="toc-adult-brother-at-home" class="nav-link" data-scroll-target="#adult-brother-at-home">Adult Brother at Home?</a></li>
+  <li><a href="#adult-sister-at-home" id="toc-adult-sister-at-home" class="nav-link" data-scroll-target="#adult-sister-at-home">Adult Sister at Home?</a></li>
+  <li><a href="#grandparent-at-home" id="toc-grandparent-at-home" class="nav-link" data-scroll-target="#grandparent-at-home">Grandparent at Home?</a></li>
+  <li><a href="#other-adult-at-home" id="toc-other-adult-at-home" class="nav-link" data-scroll-target="#other-adult-at-home">Other Adult at Home?</a></li>
+  <li><a href="#total-number-of-adults-st-home" id="toc-total-number-of-adults-st-home" class="nav-link" data-scroll-target="#total-number-of-adults-st-home">Total Number of Adults st Home</a></li>
+  <li><a href="#special-education-status" id="toc-special-education-status" class="nav-link" data-scroll-target="#special-education-status">Special Education Status</a></li>
+  <li><a href="#intellectual-impairment" id="toc-intellectual-impairment" class="nav-link" data-scroll-target="#intellectual-impairment">Intellectual Impairment?</a></li>
+  <li><a href="#social-emotional-impairment" id="toc-social-emotional-impairment" class="nav-link" data-scroll-target="#social-emotional-impairment">Social Emotional Impairment</a></li>
+  <li><a href="#high-risk-category" id="toc-high-risk-category" class="nav-link" data-scroll-target="#high-risk-category">High Risk Category</a></li>
+  <li><a href="#years-at-this-school" id="toc-years-at-this-school" class="nav-link" data-scroll-target="#years-at-this-school">Years at This School</a></li>
+  <li><a href="#number-of-school-absences" id="toc-number-of-school-absences" class="nav-link" data-scroll-target="#number-of-school-absences">Number of School Absences</a></li>
+  <li><a href="#ethnicity-asian" id="toc-ethnicity-asian" class="nav-link" data-scroll-target="#ethnicity-asian">Ethnicity: Asian</a></li>
+  <li><a href="#ethnicity-american-indian" id="toc-ethnicity-american-indian" class="nav-link" data-scroll-target="#ethnicity-american-indian">Ethnicity: American Indian</a></li>
+  <li><a href="#ethnicity-black" id="toc-ethnicity-black" class="nav-link" data-scroll-target="#ethnicity-black">Ethnicity: Black</a></li>
+  <li><a href="#ethnicity-hispanic" id="toc-ethnicity-hispanic" class="nav-link" data-scroll-target="#ethnicity-hispanic">Ethnicity: Hispanic</a></li>
+  <li><a href="#ethnicity-white" id="toc-ethnicity-white" class="nav-link" data-scroll-target="#ethnicity-white">Ethnicity: White</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#using-spss" id="toc-using-spss" class="nav-link" data-scroll-target="#using-spss"><span class="header-section-number">5.5</span> Using SPSS</a>
+  <ul>
+  <li><a href="#accessing-spss-data-importation" id="toc-accessing-spss-data-importation" class="nav-link" data-scroll-target="#accessing-spss-data-importation"><span class="header-section-number">5.5.1</span> Accessing SPSS &amp; Data Importation</a></li>
+  <li><a href="#conducting-correlations-and-partial-correlations-in-spss" id="toc-conducting-correlations-and-partial-correlations-in-spss" class="nav-link" data-scroll-target="#conducting-correlations-and-partial-correlations-in-spss"><span class="header-section-number">5.5.2</span> Conducting Correlations and Partial Correlations in SPSS</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-corrs_partials" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Variance, Covariance, Correlations, and Partial Correlations</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="the-roles-of-covariance-variance" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="the-roles-of-covariance-variance"><span class="header-section-number">5.1</span> The Roles of Covariance &amp; Variance </h2>
+<p>A <strong>standard deviation</strong> (<em>SD</em>) describes how far away—on average—individual data points are from the mean. So, to compute the standard deviation, we essentially measure how far each data point is from the mean, and then take the average of those distances while standardizing this to be presented in <em>z</em>-scores (where one <em>z</em>-score equals one standard deviation). We can do this by taking each score’s distance from the mean, squaring those distances, and then taking the square root of that squared distance<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, and then dividing it by the number of data points (um, well, actually dividing by the number of data points <em>minus 1</em>)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. The formula for doing all of this can be written as:</p>
+<p><span class="math display">\[SD = \frac{\sqrt{\sum ( X - \bar{X})^2}}{n - 1}\]</span></p>
+<p>where <span class="math inline">\(X\)</span> is the score for any given member of the sample, <span class="math inline">\(\bar{X}\)</span> is the sample mean of that score, and <em>n</em> is the sample size.</p>
+<p>Although we often report the <em>SD</em> in Results sections, many calculations in fact use the <strong>variance</strong> instead, which is nearly the same formula but without the square root<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p>
+<p><span class="math display">\[\text{Variance} = \frac{\displaystyle{\sum_{i=1}^{n} ( X_{i} - \bar{X})^2}}{n - 1}\]</span></p>
+<p>Note that I added some extra notation to the formula this time. The <em>X</em><sub><em>i</em></sub> simply means we’re subtracting a particular instance of the variable <em>X</em>, instance <em>i</em>. Which is instance <em>i</em>? Well, that’s the point: The stuff I now put around the summation symbol (<span class="math inline">\(\Sigma\)</span>) explains what <em>i</em> means. That extra stuff around the summation symbol says that we’re starting with the first instance of (<em>i</em> = 1, i.e., at the first data point, whatever its value) and continuing until we get the last data point (when <em>i</em> = <em>n</em>, i.e., when we’ve reached the last data point); in other words, “Start at the beginning and go to the end.” So, if we wrote: <span class="math inline">\(\displaystyle\sum_{i=3}^{n-1}\)</span> we’d mean to start at the third instance (e.g., third row in a data matrix) and go the to the next-to-last (<em>n</em> – 1) instance. I point this out both so you understand it and so we can notice better what’s going on when we next add another variable, <em>Y</em>, into the mix.</p>
+<p>Covariance, of course, is how much two variables covary. Mathematically, we start by taking how much each pair of instances both vary from the mean:</p>
+<p><span class="math display">\[ \text{First variable's difference} = X_{i} - \bar{X} \text{; Second variable's difference} = Y_{i} - \bar{Y} \]</span></p>
+<p>Notice how both variables have an <em>i</em> as the subscript, indicating that we take the value for X for the, e.g., row as the take the value of Y. For example, for the first “instance” (e.g., row) in a data set, we say <em>i</em> = 1 and for that row, we have <em>X</em><sub>1</sub> and <em>Y</em><sub>1</sub>; for the second instance, we have <em>X</em><sub>2</sub> and <em>Y</em><sub>2</sub> and so on.</p>
+<p>So, when we compute the covariance:</p>
+<p>we first take the difference from the respective means and then multiply these differences together (before then adding these up and dividing by <em>n</em> – 1), like so:</p>
+<p><span class="math display">\[\text{Covariance} = \text{Cov}(X, Y) =  \frac{\displaystyle{\sum_{i=1}^{n} (X_{i} - \bar{X})(Y_{i} - \bar{Y})}}{n - 1}\]</span></p>
+<p>Note three things about this:</p>
+<ol type="1">
+<li>Covariances can be negative (as typically conceived, variances and <em>SD</em>s cannot).</li>
+<li>Covariance is maximized when <em>X</em> and <em>Y</em> are both large at the same time. Sure, that also means that there will be times when <em>X</em> and <em>Y</em> are both small at the same time, but overall, those times when both <em>X</em> and <em>Y</em> are large are what make the covariance large<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Therefore, if you want to test the true magnitude of the covariance (e.g., the correlation) between two variables, try to measure a wide range of values to allow for the possibility of times when both values are large together.</li>
+<li>Because a few instances of <em>X</em> and <em>Y</em> being large together makes for a big covariance, it’s vulnerable to a few outliers. Just saying.</li>
+</ol>
+<p>One more thing to note about the covariance: It’s represented in the same units as the variables. So, e.g., if we looked at the covariance between systolic blood pressure and lung volume, the covariance is in some weird millimeter x cubic centimeter units. This is fine—indeed necessary—if our variables are in those units, but it does often make it hard to conceive of what a covariance value <em>actually</em> means.</p>
+</section>
+<section id="correlations" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="correlations"><span class="header-section-number">5.2</span> Correlations </h2>
+<p>In stats, we often standardize variables—put them all into units that are the same range—so that we can make comparisons between variables. We could do this any way we want, but commonly, we divide a value by the <em>SD</em>: This puts variables into the same range and the same units<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<p>We do this for covariances too, and often. Now, the covariance is the product of two variables, so we have to divide them by <em>both</em> their units, but that’s easily done:</p>
+<p><span class="math display">\[\text{Standardized covariance} = \frac{\text{Cov}(X, Y)}{SD_{X}SD_{Y}}\]</span></p>
+<p>As you may have figured out, this is in fact the formula for Pearson’s <em>r</em>, assuming both variables are interval / ratio.</p>
+<p>This equation also reminds us that the concept of a signal-to-noise ratio that under-girds much of statistics is intrinsic to correlations. Here, of course, it’s the covariance : variance ratio.</p>
+</section>
+<section id="sec-partial_semipartial_correlations" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-partial_semipartial_correlations"><span class="header-section-number">5.3</span> Partial &amp; Semipartial Correlations</h2>
+<p>The concepts that underlie partial correlations are another important fundamental aspects to much of statistics—especially linear regressions. In a nutshell, a partial correlation is the correlation between two variables after first removing the effect a third variable. A semipartial correlation (confusingly sometimes called a “part correlation”) removes the effect of a third variable from just one of the two correlated variables. We often say, e.g., that we’re looking at the correlation between two variables while “controlling for” the effect a third variable. (A correlation between two variables that does not account for a third (or fourth, etc.) variable is also called a zero-order or bivariate correlation.) </p>
+<p>A <strong>partial correlation</strong>, then, is the correlation between two variables, say <em>X</em> and <em>Y</em>, after removing the correlation each has with a third variable, say <em>Z</em>. Symbolizing the partial correlation between <em>X</em> and <em>Y</em> after controlling for Z as <em>r</em><sub>XY.Z</sub>:</p>
+<p><br>
+<span class="math display">\[r_{\mathit{XY}.Z} = \frac{\text{Correlation between }X \text{ and } {Y - {({\text{Correlations between }Z\text{ and  both }X\text{ and }Y})}}}{\text{Residuals left over after removing the correlations between }Z\text{ and both }X\text{ and }Y}\]</span></p>
+<p>More formally:</p>
+<p><span class="math display">\[r_{XY.Z} = \frac{r_{XY} - r_{XZ}r_{YZ}}{\sqrt{(1 - r_{XZ}^{2})(1 - r_{YZ}^{2})}}\]</span> A <strong>semipartial correlation</strong>, remember, controls for just the correlation of one of the variable with a third variable, say only controlling for the correlation of <em>X</em> and <em>Z</em> but not for the correlation of <em>Y</em> and <em>Z</em>:</p>
+<p><span class="math display">\[r_{X(Y.Z)} = \frac{r_{XY} - r_{XZ}r_{YZ}}{\sqrt{(1 - r_{XZ}^{2})}}\]</span></p>
+<p>We can create more complex partial and semipartial correlations, controlling not just for one other variable (here <em>Z</em>), but for several other, additional variables.</p>
+<p>O.K., the value of a partial correlation should be pretty clear: If I’m interested in the correlation between, say, blood pressure and breathing efficiency, I may want to control for the effects of things like age and exercise.</p>
+<p>But why would I want to compute a <em>semipartial</em> correlation? In fact, we do this all of the time. Let me explain:</p>
+<p>A zero-order correlation (i.e., a correlation between two variables that doesn’t account for any other variables) does not make a judgment about where the variance lies—in fact, it’s essentially assumed to come more or less equally from both variables. Often however, we’re interested in looking at the variance in only one measure—the outcome measure. We want to know from whence comes the variation in our outcome; we are not interested in (or we try to control) the variance in our predictors. In a linear regression, we typically investigate the effect of predictor <em>X</em> on <em>outcome Y</em> while also controlling for the effect of predictor <em>Z</em> on outcome <em>X.</em> In other words, in linear regressions with one outcome and more than one predictor, we isolate the effects of each predictor on the outcome from the effect of other predictors on the outcome while letting each predictor fully covary with the outcome (i.e., let predictor <em>X</em> covary with outcome <em>Y</em> while removing the effect of predictor <em>Z</em> from the relationship between <em>X</em> and <em>Y</em>—unless we add a term for the covariance of <em>X</em> and <em>Z</em> as an interaction term).</p>
+</section>
+<section id="investigating-why-dbt-works-or-doesnt-work" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="investigating-why-dbt-works-or-doesnt-work"><span class="header-section-number">5.4</span> Investigating Why DBT Works or Doesn’t Work</h2>
+<p>Dialectical behavior therapy (<a href="https://psychcentral.com/lib/an-overview-of-dialectical-behavior-therapy/">DBT</a>) is an intervention strategy similar to cognitive behavior therapy. It focuses on using mindfulness training to help regulate one’s emotions and behaviors. Developed first for those with borderline personality disorders and subsequently found to be quite effective among those with suicidal tendencies, it is seen by some as holding potential use for more general populations.</p>
+<p>Among those who believe it may help a broader range of individuals is the head of a local school. This school already has a modified—and more pervasively infused—health curriculum that seeks to help the school’s adolescent students understand and control their emotions, and through that be more in control of their academic and social lives.</p>
+<p>This school therefore implemented a DBT “curriculum” that is completed by seventh- and eighth-grade students. There are now about four years of data tracking these DBT-participating students from sixth through ninth grade. This gives us a sense of how they were before participating in the DBT program, how they did during it, and if any changes persist a while afterwards. We also have sixth- through ninth-grade data for all students from years before the school implemented the DBT curriculum; these previous years’ students can serve as ersatz controls.</p>
+<p>Initial analyses contend that the DBT program is associated with mild but significant improvements in participants’ executive functions relative to this ersatz control group. DBT participation was not associated with significant changes in academic performance. Of greater concern for the school, though, was that some students benefited much more strongly from the program than other students—and that students seemed not to benefit at all.</p>
+<p>I was recently asked by the school to lend insight into those students who did not respond well to the DBT program. The idea is to understand for whom it does and doesn’t work so that the school can tailor the program to better help the students and perhaps to provide additional help for those who didn’t seem to get enough from the DBT program.</p>
+<p>I was then asked to present my findings to the school’s administration. In fact, I presented it about three times, each time making my explanation (and analyses) simpler and simpler.</p>
+<section id="your-task" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="your-task"><span class="header-section-number">5.4.1</span> Your Task</h3>
+<p>How would you do if asked to do the same thing? Please therefore:</p>
+<ol type="1">
+<li>Use simple descriptive statistics—such as frequency counts—as well as zero-order and partial correlations</li>
+<li>To investigate what factors (in the data described below) predict which students will benefit from the DBT program.</li>
+<li>Please write this up in a simple 1 – 2-page report that could be understood by non-experts.</li>
+</ol>
+<p>The dataset <code>ef_slopes.ods</code> is accessible in our course’s BlackBoard site.</p>
+<p><strong>Please note</strong>:</p>
+<p><em>Although anonymized, these are real data. Please treat them with the respect, confidentiality, and care.</em></p>
+<p>Note as well that, as real data, there may be expected relationships between variables are not strong and unexpected relationships that are. In addition, most relationships won’t be statistically significant. Please don’t rely on significance as the only criterion you use to make your decisions: Instead, compare the relative magnitude of relationships to find ones you think hold more promise than other relationships; if something is indeed significant, that's nice, but we don't need to hold ourselves just to that.</p>
+</section>
+<section id="description-of-the-data" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="description-of-the-data"><span class="header-section-number">5.4.2</span> Description of the Data</h3>
+<p>The variables in the dataset are:</p>
+<section id="id" class="level4">
+<h4 class="anchored" data-anchor-id="id">ID</h4>
+<p>An identifier for each student.</p>
+</section>
+<section id="received-dbt-intervention" class="level4">
+<h4 class="anchored" data-anchor-id="received-dbt-intervention">Received DBT Intervention?</h4>
+<p>Whether the given student did (1) or did not (0) participate in the full regimen of the DBT program.</p>
+</section>
+<section id="teacher-same-ethnicity" class="level4">
+<h4 class="anchored" data-anchor-id="teacher-same-ethnicity">Teacher Same Ethnicity?</h4>
+<p>Whether the teacher is (1) or is not (0) the same ethnicity as the student.</p>
+</section>
+<section id="teacher-same-gender" class="level4">
+<h4 class="anchored" data-anchor-id="teacher-same-gender">Teacher Same Gender?</h4>
+<p>Whether the teacher is (1) or is not (0) the same gender as the student.</p>
+</section>
+<section id="behavioral-regulation-slope-teacher-report" class="level4">
+<h4 class="anchored" data-anchor-id="behavioral-regulation-slope-teacher-report">Behavioral Regulation Slope – Teacher Report</h4>
+<p>Each year, teachers at the school are asked to rate a subset of their students on a list of various behaviors believed to indicate a student’s level of executive functioning. The scores on these behaviors are summed to create a score for each student each year. To facilitate analyses here, I computed the normalized slope for the line on which a student’s yearly score regressed. <strong>For all slopes, negative values indicate</strong> <strong><em>improvements</em>—that a student’s functioning got better.</strong></p>
+<p>Behavioral regulation includes a subset of executive functions most closely related to one’s overt behaviors.</p>
+</section>
+<section id="meta-cognitive-slope-teacher-report" class="level4">
+<h4 class="anchored" data-anchor-id="meta-cognitive-slope-teacher-report">Meta-Cognitive Slope – Teacher Report</h4>
+<p>Meta-cognition includes a subset of executive functions most closely aligned with how one thinks and feels.</p>
+</section>
+<section id="all-executive-functions-slope-teacher-report" class="level4">
+<h4 class="anchored" data-anchor-id="all-executive-functions-slope-teacher-report">All Executive Functions Slope – Teacher Report</h4>
+<p>All executive functions combines the scores of the behavioral regulation and meta-cognitive sub-domains into a total score.</p>
+</section>
+<section id="behavioral-regulation-slope-student-self-report" class="level4">
+<h4 class="anchored" data-anchor-id="behavioral-regulation-slope-student-self-report">Behavioral Regulation Slope – Student Self-Report</h4>
+<p>Each year, in addition to the teachers rating a subset of their students, each student also rates themself on how they feel they’ve behaved vis-à-vis behaviors related to executive functioning.</p>
+<p>The behavioral regulation slope is the regression line for the scores for each students across these four years on executive functions most related to overt behaviors. Again, <em>negative</em> slopes denote <em>improvements</em> in executive functioning.</p>
+</section>
+<section id="meta-cognitive-slope-student-self-report" class="level4">
+<h4 class="anchored" data-anchor-id="meta-cognitive-slope-student-self-report">Meta-Cognitive Slope – Student Self-Report</h4>
+<p>Again, these are executive functions most closely aligned with internal cognitions or emotions—here as self-reported by the students.</p>
+</section>
+<section id="all-executive-functions-slope-student-self-report" class="level4">
+<h4 class="anchored" data-anchor-id="all-executive-functions-slope-student-self-report">All Executive Functions Slope – Student Self-Report</h4>
+<p>The students’ self-reported behavioral regulation and meta-cognitive subscores are first combined here before a slope for the regression line was computed for each student.</p>
+</section>
+<section id="mindfulness-slope" class="level4">
+<h4 class="anchored" data-anchor-id="mindfulness-slope">Mindfulness Slope</h4>
+<p>Recently, we added a self-reported mindfulness score by asking students to complete another instrument commonly seen to measure just that. Again, negative slopes indicate improvements.</p>
+</section>
+<section id="emotional-regulation-slope" class="level4">
+<h4 class="anchored" data-anchor-id="emotional-regulation-slope">Emotional Regulation Slope</h4>
+<p>The students complete a third instrument that measures their emotional regulation per se. Again, negative slopes indicate improvements.</p>
+</section>
+<section id="discipline-incidents-slope" class="level4">
+<h4 class="anchored" data-anchor-id="discipline-incidents-slope">Discipline Incidents Slope</h4>
+<p>Records are kept for whenever something happens on campus that leads to a student being “written up” for something that requires that student being somehow disciplined. Therefore, each student has a number of times that they are “written up” each year. This number could range from zero (for never having been written up for something requiring discipline) to sometimes rather large values.</p>
+<p>This slope is the linear regression of this number of discipline incidents each year. Positive values therefore indicate growths in the number of times that student “got into trouble.”</p>
+<p>This is also among the main outcome variables the school was interested in: They wanted to understand who had more discipline incidents, who subsequently got better, and—especially—whom benefited <em>least</em> from the DBT program so that these student (and those like them) could be targeted for more help.</p>
+</section>
+<section id="self-reflection-slope" class="level4">
+<h4 class="anchored" data-anchor-id="self-reflection-slope">Self-Reflection Slope</h4>
+<p>The linear regression for the number of times a student was put in what is essentially a mild form of in-school suspension. Positive values denote more incidents.</p>
+</section>
+<section id="in-school-suspension-slope" class="level4">
+<h4 class="anchored" data-anchor-id="in-school-suspension-slope">In-School Suspension Slope</h4>
+<p>The linear regression for the number of times a student was put in what is essentially <em>actual</em> in-school suspension. Positive values denote more incidents.</p>
+</section>
+<section id="out-of-school-suspension-slope" class="level4">
+<h4 class="anchored" data-anchor-id="out-of-school-suspension-slope">Out-of-School Suspension Slope</h4>
+<p>The linear regression for the number of times a student was suspended from school; this is the most severe of the three types of suspensions. Positive values denote more incidents.</p>
+</section>
+<section id="ela-grade" class="level4">
+<h4 class="anchored" data-anchor-id="ela-grade">ELA Grade</h4>
+<p>A 4-point grade for the student on English / language arts courses for that student’s ninth grade. 4 is the highest grade possible.</p>
+</section>
+<section id="math-grade" class="level4">
+<h4 class="anchored" data-anchor-id="math-grade">Math Grade</h4>
+<p>A 4-point grade for the student on math courses for that student’s ninth grade. 4 is the highest grade possible.</p>
+</section>
+<section id="female" class="level4">
+<h4 class="anchored" data-anchor-id="female">Female?</h4>
+<p>Whether the student does (1) or does not (0) identify as female.</p>
+</section>
+<section id="freereduced-school-lunch-group" class="level4">
+<h4 class="anchored" data-anchor-id="freereduced-school-lunch-group">Free/Reduced School Lunch Group</h4>
+<p>Whether the student is in the economic stratum that was previously used to allow them to be eligible for free (1) or reduced (0) school lunches, or whether they were not eligible (-1) for free / reduced school lunches.</p>
+</section>
+<section id="economic-distress" class="level4">
+<h4 class="anchored" data-anchor-id="economic-distress">Economic Distress?</h4>
+<p>Like <code>Free/Reduced School Lunch Group</code>, this is a measure of the student’s family’s economic situation, simply whether a student does (1) or does not (0) classify as experiencing economic distress.</p>
+</section>
+<section id="mother-at-home" class="level4">
+<h4 class="anchored" data-anchor-id="mother-at-home">Mother at Home?</h4>
+<p>Whether the student self-reported that their mother does (1) or does not (0) live with them.</p>
+</section>
+<section id="father-at-home" class="level4">
+<h4 class="anchored" data-anchor-id="father-at-home">Father at Home?</h4>
+<p>Whether the student self-reported that their father does (1) or does not (0) live with them.</p>
+</section>
+<section id="adult-brother-at-home" class="level4">
+<h4 class="anchored" data-anchor-id="adult-brother-at-home">Adult Brother at Home?</h4>
+<p>Whether the student self-reported that one or more adult brothers do (1) or do not (0) live with them.</p>
+</section>
+<section id="adult-sister-at-home" class="level4">
+<h4 class="anchored" data-anchor-id="adult-sister-at-home">Adult Sister at Home?</h4>
+<p>Whether the student self-reported that one or more adult sisters do (1) or do not (0) live with them.</p>
+</section>
+<section id="grandparent-at-home" class="level4">
+<h4 class="anchored" data-anchor-id="grandparent-at-home">Grandparent at Home?</h4>
+<p>Whether the student self-reported that one or more grandparents do (1) or do not (0) live with them.</p>
+</section>
+<section id="other-adult-at-home" class="level4">
+<h4 class="anchored" data-anchor-id="other-adult-at-home">Other Adult at Home?</h4>
+<p>Whether the student self-reported that one or more “other” adults do (1) or do not (0) live with them.</p>
+</section>
+<section id="total-number-of-adults-st-home" class="level4">
+<h4 class="anchored" data-anchor-id="total-number-of-adults-st-home">Total Number of Adults st Home</h4>
+<p>Simply the sum of each of the other “adults at home” variables.</p>
+</section>
+<section id="special-education-status" class="level4">
+<h4 class="anchored" data-anchor-id="special-education-status">Special Education Status</h4>
+<p>Whether a student has been (1) or has not been (0) diagnosed with a condition that makes them eligible for special education services.</p>
+</section>
+<section id="intellectual-impairment" class="level4">
+<h4 class="anchored" data-anchor-id="intellectual-impairment">Intellectual Impairment?</h4>
+<p>Whether a student has been (1) or has not been (0) diagnosed with an intellectual disability.</p>
+</section>
+<section id="social-emotional-impairment" class="level4">
+<h4 class="anchored" data-anchor-id="social-emotional-impairment">Social Emotional Impairment</h4>
+<p>Whether a student has been (1) or has not been (0) diagnosed with a social and/or emotional disability.</p>
+</section>
+<section id="high-risk-category" class="level4">
+<h4 class="anchored" data-anchor-id="high-risk-category">High Risk Category</h4>
+<p>Whether a student has been (1) or has not been (0) identified as benefiting from interventions related to high-risk behaviors.</p>
+</section>
+<section id="years-at-this-school" class="level4">
+<h4 class="anchored" data-anchor-id="years-at-this-school">Years at This School</h4>
+<p>The number of years the student has been at this school.</p>
+</section>
+<section id="number-of-school-absences" class="level4">
+<h4 class="anchored" data-anchor-id="number-of-school-absences">Number of School Absences</h4>
+<p>The number of times in ninth grade that the student was absent—excused or not—from school.</p>
+</section>
+<section id="ethnicity-asian" class="level4">
+<h4 class="anchored" data-anchor-id="ethnicity-asian">Ethnicity: Asian</h4>
+<p>A dummy variable indicating whether the student identifies as Asian (1) or not (0). Note that dummy variables are a good way to handle times when participants can identify with more than one group; some participants are identified here by more than one “ethnicity” dummy variable.</p>
+</section>
+<section id="ethnicity-american-indian" class="level4">
+<h4 class="anchored" data-anchor-id="ethnicity-american-indian">Ethnicity: American Indian</h4>
+<p>A dummy variable indicating whether the student identifies as American Indian (1) or not (0).</p>
+</section>
+<section id="ethnicity-black" class="level4">
+<h4 class="anchored" data-anchor-id="ethnicity-black">Ethnicity: Black</h4>
+<p>A dummy variable indicating whether the student identifies as Black (1) or not (0).</p>
+</section>
+<section id="ethnicity-hispanic" class="level4">
+<h4 class="anchored" data-anchor-id="ethnicity-hispanic">Ethnicity: Hispanic</h4>
+<p>A dummy variable indicating whether the student identifies as Hispanic/Latin (1) or not (0)).</p>
+</section>
+<section id="ethnicity-white" class="level4">
+<h4 class="anchored" data-anchor-id="ethnicity-white">Ethnicity: White</h4>
+<p>A dummy variable indicating whether the student identifies as White (1) or not (0).</p>
+</section>
+</section>
+</section>
+<section id="using-spss" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="using-spss"><span class="header-section-number">5.5</span> Using SPSS</h2>
+<section id="accessing-spss-data-importation" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="accessing-spss-data-importation"><span class="header-section-number">5.5.1</span> Accessing SPSS &amp; Data Importation</h3>
+<ol type="1">
+<li><p>Go to CUNY Virtual Desktop: <a href="https://www.cuny.edu/about/administration/offices/cis/virtual-desktop/">https://www.cuny.edu/about/administration/offices/cis/virtual-desktop/</a></p></li>
+<li><p>Click on the SPSS icon to open it. N.b.: You session can time out and suddenly. Make sure you save your work to an actual hard drive (or USB, online account, etc.) so you don’t loose it!</p></li>
+<li><p>In SPSS, with <code>Open another file...</code> highlighted, click <code>Open</code> and navigate to wherever you have <code>ef_slopes.ods</code> saved.</p>
+<ol type="1">
+<li>The first line indeed includes names, so leave that option checked</li>
+<li>The delimiter is indeed a comma, decimals are periods, and text marked with double quotes, so leave those options chosen</li>
+</ol></li>
+<li><p>When you finish the data importations, SPSS opens an <code>Output</code> window (in addition to the Data Editor window). In this window will appear both the results of any analyses and the code that SPSS used to generate those results. This is worth explaining.</p>
+<ul>
+<li>A benefit of SPSS is that it has an efficient and intuitive GUI, but in fact that GUI is used by SPSS to generate code that it actually uses to manipulate data and run operations.</li>
+<li>At first, then, you can rely on the GUI to run analyses. However, we you gain experience, you can modify the code generated through the GUI before finally simply pasting / writing in code without using the GUI.</li>
+<li>You can also easily chose parts of SPSS’s output to copy and paste elsewhere, e.g., into a manuscript (for figures, tables, etc.) or a text editor (for code).
+<ul>
+<li>For example, if we had specified formats for the variables in the <code>Advanced Options</code> for the data importation, we could pate out the code generated now into a file that we simply access to re-import those (or similar) data.</li>
+<li>In the output, you’ll notice that you can navigate from the left-hand menu, as well as delete output you no longer want. You can also right-click to rename many aspects of it and then save / export it.</li>
+</ul></li>
+<li>You can also access the GUI from either the <code>Data View</code> window or the <code>Output</code> window, letting you run / modify analyses either while looking at your data or the results, respectively.</li>
+</ul></li>
+<li><p>Focusing instead on the <code>Data Editor</code> window, notice there are two tabs at the bottom, a <code>Data View</code> and a <code>Variable View</code> tab.</p>
+<ol type="1">
+<li><p>The <code>Data View</code> tab presents the data in the matrix form one is used to in a spreadsheet program.</p>
+<ul>
+<li>Like a spreadsheet program, clicking into a cell allows one to directly modify its contents.</li>
+<li>Right-clicking a column allows one to access and modify information, etc. about that variable. (Right-clicking rows has fewer options.)
+<ul>
+<li>Note that SPSS thus requires that data be formatted with variables as columns and cases as rows.</li>
+</ul></li>
+</ul></li>
+</ol></li>
+</ol>
+</section>
+<section id="conducting-correlations-and-partial-correlations-in-spss" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="conducting-correlations-and-partial-correlations-in-spss"><span class="header-section-number">5.5.2</span> Conducting Correlations and Partial Correlations in SPSS</h3>
+<ol type="1">
+<li><p>To conduct correlations, simply click <code>Analyze &gt; Correlate &gt; Bivariate</code></p></li>
+<li><p>In the dialogue box that opens, put the variables you wish to correlate. However, we can have SPSS compute zero-order correlations along with partial correlations.</p></li>
+<li><p>To conduct partial correlations, choose <code>Analyze &gt; Correlate &gt; Partial</code><br>
+<img src="images/partial_corr.png" class="img-fluid"><br>
+In the <code>Partial Correlations</code> dialogue box, choose which variables you wish to correlate, and which you’d like to control for:<br>
+<img src="images/partial_corr_2.png" class="img-fluid"></p></li>
+<li><p>Click the <code>Options</code> button, and select, e.g., <code>Means and standard deviations</code> and <code>Zero-order correlations</code><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> checkbox in the <code>Statistics</code> area</p></li>
+<li><p>Please use these correlations along with table of, e.g., frequencies to prepare a report on insights you make into these data.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/cow.png" class="img-fluid figure-img" style="width:30.0%"></p>
+</figure>
+</div>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>You’ll often hear people say the reason we square the distances and then take the square root is to make all of the distances positive; otherwise, all of the distances from the mean would cancel each other out. Although this is true, couldn’t we just take the absolute value of each distance instead?<br>
+Yes, <a href="https://stats.stackexchange.com/questions/118/why-square-the-difference-instead-of-taking-the-absolute-value-in-standard-devia#151">we could</a>. A major difference between taking-the-absolute value-of-the-distances and squaring-then-square-rooting-the-distances is that squaring-then-square-rooting-the-distances amplifies the role of data points farther from the mean. And amplifying their effects was indeed one reason that method was chosen: Those who devised all of this wanted to give stronger weight to scores that are farther from the mean. Outliers and other scores that aren’t as well represented by the mean were intentionally made to matter more, in part because they were considered to have more information in them them scores closer to the mean.<br>
+So yeah, it’s kinda ironic that a lot of consternation is now given to removing outliers from data sets to produce more <a href="https://www.aafco.org/proficiency-testing-program/CSPStatsDocs/Reports/FrankHampelOnRobStats.pdf">robust statistics</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>The reason we use (<em>n</em> – 1) instead of simply <em>n</em> is a good one—even if it’s a rather nuanced reason. We are using a sample to estimate the values for a population, and since we don’t know the population mean, we take away a degree of freedom to indicate we don’t know that value. In fact, every time we have to estimate something in an analysis, we take away a degree of freedom to estimate that value. Practically, this serves to make the sample SD slightly larger than the population SD since we are dividing by a smaller number (<sup>1</sup>/<sub><strong>2</strong></sub> of something is larger than <sup>1</sup>/<sub><strong>3</strong></sub> of it). This reflects the fact that we don’t know so well the actual (population) value.<br>
+We also typically use lower-case <em>n</em> to denote the number in a sample or subset of data set and upper-case <em>N</em> to denote the total number, e.g., in a population or in the whole data set, but this convention isn’t always followed, so we usually just infer what the <em>n</em>/<em>N</em> refers to.<br>
+Finally, by convention, we italicize Roman letters in equations so that we know those letters denote variables; we don’t italicize Greek letters, because, well, Greece is not in Italy. That, and since we don’t usually write things in Greek, it’s pretty clear those Greek letters denote variables. Confusingly, the way I generate the formulas in this book doesn’t follow this convention and italicizes Greek letters as well; please do as I say, not as I do.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>And that’s an other reason we don’t just take the absolute value of the distances of each point from the mean. Variance—the average <em>squared</em> distance—is used “under the hood” in calculations more often than standard deviation.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>This formula is the main way that outliers have an out-sized effect on what we do in frequentist statistics. They more strongly affect the variance and covariance that are in turn used in many equations.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Yeah, we also often first subtract them from the mean, so that a 0 for one variable is comparable to a 0 from another variable.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Remember, zero-order correlations is the confusing term for simple, bivariate correlations between two variables.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./significance.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to Measuring Relationships and Building Models</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./effect_size.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Effect Size: Explanation and Guidelines</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+      <i class="bi bi-badge-cc" role="img">
+</i> 
+  </li>  
+    <li class="nav-item">
+ Creative Commons Attribution--NonCommercial--ShareAlike License
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A set of explanations, lectures, resources, and activities to complement the statistics curriculum that is part of Hunter College’s Ph.D.&nbsp;Program in Nursing Research and Health Equity and DNP Program.">
+
+<title>Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula - 16&nbsp; Introduction to Power and Sample Size Estimation Using Either G*Power or R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./data_exploration_with_r.html" rel="next">
+<link href="./Intro_to_SPSS.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Using_Templates_and_a_Reference_Manager.html">Guides to Using Software</a></li><li class="breadcrumb-item"><a href="./Intro_to_GPower.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to Power and Sample Size Estimation Using Either G\*Power or R</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Companion-to-the-Nursing-Ph.D.---DNP-Statistics-Curricula.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./curricula.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applied Statistics Curriculum</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./60N.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 60<span style="font-size: .7em">N</span>: Foundations of Biostatistics for Nursing Research and Evidence-Based Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./915.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 915 &amp; 916: Applied Statistics 1 &amp; 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing_results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Writing Results Sections</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./significance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to Measuring Relationships and Building Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Variance_Covariance_Correlations_and_Partial_Correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Variance, Covariance, Correlations, and Partial Correlations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./effect_size.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Effect Size: Explanation and Guidelines</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./missing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lrm_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 1: Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lrm_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 2: More about ANOVAs and Dummy Coding</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mlm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Longitudinal Analyses: Why and How to Conduct Multilevel Linear Modeling</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Psychometrics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./925.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 925: Psychometrics Course</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./efa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Exploratory Factor Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Guides to Using Software</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Using_Templates_and_a_Reference_Manager.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Using Templates and a Reference Manager</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_Excel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Excel</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_SPSS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_GPower.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to Power and Sample Size Estimation Using Either G*Power or R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_exploration_with_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Exploration with R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common_statistical_symbols.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Common Statistical Symbols</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vocab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Common/Confusing Statistical &amp; Scientific Terms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decision_trees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Statistical Analysis Decision Trees and Guides</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-relationship-between-α-power-effect-size-and-sample-size" id="toc-the-relationship-between-α-power-effect-size-and-sample-size" class="nav-link active" data-scroll-target="#the-relationship-between-α-power-effect-size-and-sample-size"><span class="header-section-number">16.1</span> The Relationship Between α, Power, Effect Size, and Sample Size</a></li>
+  <li><a href="#using-gpower-or-r-to-estimate-a-priori-sample-size-estimates" id="toc-using-gpower-or-r-to-estimate-a-priori-sample-size-estimates" class="nav-link" data-scroll-target="#using-gpower-or-r-to-estimate-a-priori-sample-size-estimates"><span class="header-section-number">16.2</span> Using G*Power or R to Estimate a Priori Sample Size Estimates</a></li>
+  <li><a href="#sec-additional_resources_power_analyses" id="toc-sec-additional_resources_power_analyses" class="nav-link" data-scroll-target="#sec-additional_resources_power_analyses"><span class="header-section-number">16.3</span> Additional Resources</a>
+  <ul>
+  <li><a href="#gpower-guides-tutorials" id="toc-gpower-guides-tutorials" class="nav-link" data-scroll-target="#gpower-guides-tutorials"><span class="header-section-number">16.3.1</span> G*Power Guides &amp; Tutorials</a></li>
+  <li><a href="#further-readings-and-explanations" id="toc-further-readings-and-explanations" class="nav-link" data-scroll-target="#further-readings-and-explanations"><span class="header-section-number">16.3.2</span> Further Readings and Explanations</a></li>
+  <li><a href="#sample-size-estimations-and-guidelines-for-more-complex-designs" id="toc-sample-size-estimations-and-guidelines-for-more-complex-designs" class="nav-link" data-scroll-target="#sample-size-estimations-and-guidelines-for-more-complex-designs"><span class="header-section-number">16.3.3</span> Sample Size Estimations and Guidelines for More Complex Designs</a>
+  <ul>
+  <li><a href="#ancovas" id="toc-ancovas" class="nav-link" data-scroll-target="#ancovas">ANCOVAs</a></li>
+  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression">Logistic Regression</a></li>
+  <li><a href="#factor-analysis-and-structural-equation-models" id="toc-factor-analysis-and-structural-equation-models" class="nav-link" data-scroll-target="#factor-analysis-and-structural-equation-models">Factor Analysis and Structural Equation Models</a></li>
+  </ul></li>
+  <li><a href="#online-tools" id="toc-online-tools" class="nav-link" data-scroll-target="#online-tools"><span class="header-section-number">16.3.4</span> Online Tools</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-gp_intro" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to Power and Sample Size Estimation Using Either G*Power or R</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="the-relationship-between-α-power-effect-size-and-sample-size" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="the-relationship-between-α-power-effect-size-and-sample-size"><span class="header-section-number">16.1</span> The Relationship Between α, Power, Effect Size, and Sample Size</h2>
+<p>Power is one of four, inter-related values used (implicitly or explicitly) in hypothesis testing:</p>
+<ol type="1">
+<li><strong>α</strong>, the probability of a false positive—seeing an effect that isn’t there. (Also called a Type 1 error.)</li>
+<li><strong>β</strong>, the probability of a false negative—missing a real effect. (Also called a Type 2 error.)
+<ul>
+<li>Note that power is 1 – β</li>
+</ul></li>
+<li><strong>Effect size</strong>, the magnitude of a measured effect. More about this is at <a href="effect_size.html"><span>Chapter&nbsp;6</span></a></li>
+<li><strong><em>N</em></strong>, the sample size.</li>
+</ol>
+<p>Changes in any of these four values affects the chances of obtaining a significant effect:</p>
+<p><img src="images/power_figure.png" class="img-fluid"></p>
+<p>Sample size doesn’t appear directly in this figure, but it affects the width of the distributions—when those distributions represent uncertainty around an estimate (such as estimates of a population mean<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>). We are using the sample values to estimate these population values, so these distributions represent the probabilities of what the population values are given the sample values we found. The vertical red and blue lines denote the sample values we got for each group, and the curves represent the probabilities of where the actual population values are expected to be. The larger our sample, the more confident we are that our sample’s values are darned close to the population values—and so the distributions become thinner.</p>
+<p>As the samples grow—and the distribution of estimates of the population means become thinner—the chances of false positives (α) and false negatives (β) become smaller:</p>
+<p><img src="images/power_figure_thin.png" class="img-fluid"></p>
+<p>Generally, if we know any three of those values—α, β, effect size, or <em>N</em>—we can compute the fourth<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. This most often means that we can estimate the sample size (<em>N</em>) that we would need to detect a given effect size, while assuming particular values for α and β.</p>
+</section>
+<section id="using-gpower-or-r-to-estimate-a-priori-sample-size-estimates" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="using-gpower-or-r-to-estimate-a-priori-sample-size-estimates"><span class="header-section-number">16.2</span> Using G*Power or R to Estimate a Priori Sample Size Estimates</h2>
+<p>G*Power (and <code>R</code>) are perhaps the best, current, one-stop applications<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> to estimate sample sizes needed to expect significance of many, common analyses.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">G*Power</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><code>R</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>G*Power is a free (as in “<a href="https://www.gnu.org/philosophy/free-sw.en.html">free beer”</a>”) software follows the “<a href="https://en.wikipedia.org/wiki/Unix_philosophy">Unix</a>” philosophy to do one thing and do it well. What it does well is estimate how large a sample one will need to be for various analyses. As the name implies, it’s in fact designed to conduct analyses related to statistical power, but it most often used to computes sample sizes well (power is only occasionally worth computing anyway).</p>
+<section id="installing-gpower" class="level3" data-number="16.2.1">
+<h3 data-number="16.2.1" class="anchored" data-anchor-id="installing-gpower"><span class="header-section-number">16.2.1</span> Installing G*Power</h3>
+<p>Finally, software that’s easy to install:</p>
+<ol type="1">
+<li>Click the <a href="https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower#c423885"><code>Download</code></a> button on the right of the <a href="https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower">G*Power</a> site</li>
+<li>Download the latest version for either Mac or Windows<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></li>
+<li>The downloaded file is zipped, so extract it and install.</li>
+</ol>
+</section>
+<section id="citing-gpower" class="level3" data-number="16.2.2">
+<h3 data-number="16.2.2" class="anchored" data-anchor-id="citing-gpower"><span class="header-section-number">16.2.2</span> Citing G*Power</h3>
+<p>The creators of G*Power <a href="https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower">request</a> that one uses one or both of the following citations when using it:</p>
+<p>Faul, F., Erdfelder, E., Lang, A.-G., &amp; Buchner, A. (2007). <a href="https://www.psychologie.hhu.de/fileadmin/redaktion/Fakultaeten/Mathematisch-Naturwissenschaftliche_Fakultaet/Psychologie/AAP/gpower/GPower3-BRM-Paper.pdf">G*Power 3: A flexible statistical power analysis program for the social, behavioral, and biomedical sciences</a>. <em>Behavior Research Methods</em>, <em>39</em>, 175–191.</p>
+<p>Faul, F., Erdfelder, E., Buchner, A., &amp; Lang, A.-G. (2009). <a href="https://www.psychologie.hhu.de/fileadmin/redaktion/Fakultaeten/Mathematisch-Naturwissenschaftliche_Fakultaet/Psychologie/AAP/gpower/GPower31-BRM-Paper.pdf">Statistical power analyses using G*Power 3.1: Tests for correlation and regression analyses</a>. <em>Behavior Research Methods</em>, <em>41</em>, 1149–1160.</p>
+</section>
+<section id="orientation-to-gpower" class="level3" data-number="16.2.3">
+<h3 data-number="16.2.3" class="anchored" data-anchor-id="orientation-to-gpower"><span class="header-section-number">16.2.3</span> Orientation to G*Power</h3>
+<p>G*Power has a rather simple interface. Below the menu bar at the top (and a window that will fill with power cures for your estimation), it presents a drop-down menu for <code>Test family</code> and <code>Statistical test</code>; most of the options below these drop-down menus will change depending on the options chosen there.</p>
+<p><img src="images/gp_01.png" class="img-fluid" style="width:50.0%"></p>
+<p>Usually, the first step to use G*Power is to select <code>Test family</code> and then the <code>Statistical test</code>. After that, one fills in the values in the fields below in the <code>Input Parameters</code> section.</p>
+<section id="type-of-power-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="type-of-power-analysis"><code>Type of power analysis</code></h4>
+<p>The drop-down menu under immediately under <code>Test family</code> and <code>Statistical test</code> allows one to compute either sample size or power, α, or effect size. The only option we will use is <code>A priori: Compute required smaple size - given α, power, and effect size</code>. However, it’s worth briefly discussing the other options.</p>
+<p>The <code>Type of power analysis</code> offers more options than the <code>A priori: Compute required sample size - given α, power, and effect size</code>. Most of the options pertain to computing the other variables in the α, power, effect size, sample size group. There is one worth explaining, however: <code>Compromise : Compute implied α &amp; power - given β/α ratio, sample size, and effect size</code></p>
+<section id="a-priori-compute-required-sample-size-and-a-note-on-post-hoc-power-analyses" class="level5">
+<h5 class="anchored" data-anchor-id="a-priori-compute-required-sample-size-and-a-note-on-post-hoc-power-analyses"><code>A priori: Compute required sample size</code> and a Note on Post hoc Power Analyses</h5>
+<p>Computing effect size can be informative. Computing required α may be interesting if rarely practical. Computing post hoc “achieved power,” however, is rarely either [hoenig2001]. Post hoc power analyses depend very heavily on the particulars of a given set of data; i.e., they do not generalize—neither to other samples nor even to the actual power of the test <span class="citation" data-cites="yuan2005 zhang2019">(<a href="references.html#ref-yuan2005" role="doc-biblioref">Yuan &amp; Maxwell, 2005</a>; <a href="references.html#ref-zhang2019" role="doc-biblioref">Zhang et al., 2019</a>)</span>.</p>
+<p>Post hoc power analyses are also based on a tenuous interpretation of power: Achieved power is computed assuming that there is an effect, but hypothesis tests actually assume that there is no effect. Remember that hypothesis tests actually test the probability of finding the results we did <em>if the null hypothesis is true</em>. If we conclude that there is a significant effect, we are saying that there is insufficient evidence to conclude that the null is true. We are thus also stating that there is insufficient evidence that a post hoc power analysis is justified.</p>
+</section>
+<section id="compromise-compute-implied-α-power" class="level5">
+<h5 class="anchored" data-anchor-id="compromise-compute-implied-α-power"><code>Compromise: Compute implied α &amp; power</code></h5>
+<p>The <code>Compromise: Compute implied α &amp; power - given β/α ratio, sample size, and effect size</code> option is an interesting one—even if it’s rarely useful. We begin with a sample size—typically the largest sample we know we would be able to attain within practical constraints—and an effect size that we either know or expect to have. Within those real constraints we can explore what levels of α and β we could achieve. We could see—for example—how badly power would be affected if we try to maintain a significance level of .05, or what level of significance we would have if we tried to keep the chances of both types of error the same.</p>
+<p>It is an idea that harkens back to the original intents of those (like Fisher) who originally thought up the idea of a significance test. The significance level wasn’t always frozen at .05; the original idea was to use whatever level one felt was appropriate—be it .05, .01, .10, .25 or any level that conveyed how important one felt false positives were in a particular situation.</p>
+<p>But messing with α has become verboten. A wall doing its best to keep out <em>p</em>-hackers and other all-too-human threats to the integrity of science. There is now little practical point to play with the proportion of false positives. It may satisfy an idle curiosity to see how strongly it is affected versus false negatives, but it isn’t going to get you any closer to published or funded. Let’s instead explore what does.</p>
+</section>
+</section>
+<section id="a-note-about-the-default-level-of-β-in-gpower" class="level4">
+<h4 class="anchored" data-anchor-id="a-note-about-the-default-level-of-β-in-gpower">A Note About the Default Level of β in G*Power</h4>
+<p>It is common in the health and social sciences to also assume power is .80, i.e., that we have an 80% of detecting a real effect. Otherwise said, we assume we have a 20% to <em>miss</em> detecting a real effect. The convention is to prefer to miss seeing something important over mistakenly thinking we found something; we accept more false negatives (β = .20) than false positives (α = .05). This convention is not rigid, however, and we certainly can and should change those values—such as making α and β the same—if justified.</p>
+<p>However, the default value for β in G*Power is .10. G*Power is used in many areas of science, and that .80 convention for power isn’t followed everywhere. For example, pharmaceutical researchers often use that higher value for power (1 – β = .9) so they have a better chance to detect real—even rare—side effects in clinical trials.</p>
+</section>
+</section>
+<section id="estimating-required-sample-sizes" class="level3" data-number="16.2.4">
+<h3 data-number="16.2.4" class="anchored" data-anchor-id="estimating-required-sample-sizes"><span class="header-section-number">16.2.4</span> Estimating Required Sample Sizes</h3>
+<p>For all of these exercises, we will be estimating how large a sample we would expect to need in various analyses and assuming common standards for α and β. Before we do, however, I want to point out that the key words in that sentence are “estimating” and “expect”: Sample size estimation is <em>not</em> an exact science and the actual study we conduct will surely have actual rates of significance different from what we expect. After all, if we already knew what we would find, we probably wouldn’t be conducting the experiment.</p>
+<p>It is also worth pointing out that we pretty often actually need a larger sample than we estimate. There is a tendency to be overly optimistic about our abilities to realize certain effects or overcome real-world challenges for recruiting a conscientious group of well-delimited participants. Nonetheless, our a priori estimates can at least put us in the general vicinity of where we need to be.</p>
+<section id="correlations" class="level4">
+<h4 class="anchored" data-anchor-id="correlations">Correlations</h4>
+<p>Let us begin with estimating samples for correlations. Although it’s not evident from most stat programs, we use different sorts of tests for different sorts of correlations. Therefore, tests of correlations are under different <code>Test family</code> options in G*Power.</p>
+<section id="sec-pearson_power" class="level5">
+<h5 class="anchored" data-anchor-id="sec-pearson_power">Pearson’s Product-Moment Correlation (<em>r</em>)</h5>
+<p>We begin with the most commonly-used type of correlation, that which is most formally called Pearson’s product-moment correlation coefficient. This is the one symbolized with a simple <em>r</em> that measures the degree of association between two continuous variables. This sample size estimate is for tests of whether the correlations differ between two groups.</p>
+<p>For example, if Hepatitis B/C is more strongly correlated with incidents of liver cancer in <a href="https://articles.viriya.net/epidemiology_of_viral_hepatitis_and_hepatocellular_carcinoma.pdf">males than in non-males</a>. Or whether <a href="https://articles.viriya.net/the_association_between_income_and_life_expectancy_in_the_united_states_2001_2014.pdf">the correlation between income and longevity is different</a> among Blacks versus that correlation among whites. Let’s use that latter example and assume that we expect that the correlation will be .5 among Blacks but only .3 among whites (or vice versa). We’re thus interested in seeing how large a sample we would need to reliably detect a significant difference between these correlation coefficients.</p>
+<ol type="1">
+<li>It is found under the <code>z tests</code> option in the <code>Test family</code> menu.</li>
+<li>After selecting that option, under <code>Statistical test</code>, choose <code>Correlations: Two independent Pearons's r's</code><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>:<br>
+<img src="images/cor_pearson.png" class="img-fluid" style="width:75.0%"></li>
+<li>As we will for all of these exercises, under <code>Type of power analysis</code>, choose <code>A priori: Compute required sample size - given α, power, and effect size</code></li>
+<li>In the <code>Input Parameters</code> section, let’s first choose <code>One</code> under <code>Tails</code>. (We will next see how things change when we choose two.)</li>
+<li>Handling effect size
+<ol type="1">
+<li><strong>By computing the difference between two anticipated correlations</strong>.
+<ol type="1">
+<li>The effect size statistic for a difference between correlations is Cohen’s <em>q</em> <span class="citation" data-cites="cohen1988">(<a href="references.html#ref-cohen1988" role="doc-biblioref">Cohen, 1988, p. 109</a>)</span>, as noted in the next row, <code>Effect size q</code>. Most effect size statistics are easy to compute, but unfortunately <em>q</em> is not<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Fortunately, G*Power can easily compute it for us:</li>
+<li>Click on the <code>Determine =&gt;</code> button to the left of <code>Effect size q</code>. A new window will open to the right of the main window:<br>
+<img src="images/cor_determination.png" class="img-fluid"></li>
+<li>By sheer coincidence, the default values given by G*Power for the first (<code>Correlation coefficient ρ1</code>) and second (<code>Correlation coefficient ρ2</code>) correlations are the ones we want<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, so leave them as they are.</li>
+<li>Still inside the side window, click on the <code>Calculate and transfer to main window</code> button. The computed value for <em>q</em> will be populated into both the side window’s and the main window’s <code>Effect size q</code> fields.</li>
+<li>Click <code>Close</code> in that side window.<br>
+Note that most power analyses in G*Power will have a <code>Determine =&gt;</code> button, but they will do different things for different tests. Often, it is used to convert one effect size measure to an other one that is more appropriate for the given test (unlike we did here).</li>
+</ol></li>
+<li><strong>By using Cohen’s (1988) recommendations</strong>.
+<ol type="1">
+<li>Back in the <code>Input Parameters</code> section of the main window, mouse over the field where we will enter our values:<br>
+<img src="images/cor_effect.png" class="img-fluid"><br>
+The bubble that appears lists the values that <span class="citation" data-cites="cohen1988">Cohen (<a href="references.html#ref-cohen1988" role="doc-biblioref">1988</a>)</span> recommends for—in this case—Pearson’s <em>r</em>s. A bit more about his recommendations for these is given on <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=145">page 129</a> of his book. Looking at those suggested levels, we see that the effect size for a difference between <em>r</em><sub>1</sub> = .3 and <em>r</em><sub>2</sub> = .5 is a bit less than a “medium”-sized effect.</li>
+<li>Although Cohen’s recommendations are viewed by most as more canonical than Cohen intended, it is still useful practice to use them as guides for anticipating effects, especially if we don’t know ahead of time what size of effects we can expect. Or here, if we didn’t have any reason to expect certain correlations for each group beforehand.<br>
+In such cases, researchers often assume a priori that they will achieve a “medium” effect. (Although I tend to recommend assuming something half way between a “small” and “medium.”) G*Power also uses a “medium” effect as well for the default value, so feel free to use that here instead of the <span class="math inline">\(\approx\)</span>|0.23| that we computed from a priori expected correlations.<br>
+It is quite worth noting, however, that it is greatly preferable to instead use prior research—even if only tangentially related—to estimate what levels of effects one should expect.</li>
+</ol></li>
+</ol>
+<ul>
+<li><strong>For <code>Effect size q</code>, please enter either ~0.23 or .3.</strong> I will continue assuming that you entered in the latter option.</li>
+</ul></li>
+<li>The <code>α-error prob</code> option can be left at the <code>0.05</code> default both now and probably always.</li>
+<li>The default value in G*Power for <code>Power (1 - β err prob)</code> is <code>0.95</code>. Since 1 – .05 = .95, that is implying that the probability of a false negative (β) should be equal to the probability of a false positive (α). I commend the creators of G*Power<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> for advocating for this parity. However, convention is to deprecate power relative to α and set 1 – β to .8 (thus setting β = .2, four times larger than α).
+<ul>
+<li><strong>tl;dr</strong>: Enter <code>.8</code> into the <code>Power (1 - β err prob)</code> field</li>
+</ul></li>
+<li>The <code>Allocation ratio N2/N1</code> is asking if the size of the two groups (i.e., the groups whose different correlations we’re testing, e.g., if Blacks versus whites have a different correlation between income and longevity) is the same.
+<ul>
+<li>If we assume that there will be equal numbers in both groups, then enter <code>1</code>.</li>
+<li>If we assume, e.g., that we will have twice as many whites as Blacks, then enter <code>2</code> (or<code>.5</code> to change which group is consider which race).</li>
+<li>Of course, any other ratio can be used, and different ratios tried to obtain tolerance ranges.</li>
+</ul></li>
+<li>Click on the <code>Calculate</code> button in the lower right.</li>
+</ol>
+<p>Assuming you used these values—including <code>1</code> for <code>Allocation ratio N2/N1</code>—your output should look like this:</p>
+<p><img src="images/cor_output.png" class="img-fluid" style="width:75.0%"></p>
+<ul>
+<li>Under the <code>Output Parameters</code> section, we can see that the <code>Critical z</code> value is <span class="math inline">\(\approx\)</span> 1.64. This is also presented in the figure near the top of the G*Power window. This is simply the value of the test statistic (here <em>z</em>) computed and used to test the significance of the difference between correlation coefficients.</li>
+<li>Of greater interest are the next three rows.
+<ul>
+<li><code>Sample size group 1</code> and <code>Sample size group 2</code> present the required samples sizes for the two groups. Note that these would be different if we had chosen a value other than <code>1</code> for the <code>Allocation ratio N2/N1</code>.</li>
+<li><code>Total sample size</code> is just the sum of those two samples sizes. We would thus need a total <em>N</em> of 282 to detect a difference between the two correlations (or 438 if you used -.23 for the effect size).</li>
+</ul></li>
+<li>The <code>Actual power</code> field simply presents what the power is for these two sample sizes. It differs slightly from what we entered into the <code>Power (1 - β err prob)</code> field due to rounding error from the sample sizes needing to be whole numbers.</li>
+</ul>
+<p>If we change the tab at the top from <code>Central and noncentral distribution</code> to <code>Protocol of power analysis</code>, instead of the two curves at the top, we see both the values we entered to estimate the sample size and the output. This alone is of little use, but of slightly more use is that, under this tab, we can select <code>File &gt; Save Protocol</code> and save these input and output values as a text file. (Under the <code>Central and noncentral distribution</code> tab, we can instead save that image of the two distributions.)</p>
+<p>Click now on the <code>X-Y plot for a range of values</code> button next to the <code>Calculate</code> button. The following new window will appear:</p>
+<p><img src="images/cor_graph.png" class="img-fluid" style="width:75.0%"></p>
+<p>This figure presents what the power would expected to be were we to use different <em>total</em> sample sizes. You will see that the <em>y</em>-axis (<code>Total sample size</code>) is about at 280 (or 440 if you used <em>q</em> = -.23) when the <em>x</em>-axis is at 0.8. Had we used G*Power’s default of .95 for power, the estimated total sample size would have been a little less than 500.</p>
+<p>The fields below this figure present the values we entered in the other window as well as options for changing the figure, including changing the range of power values presented and the “steps” between each dot in the figure. The <code>Table</code> tab at the top lets us look at these values as a table instead of a figure for more precision:</p>
+<p>I think this <code>X-Y plot for a range of values</code> window is under appreciated. We can change values in this figure (and the corresponding table) to see not only the estimated sample size needed, but how smallish changes to the values—especially to power—would change with different assumptions.</p>
+<p>Please return to G*Power’s main window and change the <code>Tails</code> to <code>Two</code> and recalculate the sample size estimation. Under the <code>Protocol of power analysis</code> tab, you can save that output as, e.g., <code>corr_2-tailed.rtf</code>.</p>
+<p>More about this particular analysis is on <a href="https://www.psychologie.hhu.de/fileadmin/redaktion/Fakultaeten/Mathematisch-Naturwissenschaftliche_Fakultaet/Psychologie/AAP/gpower/GPowerManual.pdf#page=65">page 65</a> of the <a href="https://www.psychologie.hhu.de/fileadmin/redaktion/Fakultaeten/Mathematisch-Naturwissenschaftliche_Fakultaet/Psychologie/AAP/gpower/GPowerManual.pdf"><em>G*Power Manual</em></a>.</p>
+</section>
+<section id="point-biserial-correlation-rpb" class="level5">
+<h5 class="anchored" data-anchor-id="point-biserial-correlation-rpb">Point Biserial Correlation (<em>r</em><sub>pb</sub>)</h5>
+<p>Point biserial correlations measure the association between a dichotomous variable and a continuous variable (e.g., the association between pregnancy and blood pressure). In significance tests of point biserial correlations, we’re seeing how closely matched some continuous outcome score is for two group. Two nominal groups and a continuous outcome, that sounds like a <em>t</em>-test.</p>
+<ol type="1">
+<li>Under <code>Test family</code>, choose <code>t tests</code>.</li>
+<li>Under <code>Statistical test</code> choose <code>Correlation: Point biserial model</code></li>
+<li>As always, under <code>Type of power analysis</code>, choose <code>A priori: Compute required sample size - given α, power, and effect size</code></li>
+<li>Since we usually use two-tailed significance tests, please change <code>Tails</code> to <code>Two</code>. (We will next see how things change when we choose two.)</li>
+<li>The effect size statistic has changed to <code>Effect size |p|</code> since a different measure is used to compute it for <em>r</em><sub>pb</sub> (and <em>t</em>-tests in general). Mousing over that field, though, shows that the same values pertain for “small,” “medium,” and “large” effects. (This isn’t always the case.) Again, please enter <code>.3</code> for a “medium” effect.</li>
+<li>The only other options here are for <code>α-error prob</code> and <code>Power (1 - β err prob)</code> for which we will use <code>.05</code> and <code>.8</code>, respectively.</li>
+<li>Click on the <code>Calculate</code> button in the lower right. The following should appear:</li>
+</ol>
+<p><img src="images/corr_pb.png" class="img-fluid" style="width:76.0%"></p>
+<p>The <code>Ouput Parameters</code> area contains somewhat different values. Instead of <em>z</em>, the test statistic is the <code>Noncentrality parameter δ</code> along with <code>Critical t</code>, which is tested—in this particular case—against a <code>Df</code> of <code>62</code>. That is two <em>df</em> less than the <code>Total sample size</code> estimated to be needed to find an effect under these conditions.</p>
+</section>
+</section>
+<section id="t-tests" class="level4">
+<h4 class="anchored" data-anchor-id="t-tests"><em>t</em>-Tests</h4>
+<p>Along with a few other tests (like for <em>r</em><sub>pb</sub>), all <em>t</em>-tests are under <code>Test family &gt; t tests</code>. Two of the most common <em>t</em>-tests are:</p>
+<ul>
+<li><code>Means: Differences between two dependent means (matched groups)</code>
+<ul>
+<li>This is used when the values used to compute the two means we’re testing come from the same participants, e.g., when we have pretest and posttest measures for the same patients.</li>
+</ul></li>
+<li><code>Means: Differences between two independent means (two groups)</code>
+<ul>
+<li>This is used whenever the means come from different participants. This is more often the case—and would apply even if we had pretest and posttest measures but from <em>different</em> patients (e.g., if we measured HCAHPS satisfaction scores from an outpatient unit before and after an intervention).</li>
+</ul></li>
+</ul>
+<ol type="1">
+<li>Let us use the latter of those two, <code>Means: Differences between two independent means (two groups)</code></li>
+<li>The options for <code>Input Parameters</code> is similar to what we were presented with for Pearson correlations (in <a href="#sec-pearson_power"><span>Section&nbsp;16.2.4.1.1</span></a>). However, when we mouse over the <code>Effect size d</code> field, we see different recommendations for sizes:<br>
+<img src="images/ttest_effect_size.png" class="img-fluid">
+<ul>
+<li>Cohen’s <em>d</em>, the measure of effect size now used, is computed differently than his <em>q</em> used to measure the effect size of difference between correlation coefficients. As I describe in <a href="effect_size.html"><span>Chapter&nbsp;6</span></a>, this is simply the standardized difference between the two means; it’s also one of the most commonly-used measures of effect size.</li>
+<li>Let’s stick with the default given, a “medium” effect of <code>0.5</code>.</li>
+</ul></li>
+<li><code>α err prob</code> can of course stay at <code>0.05</code></li>
+<li>But please change <code>Power (1-β prob)</code> to <code>.8</code></li>
+<li>We could again stipulate a different ratio for the number of participants in the two groups, but let’s again assume we will have equal numbers and enter <code>1</code> in <code>Allocation ratio N2/N1</code></li>
+</ol>
+<p>Like with <em>r</em><sub>pb</sub>, in the <code>Output Parameters</code> section, we have <code>Noncentrality parameter δ</code>, <code>Critical t</code>, and <code>Df</code>. However, we now have two groups, so we instead have <code>Sample size group 1</code>, <code>Sample size group 1</code>, and <code>Total sample size</code>. That last field reports expecting to need 102 total participants, so the <code>Df</code> for the <code>Critical t</code> is 100.</p>
+</section>
+<section id="f-tests" class="level4">
+<h4 class="anchored" data-anchor-id="f-tests"><em>F</em>-Tests</h4>
+<p><em>F</em>-tests are primarily (nearly only) used to test effects in ANOVAs and their ilk (ANCOVAs, MANOVAs, etc.). These include the most complex sample size analyses available within G*Power, and the most complex ones researchers typically try to do<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> The reason for this is because the variance associated with effects differ depending on a couple of parameters, such as the number of variables and whether those variables are “fixed” or “random” effects<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>.</p>
+<section id="anova-fixed-effects-omnibus-one-way" class="level5">
+<h5 class="anchored" data-anchor-id="anova-fixed-effects-omnibus-one-way"><code>ANOVA: Fixed effects, omnibus, one-way</code></h5>
+<p>A one-way ANOVA is simplest form of ANOVA: It contains only one input variable<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> (and one output variable). This one-way ANOVA is really just a <em>t</em>-test that is used when the input variable has more than two levels to it. We would use a <em>t</em>-test to test the difference (in some continuous outcome) between two groups, say between those diagnosed or not diagnosed with a certain cancer. If there are more than two groups—if, e.g., we were instead looking at the stage of the cancer—we would use a one-way ANOVA.</p>
+<p>Sample size estimates for one-way ANOVAs thus closely resemble those for <em>t</em>-tests. The difference is that, for one-way ANOVAs, we must indicate how many levels the input variable has. To conduct sample size estimates for them:</p>
+<ol type="1">
+<li>Under <code>Test family</code>, choose <code>F tests</code></li>
+<li>Under <code>Statistical test</code>, choose <code>ANOVA: Fixed effects, omnibus, one-way</code></li>
+<li>Under <code>Type of power anlaysis</code> choose <code>A priori: Compute required sample size - given α, power, and effect size</code></li>
+<li>In the <code>Input Parameters</code> section, when you mouse over the <code>Effect size f</code> field, you will once again see that the values <span class="citation" data-cites="cohen1988">Cohen (<a href="references.html#ref-cohen1988" role="doc-biblioref">1988</a>)</span> suggests for “small” through “large” effects are different than for <em>z</em> or <em>t</em> tests:<br>
+<img src="images/anova_effect_sizes.png" class="img-fluid"><br>
+As noted in <a href="effect_size.html"><span>Chapter&nbsp;6</span></a>, Cohen’s <em>f</em> denotes a the effect of a variable after partialing out the effects of other variables. In a one-way ANOVA, there are no other effects—no other variables—but the criteria for effect sizes is still based on this other standard.
+<ul>
+<li>Let’s again leave this value at the default—a “medium” effect of <code>0.25</code></li>
+</ul></li>
+<li>We can also again leave <code>α-error prob</code> to be <code>0.05</code> but change <code>Power (1 - β err prob)</code> to be <code>.8</code>.</li>
+<li>The <code>Number of groups</code> field is slightly misleading. This is in fact asking for the number of levels of the input variable. So, e.g., if we are studying the effects of cancer stage and using the TNM staging system, we would have three groups—one for each of the three stages.
+<ul>
+<li>Going with that, please enter <code>3</code> in the <code>Number of groups</code> field.</li>
+</ul></li>
+<li>Clicking <code>Calculate</code> generates the following output:</li>
+</ol>
+<p><img src="images/1-way_anova_power_output.png" class="img-fluid" style="width:75.0%"></p>
+<p>The output is thus:</p>
+<ul>
+<li><code>Noncentrality parameter λ</code>
+<ul>
+<li>In this context, the <a href="https://www.statisticshowto.com/non-centrality-parameter-ncp/">noncentrality parameter</a> is used to measure the power of the <em>F</em>-test. Larger numbers denote higher possibilities of larger power, depending on other parameters (viz., α, β, &amp; <em>N</em>). Although good to report, this isn’t critical to consider since it’s used to help compute the other values in the <code>Output Parameters</code> section.</li>
+<li>There nonetheless may be a use of further explained the noncentrality parameter statistic: You will see that what is now called the Central and noncentral distributions` in the figure do not look normally distributed. This is because <em>F</em>-tests use <em>F</em> distributions to test significance—not normal distributions. This is very similar to what is done with χ<sup>2</sup> tests, and <em>F</em> distributions <a href="http://amath2.nchu.edu.tw/honda/605Lecture/Lecture%2005_addendum_Chisquare,t%20and%20F%20distributions.PDF">strongly resemble</a> χ<sup>2</sup> distributions—including in becoming closer to a normal distribution as the degrees of freedom increase. However, part of the <em>F</em>-test uses the numerator degrees of freedom, which is usually quite small—here, it’s 2. So, as the figure shows, <em>F</em> tests are used under conditions in which the distributions actually used to compute significance themselves aren’t appreciably normally distributed: They are “non-central” since the “center” of the distribution is unclear—as it is in the red (null) distribution in the figure.</li>
+</ul></li>
+<li><code>Critical F</code>
+<ul>
+<li>This is the level of the <em>F</em>-statistic needed to establish significance under these conditions</li>
+</ul></li>
+<li><code>Numerator df</code>
+<ul>
+<li>This number will be one less than the <code>Number of groups</code></li>
+</ul></li>
+<li><code>Denominator df</code>
+<ul>
+<li>This is the number that would be needed in the lower part of the <em>F</em>-test in order to find significance under these conditions—the error degrees of freedom. This in turn translates into most of the sample size we expect to need.</li>
+</ul></li>
+<li><code>Total sample size</code>
+<ul>
+<li>This is the <code>Numerator df</code> plus the <code>Denominator df</code> plus one more degree of freedom needed to estimate the intercept.</li>
+</ul></li>
+<li><code>Actual power</code>
+<ul>
+<li>Given the rounding needed to create a whole number for the numerator and denominate degrees of freedom, actual actual power will often be a little different from what we entered in the <code>Power (1 - β err prob)</code> field in the <code>Input Parameters</code> section.</li>
+</ul></li>
+</ul>
+<p>More about power analyses with one-way ANOVAs is presented by <a href="https://stats.oarc.ucla.edu/other/gpower/one-way-anova-power-analysis/">UCLA’s Statistical Methods and Data Analytics site</a>.</p>
+</section>
+<section id="anova-fixed-effects-special-main-effects-and-interactions" class="level5">
+<h5 class="anchored" data-anchor-id="anova-fixed-effects-special-main-effects-and-interactions"><code>ANOVA: Fixed effects, special, main effects and interactions</code></h5>
+<p>(For those who prefer videos—and soothing piano music—<a href="https://www.youtube.com/watch?v=tIfoUo_7sWs">this video</a> also presents conducting sample size estimates for multi-way ANOVAs.)</p>
+<p>As we increase the complexity of our analyses, we next move on to <code>ANOVA: Fixed effects, special, main effects and interactions</code>. Here, we can estimate sample sizes for ANOVAs with one or more <em>nominal</em> variables.</p>
+<p>The main issue with sample size estimates for ANOVA-family analyses is correctly assigning numerator degrees of freedom. And the main issue with doing that when all of the input variables are nominal is to understand how degrees of freedom are computed for them:</p>
+<ul>
+<li>The degrees of freedom for any nominal <strong>main effect</strong> is one less than the number of levels of that variable<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>
+<ul>
+<li>Using TNM cancer staging as an example, the number of degrees of freedom for its main effect would be 3 – 1 = 2.</li>
+</ul></li>
+<li>The degrees of freedom for an <strong>interaction</strong> between two nominal input variables is the product of their main effect degrees of freedom.
+<ul>
+<li>Let us assume that we wanted to look at the interaction between dichotomized gender (self-identifying as female or male) and TNM cancer stage.
+<ul>
+<li>The degrees of freedom for gender’s main effect would be 2 – 1 = 1.</li>
+<li>The degrees of freedom for the TNM cancer stage main effect would, of course, be 2.</li>
+<li>The degrees of freedom for the gender <span class="math inline">\(\times\)</span> cancer stage interaction would be 2 <span class="math inline">\(\times\)</span> 1 = 2.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Continuing with that example, if we were interested in knowing the significance of both main effects and their interaction, then the total number of numerator degree of freedom I need to consider in my sample size estimate is:<br>
+<span class="math inline">\(\text{Total}\text{ Numerator } df\text{s} = df_{\text{Cancer} \text{ Stage}} + df_{\text{Dichotomized}\text{ Gender}} + df_{\text{Cancer} \text{ Stage} \times \text{Gender}\text{ Interaction}}\)</span><br>
+<span class="math inline">\(\text{Total}\text{ Numerator } df\text{s} = 2 + 1 + 2\)</span><br>
+<span class="math inline">\(\text{Total}\text{ Numerator } df\text{s} = 5\)</span></p>
+<p>It is thus <code>5</code> that we would enter into the <code>Numerator df</code> field.</p>
+<p>With this understanding in hand, let us compute the estimate sample size for this model:</p>
+<ol type="1">
+<li>Mousing over <code>Effect size f</code>, we see that a “medium” effect for Cohen’s <em>f</em> is .25, again the default given by G*Power, and again what we will retain since we have no prior studies to guide us better.</li>
+<li><code>α err prob</code> we will leave as <code>0.05</code>.</li>
+<li><code>Power (1 - β err prob)</code> we will change to <code>.8</code>.</li>
+<li><code>Numberator df</code> is <code>5</code> (those two main effects and their interaction).</li>
+<li><code>Number of groups</code> is the product of the total number of levels of the input variables.
+<ul>
+<li>Here, TNM stage has 3 levels and dichotomized gender has 2, so the <code>Number of groups</code> is 3 <span class="math inline">\(\times\)</span> 2 = 6<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>.</li>
+</ul></li>
+<li>Clicking <code>Calculate</code> returns this output:</li>
+</ol>
+<p><img src="images/multi-way_anova_power.png" class="img-fluid" style="width:75.0%"></p>
+<p>Indicating that we expect to need 211 participants to find significant effects for both main effects and their interaction. Of course, we couldn’t divide this number evenly between the groups, so there would be a small amount of imbalance between them.</p>
+<p>Note that we don’t <em>need</em> to worry about the significance of every term we enter into a model. As I discuss in <a href="significance.html"><span>Chapter&nbsp;4</span></a>, we can enter terms in a model solely to isolate (“partial out”) their effects on those other terms whose effects we <em>are</em> interested in. Of course, do this cautiously so to not delude yourself into thinking you need fewer participants than you actually will. Sure, data are expensive, but investing to get some but not enough data—and then having to redo a study—is more expensive than getting enough the first time.</p>
+</section>
+</section>
+</section>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<!-- Add this here as how to do this in R: -->
+<!-- file:///home/wes/sample_size_r_module.pdf -->
+<p>Among the most, well, powerful packages in <code>R</code> is <a href="https://cran.r-project.org/web/packages/pwr/pwr.pdf"><code>pwr</code></a>, which can easily compute same size estimates, etc, with a few succinct lines of code. We’ll also use the <a href="https://cran.r-project.org/web/packages/pwr2/index.html"><code>pwr2</code></a> package. <a href="https://cran.r-project.org/web/packages/WebPower/index.html"><code>WebPower</code></a> is also very useful for power analyses.</p>
+<section id="comparing-two-independent-correlations" class="level3" data-number="16.2.5">
+<h3 data-number="16.2.5" class="anchored" data-anchor-id="comparing-two-independent-correlations"><span class="header-section-number">16.2.5</span> Comparing Two Independent Correlations</h3>
+<p>We examine how large a sample is needed to detect a difference between two Pearson correlations:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the correlations</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="co"># The correlation we expect in one group</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>r2 <span class="ot">&lt;-</span> <span class="fl">0.3</span> <span class="co"># The correlation we expect in the other group</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute Cohen's q</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fl">0.5</span> <span class="sc">*</span> <span class="fu">log</span>((<span class="dv">1</span> <span class="sc">+</span> r1)<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">-</span> r1)) <span class="sc">-</span> <span class="fl">0.5</span> <span class="sc">*</span> <span class="fu">log</span>((<span class="dv">1</span> <span class="sc">+</span> r2)<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">-</span> r2)))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>q</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate required sample size per group to detect difference in correlations</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.norm.test</span>(<span class="at">d =</span> q, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">power =</span> <span class="fl">0.8</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="independent-samples-t-test" class="level3" data-number="16.2.6">
+<h3 data-number="16.2.6" class="anchored" data-anchor-id="independent-samples-t-test"><span class="header-section-number">16.2.6</span> Independent Samples <em>t</em>-Test</h3>
+<p>Sample size needed to detect a medium effect (<em>d</em> = 0.5):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(<span class="at">d =</span> <span class="fl">0.5</span>,            <span class="co"># Coden's d, effect size for a mean difference</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">power =</span> <span class="fl">0.8</span>,        <span class="co"># desired power</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">sig.level =</span> <span class="fl">0.05</span>,   <span class="co"># significance level</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">type =</span> <span class="st">"two.sample"</span> <span class="co"># Type of t-test being evaluated</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>           )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="paired-samples-t-test" class="level3" data-number="16.2.7">
+<h3 data-number="16.2.7" class="anchored" data-anchor-id="paired-samples-t-test"><span class="header-section-number">16.2.7</span> Paired Samples <em>t</em>-Test</h3>
+<p>Sample size needed when using paired/matched data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(<span class="at">d =</span> <span class="fl">0.5</span>,            <span class="co"># Coden's d, effect size for a mean difference</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">power =</span> <span class="fl">0.8</span>,        <span class="co"># desired power</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">sig.level =</span> <span class="fl">0.05</span>,   <span class="co"># significance level</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">type =</span> <span class="st">"paired"</span> <span class="co"># Type of t-test being evaluated</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>           )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="point-biserial-correlation" class="level3" data-number="16.2.8">
+<h3 data-number="16.2.8" class="anchored" data-anchor-id="point-biserial-correlation"><span class="header-section-number">16.2.8</span> Point-Biserial Correlation</h3>
+<p>This is the correlation between a continuous variable and a dichotomous variable (coded as 0 or 1).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.r.test</span>(<span class="at">r =</span> <span class="fl">0.3</span>,            <span class="co"># Pearson (or phi) correlation</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">power =</span> <span class="fl">0.8</span>,        <span class="co"># desired power</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">sig.level =</span> <span class="fl">0.05</span>    <span class="co"># significance level</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>           )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="one-way-anova" class="level3" data-number="16.2.9">
+<h3 data-number="16.2.9" class="anchored" data-anchor-id="one-way-anova"><span class="header-section-number">16.2.9</span> One-Way ANOVA</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.anova.test</span>(<span class="at">k =</span> <span class="dv">3</span>,             <span class="co"># The number of levels of the IV (e.g., 2 for Experimental vs. Control group)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">f =</span> <span class="fl">0.25</span>,          <span class="co"># Cohen's f, the effect size for terms in an ANOVA</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">power =</span> <span class="fl">0.8</span>,       <span class="co"># desired power</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">sig.level =</span> <span class="fl">0.05</span>)  <span class="co"># significance level</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="two-way-anova" class="level3" data-number="16.2.10">
+<h3 data-number="16.2.10" class="anchored" data-anchor-id="two-way-anova"><span class="header-section-number">16.2.10</span> Two-Way ANOVA</h3>
+<p>Two IVs with 3 and 2 levels respectively (6 groups total):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pwr2<span class="sc">::</span><span class="fu">pwr.2way</span>(<span class="at">a =</span> <span class="dv">3</span>,           <span class="co"># levels in factor A</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">b =</span> <span class="dv">2</span>,           <span class="co"># levels in factor B</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">alpha =</span> <span class="fl">0.05</span>,    <span class="co"># significance level</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">power =</span> <span class="fl">0.8</span>,     <span class="co"># desired power</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">f =</span> <span class="fl">0.25</span>,        <span class="co"># effect size (Cohen's f)</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">n =</span> <span class="cn">NULL</span>)        <span class="co"># compute required sample size per cell</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="power-curves" class="level3" data-number="16.2.11">
+<h3 data-number="16.2.11" class="anchored" data-anchor-id="power-curves"><span class="header-section-number">16.2.11</span> Power Curves</h3>
+<section id="power-curve-for-independent-samples-t-test" class="level4">
+<h4 class="anchored" data-anchor-id="power-curve-for-independent-samples-t-test">Power Curve for Independent-Samples <em>t</em>-Test</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the power curve for a range of sample sizes in a two-sample t-test</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">expr =</span> pwr<span class="sc">::</span><span class="fu">pwr.t.test</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> x,                         <span class="co"># sample size per group</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">d =</span> <span class="fl">0.5</span>,                       <span class="co"># Cohen's d effect size (medium effect)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sig.level =</span> <span class="fl">0.05</span>,              <span class="co"># significance level (alpha)</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">"two.sample"</span>            <span class="co"># specifies independent-samples t-test</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">$</span>power,                         <span class="co"># extract power from the result</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">from =</span> <span class="dv">10</span>, <span class="at">to =</span> <span class="dv">200</span>,             <span class="co"># range of sample sizes (per group)</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Sample Size per Group"</span>,  <span class="co"># x-axis label</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Power"</span>,                  <span class="co"># y-axis label</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Power Curve for d = 0.5"</span> <span class="co"># title of the plot (match d above)</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a reference line for the conventional 80% power threshold</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.8</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="power-curve-for-one-way-anova" class="level4">
+<h4 class="anchored" data-anchor-id="power-curve-for-one-way-anova">Power Curve for One-Way ANOVA</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Power Curve for One-Way ANOVA (e.g., 3 groups)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot power vs. total sample size for one-way ANOVA</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">expr =</span> pwr<span class="sc">::</span><span class="fu">pwr.anova.test</span>(</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">k =</span> <span class="dv">3</span>,                         <span class="co"># number of groups</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> x <span class="sc">/</span> k,                     <span class="co"># converts total sample size to per-group n</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">f =</span> <span class="fl">0.25</span>,                      <span class="co"># Cohen's f effect size (medium)</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">sig.level =</span> <span class="fl">0.05</span>               <span class="co"># significance level (alpha)</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">$</span>power,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">from =</span> <span class="dv">30</span>, <span class="at">to =</span> <span class="dv">300</span>,             <span class="co"># total sample size range</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Total Sample Size"</span>,      <span class="co"># x-axis label</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Power"</span>,                  <span class="co"># y-axis label</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Power Curve for One-Way ANOVA (k = 3, f = 0.25)"</span> <span class="co"># title</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Add conventional power threshold line</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.8</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="power-curve-for-two-way-anova-main-effects-interaction" class="level4">
+<h4 class="anchored" data-anchor-id="power-curve-for-two-way-anova-main-effects-interaction">Power Curve for Two-Way ANOVA (Main Effects + Interaction)</h4>
+<p><code>pwr.f2.test()</code> is used for general linear models including two-way ANOVA. To use this, you need:</p>
+<ul>
+<li><code>u</code>: numerator degrees of freedom (e.g., 1 for each main effect, plus interaction)</li>
+<li><code>v</code>: denominator degrees of freedom (sample size – predictors – 1)</li>
+<li><code>f2</code>: Cohen’s <span class="math inline">\(f^2\)</span> effect size. <span class="math inline">\(f^2 = \frac{f^2_{\text{anova}}}{1 - f^2_{\text{anova}}}\)</span>, so for <span class="math inline">\(f = 0.25\)</span>, <span class="math inline">\(f^2 ≈ 0.0625\)</span></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Power Curve for Two-Way ANOVA (2x3 design, 2 main effects + interaction)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Total df = (levels_A - 1) + (levels_B - 1) + (A*B interaction df)</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>numerator_df <span class="ot">&lt;-</span> (<span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">+</span> (<span class="dv">3</span> <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">+</span> ((<span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> (<span class="dv">3</span> <span class="sc">-</span> <span class="dv">1</span>))  <span class="co"># = 1 + 2 + 2 = 5</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>f2_value <span class="ot">&lt;-</span> <span class="fl">0.25</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.25</span><span class="sc">^</span><span class="dv">2</span>)  <span class="co"># convert Cohen's f to f^2 ≈ 0.0625 / 0.9375 ≈ 0.0667</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Power curve for GLM (e.g., 2x3 ANOVA with 5 df for predictors)</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">expr =</span> pwr<span class="sc">::</span><span class="fu">pwr.f2.test</span>(</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">u =</span> numerator_df,                   <span class="co"># numerator df (main + interaction)</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">v =</span> x <span class="sc">-</span> numerator_df <span class="sc">-</span> <span class="dv">1</span>,           <span class="co"># denominator df = N - u - 1</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">f2 =</span> f2_value,                      <span class="co"># Cohen's f^2 effect size</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">sig.level =</span> <span class="fl">0.05</span>                    <span class="co"># significance level (alpha)</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">$</span>power,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">from =</span> <span class="dv">60</span>, <span class="at">to =</span> <span class="dv">300</span>,                  <span class="co"># total sample size range</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Total Sample Size"</span>,           <span class="co"># x-axis label</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Power"</span>,                       <span class="co"># y-axis label</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Power Curve for Two-Way ANOVA (f = 0.25, df = 5)"</span> <span class="co"># title</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Add reference line at power = 0.8</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.8</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-additional_resources_power_analyses" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="sec-additional_resources_power_analyses"><span class="header-section-number">16.3</span> Additional Resources</h2>
+<section id="gpower-guides-tutorials" class="level3" data-number="16.3.1">
+<h3 data-number="16.3.1" class="anchored" data-anchor-id="gpower-guides-tutorials"><span class="header-section-number">16.3.1</span> G*Power Guides &amp; Tutorials</h3>
+<ul>
+<li><a href="https://www.psychologie.hhu.de/fileadmin/redaktion/Fakultaeten/Mathematisch-Naturwissenschaftliche_Fakultaet/Psychologie/AAP/gpower/GPowerManual.pdf"><em>G*Power Manual</em></a>, which is quite useful</li>
+<li>The <a href="https://stats.oarc.ucla.edu/other/gpower/">UCLA Guide to G*Power</a> contains detailed but digestible guides to estimates for most of the analyses you’ll conduct (except maybe χ<sup>2</sup> tests).</li>
+<li>Mayr, S., Erdfelder, E., Buchner, A., &amp; Faul, F. (2007). <a href="https://www.tqmp.org/RegularArticles/vol03-2/p051/p051.pdf">A short tutorial of <em>GPower</em></a>. <em>Tutorials in Quantitative Methods for Psychology</em>, <em>3</em>(2), 51–59. doi: <a href="https://doi.org/10.20982/tqmp.03.2.p051">10.20982/tqmp.03.2.p051</a>.</li>
+<li>Faul, F., Erdfelder, E., Lang, A.-G., &amp; Buchner, A. (2007). <a href="https://articles.viriya.net/gpower_3_a_flexible_statistical_power_analysis_program_for_the_social_behavioral_and_biomedical_sciences.pdf">G*Power 3: a flexible statistical power analysis program for the social, behavioral, and biomedical sciences</a>. <em>Behavior Research Methods</em>, <em>39</em>(2), 175–191. doi: <a href="https://doi.org/10.3758/BF03193146">10.3758/BF03193146</a>. <a href="./ris/10.3758_BF03193146.ris">RIS</a></li>
+<li>Kang, H. (2021). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8441096/">Sample size determination and power analysis using the GPower software</a>. <em>Journal of Educational Evaluation for Health Professions</em>, <em>18</em>, 1–17. doi: <a href="https://doi.org/10.3352/jeehp.2021.18.17">10.3352/jeehp.2021.18.17</a>. <a href="./ris/10.3352_jeehp.2021.18.17.ris">RIS</a></li>
+</ul>
+</section>
+<section id="further-readings-and-explanations" class="level3" data-number="16.3.2">
+<h3 data-number="16.3.2" class="anchored" data-anchor-id="further-readings-and-explanations"><span class="header-section-number">16.3.2</span> Further Readings and Explanations</h3>
+<ul>
+<li>Bujang, M. A. (2021). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8075593/table/t1-02mjms2802_ra1/">A step-by-step process on sample size determination for medical research</a>. <em>The Malaysian Journal of Medical Sciences</em>, <em>28</em>(2), 15–27. doi: <a href="https://doi.org/10.21315/mjms2021.28.2.2">10.21315/mjms2021.28.2.2</a>
+<ul>
+<li>Probably best is <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8075593/table/t1-02mjms2802_ra1/">Table 1</a> which presents a nice list of other sources for more information about sample size estimations for various types of analyses from correlations to exploratory factor analysis.</li>
+</ul></li>
+<li>Das, S., Mitra, K., &amp; Mandal, M. (2016) <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5037946/">Sample size calculation: Basic principles</a>. <em>Indian Journal of Anaesthesia</em>, <em>60</em>(9), 652–656. doi: <a href="https://doi.org/10.4103/0019-5049.190621">10.4103/0019-5049.190621</a>. PMID: 27729692; PMCID: PMC5037946. <a href="./ris/pmc_5037946.nbib">NBIB</a></li>
+<li>Hunt, A. (n.d.). <a href="https://articles.viriya.net/A_Researchers_Guide_to_Power_Analysis_USU.pdf">A researcher’s guide to power analysis</a>.</li>
+</ul>
+</section>
+<section id="sample-size-estimations-and-guidelines-for-more-complex-designs" class="level3" data-number="16.3.3">
+<h3 data-number="16.3.3" class="anchored" data-anchor-id="sample-size-estimations-and-guidelines-for-more-complex-designs"><span class="header-section-number">16.3.3</span> Sample Size Estimations and Guidelines for More Complex Designs</h3>
+<section id="ancovas" class="level4">
+<h4 class="anchored" data-anchor-id="ancovas">ANCOVAs</h4>
+<ul>
+<li>Borm, G. F., Fransen, J., &amp; Lemmens, W. A. J. . (2007). <a href="https://articles.viriya.net/a_simple_sample_size_formula_for_analysis_of_covariance_in_randomized_clinical_trials.pdf">A simple sample size formula for analysis of covariance in randomized clinical trials</a>. <em>Journal of Clinical Epidemiology</em>, <em>60</em>(12), 1234–1238. doi: <a href="https://doi.org/10.1016/j.jclinepi.2007.02.006">10.1016/j.jclinepi.2007.02.006</a>. <a href="./ris/10.1016_j.jclinepi.2007.02.006.ris">RIS</a></li>
+<li>Shieh, G. (2020). <a href="https://articles.viriya.net/power_analysis_and_sample_size_planning_in_ancova_designs.pdf">Power Analysis and Sample Size Planning in ANCOVA Designs</a>. <em>Psychometrika</em>, <em>85</em>(1), 101–120. doi: <a href="https://doi.org/10.1007/s11336-019-09692-3">10.1007/s11336-019-09692-3</a>. <a href="./ris/10.1007_s11336-019-09692-3.ris">RIS</a></li>
+<li>Teerenstra, S., Eldridge, S., Graff, M., de Hoop, E., &amp; Borm, G. F. (2012). <a href="https://articles.viriya.net/a_simple_sample_size_formula_for_analysis_of_covariance_in_cluster_randomized_trials.pdf">A simple sample size formula for analysis of covariance in cluster randomized trials</a>. <em>Statistics in Medicine</em>, <em>31</em>(20), 2169–2178. doi: <a href="https://doi.org/10.1002/sim.5352">10.1002/sim.5352</a>. <a href="./ris/10.1002_sim.5352.ris">RIS</a></li>
+</ul>
+</section>
+<section id="logistic-regression" class="level4">
+<h4 class="anchored" data-anchor-id="logistic-regression">Logistic Regression</h4>
+<ul>
+<li>Motrenko, A., Strijov, V., &amp; Weber, G.-W. (2014). <a href="https://articles.viriya.net/sample_size_determination_for_logistic_regression.pdf">Sample size determination for logistic regression</a>. <em>Journal of Computational and Applied Mathematics</em>, <em>255</em>, 743–752. doi: <a href="https://doi.org/10.1016/j.cam.2013.06.031">10.1016/j.cam.2013.06.031</a>. <a href="./ris/10.1016_j.cam.2013.06.031.ris">RIS</a></li>
+</ul>
+</section>
+<section id="factor-analysis-and-structural-equation-models" class="level4">
+<h4 class="anchored" data-anchor-id="factor-analysis-and-structural-equation-models">Factor Analysis and Structural Equation Models</h4>
+<ul>
+<li>Grace-Martin, K. (n.d.). <a href="https://www.theanalysisfactor.com/sample-size-needed-for-factor-analysis/">How big of a sample size fo you need for factor analysis?</a> The Analysis Factor. <a href="https://www.theanalysisfactor.com/sample-size-needed-for-factor-analysis/" class="uri">https://www.theanalysisfactor.com/sample-size-needed-for-factor-analysis/</a></li>
+<li>Kelley, K., Lai, K. (2018). <a href="https://articles.viriya.net/sample_size_planning_for_confirmatory_factor_models.pdf">Sample size planning for confirmatory factor models</a>. In <em>The Wiley Handbook of Psychometric Testing</em> (pp.&nbsp;113–138). John Wiley &amp; Sons, Ltd.&nbsp;doi: <a href="10.1002/9781118489772.ch5.ris">https://doi.org/10.1002/9781118489772.ch5</a>. <a href="./ris/10.1002_9781118489772.ch5.ris">RIS</a></li>
+<li>La Du, T. J., &amp; Tanaka, J. S. (1989). <a href="https://articles.viriya.net/influence_of_sample_size_estimation_method_and_model_specification_on_goodness-of-fit_assessments_in_structural_equation_models.pdf">Influence of sample size, estimation method, and model specification on goodness-of-fit assessments in structural equation models</a>. <em>Journal of Applied Psychology</em>, <em>74</em>(4), 625–635. doi: <a href="https://doi.org/10.1037/0021-9010.74.4.625">10.1037/0021-9010.74.4.625</a>. <a href="./ris/10.1037_0021-9010.74.4.625.ris">RIS</a></li>
+<li>Mundfrom, D. J., Shaw, D. G., &amp; Ke, T. L. (2005). <a href="https://articles.viriya.net/sample_size_recommendations_for_conducting_factor_analyses.pdf">Minimum sample size recommendations for conducting factor analyses</a>. <em>International Journal of Testing</em>, <em>5</em>(2), 159–168. doi: <a href="https://doi.org/10.1207/s15327574ijt0502_4">10.1207/s15327574ijt0502_4</a>. <a href="./ris/10.1207_s15327574ijt0502_4.ris">RIS</a></li>
+<li>Nicolaou, A. I., &amp; Masoner, M. M. (2013). <a href="https://articles.viriya.net/sample_size_requirements_in_structural_equation_models_under_standard_conditions.pdf">Sample size requirements in structural equation models under standard conditions</a>. <em>International Journal of Accounting Information Systems</em>, <em>14</em>(4), 256–274. doi: <a href="https://doi.org/10.1016/j.accinf.2013.11.001">10.1016/j.accinf.2013.11.001</a>. <a href="./ris/10.1016_j.accinf.2013.11.001.ris">RIS</a> Pearson, R., H. &amp; Mundform, D. J. (2010). <a href="https://digitalcommons.wayne.edu/jmasm/vol9/iss2/5/">Recommended sample size for conducting exploratory factor analysis on dichotomous data</a>. <em>Journal of Modern Applied Statistical Methods</em>, <em>9</em>(2), 359–368. doi: <a href="https://doi.org/10.22237/jmasm/1288584240">10.22237/jmasm/1288584240</a>.</li>
+<li>Wolf, E. J., Harrington, K. M., Clark, S. L., &amp; Miller, M. W. (2013). <a href="https://articles.viriya.net/sample_size_requirements_for_structural_equation_models_an_evaluation_of_power_bias_and_solution_propriety.pdf">Sample size requirements for structural equation models: An evaluation of power, bias, and solution propriety</a>. <em>Educational and Psychological Measurement</em>, <em>73</em>(6), 913–934. doi: <a href="https://doi.org/10.1177/0013164413495237">10.1177/0013164413495237</a>. <a href="./ris/10.1177_0013164413495237.ris">RIS</a></li>
+</ul>
+</section>
+</section>
+<section id="online-tools" class="level3" data-number="16.3.4">
+<h3 data-number="16.3.4" class="anchored" data-anchor-id="online-tools"><span class="header-section-number">16.3.4</span> Online Tools</h3>
+<ul>
+<li>Kovacs, M., van Ravenzwaaij, D., Hoekstra, R., Aczel, B.. (2022). <a href="https://journals-sagepub-com.proxy.wexler.hunter.cuny.edu/doi/full/10.1177/25152459211054059">SampleSizePlanner: A tool to estimate and justify sample size for two-group studies</a>. Advances in Methods and Practices in Psychological Science. 2022;5(1). doi: <a href="https://doi.org/10.1177/25152459211054059">10.1177/25152459211054059</a>. <a href="./ris/10.1177_25152459211054059.ris">RIS</a></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/elephant.png" class="img-fluid figure-img" style="width:30.0%"></p>
+</figure>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-cohen1988" class="csl-entry" role="listitem">
+Cohen, J. (1988). <em>Statistical power analysis for the behavioral sciences (2nd ed.)</em>. <span>Lawrence Erlbaum Associates</span>.
+</div>
+<div id="ref-yuan2005" class="csl-entry" role="listitem">
+Yuan, K.-H., &amp; Maxwell, S. E. (2005). On the post hoc power in testing mean differences. <em>Journal of Educational and Behavioral Statistics</em>, <em>30</em>(2), 141–167. <a href="https://articles.viriya.net/on_the_post_hoc_power_in_testing_mean_differences.pdf">https://articles.viriya.net/on_the_post_hoc_power_in_testing_mean_differences.pdf</a>
+</div>
+<div id="ref-zhang2019" class="csl-entry" role="listitem">
+Zhang, Y., Hedo, R., Rivera, A., Rull, R., Richardson, S., &amp; Tu, X. M. (2019). Post hoc power analysis: <span>Is</span> it an informative and meaningful analysis? <em>General Psychiatry</em>, <em>32</em>(4), e100069–e100069. <a href="https://doi.org/10.1136/gpsych-2019-100069">https://doi.org/10.1136/gpsych-2019-100069</a>
+</div>
+</div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Although we often think of figures like this showing differences in estimates of means, these could instead be estimating, e.g., population proportions (whether, e.g., the proportion of members of two populations have different mortality rates for a given disorder). Since we tend to think about this in terms of means, though, let’s just stick with that.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Some analyses are not this straight forward, though, for various reasons. Among the reasons why it isn’t always this straight forward is because the <em>N</em> for the sample is divided out unevenly among the effects being tested—especially for nested effects; we will address this in one of the cases you are more likely to encounter (it’s different types of ANOVAs), but first let’s orient ourselves to G*Power and conduct some more straight-forward sample size estimates.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Well, to be pedantic, <code>R</code> may be considered <a href="https://www.geeksforgeeks.org/difference-between-software-and-application/">software</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Alas, there is no GNU/Linux version.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Even though using an apostrophe in <code>r's</code> is incorrect: It’s plural, not possessive, so should instead be <code>rs</code>. Just one of my many grammatical pet peeves.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>It’s this monstrosity: <span class="math inline">\(q = {\frac{1}{2}\text{log}_e\frac{1 + r_2}{1 - r_2} -\frac{1}{2}\text{log}_e\frac{1 + r_1}{1 - r_1}}\)</span> for correlations <em>r</em><sub>1</sub> and <em>r</em><sub>2</sub>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Changing the order of them so that <code>Correlation coefficient ρ1</code> is <code>.5</code> and <code>Correlation coefficient ρ2</code> is <code>.3</code> will make the effect size measure, <em>q</em>, into a positive value, but that doesn’t matter: The positive or negative sign simple indicates which correlation is larger than which. Making it positive will also move the H<sub>1</sub> distribution to the right of the H<sub>0</sub> one in the figure at the top.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>G*Power was created and is maintained by <a href="https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower">Edgar Erdfelder, Franz Faul</a>, and their colleagues at <a href="https://www.hhu.de/">Heinrich-Heine-Universität Düsseldorf</a>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>I give resources in the <a href="#sec-additional_resources_power_analyses"><span>Section&nbsp;16.3</span></a> section about estimating sample sizes for factor analyses, etc. These are important…but much less straight forward.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>“Fixed” factors are those for which all possible levels are present in the data, e.g., if data for both those who survive and die from an illness are present. “Random” factors are those for which a random subset of all possible levels of a variable are present; these are typically continuous variables (such as height). The ways that error is estimated for these differ.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>You may well have learned to call this the “independent variable” (IV). This is not wrong—it’s just not always correct. An IV is the term used to indicate a variable that researchers manipulate or measure in a true experimental design to observe their effects on some outcome—that which (in that context) is called a dependent variable and that I’m calling by the more general term of “output variable.” The input variable in an ANOVA is indeed often an IV. However, there are certainly times when we wish to test the effects of a variable that isn’t an IV, for example if we’re working with secondary data in which no variables are forcibly IVs or DVs.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>We deduct “1” from each main effect because we only need to establish the values for all levels but one. That last level can be deduced from the other levels. As a simplified analogy, if I knew that <em>x</em> + <em>y</em> + <em>z</em> = 6, then I only need to know that <em>x</em> = 2 and that <em>y</em> = 2 to know that <em>z</em> also equals 2.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>Notice that, in this case, including the interaction term in the model doesn’t affect the estimating needed sample size.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./Intro_to_SPSS.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./data_exploration_with_r.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Exploration with R</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+      <i class="bi bi-badge-cc" role="img">
+</i> 
+  </li>  
+    <li class="nav-item">
+ Creative Commons Attribution--NonCommercial--ShareAlike License
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

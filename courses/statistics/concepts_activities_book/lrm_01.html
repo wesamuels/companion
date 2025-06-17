@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A set of explanations, lectures, resources, and activities to complement the statistics curriculum that is part of Hunter College’s Ph.D.&nbsp;Program in Nursing Research and Health Equity and DNP Program.">
+
+<title>Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula - 8&nbsp; Linear Regression Modeling with SPSS, Part 1: Introduction</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./lrm_02.html" rel="next">
+<link href="./missing_data.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./curricula.html">Applied Statistics Curriculum</a></li><li class="breadcrumb-item"><a href="./lrm_01.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 1: Introduction</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Companion-to-the-Nursing-Ph.D.---DNP-Statistics-Curricula.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./curricula.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applied Statistics Curriculum</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./60N.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 60<span style="font-size: .7em">N</span>: Foundations of Biostatistics for Nursing Research and Evidence-Based Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./915.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 915 &amp; 916: Applied Statistics 1 &amp; 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing_results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Writing Results Sections</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./significance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to Measuring Relationships and Building Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Variance_Covariance_Correlations_and_Partial_Correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Variance, Covariance, Correlations, and Partial Correlations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./effect_size.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Effect Size: Explanation and Guidelines</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./missing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lrm_01.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 1: Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lrm_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 2: More about ANOVAs and Dummy Coding</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mlm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Longitudinal Analyses: Why and How to Conduct Multilevel Linear Modeling</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Psychometrics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./925.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 925: Psychometrics Course</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./efa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Exploratory Factor Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Guides to Using Software</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Using_Templates_and_a_Reference_Manager.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Using Templates and a Reference Manager</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_Excel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Excel</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_SPSS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_GPower.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to Power and Sample Size Estimation Using Either G*Power or R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_exploration_with_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Exploration with R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common_statistical_symbols.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Common Statistical Symbols</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vocab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Common/Confusing Statistical &amp; Scientific Terms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decision_trees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Statistical Analysis Decision Trees and Guides</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">8.1</span> Overview</a></li>
+  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts"><span class="header-section-number">8.2</span> Core Concepts</a>
+  <ul>
+  <li><a href="#linear-relationships" id="toc-linear-relationships" class="nav-link" data-scroll-target="#linear-relationships"><span class="header-section-number">8.2.1</span> Linear Relationships</a></li>
+  <li><a href="#consider-removing-the-intercept" id="toc-consider-removing-the-intercept" class="nav-link" data-scroll-target="#consider-removing-the-intercept"><span class="header-section-number">8.2.2</span> Consider Removing the Intercept</a></li>
+  </ul></li>
+  <li><a href="#sec-intro_to_lrm" id="toc-sec-intro_to_lrm" class="nav-link" data-scroll-target="#sec-intro_to_lrm"><span class="header-section-number">8.3</span> Introduction to Linear Regression Models</a>
+  <ul>
+  <li><a href="#correlation-vs.-simple-linear-regression" id="toc-correlation-vs.-simple-linear-regression" class="nav-link" data-scroll-target="#correlation-vs.-simple-linear-regression"><span class="header-section-number">8.3.1</span> Correlation vs.&nbsp;Simple Linear Regression</a>
+  <ul>
+  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation">Correlation</a></li>
+  <li><a href="#linear-regression" id="toc-linear-regression" class="nav-link" data-scroll-target="#linear-regression">Linear Regression</a></li>
+  <li><a href="#semipartial-correlation-vs.-multivariate-linear-regression" id="toc-semipartial-correlation-vs.-multivariate-linear-regression" class="nav-link" data-scroll-target="#semipartial-correlation-vs.-multivariate-linear-regression">Semipartial Correlation vs.&nbsp;Multivariate Linear Regression</a></li>
+  </ul></li>
+  <li><a href="#conducting-a-multivariate-linear-regression-using-forward-term-selection" id="toc-conducting-a-multivariate-linear-regression-using-forward-term-selection" class="nav-link" data-scroll-target="#conducting-a-multivariate-linear-regression-using-forward-term-selection"><span class="header-section-number">8.3.2</span> Conducting a Multivariate Linear Regression Using Forward Term Selection</a>
+  <ul>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#sec-into-to-stepwise" id="toc-sec-into-to-stepwise" class="nav-link" data-scroll-target="#sec-into-to-stepwise">Variables Entered/Removed and the “Stepwise” Strategy</a></li>
+  <li><a href="#model-summary" id="toc-model-summary" class="nav-link" data-scroll-target="#model-summary">Model Summary</a></li>
+  <li><a href="#anova-table" id="toc-anova-table" class="nav-link" data-scroll-target="#anova-table">ANOVA Table </a></li>
+  <li><a href="#coefficients" id="toc-coefficients" class="nav-link" data-scroll-target="#coefficients">Coefficients</a></li>
+  <li><a href="#excluded-variables" id="toc-excluded-variables" class="nav-link" data-scroll-target="#excluded-variables">Excluded Variables</a></li>
+  <li><a href="#collinearity-diagnostics" id="toc-collinearity-diagnostics" class="nav-link" data-scroll-target="#collinearity-diagnostics">Collinearity Diagnostics</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#multivariate-linear-regression-with-three-predictors-using-enter-term-selection" id="toc-multivariate-linear-regression-with-three-predictors-using-enter-term-selection" class="nav-link" data-scroll-target="#multivariate-linear-regression-with-three-predictors-using-enter-term-selection"><span class="header-section-number">8.4</span> Multivariate Linear Regression with Three Predictors Using <code>Enter</code> Term Selection</a>
+  <ul>
+  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1"><span class="header-section-number">8.4.1</span> Results</a>
+  <ul>
+  <li><a href="#variables-entered-removed" id="toc-variables-entered-removed" class="nav-link" data-scroll-target="#variables-entered-removed">Variables Entered / Removed</a></li>
+  <li><a href="#model-summary-1" id="toc-model-summary-1" class="nav-link" data-scroll-target="#model-summary-1">Model Summary</a></li>
+  <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova">ANOVA</a></li>
+  <li><a href="#coefficients-1" id="toc-coefficients-1" class="nav-link" data-scroll-target="#coefficients-1">Coefficients</a></li>
+  <li><a href="#excluded-variables-1" id="toc-excluded-variables-1" class="nav-link" data-scroll-target="#excluded-variables-1">Excluded Variables</a></li>
+  <li><a href="#collinearity-diagnostics-1" id="toc-collinearity-diagnostics-1" class="nav-link" data-scroll-target="#collinearity-diagnostics-1">Collinearity Diagnostics</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-lrm_01" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 1: Introduction</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><strong><em>Statistics</em></strong><em>: A subject which most statisticians find difficult but which many physicians are experts on.</em> – Stephen Senn, <em>Statistical Issues in Drug Development</em>, <a href="https://media.wiley.com/product_data/excerpt/71/04700187/0470018771.pdf">p.&nbsp;4</a></p>
+<section id="overview" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">8.1</span> Overview</h2>
+<p>This chapter covers the relationship between partial correlations and linear regressions before exploring and interpreting results of linear regressions conducted on the adolescent executive functioning data.</p>
+</section>
+<section id="core-concepts" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="core-concepts"><span class="header-section-number">8.2</span> Core Concepts</h2>
+<section id="linear-relationships" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="linear-relationships"><span class="header-section-number">8.2.1</span> Linear Relationships</h3>
+<p>Very few relationships in healthcare are truly linear. There are sweet spots in how much or what sorts of care to give, sometimes diminishing returns, sometimes growing returns. This is, in fact, true for much outside of the physical sciences; even the effect of intelligence on income &amp; wealth appears to have a non-linear (<a href="https://www.sciencealert.com/worlds-wealthiest-may-actually-be-less-intelligent-than-those-who-dont-earn-as-much">diminshing</a>) effect.</p>
+<p>And yet, it many cases it’s good enough to assume relationships are linear. It can account for much of the relationship while being easy to model statistically. Even if we suspect that the relationships between predictors and outcome are non-linear, we often first test those relationships against a model that assumes linearity because that may well still be sufficient. In addition, seeing how well the data are fit by a linear model lets us then subsequently see <em>how much better</em> a given non-linear relationship explains it: We can even quantify and test the significance of the improvement of a non-linear model over a linear one.</p>
+</section>
+<section id="consider-removing-the-intercept" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="consider-removing-the-intercept"><span class="header-section-number">8.2.2</span> Consider Removing the Intercept</h3>
+<p>O.K., removing the intercept isn’t a core concept, but it can be a good idea nonetheless. One of the best predictors of the future is the past<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, so simply knowing where participants are when they start participating is often among the most efficient and powerful ways of knowing where they will be later on in the study.</p>
+<p>But wouldn’t it be nice to know <em>what</em> about their initial state matters most later one? Leaving the intercept in lets it “suck up” a lot of information that could otherwise be explained by other terms in your model. Removing the intercept may allow that information to “flow back” into other predictors to allow those other predictors to explain your outcome.</p>
+<p>Removing the intercept also frees up the degree of freedom used to estimate its value. This gives our other analyses that much more power. No, that’s not usually a lot, but it does help us maximize the information in our data, making us that much more efficient and conscious of the real value of data.</p>
+</section>
+</section>
+<section id="sec-intro_to_lrm" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="sec-intro_to_lrm"><span class="header-section-number">8.3</span> Introduction to Linear Regression Models</h2>
+<p>I have tried to emphasize the similarity between correlations (including partial and semipartial) and linear regressions. I did this in part to help use your understanding of correlations as a stepping stone to understanding linear regressions and in part to explain interpreting terms in linear regressions. Let us explore that relationship between those two analyses now.</p>
+<section id="correlation-vs.-simple-linear-regression" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="correlation-vs.-simple-linear-regression"><span class="header-section-number">8.3.1</span> Correlation vs.&nbsp;Simple Linear Regression</h3>
+<p>First, let’s compare the results of a simple linear regression against the results of a zero-order correlation containing the same variables. A simple linear regression is a linear regression that contains only one predictor (like a one-way ANOVA).</p>
+<section id="correlation" class="level4">
+<h4 class="anchored" data-anchor-id="correlation">Correlation</h4>
+<ol type="1">
+<li><p>Choose <code>Analyze</code> from the menu bar (from any window), and click on <code>Correlate &gt; Bivariate</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p></li>
+<li><p>Select Participated in DBT [DBT] and Ball Executive Functions Slope – Student Self-Report [All_EFs_SR_Slope] to add to the Variables field.</p>
+<ol type="1">
+<li>This is a <a href="https://www.statisticssolutions.com/free-resources/directory-of-statistical-analyses/point-biserial-correlation/">point-biserial correlation</a> (i.e., a dichotomous variable correlated with a continuous), but the formula for that derives to be computationally the same as that for the Pearson, so select (or leave selected) that option under <code>Correlation Coefficients</code>.</li>
+<li>The default α-value for rejecting the null in SPSS is .05. i.e., we are accepting a 5% chance that any given hypothesis test will be a Type 1 error—here that the correlation is equal to zero (and the Type I error being that we think it isn’t equal to zero when in fact it is). We don’t really have an <em>a priori</em> reason to believe that this correlation will be above or below zero, so we will divide that α = .05 into two pieces, letting us test if it is above zero 2.5% of the time and below zero 2.5% of the time. This is called a two-tailed test, so let’s leave the <code>Test of Significance</code> to <code>Two-tailed</code>.</li>
+<li>Under the <code>Options</code> dialogue, we can include <code>Means and standard deviations</code> under <code>Statistics</code>. We also should leave the <code>Missing Values</code> option to <code>Exclude cases pairwise</code>. Pairwise exclusion in SPSS means that a given case (row) will be excluded from a given analysis if that row is missing data relevant to that analysis per se. <code>Listwise</code> exclusion in SPSS means that a row will be excluded if <em>any</em> data are missing for that case in any of the variables selected for that family of analyses—even if one values relevant to that particular analysis are both present. Listwise exclusion is nearly always too conservative a criterion, thus opening us up to biases in our analysis that come from biases introduced by variables that aren’t even in that analysis.</li>
+</ol></li>
+<li><p>In the <code>Descriptive Statistics</code> the <code>Output</code> window, we see that mean for the <code>DBT</code> variable is .19; since this is a dummy variable (where <code>1</code> = participating and <code>0</code> = not participating), this is also the proportion of cases that participated in the program: 19% of the students here participated in the DBT program.</p></li>
+<li><p>In the <code>Correlations</code> table, we see that the correlation between <code>DBT</code> and <code>All_EFs_SR_Slope</code> is -.165. This indicates that as we go from a DBT score of 0 to 1, the slope changes -.165<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. The <code>Sig. (2--tailed)</code> row in the table indicates that the <em>p</em>-value for that correlation is .003, which is less than the α–level we established (α = .05 / 2 = .025 for each tail), making this correlation significant3. We could write this in a Results section as:</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>The point-biserial correlation between DBT participation and changes in all executive functions was significant (<em>r</em><sub>pb</sub> = -.165, <em>df</em> = 326, <em>p</em> = .003), indicating that participating in the DBT program was associated with significantly more negative slopes (i.e., significantly greater improvements) in total executive function scores.</p>
+</blockquote>
+<p>Which attempts to explain the relationship in simply terms that rely on little in-article jargon and acronyms. The support for this plainer-English description is supported (parenthetically) by the numerical statistics.</p>
+</section>
+<section id="linear-regression" class="level4">
+<h4 class="anchored" data-anchor-id="linear-regression">Linear Regression</h4>
+<p>Remember that in simple correlations, we assume that unique variance / error comes equally from both variables. We formalize this mathematically by having the variance they share—their <strong>co</strong>variance—divided by the unshared variance from both variables:</p>
+<p><span class="math display">\[\text{Correlation} = \frac{\text{Cov}{({X,Y})}}{\text{Var}{(X)}\text{Var}{(Y)}}\]</span></p>
+<p>Unlike a correlation, in a linear regression, unique variance / error is assumed to come from only the predictor variable(s):</p>
+<p><span class="math display">\[Y = bX + e\]</span></p>
+<p>where <span class="math inline">\(b\)</span> is the slope of the regression line that best fits the cluster of <span class="math inline">\(X\)</span> values plotted against <span class="math inline">\(Y\)</span> and <span class="math inline">\(e\)</span> is the average distance<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> of each individual <span class="math inline">\(X\)</span> value from that line—the variance unique to <span class="math inline">\(X\)</span> that is relegated to error:</p>
+<p><img src="images/lrm_02.png" class="img-fluid"></p>
+<p>Although our assumptions are different, we are still doing the same basic function: determining a line of best fit computed by minimizing the unique variance in our data—here in the values of our criterion, <span class="math inline">\(X\)</span><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<p>Separating out error like is done in a linear regression will eventually allow us more flexibility in how we deal with error. For now, I simply want to show the similarity between a correlation and a linear regression. So, in SPSS:</p>
+<ol type="1">
+<li><p>In whatever window you have active, click <code>Analyze &gt; Regression &gt; Linear...</code>.</p></li>
+<li><p>Add <code>ZAll_EFs_SR_Slope</code> to the <code>Dependent</code> field and <code>DBT</code> to the <code>Independent(s)</code> field. SPSS is calling the outcome “<code>Dependent</code>” and the predictor(s) “<code>Independent(s)</code>”, as in DVs and IVs.</p></li>
+<li><p>Under <code>Statistics</code>, have <code>Estimates and Confidence intervals</code> selected under <code>Regression Coefficients</code> (the latter since confidence intervals are slowly replacing up-and-down significance tests), and <code>Model fit</code>, <code>Part and partial correlations</code>, and—might as well—<code>Descriptives</code> also selected. For now, leave <code>R squared change</code> unselected.</p>
+<p>(<code>Casewise diagnostics</code> lets you evaluate whether there are extreme outliers in the data that may be skewing the results. <code>Durbin-Watson</code> tests whether there is nonignorable autocorrelation between the errors of longitudinal data, with a value of “2” indicating ignorable autocorrelation and values approaching either 0 or 4 indicating that error values are not independent of each other and thus that, e.g., one should consider the nested nature of the data, q.v. <a href="mlm.html"><span>Chapter&nbsp;10</span></a>.)</p></li>
+<li><p>Under <code>Options</code>, select <code>Exclude cases pairwise</code> under <code>Missing values</code> for the reasons discussed above; <code>Replace with mean</code> is a defensible strategy for handling missing data, although multiple imputation would be preferred in all ways … were it easy performed in SPSS.</p>
+<p>We will not be use any <code>Stepping Method Criteria</code>, so the default (or really any values since this doesn’t apply) are fine.</p>
+<p>Finally, leave <code>Include constant in equation</code> selected. The constant of which they speak is the intercept since not all of our variables are standardized.</p></li>
+<li><p>We will ignore, e.g., the <code>Method</code> of entering or removing terms from the model for now.</p></li>
+</ol>
+<p>For <code>Zscore: All Executive Functions Slope -- Student Self-Report</code> in the <code>Descriptive Statistics</code> table in the <code>Output</code> window, we see that the Mean is <code>.00000000</code> and the <code>Std Deviation</code> is <code>1.00000000</code>, as they should be since <em>that</em> variable is indeed standardized here<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
+<p>For <code>Participation in DBT Program?</code>, the mean is .19 (sample size is 670); since this is a dummy variable, this means that 19% of the cases had 1s, i.e., that 19% of the students participated. The results for the <code>Correlation</code> also return the correlation (-.165) and that it is significant.</p>
+<p>After the <code>Variables Entered/Removed</code> table (which is not relevant now), the results present a <code>Model Summary</code> table. This table presents statistics about how well the model overall performs when trying to fit the data we fed it. Remember how one way of thinking about linear regression models is that they try to minimize unexplained variance in the data—that they try to account for as much of the variance / information in the data as possible. The <code>R</code> and <code>R Square</code> values in this table do just that; they describe how much variance in the data set are accounted for by this particular model (containing—for now—simply whether the student participated in the DBT program). We see from this table that the <code>R</code>-value is .165. This, of course, is the same absolute value as the correlation between <code>DBT</code> and <code>All_EFs_SR_Slope</code>. A linear regression will generate the same (or nearly same) values as a correlation on those same variables—the difference, though, is in the assumptions we’re making about the data: Correlations assume error is shared equally whereas linear regressions separate out error and explicitly model it s a term among the predictors.</p>
+<p>The <code>R Square</code> value in that table is just the <code>R</code> value squared. Squaring a correlation coefficient (i.e., computing <em>r</em><sup>2</sup> from <em>r</em>) computes the shared variance between the two variables. Similarly, <code>R Square</code> (i.e., <em>R</em><sup>2</sup>) computes the variance within that data set that is accounted for by this model. Capital <em>R</em><sup>2</sup> is used to denote the variance in the data accounted for by <em>all</em> of the model terms—intercept, main effects, interactions, etc., but not error. Lower-case <em>r</em><sup>2</sup> is used to denote the variance shared by just two variables—not the whole model. (The <code>Adjusted R Square</code> reduces the value a bit for each term added to the model since one can improve the <em>R</em><sup>2</sup> of a model even by adding non-significant or uninteresting terms to it.)</p>
+<p>The next table, <code>ANOVA</code>, presents the results of the linear regression in terms of just that. This presents the familiar <code>Sum of Squares</code> for the <code>DBT</code> term (when <code>DBT</code> = <code>1</code>, as it shows in the left-most column) as well as the <code>Residual (Sum of Squares)</code> which you should now recognize is the unexplained variance. The <em>F</em>-score and <em>p</em>-value (<code>Sig.</code>) both indicate the significance of the <code>DBT</code> term.</p>
+<p>One more thing to note about the <code>ANOVA</code> table … is that there even is one: The presence here of an <code>ANOVA</code> table—when we didn’t explicitly tell SPSS to run an ANOVA—underlines the fact that what we’re doing in a linear regression is the same as we would do in an ANOVA. Again, one reason to prefer a linear regression over an ANOVA is because of the greater flexibility of a linear regression. Of course, if you don’t need this greater flexibility, then this also means that running an ANOVA is just fine if that’s all you need; in addition, ANOVA source tables may also be more accessible to audiences without quite as much sophisticated understanding of statistics as you now have.</p>
+<p>The results of the ANOVA, correlation, and linear regression analyses are all quite similar. Indeed—to the extent that our underlying assumptions hold—the results of all three analyses will become even more similar as the sample size increases. Two things to infer from this that are most relevant here are:</p>
+<ol type="1">
+<li><p><strong>Assumptions matter</strong>. Although some assumptions (monotonicity of the data and that data are independently and identically distributed) tend to be more important than others (strict adherence to normality), knowing how well and in what ways our data meet our basic assumptions affect all analyses we do and all inferences we make from them. This remains true for data of all sizes—even if some assumptions become more important as sample size increases and others tend to become less important (e.g., sampling bias becomes more important; adherence to normality even less).</p></li>
+<li><p>(Nearly all) <strong>linear regressions do the same thing</strong>. The fundamental goal of a correlation, ANOVA, multilevel model, logistic regression, and structural equation model are the same. They all test a linear relationship between the variables by computing a slope, determining that slope is determined by computing a loss-limiting functioning (e.g., ordinary least squares or maximum likelihood), and parceling out variance into that which is explained by the model and that which remains unexplained (“error”).</p>
+<p>In fact, a main goal of demonstrating the relationship between, e.g., a one-way ANOVA and a zero-order correlation is to show that they can be seen as members of the same family of analyses.</p></li>
+</ol>
+</section>
+<section id="semipartial-correlation-vs.-multivariate-linear-regression" class="level4">
+<h4 class="anchored" data-anchor-id="semipartial-correlation-vs.-multivariate-linear-regression">Semipartial Correlation vs.&nbsp;Multivariate Linear Regression</h4>
+<p>Remember (e.g., from <a href="Variance_Covariance_Correlations_and_Partial_Correlations.html#sec-partial_semipartial_correlations"><span>Section&nbsp;5.3</span></a>) that a semipartial correlation removes the effect of a third variable<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> from <em>one</em> of the two variables in a correlation. Remember too that as odd as this may seem a thing to do, in fact it’s done all the time: It’s the basis for having two (or more) predictors in a linear model; the effects of each predictor are (mathematically) isolated from each other so that the effect of one is independent of the effect of the other.</p>
+<p>If the two predictors are strongly correlated with each other, then the model will perform quite differently if only one is included versus if both are. Exactly in what way it will “act differently” is hard to anticipate ahead of time, but act differently it will. Let’s look at examples of that now.</p>
+</section>
+</section>
+<section id="conducting-a-multivariate-linear-regression-using-forward-term-selection" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="conducting-a-multivariate-linear-regression-using-forward-term-selection"><span class="header-section-number">8.3.2</span> Conducting a Multivariate Linear Regression Using Forward Term Selection</h3>
+<p>A <em>multivariate</em> linear regression is just a linear regression that has two or more predictors.</p>
+<ol type="1">
+<li>In SPSS, compute the correlation between <code>ZAll_EFs_SR_Slope</code> and <code>Adult_Sister_at_Home</code> (a dummy variable that indicates whether the teens if they lived with a sister who was over 18 years old). You’ll see that <em>r</em><sub>bp</sub> = -.11 (<em>df</em> = 319, <em>p</em> = .048). This correlation is small but significant (and, yes, cherry-picked for this example).</li>
+<li>Look, too, at the correlations between <code>DBT</code> and both <code>ZAll_EFs_SR_Slope</code> and <code>Adult_Sister_at_Home</code>. The zero-order correlation between <code>DBT</code> and <code>ZAll_EFs_SR_Slope</code> is -.165 and between <code>DBT</code> and <code>Adult_Sister_at_Home</code> is .04. Of course, this correlation between <code>DBT</code> and <code>Adult_Sister_at_Home</code> is not theoretically interesting since there is no reason to believe that participating in the DBT program really affects how many adult sisters one has or vice versa; nonetheless, it serves well as an example of how linear models change when correlated predictors are both included.</li>
+<li>Now, let us rerun the linear regression predicting <code>ZAll_EFs_SR_Slope</code> with DBT, but this time also add in <code>Adult_Sister_at_Home</code>. I.e., go to <code>Analyze &gt; Regression &gt; Linear...</code>, put <code>ZAll_EFs_SR_Slope</code> in the Dependent field, and put both <code>DBT</code> and <code>Adult_Sister_at_Home</code> in the <code>Independent(s)</code> field.</li>
+<li>Under <code>Statistics...</code>, make sure <code>Estimates</code>, <code>Model fit</code>, <code>R squared change</code>, and <code>Collinearity diagnostics</code> are all selected. These play into what we will be doing now.</li>
+<li>Leave everything under <code>Options</code> the same, viz., leave the <code>Stepping Method Criteria</code> to the default, keep <code>Include constant in equation</code> selected, and <code>Exclude cases pairwise</code>. Most of these inform our investigation here, too.</li>
+<li>Now, turn your attention to the <code>Method:</code> drop-down menu right under the <code>Independent(s)</code> field. This is the method SPSS will use to add or remove terms to the model. I’ll explain this further soon, but for right now, select <code>Forward Selection</code>.</li>
+<li>Hit <code>OK</code>.</li>
+</ol>
+<section id="results" class="level4">
+<h4 class="anchored" data-anchor-id="results">Results</h4>
+<section id="sec-into-to-stepwise" class="level5">
+<h5 class="anchored" data-anchor-id="sec-into-to-stepwise">Variables Entered/Removed and the “Stepwise” Strategy</h5>
+<p><img src="images/lrm_03.png" class="img-fluid"> The <code>Variables Entered/Removed</code> table reports which variables are either entered or removed based on the <code>Method:</code> we selected to determine which variables ought to be selected for our final model. Let me first explain what is being done here and why before we explore more particularly the methods used.</p>
+<p>Second, we could think of the whole model and whether a predictor makes a significant contribution to the overall fit of the model. This latter method will (usually) produce the same results as the former, but has the advantages of both allowing us to test significance in more ways and of allowing us to test and consider contributions more flexibly and precisely.</p>
+<p>What SPSS is doing here is based on that second approach. It is trying to build the best model, picking from those we suggested to find the combination that has the largest number of significant terms<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. Here, the only possible predictors SPSS could choose from are just <code>DBT</code> and <code>Adult_Sister_at_Home</code>. However, when exploring larger sets of data, there may be many more potential variables to add.</p>
+<p>The general strategy SPSS presumes we are following is to choose which variable(s) to add or remove from a model based on whether that variable significantly changes the fit of the overall model. One advantage of this strategy is that is considers whether predictors themselves are inter-correlated. If two predictors are strongly correlated, then it’s unlikely that both will be added to the model; instead, the one that is more strongly predictive of the criterion will be added and the other one won’t make the cut since most of its relationship with the criterion will be accounted for by the other predictor that made the cut first. This tends to create a more parsimonious model that is less affected by multicollinearity and yet is still effective.</p>
+<p>SPSS, in fact, offers five methods for deciding which predictors to add or remove<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> given this general strategy:</p>
+<ul>
+<li><p><code>Enter:</code> The most theory-driven of the methods, <code>Enter</code> lets one add “block” or set of predictors and then add another block, continuing as one wants. In this way, one could, e.g., first add in all of the variables that are not of direct but that one expects will be important to control for when finally looking at the (other) predictors that are of theoretical interest; in other words, one could create a base model with the first block, and then in the second block start adding predictors of theoretical interest to see if those theoretically-interesting predictors prove to be important after all. This is the method I use nearly exclusively.</p></li>
+<li><p><code>Remove:</code> A similar strategy to <code>Enter</code>, SPSS first starts with all chosen predictors added to the model. It then removes those listed in the first block, then those listed in the second block, and continues until there are no more predictors (except the intercept, if present). <code>Enter</code> is used to test whether adding a block of predicts improves the model; <code>Remove</code> is used to test whether removing a block of predictors worsened the model. It’s a subtle distinction, and the choice of which to use is one determines based on one’s theory and research questions.</p></li>
+<li><p><code>Stepwise:</code> A method that both adds and removes predictors. SPSS does this in “steps.” In the first step, SPSS starts with no predictors in the model (except the intercept); it then tries out each predictor, seeing which of them would be most significant (has the smallest <em>p</em>-value<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>); if that predictor with the smallest <em>p</em>-value is also sufficiently significant<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>, then it is indeed added to the model in that first step.</p>
+<p>In the second step, SPSS first tries out all of the variables still not in the model, chooses the one with the smallest <em>p</em>-value, and adds that to the model if its <em>p</em>-value is smaller than the pre-set cut-off. Then, still in the second step, SPSS goes through the predictors that have been added to the model; if any of them have become sufficiently <em>non</em>-significant, SPSS removes them from the model. If no predictors were added or removed during the second step (if none met the criteria for entry or removal), then SPSS stops and reports this as the final model.</p>
+<p>The third and any subsequent steps follow the same procedure as the second step, explained just above. Note that it is possible (unlikely, but possible) that a variable that was previously removed is later re-entered as SPSS fiddles around finding the best set of predictors.</p></li>
+<li><p><code>Forward:</code> This method is like <code>Stepwise</code>, but in which predictors are only added (if they meet the pre-set cut-off) at each step; none are removed. (This is the method we used here because it’s simple and worked for what I wanted to show.)</p></li>
+<li><p><code>Backward:</code> This method is also like <code>Stepwise</code>; here SPSS starts with all chosen predictors in the model, and then only removes any at each step, stopping either when no more meet the pre-set cut-off or when there are no more predictors left in it.</p></li>
+</ul>
+</section>
+<section id="model-summary" class="level5">
+<h5 class="anchored" data-anchor-id="model-summary">Model Summary</h5>
+<p><img src="images/lrm_04.png" class="img-fluid"></p>
+<p>This is the meat of the output. This table shows the performance of the overall model—not the individual predictors—at each step. The model statistics for the first step are given in the row labeled 1 in the Model column. Notice that the <em>R</em>-value for the first model (which contains only DBT) is the same as the zero-order correlation between <code>DBT</code> and <code>ZAll_EFs_SR_Slope</code>, again showing the similarity of the processes (again, as long as the same assumptions hold).</p>
+<p>Remember that squaring a correlation produces the proportion of variance explained. Similarly the model <em>R</em><sup>2</sup> (here <code>R Square</code>) indicates the proportion of variance in the criterion explained by this model. The <code>Adjusted R Square</code> is the model <em>R</em><sup>2</sup> adjusted for the number of terms in the model (predictors as well as intercept—if present—and error); as you can infer from the values here, it reduces the <em>R</em><sup>2</sup> ; this helps protect against inflated the model <em>R</em><sup>2</sup> simply adding a bunch of terms that have very little—if any—relationship with the criterion.</p>
+<p>Adjusted <em>R</em><sup>2</sup> also adjusted for the sample size; larger sample sizes are adjusted less since it is argued that they better represent the overall population. Given these adjustments, adjusted <em>R</em><sup>2</sup> values are best used as descriptive statistics when reporting how much, e.g., your model’s results and performance may apply to instances outside of your study—when making recommendations to the field, for example. However, adjusted <em>R</em><sup>2</sup> does not serve well for comparing between models within your analysis, as we will soon do.</p>
+<p>The <code>Std. Error of the Estimate</code> (standard error of the estimate, also called the root mean square error) is the standard deviation of the error term in the model; this simply shows how much residual error (variance) there is in the model. Our <em>R</em><sup>2</sup> value is small—only accounting for 2.7% of the variance in EF change scores—so it’s not surprising that there is a lot of residual error; this column reminds us that that is so.</p>
+<p>The <code>R Square Change</code> is how much change there is in the <code>R Square</code> value. For the first model, you’ll see that the <code>R Square Change</code> value is the same as the <code>R Square</code> value. Personally, I find this confusing since it’s not really a <em>change</em> in <em>R</em><sup>2</sup>, but simply the initial <em>R</em><sup>2</sup> value. The <code>F Change</code>, <em>df</em>s, and <code>Sig. F Change</code> for this first row are also simply the significance tests for this first model—not the change in the model. They do show that the model is significant (<em>p</em> = .003).</p>
+<p>The second row (where Model is 2) indeed shows the change in model fit made by adding <code>Adult_Sister_at_Home</code> to the model that already contains <code>DBT.</code> Now, the <code>R</code>, <code>R Square</code>, <code>Adjusted R Square</code>, and <code>Std. Error of the Estimate</code> values <em>are</em> for the whole model (showing that the model with both predictors does account for more of the variance in <code>ZAll_EFs_SR_Slope</code> than the one only containing <code>DBT</code>—even when adjusting for the fact there are simple more predictors there), but the other columns are all analyzing the change in the <em>R</em><sup>2</sup> value between the first and second models. Although the change in <em>R</em>2 is small (.041 – .027 = .014), it is significant (<em>F</em><sub>1,</sub> <sub>316</sub> = 4.51, <em>p</em> = .034); adding the <code>Adult_Sister_at_Home</code> term improved our model—and thus our understanding of EF changes; <code>DBT</code> and <code>Adult_Sister_at_Home</code> both make significant contributions to our understanding of changes in student-reported executive functioning, and these predictors—although mildly correlated (<em>r</em><sub>pb</sub> = .04)—make otherwise unique contributions to predictions of EF changes.</p>
+<p>It’s worth reiterating how testing for relationships in this way allows for more precise and nuanced insights into the relationships between our variables. We still test whether both predictors are significant, but do so through how much they contribute to our overall understanding: It’s not just if a term is significant, but how much it matters in light of everything else we know.</p>
+</section>
+<section id="anova-table" class="level5">
+<h5 class="anchored" data-anchor-id="anova-table">ANOVA Table </h5>
+<p><img src="images/lrm_05.png" class="img-fluid"></p>
+<p>Finally something familiar. The <code>ANOVA</code> table presents an ANOVA run on each of the models. This table doesn’t, however, show the tests of each of the terms in the model—just the overall model As such, this table really does little more than what was shown by the <em>F</em>-scores in the <code>Model Summary</code> table, just above.</p>
+</section>
+<section id="coefficients" class="level5">
+<h5 class="anchored" data-anchor-id="coefficients">Coefficients</h5>
+<p><img src="images/lrm_06.png" class="img-fluid"></p>
+<p>The <a href="https://stats.idre.ucla.edu/spss/output/regression-analysis/"><code>Coefficients</code></a> table also takes us back to more familiar ground, testing the effects of the predictor terms per se. Given how we’ve coded our variables, this table is a bit more confusing than it would otherwise be, though: Both <code>DBT</code> and <code>Adult_Sister_at_Home</code> are dichotomous variables, so the <code>Unstandardized Coefficients</code> don’t give us the insights that variables that have meaningful units would give; the main insights from the <code>Unstandardized Coefficients</code> is that the intercepts in both models are not significant, meaning that the sixth-grade EF scores for students were not different between those who participated or didn’t participate in the DBT program (<em>t</em> = 1.28, <em>p</em> = .20), even when accounting for whether they had adult sister(s) at home (<em>t</em> = -0.25, <em>p</em> = .80).</p>
+<p>Note, though, that the <span class="math inline">\(beta\)</span>-weight for the <code>DBT</code> term in the first model is the zero-order correlation between it and <code>ZAll_EFs_SR_Slope</code>. As the column heading makes clear, <span class="math inline">\(beta\)</span>-weights are the standardized regression weights, thus here the semipartial correlation (semipartialing out the intercept). In the second model, the <code>DBT</code> <span class="math inline">\(beta\)</span>-weight is -.169; this is the semipartial correlation between <code>DBT</code> and <code>ZAll_EFs_SR_Slope</code>; semipartialing out slightly improves—clarifies—the relationship between DBT participation and EF changes (as we knew from the <em>R</em><sup>2</sup> change tests, above). The zero-order correlation between <code>Adult_Sister_at_Home</code> and <code>ZAll_EFs_SR_Slope</code> is -.11 while the semipartial correlation between them is .117—stronger and in the opposite direction; the adult sister thing is hard to explain or interpret here, but what we can say is that its relationship with EF changes is certainly mediated by DBT participation, underlining the importance of considering other variables in one’s analyses.</p>
+<p>The <code>Collinearity Statistics</code> columns report two common tests of (multi)collinearity between predictors in the model:</p>
+<ul>
+<li><code>Tolerance</code> ranges from 0 to 1, with numbers closer to zero indicating that that variable is stronger related to other predictors in the model. By convention (more than reason), tolerances of less than .1 are seen as problematic and should be addressed, e.g., by removing predictors from the model or explaining why there is such high <a href="https://articles.viriya.net/multicollinearity.pdf">multicollinearity</a>.</li>
+<li>The variance inflation factor (<code>VIF</code>) measure the effect of collinearity on the model. VIFs range from 1 to infinity, and values greater than 10 are typically seen as indicating that collinearity is unignorably affecting the performance of the model. This affect is usually to make the model terms unstable, meaning we can’t speak confidently about not only the absolute values of the <em>b</em>- or <span class="math inline">\(beta\)</span>-weights but that we can’t even be sure of significance tests on them.</li>
+</ul>
+<p>There is only one predictor in the first model, so the <code>Collinearity Statistics</code> expectedly show there is no collinearity. In the second model, both statistics are remain very good, indicating that the contributions of <code>DBT</code> and <code>Adult_Sister_at_Home</code> are largely independent of each other; the weak correlation between those two variables (<a href="https://www.andrews.edu/~calkins/math/edrm611/edrm13.htm#PHI">φ</a> = .04) makes us expect that any collinearity would be quite small.</p>
+</section>
+<section id="excluded-variables" class="level5">
+<h5 class="anchored" data-anchor-id="excluded-variables">Excluded Variables</h5>
+<p><img src="images/lrm_07.png" class="img-fluid"></p>
+<p>The <code>Excluded Variables</code> table reports what the statistics would have been for each term if they had indeed been added to it. We only have two predictors and the second predictor was all that was added to the second model, so there is no new information gained here fro this table. Has we been conducting a more data-driven investigation into a larger set of variables, this table could be used to look at how the model would have performed under different combinations of predictors, even if SPSS hasn’t selected to include them.</p>
+</section>
+<section id="collinearity-diagnostics" class="level5">
+<h5 class="anchored" data-anchor-id="collinearity-diagnostics">Collinearity Diagnostics</h5>
+<p><img src="images/lrm_08.png" class="img-fluid"></p>
+<p>We had told SPSS to include collinearity diagnostics above, so this table also doesn’t present much new, but it does give some more information about what we know already. The <code>Eigenvalue</code> column can be used to ascertain where most of the collinearity in a model resides; this is especially useful if there are more than two variables that share unignorable levels of multicollinearity. In investigating multicollinearity, Eigenvalues greater than 15 are generally seen as important; Eigenvalues less than 1 are always ignorable. The <code>Condition Index</code> essentially measures the cumulative effect of the various sources of multicollinearity; values greater than 15 for condition indices are seen as problematic.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="multivariate-linear-regression-with-three-predictors-using-enter-term-selection" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="multivariate-linear-regression-with-three-predictors-using-enter-term-selection"><span class="header-section-number">8.4</span> Multivariate Linear Regression with Three Predictors Using <code>Enter</code> Term Selection</h2>
+<p>Now that we (hopefully!) have some understanding of multivariate linear regression, we can look at a slightly more complex one. Here, we are considering three variables, two of which we know are themselves mildly but significantly interrelated: DBT participation and economic distress (φ = -.08, <em>p</em> = 0.48). We’ll also consider adult sisters at home to build upon what we did above.</p>
+<p>We will also move to what I believe is a more generally-defensible method of building and comparing models. Presuming we are interested in testing if DBT participation affects changes in students’ executive functioning, we are probably interested not only if DBT participation matters, but if it matters more than other, theoretically-uninteresting factors—like how many adult sisters one lives with. Controlling for economic distress also removes an important source of variance we couldn’t control through experimental design, and so is worth including here for that reason<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>. Therefore, we will add all (both) of the theoretically-uninteresting predictors to the first model. Although we can (and should) investigate the statistics of this first model, it is primarily intended to serve simply as the null model—the baseline of comparison—for testing the effect of DBT participation. Looked at this way, we see if DBT participation predicts changes in EF—while controlling for known sources of variance that could otherwise mislead our interpretation of the effects of the DBT program.</p>
+<ol type="1">
+<li>To conduct our analyses, again evoke the main linear regression dialogue box, e.g., via <code>Analyze &gt; Regression &gt; Linear...</code></li>
+<li>Again let <code>ZAll_EFs_SR_Slope</code> serve as the <code>Dependent(s)</code>, but this time first add <code>Economic_Distress</code> and <code>Adult_Sister_at_Home</code> to the <code>Independent(s)</code> field.</li>
+<li>Change the <code>Method:</code> to <code>Enter</code>.</li>
+<li>Click on the <code>Next</code> button just above the <code>Independent(s)</code> field. This allows us to now enter other predictors into what will be the second block of predictors. Add <code>DBT</code> to the now-blank <code>Independent(s)</code> field.</li>
+<li>Ensure that in the <code>Statistics</code> dialogue box <code>Model fit</code>, <code>R squared change</code>, and <code>Collinearity diagnostics</code> are selected as is <code>Estimates</code> under <code>Regression Coefficients</code>.</li>
+<li>In the <code>Options</code> dialogue box, makes sure <code>Include constant in equation</code> and <code>Exclude cases pairwise</code> are also selected.</li>
+<li>Hit <code>OK</code>.</li>
+</ol>
+<section id="results-1" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="results-1"><span class="header-section-number">8.4.1</span> Results</h3>
+<section id="variables-entered-removed" class="level4">
+<h4 class="anchored" data-anchor-id="variables-entered-removed">Variables Entered / Removed</h4>
+<p><img src="images/lrm_09.png" class="img-fluid"></p>
+<p>The <code>Variables Entered/Removed</code> table summarizes our steps and that we used the <code>Enter</code> method allowing us—not the data—to decide which predictors to add and when.</p>
+</section>
+<section id="model-summary-1" class="level4">
+<h4 class="anchored" data-anchor-id="model-summary-1">Model Summary</h4>
+<p><img src="images/lrm_11.png" class="img-fluid"></p>
+<p>Given our goals here, this is the most telling part of the output. The base model in step one in fact predict EF changes well (for field-based data). More interesting, though, is that adding <code>DBT</code> to this already-significant model further improves it, increasing the proportion of variance explained by 2.4% (<code>R Square Change</code> = .024), which is a significant contribution here (<em>F</em><sub>1,</sub> <sub>315</sub> = 8.16, <em>p</em> = .005).</p>
+</section>
+<section id="anova" class="level4">
+<h4 class="anchored" data-anchor-id="anova">ANOVA</h4>
+<p><img src="images/lrm_12.png" class="img-fluid"></p>
+<p>The <code>ANOVA</code> table simply reinforces what the <code>Model Summary</code> table contains, showing, e.g., not only that adding <code>DBT</code> made a significant improvement in model fit, but that the model containing all three predictors (<code>Model 2</code>) significantly predicted <code>ZAll_EFs_SR_Slope</code> scores. (<em>F</em><sub>3,</sub> <sub>315</sub> = 7.01, <em>p</em> &lt; .001).</p>
+</section>
+<section id="coefficients-1" class="level4">
+<h4 class="anchored" data-anchor-id="coefficients-1">Coefficients</h4>
+<p><img src="images/lrm_13.png" class="img-fluid"></p>
+<p>Perhaps the most interesting thing to note from the <code>Coefficients</code> table for this family of analyses is that the <code>DBT</code> term’s <code>Beta</code>-weight is lower when including <code>Economic_Distress</code> (and <code>Adult_Sister_at_Home</code>), reflecting that the shared variance between <code>DBT</code> and <code>Economic_Distress</code> is also shared by <code>ZAll_EFs_SR_Slope</code>: Some of the effect of the DBT program is mediated by the adolescents’ levels of economic distress.</p>
+<p>The small levels of collinearity between <code>DBT</code> and <code>Economic_Distress</code> suggests that the variance they share is nearly entirely itself associated with <code>ZAll_EFs_SR_Slope</code>—that very little of their shared variance is left to create collinearity between them.</p>
+</section>
+<section id="excluded-variables-1" class="level4">
+<h4 class="anchored" data-anchor-id="excluded-variables-1">Excluded Variables</h4>
+<p><img src="images/lrm_14.png" class="img-fluid"></p>
+<p>Since we chose which predictors to add and when—and since there were only two steps—the <code>Excluded Variables</code> table is again uninteresting.</p>
+</section>
+<section id="collinearity-diagnostics-1" class="level4">
+<h4 class="anchored" data-anchor-id="collinearity-diagnostics-1">Collinearity Diagnostics</h4>
+<p><img src="images/lrm_15.png" class="img-fluid"></p>
+<p>The multicollinearity between the predictors is greater in this family of models than it was in the previous family. Nonetheless, it is negligible.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/croc.png" class="img-fluid figure-img" style="width:30.0%"></p>
+</figure>
+</div>
+
+
+</section>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>An interesting take on this—albeit one that’s tangential to what we’re talking about—is given in this quote from Funk’s (<a href="https://www.nytimes.com/2023/09/22/magazine/hank-asher-data.html?unlocked_article_code=1We_UxVXHFbRKCYKCogInk0FqPtcm24qUr2MZ14WLJ7igbG9tQkBEfdGQ_Hh6-6SRbQluxlR_W2w9qo1EuXs1xjVyWb21L9LpT-t8JebNqigFx88IKJVNFCVpHkpTserNEG5HcVeS6WXpqQNQvN6cXenOlz4i_57tNY8_7Y2fM0zKSf4bLfkvzpeN4VmxThpVyyJBKHu8uD0LQMb4IRRWpKyGwV9ji-ewuVHLfw-9AT9omGH6Kc_Hy-ETtWUh3oD0D9Lhp3oIjWR3XcMcUcBVBlvwkgoDf49aLuF1cMz2iG8yRV-FncOLNvlLKZm6sp8n0nu3QsWG1jl&amp;smid=url-share">2023</a>) <em>New York Times</em> article:<br>
+“A world in which computers accurately collect and remember and increasingly make decisions based on every little thing you have ever done is a world in which your past is ever more determinant of your future. It’s a world tailored to who you have been and not who you plan to be, one that could perpetuate the lopsided structures we have, not promote those we want. It’s a world in which lenders and insurers charge you more if you’re poor or Black and less if you’re rich or white, and one in which advertisers and political campaigners know exactly how to press your buttons by serving ads meant just for you. It’s a more perfect feedback loop, a lifelong echo chamber, a life-size version of the Facebook News Feed. And insofar as it cripples social mobility because you’re stuck in your own pattern, it could further hasten the end of the American dream. What may be scariest is not when the machines are wrong about you — but when they’re right.”<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Note that in SPSS the “<code>A</code>” in <code>Analyze</code> is underlined, that the “<code>C</code>” in <code>Correlate</code> is underlined, and the “<code>B</code>” in <code>Bivariate</code> is underlined. You will notice that all menu options have one letter underlined; once you are let enough to use keyboard instead of the mouse, this is the key you will type to select that option. So, to access this analysis, you could simply hold down the <code>Alt</code> key and type <code>A</code> then <code>C</code> then <code>B</code> instead of using the mouse.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The reverse interpretation—that a 1–point decrease in slope makes it 16.% more likely that that student was a member of the DBT group—is plausible for a correlation, but doesn’t really make sense practically since whether a child participated depended only on the year they were admitted to the school.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>In ordinary least squares, it’s the square root of the mean squared distance—just as the standard deviation is square root of the deviance, which is itself the sum of squared distances from the mean.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>By minimizing the variance relegated to error, we are trying to minimize the amount of information in the data that is lost—unexplained—by the model. The better that a model is at explaining the variance—the information—in the data, then the less information is lost to error.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Note that the mean and standard deviation for standardized variables won’t always be reported by stats software as always equal to exactly 9 and 1, respectively. Sometime there is rounding error or only a subset of the standardized values are being used to re-calculate the mean &amp; standard deviation.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Or the effect of both a third and fourth variable, etc.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>There are other ways to go about doing this than what SPSS is doing here—ways I prefer—but what we’re doing here is easy and still useful strategy to know and use.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>More about these methods can be found, e.g., in IBM’s <a href="https://wesamuels.net/NURS_71200/Lectures_&amp;_Materials/02_Intro_to_Linear_Models/More%20about%20these%20methods%20can%20be%20found,%20e.g.,%20in%20IBM%E2%80%99s%20Knowledge%20Center">Knowledge Center</a>.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>Instead of choosing the predictor with the smallest <em>p</em>-value, SPSS can choose the value with the largest <em>F</em>-value. A small distinction, but worth a footnote.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>The criterion used to decide whether the <em>p</em>-value is sufficiently significant is determined by the values used under <code>Options... &gt; Stepping Method Criteria</code>. The default is to include a predictor if the <em>p</em>-value is less than .05 and to exclude a predictor if its <em>p</em>-value is greater than .10.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>There are really three, general ways to address noise in one’s studies: group assignment (e.g., experimental vs.&nbsp;control), randomization, and what we’re doing here: adding possibly-confounding variables to a model to isolate their effect on the variables of interest. What we’re doing here tends to get short shrift when discussing experimental design, and—in my opinion—that’s too bad since we can’t always create the groups we want and randomization doesn’t always work and isn’t always easy to tell if it did.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./missing_data.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Missing Data</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./lrm_02.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 2: More about ANOVAs and Dummy Coding</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+      <i class="bi bi-badge-cc" role="img">
+</i> 
+  </li>  
+    <li class="nav-item">
+ Creative Commons Attribution--NonCommercial--ShareAlike License
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A set of explanations, lectures, resources, and activities to complement the statistics curriculum that is part of Hunter College’s Ph.D.&nbsp;Program in Nursing Research and Health Equity and DNP Program.">
+
+<title>Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula - 6&nbsp; Effect Size: Explanation and Guidelines</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./missing_data.html" rel="next">
+<link href="./Variance_Covariance_Correlations_and_Partial_Correlations.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./curricula.html">Applied Statistics Curriculum</a></li><li class="breadcrumb-item"><a href="./effect_size.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Effect Size: Explanation and Guidelines</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Companion-to-the-Nursing-Ph.D.---DNP-Statistics-Curricula.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./curricula.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applied Statistics Curriculum</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./60N.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 60<span style="font-size: .7em">N</span>: Foundations of Biostatistics for Nursing Research and Evidence-Based Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./915.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 915 &amp; 916: Applied Statistics 1 &amp; 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing_results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Writing Results Sections</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./significance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to Measuring Relationships and Building Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Variance_Covariance_Correlations_and_Partial_Correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Variance, Covariance, Correlations, and Partial Correlations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./effect_size.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Effect Size: Explanation and Guidelines</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./missing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lrm_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 1: Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lrm_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 2: More about ANOVAs and Dummy Coding</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mlm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Longitudinal Analyses: Why and How to Conduct Multilevel Linear Modeling</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Psychometrics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./925.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 925: Psychometrics Course</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./efa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Exploratory Factor Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Guides to Using Software</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Using_Templates_and_a_Reference_Manager.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Using Templates and a Reference Manager</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_Excel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Excel</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_SPSS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_GPower.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to Power and Sample Size Estimation Using Either G*Power or R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_exploration_with_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Exploration with R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common_statistical_symbols.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Common Statistical Symbols</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vocab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Common/Confusing Statistical &amp; Scientific Terms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decision_trees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Statistical Analysis Decision Trees and Guides</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#common-effect-sizer-statistics" id="toc-common-effect-sizer-statistics" class="nav-link active" data-scroll-target="#common-effect-sizer-statistics"><span class="header-section-number">6.1</span> Common Effect Sizer Statistics</a>
+  <ul>
+  <li><a href="#mean-differences" id="toc-mean-differences" class="nav-link" data-scroll-target="#mean-differences"><span class="header-section-number">6.1.1</span> Mean Differences</a>
+  <ul>
+  <li><a href="#cohens-d" id="toc-cohens-d" class="nav-link" data-scroll-target="#cohens-d">Cohen’s <em>d</em> </a></li>
+  <li><a href="#cohens-f-and-f2" id="toc-cohens-f-and-f2" class="nav-link" data-scroll-target="#cohens-f-and-f2">Cohen’s <em>f</em> and <em>f</em><sup>2</sup> </a></li>
+  <li><a href="#other-measures-of-maen-differences" id="toc-other-measures-of-maen-differences" class="nav-link" data-scroll-target="#other-measures-of-maen-differences">Other Measures of Maen Differences</a>
+  <ul class="collapse">
+  <li><a href="#cohens-d-1" id="toc-cohens-d-1" class="nav-link" data-scroll-target="#cohens-d-1">1. Cohen’s <em>d</em></a></li>
+  <li><a href="#hedges-g-correction-for-small-or-unequal-samples" id="toc-hedges-g-correction-for-small-or-unequal-samples" class="nav-link" data-scroll-target="#hedges-g-correction-for-small-or-unequal-samples">2. Hedges’ <em>g</em> (Correction for Small or Unequal Samples)</a></li>
+  <li><a href="#glasss-δ" id="toc-glasss-δ" class="nav-link" data-scroll-target="#glasss-δ">3. Glass’s Δ</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sec-prop_var_exp_effect_size" id="toc-sec-prop_var_exp_effect_size" class="nav-link" data-scroll-target="#sec-prop_var_exp_effect_size"><span class="header-section-number">6.1.2</span> Proportions of Variance Explained</a>
+  <ul>
+  <li><a href="#squared-correlations" id="toc-squared-correlations" class="nav-link" data-scroll-target="#squared-correlations">(Squared) Correlations</a></li>
+  <li><a href="#sec-eta_squared" id="toc-sec-eta_squared" class="nav-link" data-scroll-target="#sec-eta_squared">Eta-squared (η<sup>2</sup>) and Partial η<sup>2</sup></a>
+  <ul class="collapse">
+  <li><a href="#eta2-compared-to-cohens-f-and-f2" id="toc-eta2-compared-to-cohens-f-and-f2" class="nav-link" data-scroll-target="#eta2-compared-to-cohens-f-and-f2"><span class="math inline">\(\eta^2\)</span> Compared to Cohen’s <span class="math inline">\(f\)</span> and <span class="math inline">\(f^2\)</span></a></li>
+  </ul></li>
+  <li><a href="#omega-squared-ω2" id="toc-omega-squared-ω2" class="nav-link" data-scroll-target="#omega-squared-ω2">Omega-squared (ω<sup>2</sup>) </a></li>
+  <li><a href="#epsilon-squared-ε2" id="toc-epsilon-squared-ε2" class="nav-link" data-scroll-target="#epsilon-squared-ε2">Epsilon-squared (ε<sup>2</sup>) </a></li>
+  </ul></li>
+  <li><a href="#sec-or_rr_effect_size" id="toc-sec-or_rr_effect_size" class="nav-link" data-scroll-target="#sec-or_rr_effect_size"><span class="header-section-number">6.1.3</span> Odds &amp; Risk Ratios</a></li>
+  </ul></li>
+  <li><a href="#sec-small-large-effects" id="toc-sec-small-large-effects" class="nav-link" data-scroll-target="#sec-small-large-effects"><span class="header-section-number">6.2</span> “Small,” “Medium,” &amp; “Large” Effects</a>
+  <ul>
+  <li><a href="#effect-size-criteria-as-percent-of-total-variance" id="toc-effect-size-criteria-as-percent-of-total-variance" class="nav-link" data-scroll-target="#effect-size-criteria-as-percent-of-total-variance"><span class="header-section-number">6.2.1</span> Effect Size Criteria as Percent of Total Variance</a></li>
+  <li><a href="#effect-size-criteria-as-noticeability-of-effects" id="toc-effect-size-criteria-as-noticeability-of-effects" class="nav-link" data-scroll-target="#effect-size-criteria-as-noticeability-of-effects"><span class="header-section-number">6.2.2</span> Effect Size Criteria as Noticeability of Effects</a></li>
+  <li><a href="#effect-size-criteria-for-odds-ratios" id="toc-effect-size-criteria-for-odds-ratios" class="nav-link" data-scroll-target="#effect-size-criteria-for-odds-ratios"><span class="header-section-number">6.2.3</span> Effect Size Criteria for Odds Ratios</a></li>
+  <li><a href="#a-few-words-of-caution-about-effect-size-criteria" id="toc-a-few-words-of-caution-about-effect-size-criteria" class="nav-link" data-scroll-target="#a-few-words-of-caution-about-effect-size-criteria"><span class="header-section-number">6.2.4</span> A Few Words of Caution About Effect Size Criteria</a></li>
+  <li><a href="#table-of-effect-size-statistics" id="toc-table-of-effect-size-statistics" class="nav-link" data-scroll-target="#table-of-effect-size-statistics"><span class="header-section-number">6.2.5</span> Table of Effect Size Statistics</a></li>
+  </ul></li>
+  <li><a href="#sec-effect_size_conversions" id="toc-sec-effect_size_conversions" class="nav-link" data-scroll-target="#sec-effect_size_conversions"><span class="header-section-number">6.3</span> Converting Between Effect Size Measures</a>
+  <ul>
+  <li><a href="#a-few-notes-on-conversions" id="toc-a-few-notes-on-conversions" class="nav-link" data-scroll-target="#a-few-notes-on-conversions"><span class="header-section-number">6.3.1</span> A Few Notes on Conversions</a></li>
+  <li><a href="#cohens-f-and-f2-to-cohens-d" id="toc-cohens-f-and-f2-to-cohens-d" class="nav-link" data-scroll-target="#cohens-f-and-f2-to-cohens-d"><span class="header-section-number">6.3.2</span> Cohen’s <em>f</em> (and <em>f</em><sup>2</sup>) to Cohen’s <em>d</em></a></li>
+  <li><a href="#cohens-d-and-students-t" id="toc-cohens-d-and-students-t" class="nav-link" data-scroll-target="#cohens-d-and-students-t"><span class="header-section-number">6.3.3</span> Cohen’s <em>d</em> and Student’s <em>t</em></a></li>
+  <li><a href="#η2-and-f-scores" id="toc-η2-and-f-scores" class="nav-link" data-scroll-target="#η2-and-f-scores"><span class="header-section-number">6.3.4</span> η<sup>2</sup> and <em>F</em>-scores</a></li>
+  </ul></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">6.4</span> Additional Resources</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-effect_size" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Effect Size: Explanation and Guidelines</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p></p>
+<p>Effect size is a simple idea that is finally gaining traction. It refers to a class of statistics that quantify the magnitude of a relationship or difference, independent of sample size. Most effect size statistics are standardized, so a given effect size statistic can be compared directly with that same type of effect size statistic from other analyses—or even from other studies that sample the same or similar populations.</p>
+<p>The effect being measured can be either a difference (such as the difference between an experimental-group and a control-group mean, or the difference in number of events between groups) or an association (e.g., correlations). Different effect size statistics are computed in different ways; this means that we cannot usually directly compare one effect size statistic to an other type of effect size statistic. However, the same type of effect size can be compared across different analyses or studies, and in many cases, effect size measures can be converted from one form to another (see <a href="#sec-effect_size_conversions"><span>Section&nbsp;6.3</span></a>).</p>
+<p>Effect sizes are descriptive statistics. For measures of the size of an association (like a correlation), an effect size statistic may assume a linear relationship<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, but they don’t assume, e.g., that the population is normally distributed. Since they make few assumptions, effect size statistics are inherently robust.</p>
+<p>Effect size statistics can complement significance tests. Significance is, of course, a yes-or-no indication of whether there is “enough” of a difference/association relative to noise: An effect is either significant or not; there are no gradations to significance. Effect size statistics do show gradations and so can be used to properly provide the nuance that people seek when they report that something is “very” or “slightly”—or even “<a href="https://www.explainxkcd.com/wiki/index.php/1478:_P-Values">almost</a>”—significant. (As noted in <a href="#sec-small-large-effects"><span>Section&nbsp;6.2</span></a> below, effect size statistics are often described as being “small,” “medium,” or “large,” but this valuation of them doesn’t—well, <em>shouldn’t</em>—carry anything but an arbitrary weight.)</p>
+<p>Effect sizes can also be reported with confidence intervals, providing an informal test of significance. Since an effect size measures magnitude, while a significance test determines whether an effect is “not zero,” an effect is likely significant if its 95% confidence interval does not include zero. However, statistical significance still depends on factors such as model specification and the inclusion of covariates.</p>
+<section id="common-effect-sizer-statistics" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="common-effect-sizer-statistics"><span class="header-section-number">6.1</span> Common Effect Sizer Statistics</h2>
+<p></p>
+<section id="mean-differences" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="mean-differences"><span class="header-section-number">6.1.1</span> Mean Differences</h3>
+<p>These measure the distance between two or more means. Like most effect size statistics, they are also standardized (measured in terms of standard deviations) so they can be compared between studies.</p>
+<section id="cohens-d" class="level4">
+<h4 class="anchored" data-anchor-id="cohens-d">Cohen’s <em>d</em> </h4>
+<p>One of the most commonly used effect size statistics is Cohen’s <em>d</em>, which expresses the standardized difference between two group means:</p>
+<p><span class="math display">\[\text{Cohen's }d = \frac{\text{First Mean}-\text{Second Mean}}{\text{Pooled }SD}.\]</span></p>
+<p>We combine (or “pool” the <em>SD</em>s because there are two of them (one <em>SD</em> for each mean). To do this, we essentially take the average of the two <em>SD</em>s<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Therefore, Cohen’s <em>d</em> is presented in terms of standard deviations. A Cohen’s <em>d</em> of 1 means that the means are one standard deviation apart.</p>
+<p>You may remember that <em>z</em>-scores are also presented in terms of standard deviations—that a <em>z</em>-score of 1 means that that person’s score is one standard deviation away from the mean. This isn’t a coincidence and means that Cohen’s <em>d</em> can be looked at as a <em>z</em>-score.</p>
+</section>
+<section id="cohens-f-and-f2" class="level4">
+<h4 class="anchored" data-anchor-id="cohens-f-and-f2">Cohen’s <em>f</em> and <em>f</em><sup>2</sup> </h4>
+<p></p>
+<p>Cohen introduced <em>f</em> as a measure of effect size for <em>F</em>-tests, specifically to quantify differences among three or more means. In contrast, he developed <em>d</em> to measure the effect size between two means. The exact formula for computing <em>f</em> <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=290">varies slightly</a> depending on the number of levels in the factor and the variance structure.</p>
+<p>To extend this concept to more complex models, Cohen introduced <em>f²</em>, which applies not only to ANOVA-family models but also to general(ized) linear regression. The primary distinction between <em>f</em> and <em>f²</em> is that <em>f²</em> is simply <em>f</em> squared. Cohen recommended using <em>f²</em> for complex models because it aligns with how other parameters, such as variance-explained measures, are typically computed using squared values.</p>
+<p>An important advantage of <em>f²</em> is its flexibility: it can be used to assess the effect of a single predictor or a set of predictors, whether or not other variables in the model have been controlled for or partialed out.</p>
+<p>More about Cohen’s <em>f</em> can be found at this <a href="https://www.statisticshowto.com/cohens-f-statistic-definition-formulas/">Statistics How to</a> page.</p>
+</section>
+<section id="other-measures-of-maen-differences" class="level4">
+<h4 class="anchored" data-anchor-id="other-measures-of-maen-differences">Other Measures of Maen Differences</h4>
+<p>Cohen’s <em>d</em> is not the only measure of the effect size of mean differences—although it is the most common. Two others—Hedges’ <em>g</em> and Glass’s Δ —are worth mentioning. All three are all standardized effect size measures used to quantify the difference between two groups in terms of standard deviations, but they differ slightly in calculation and applicability.</p>
+<div id="tbl-mean_difference_stats" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Table&nbsp;6.1: Common Effect Size Measures of Mean Differences</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 28%">
+<col style="width: 24%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Aspect</strong></th>
+<th style="text-align: left;"><strong>Cohen’s <em>d</em></strong></th>
+<th style="text-align: left;"><strong>Hedges’ <em>g</em></strong></th>
+<th style="text-align: left;"><strong>Glass’s Δ</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Denominator</strong></td>
+<td style="text-align: left;">Pooled standard deviation</td>
+<td style="text-align: left;">Pooled standard deviation with small-sample correction</td>
+<td style="text-align: left;">Control group standard deviation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Use Case</strong></td>
+<td style="text-align: left;">Large samples, equal variances</td>
+<td style="text-align: left;">Small samples</td>
+<td style="text-align: left;">Unequal variances</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Correction Factor</strong></td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">Corrects for small sample bias</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Applicability</strong></td>
+<td style="text-align: left;">Widely used in social sciences</td>
+<td style="text-align: left;">More accurate for small samples</td>
+<td style="text-align: left;">Best for heteroscedastic data</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Summary</strong></p>
+<ul>
+<li>Use <strong>Cohen’s <em>d</em></strong> in large-sample studies with equal variances.</li>
+<li>Use <strong>Hedges’ <em>g</em></strong> to correct for bias in small samples.</li>
+<li>Use <strong>Glass’s <span class="math inline">\(\Delta\)</span></strong> when group variances are expected to differ substantially.</li>
+</ul>
+<section id="cohens-d-1" class="level5">
+<h5 class="anchored" data-anchor-id="cohens-d-1">1. Cohen’s <em>d</em></h5>
+<ul>
+<li>Cohen’s <em>d</em> measures the standardized mean difference between two groups.</li>
+<li><strong>Formula</strong>: <span class="math display">\[d = \frac{\bar{X}_1 - \bar{X}_2}{s_p}\]</span> where:
+<ul>
+<li><span class="math inline">\(\bar{X}_1\)</span> and <span class="math inline">\(bar{X}_2\)</span> are the means of the two groups.</li>
+<li><span class="math inline">\(s_p\)</span> is the pooled standard deviation: <span class="math display">\[s_p = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}\]</span></li>
+</ul></li>
+<li><strong>Key Points</strong>:
+<ul>
+<li>Assumes equal variances between the groups (homoscedasticity).</li>
+<li>Suitable for large samples.</li>
+<li>Can overestimate the effect size for small sample sizes.</li>
+</ul></li>
+</ul>
+</section>
+<section id="hedges-g-correction-for-small-or-unequal-samples" class="level5">
+<h5 class="anchored" data-anchor-id="hedges-g-correction-for-small-or-unequal-samples">2. Hedges’ <em>g</em> (Correction for Small or Unequal Samples)</h5>
+<ul>
+<li><a href="https://www.statisticshowto.com/hedges-g/">Hedges’ <em>g</em></a> is a variation of Cohen’s <em>d</em> that corrects for the upward bias in <em>d</em> when sample sizes are small (usually considered when <em>n</em> &lt; 20).</li>
+<li><strong>Formula</strong>: <span class="math display">\[g = d \times \left(1 - \frac{3}{4(n_1 + n_2 - 2) - 1}\right)\]</span></li>
+<li><strong>Key Points</strong>:
+<ul>
+<li>Incorporates a correction factor to reduce bias in small sample sizes.</li>
+<li>Provides a more accurate effect size estimate when (n &lt; 20).</li>
+<li>For large samples, Hedges’ <em>g</em> converges to Cohen’s <em>d</em>.</li>
+<li>Often used in meta-analysis where comparisons between studies of very different sizes are made.</li>
+</ul></li>
+</ul>
+</section>
+<section id="glasss-δ" class="level5">
+<h5 class="anchored" data-anchor-id="glasss-δ">3. Glass’s Δ</h5>
+<ul>
+<li>Glass’s Δ uses only the standard deviation of the control group ((s_2)) as the denominator, instead of a pooled standard deviation.</li>
+<li><strong>Formula</strong>: <span class="math display">\[\Delta = \frac{\bar{X}_1 - \bar{X}_2}{s_2}\]</span> where:
+<ul>
+<li><span class="math inline">\(s_{2}\)</span> is the standard deviation of the control group.</li>
+</ul></li>
+<li><strong>Key Points</strong>:
+<ul>
+<li>Useful when variances between groups are unequal (heteroscedasticity).</li>
+<li>May produce biased estimates if the control group standard deviation is not representative.</li>
+<li>Often applied in scenarios where the experimental treatment group might naturally have a higher variance (e.g., due to a treatment effect).</li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="sec-prop_var_exp_effect_size" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="sec-prop_var_exp_effect_size"><span class="header-section-number">6.1.2</span> Proportions of Variance Explained</h3>
+<p>Cohen’s <em>d</em> and <em>f</em> measure the (standardized) difference between means. Cohen’s <em>d</em> measures it for two means, while Cohen’s <em>f</em> is used to measure it between three or more means. Both of these statistics can be as small as zero (when there is no difference) to positive infinity. Both simply represent the number of standard deviations between the means, and if the effect size is more than 1 <em>SD</em>, then the effect size will be greater than 1.</p>
+<p>An other set of effect size measures are standardized differently: They measure proportions, and so can only range between 0 and 1. The ones describe in this section measure the proportion of total variance explained by a particular term in a regression model.</p>
+<section id="squared-correlations" class="level4">
+<h4 class="anchored" data-anchor-id="squared-correlations">(Squared) Correlations</h4>
+<p></p>
+<p>Perhaps the simplest measure of proportion of variance explained is correlations, specifically squared correlations. Squared correlations are indeed effect size statistics, and they measure the amount of variance explained in each of the two variables that is explained by their relationship compared to all of the variance in each of them.</p>
+<p>For example, if the correlation between two variables is .50, i.e., if <em>r</em> = .50, then <em>r</em><sup>2</sup> = .50<sup>2</sup> = .25. In that case, the correlation accounts for 25% of the variance in each of the variables.</p>
+</section>
+<section id="sec-eta_squared" class="level4">
+<h4 class="anchored" data-anchor-id="sec-eta_squared">Eta-squared (η<sup>2</sup>) and Partial η<sup>2</sup></h4>
+<p></p>
+<p></p>
+<p>The other three “proportion of variance explained” statistics are used to measure the effect size of individual terms in a linear regression model.</p>
+<p>The first of these is <a href="https://www.statology.org/eta-squared/">eta-squared (<span class="math inline">\(\eta^2\)</span>)</a>, which quantifies the proportion of total variance in the outcome variable that is explained by a given predictor. It is calculated as:</p>
+<p><span class="math display">\[
+\eta^2 = \frac{SS_{\text{Effect}}}{SS_{\text{Total}}}
+\]</span></p>
+<p>This makes <span class="math inline">\(\eta^2\)</span> conceptually similar to <span class="math inline">\(R^2\)</span>, which measures the total proportion of variance explained by all predictors in a regression model. Like the correlation coefficient <span class="math inline">\(r\)</span>, eta (<span class="math inline">\(\eta\)</span>) itself can be understood as the proportion of standard deviation differences in the outcome explained by the predictor, while <span class="math inline">\(\eta^2\)</span> represents variance explained as a proportion of total variance.</p>
+<p>However, <span class="math inline">\(\eta^2\)</span> has a notable limitation: it does not account for other predictors in the model. As additional terms are introduced, the individual <span class="math inline">\(\eta^2\)</span> values for each predictor tend to decrease, since they represent only the variance uniquely attributable to each predictor relative to total variance.</p>
+<p>To address this, researchers use <strong>partial eta-squared (<span class="math inline">\(\eta_p^2\)</span>)</strong>, which represents the proportion of variance explained by a specific predictor after accounting for other predictors in the model. Partial <span class="math inline">\(\eta^2\)</span> is conceptually similar to partial <span class="math inline">\(r^2\)</span>, as it isolates the unique contribution of a predictor while removing variance shared with other terms.</p>
+<p>In a <strong>one-way ANOVA</strong> (i.e., a model with a single categorical predictor), <span class="math inline">\(\eta^2\)</span> is equivalent to the overall model <span class="math inline">\(R^2\)</span>. However, in models with more than one predictor, partial <span class="math inline">\(\eta^2\)</span> is preferred and the overall <span class="math inline">\(R^2\)</span> will be different than each of the partial <span class="math inline">\(\eta^2\)</span>s.</p>
+<section id="eta2-compared-to-cohens-f-and-f2" class="level5">
+<h5 class="anchored" data-anchor-id="eta2-compared-to-cohens-f-and-f2"><span class="math inline">\(\eta^2\)</span> Compared to Cohen’s <span class="math inline">\(f\)</span> and <span class="math inline">\(f^2\)</span></h5>
+<p>Cohen’s <span class="math inline">\(f\)</span> and <span class="math inline">\(f^2\)</span> serve a similar purpose but differ in how they handle variance:</p>
+<ul>
+<li><strong><span class="math inline">\(\eta^2\)</span> vs.&nbsp;<span class="math inline">\(f\)</span> (ANOVA)</strong>: While <span class="math inline">\(\eta^2\)</span> measures the proportion of variance explained by a factor, <span class="math inline">\(f\)</span> adjusts for unexplained variance, making it more suitable for cross-study comparisons. The relationship between them is:</li>
+</ul>
+<p><span class="math display">\[f = \sqrt{\frac{\eta^2}{1 - \eta^2}}\]</span></p>
+<ul>
+<li><strong>Partial <span class="math inline">\(\eta^2\)</span> vs.&nbsp;<span class="math inline">\(f^2\)</span> (Regression)</strong>: Partial <span class="math inline">\(\eta^2\)</span> describes the proportion of variance explained by a predictor after controlling for other variables, while Cohen’s <span class="math inline">\(f^2\)</span> expresses the incremental contribution of a predictor relative to the unexplained variance:</li>
+</ul>
+<p><span class="math display">\[f^2 = \frac{R^2}{1 - R^2}\]</span></p>
+<p>Since <span class="math inline">\(f^2\)</span> explicitly models the variance explained relative to unexplained variance, it is commonly used in multiple regression, particularly for power analysis and comparing models across studies.</p>
+<p>Thus, while <span class="math inline">\(\eta^2\)</span> and partial <span class="math inline">\(\eta^2\)</span> are useful for describing within-sample variance explained, <span class="math inline">\(f\)</span> and <span class="math inline">\(f^2\)</span> provide standardized effect size measures better suited for meta-analysis and statistical power estimation.</p>
+<div id="tbl-eta_squared_vs_cohens_f" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Table&nbsp;6.2: When to Use <span class="math inline">\(\eta^2\)</span>, <span class="math inline">\(f\)</span>, and <span class="math inline">\(f^2\)</span></caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 25%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: left;"><span class="math inline">\(\eta^2\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(f\)</span> (ANOVA)</th>
+<th style="text-align: left;"><span class="math inline">\(f^2\)</span> (Regression)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Use Case</td>
+<td style="text-align: left;">ANOVA (variance explained)</td>
+<td style="text-align: left;">ANOVA (standardized effect size)</td>
+<td style="text-align: left;">Regression (incremental variance explained)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Interpretation</td>
+<td style="text-align: left;">Proportion of total variance explained</td>
+<td style="text-align: left;">Standardized measure of effect size</td>
+<td style="text-align: left;">Standardized measure of predictor impact</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Best for Comparing Studies?</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Used in Power Analysis?</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Inflation in Small Samples?</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Therefore</strong>:</p>
+<ul>
+<li>Use <span class="math inline">\(\eta^2\)</span> to describe the proportion of variance explained in ANOVA and regression models.</li>
+<li>Use Cohen’s <span class="math inline">\(f\)</span> for standardizing effect sizes in ANOVA, making them comparable across studies.</li>
+<li>Use Cohen’s <span class="math inline">\(f^2\)</span> in regression to assess the impact of specific predictors, particularly when measuring incremental effects.</li>
+<li>For a single dichotomous predictor, Cohen’s <em>d</em> and <span class="math inline">\(\eta^2\)</span> can be converted into each other, but for more complex models, additional transformations are required.</li>
+</ul>
+<p><a href="https://www.theanalysisfactor.com/effect-size/">This <em>Analysis Factor</em> post</a> gives a good further explanation of η<sup>2</sup>. Recommendations on interpreting and reporting η<sup>2</sup> are given well in <a href="https://stats.stackexchange.com/questions/15958/how-to-interpret-and-report-eta-squared-partial-eta-squared-in-statistically">this StackExchange Q&amp;A</a>.</p>
+</section>
+</section>
+<section id="omega-squared-ω2" class="level4">
+<h4 class="anchored" data-anchor-id="omega-squared-ω2">Omega-squared (ω<sup>2</sup>) </h4>
+<p>ω<sup>2</sup> is very similar to η<sup>2</sup>. They both measure proportion of total variance accounted for by a given term in a model, but compute it in slightly different ways<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. The way η<sup>2</sup> computes it makes it systematically overestimate the size of an effect—when it is used to measure the size of the effect for the population (i.e., when inferring from the sample to the population). Although this overestimation gets smaller as the sample gets larger, it always present (until the sample is the same size as the population).</p>
+<p>The way ω<sup>2</sup>—and partial ω<sup>2</sup>—estimate unexplained variance makes them always smaller than η<sup>2</sup> (and partial η<sup>2</sup>). ω<sup>2</sup> is therefore a more conservative estimate of effect size than η<sup>2</sup>. Given this, many prefer ω<sup>2</sup> over η<sup>2</sup>.</p>
+</section>
+<section id="epsilon-squared-ε2" class="level4">
+<h4 class="anchored" data-anchor-id="epsilon-squared-ε2">Epsilon-squared (ε<sup>2</sup>) </h4>
+<p>The third and final member of our Greek-alphabet soup of stats to measure the proportion of variance explained is ε<sup>2</sup>. Everyone agrees that η<sup>2</sup> overestimates the effect. Some, like <span class="citation" data-cites="okada2013">Okada (<a href="references.html#ref-okada2013" role="doc-biblioref">2013</a>)</span>, argue that ω<sup>2</sup> is sometimes <em>too</em> conservative, underestimating the true size of an effect.</p>
+<p>ε<sup>2</sup> (and partial ε<sup>2</sup>) may be closer to “just right,” giving what may be the least biased estimate. Anyway, its value is always between the other two (or equal to them).</p>
+<p>It’s worth noting that in a one-way ANOVA, ε<sup>2</sup> is equal to the <em>adjusted</em> <em>R</em><sup>2</sup>.</p>
+</section>
+</section>
+<section id="sec-or_rr_effect_size" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="sec-or_rr_effect_size"><span class="header-section-number">6.1.3</span> Odds &amp; Risk Ratios</h3>
+<p></p>
+<p>Odds ratios (ORs) and risk ratios (RRs) are often treated as standardized measures of effect size. Under appropriate conditions—i.e., comparable outcome definitions and baseline rates—they can be used to compare the magnitude of associations across studies.</p>
+<p>Risk is simply another term for probability, and risk ratios represent the relative likelihood of an event between two groups. Both risks and risk ratios range from 0 to 1, much like proportion-of-variance metrics such as <span class="math inline">\(\eta^2\)</span> or <span class="math inline">\(R^2\)</span> <a href="#sec-prop_var_exp_effect_size"><span>Section&nbsp;6.1.2</span></a>.</p>
+<p>In contrast, odds and odds ratios are unbounded above and can exceed 1. This asymmetry may make them less intuitive for some audiences, especially when comparing across studies. Nonetheless, it is statistically valid to compare odds or odds ratios across studies—though in some contexts, interpretability may be improved by transforming them to effect size statistics bounded between 0 and 1.</p>
+<p>Two classic measures that do just this are the φ (phi) coefficient and Yule’s <em>Q</em>. Both are designed to quantify the strength of association between two binary variables—for example, the relationship between disease status (present/absent) and group membership (exposed/unexposed). When variables have more than two categories, related measures such as Cramér’s <em>V</em> are more appropriate.</p>
+<p>The φ coefficient is defined as:</p>
+<p><span class="math display">\[
+\phi = \frac{AD - BC}{\sqrt{(A + B)(A + C)(D + B)(D + C)}}
+\]</span></p>
+<p>where <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, and <span class="math inline">\(D\)</span> refer to the cell counts of a 2 <span class="math inline">\(\times\)</span> 2 contingency table:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|}
+\hline
+&amp; \text{Present} &amp; \text{Not Present} \\
+\hline
+\text{Group 1} &amp; A &amp; B \\
+\hline
+\text{Group 2} &amp; C &amp; D \\
+\hline
+\end{array}
+\]</span></p>
+<p>Despite its structural differences from the Pearson correlation coefficient, φ is mathematically equivalent to <span class="math inline">\(r\)</span> when both variables are dichotomous. It is also frequently used as an effect size accompanying <span class="math inline">\(\chi^2\)</span> tests, and can be computed directly as <span class="math inline">\(\phi = \sqrt{\chi^2 / n}\)</span>.</p>
+<p>While φ is a valid and interpretable measure of association, it has notable limitations. It is sensitive to rare outcomes and can be inflated when marginal frequencies are highly unbalanced. This makes φ less suitable for studies involving rare events—such as mortality rates—where other statistics may provide more stable estimates.</p>
+<p>Yule’s <em>Q</em> was developed to address these limitations. It is specifically designed to measure association between <strong>odds</strong> and is effectively a transformation of the odds ratio into a scale ranging from −1 to +1, similar to correlations. Given a 2 <span class="math inline">\(\times\)</span> 2 contingency table, it is defined as:</p>
+<p><span class="math display">\[
+Q = \frac{AD - BC}{AD + BC}
+\]</span></p>
+<p>Alternatively, it can be expressed directly in terms of the odds ratio:</p>
+<p><span class="math display">\[
+Q = \frac{\text{OR} - 1}{\text{OR} + 1}
+\]</span></p>
+<p>This transformation offers a symmetric, bounded, and more interpretable summary of the magnitude of association when using odds ratios.</p>
+</section>
+</section>
+<section id="sec-small-large-effects" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sec-small-large-effects"><span class="header-section-number">6.2</span> “Small,” “Medium,” &amp; “Large” Effects</h2>
+<p></p>
+<p>Like much of statistics, Cohen’s <em>d</em> in standardized into <em>z</em>-scores/<em>SD</em>s (remember, the formula for it is to divide it by <em>SD</em>s). However, simply reporting Cohen’s <em>d</em> without interpreting what that means has a couple of disadvantages: (a) <em>z</em>-scores are not intuitive for lay audiences, and (b) there are other measures of effect size than Cohen’s <em>d</em>—and they aren’t all measured on the same scale. Given both of these factors, in his seminal book, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf"><em>Statistical Power Analysis for the Behavioral Sciences</em></a>, Jacob <span class="citation" data-cites="cohen1988">Cohen (<a href="references.html#ref-cohen1988" role="doc-biblioref">1988</a>)</span> gave recommendations for how to interpret the magnitude of various effect size statistics in terms of “small,” “medium,” and “large” effects.</p>
+<p>These “criteria” for evaluating the magnitude of an effect size have become quite popular. Indeed, the adoption of effect size statistics seems to be regulated by people’s uses and understandings of them in relation to these criteria. They therefore deserve further consideration.</p>
+<section id="effect-size-criteria-as-percent-of-total-variance" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="effect-size-criteria-as-percent-of-total-variance"><span class="header-section-number">6.2.1</span> Effect Size Criteria as Percent of Total Variance</h3>
+<p>Cohen generally defined effect sizes based on the percent of the total variance that effect accounted for<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>:</p>
+<ul>
+<li>“<strong>small</strong>” effects account for <strong>1%</strong>,</li>
+<li>“<strong>medium</strong>” effects account for <strong>10%</strong>, and</li>
+<li>“<strong>large</strong>” effects account for <strong>25%</strong>.</li>
+</ul>
+<p>I say that he <em>generally</em> defined them as such because he didn’t see a need to be bound to this definition, in part because he repeatedly noted—as do I here—that these criteria were arbitrary. He defined them based on percent of total variance for <em>d</em> and then chose “small,” “medium,” and “large” values for other effect size statistics that corresponded to those values for <em>d</em>.</p>
+<p>This meant, for example, that he chose levels for correlations that don’t always match up to what one would expect by squaring the correlations to get the percents of total variances. In other words, his criteria for correlations weren’t that a “small” correlations would be <em>r</em> = .1 (i.e., where <em>r</em><sup>2</sup> = .01), “medium” would be <em>r</em> = .5, and “large” <em>r</em> <span class="math inline">\(\approx\)</span> .63. In justifying this, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=98">he notes</a>) that he is not positing these criteria levels based on strict mathematical equivalences but instead on a concerted attempt to equate the sorts of effects one would obtain with one analytic strategy with an other analytic strategy; for example, the types of effects sizes (experimental psychologists) obtain with <em>t</em>-tests with those they would obtain through correlations.</p>
+</section>
+<section id="effect-size-criteria-as-noticeability-of-effects" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="effect-size-criteria-as-noticeability-of-effects"><span class="header-section-number">6.2.2</span> Effect Size Criteria as Noticeability of Effects</h3>
+<p>Although Cohen was thorough in his descriptions of these effect size criteria in terms of proportions of total variance, he was also careful to couch them in practical and experimental terms.</p>
+<p>A “<strong>small</strong>” effect is the sort he suggested one would expect to find in the early stages of a line of research when researchers have not yet determined the best ways to manipulate/intervene and when much of the noise had not yet been controlled.</p>
+<p>A “small” effect can also be considered to be a subtle but non-negligible effect: the sorts of effects that are often found to be significant in field-based studies with typical samples and manipulations/interventions. Examples Cohen gives include:</p>
+<ul>
+<li>The mean difference in IQs between twin and non-twin siblings<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>,</li>
+<li>The difference in visual IQs of adult men and women, &amp;</li>
+<li>The difference in heights between 15- and 16-YO girls.</li>
+</ul>
+<p>A “<strong>medium</strong>” is one large enough to see with the naked eye. Example Cohen gives include:</p>
+<ul>
+<li>The mean difference in IQs between members of professional and managerial occupations,</li>
+<li>The mean difference in IQs between “clerical” and “semiskilled” workers, &amp;</li>
+<li>The difference in heights between 14- and 18-YO girls.</li>
+</ul>
+<p>A “<strong>large</strong>” effect is one that is near the upper limit of effects attained in experimental psychological studies. So yes, the generalization of this criterion to other areas of science—including nursing research—is certainly not directly supported by Cohen himself.</p>
+<p>Examples include:</p>
+<ul>
+<li>The mean difference in IQs between college freshmen and those who’ve earned Ph.D.s<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>,</li>
+<li>The mean difference in IQs between those who graduate college and those who have a 50% chance of graduating high school, &amp;</li>
+<li>The difference in heights between 13- and 18-YO girls, &amp;</li>
+<li>The typical correlation between high school GPAs and scores on standardized exams like the <a href="https://www.act.org/content/act/en/products-and-services/the-act.html">ACT</a>.</li>
+</ul>
+</section>
+<section id="effect-size-criteria-for-odds-ratios" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="effect-size-criteria-for-odds-ratios"><span class="header-section-number">6.2.3</span> Effect Size Criteria for Odds Ratios</h3>
+<p><span class="citation" data-cites="cohen1988">Cohen (<a href="references.html#ref-cohen1988" role="doc-biblioref">1988</a>)</span> discussed proportions (aka risks) and presented effect size measures for a proportion’s difference from .5 (<a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=160">Cohen’s <em>g</em></a>) and the difference between two proportions (<a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=194">Cohen’s <em>h</em></a>), which could be used to present the magnitude of a risk ratio; even though a risk ratio <em>per se</em> is already a fine effect size stat, Cohen didn’t give size criteria for risk ratios, but instead for his <em>h</em>.</p>
+<p>He didn’t, however, discuss odds or odds ratios directly, and thus didn’t give his opinion about what could be considered “small,”“medium,” and “large” values for odds or odds ratios. Yule’s <em>Q</em> (<a href="#sec-or_rr_effect_size"><span>Section&nbsp;6.1.3</span></a>) can be considered comparable to risk ratios, risk ratios weren’t given size criteria either.</p>
+<p><span class="citation" data-cites="chen2010a">Chen et al. (<a href="references.html#ref-chen2010a" role="doc-biblioref">2010</a>)</span> nonetheless gives some guidance by providing ranges of effect size criteria for odds ratios by comparing values with criteria for “small,” “medium,” and “large” Coden’s <em>d</em>s. Chen et al.’s (2010) rules of thumb for “small,” “medium,” and “large” odds ratios (below) deserve especial explanation.</p>
+<p>The size of an odds ratio depends not just on the difference in outcomes in a group (e.g., the numbers of Black woman with and without pre-eclampsia), but also the difference in outcomes in a comparison group (e.g., the numbers of non-Black women with and without pre-eclampsia). It is thus not so easy to compute simple (simplistic) rules of thumbs for the sizes of odds ratios<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p>
+<p>In addition, the exact values for what to consider as a “small,” “medium,” and “large” effect depend on the overall frequency, with smaller events require larger odds ratios to equate to a given level of Cohen’s <em>d</em>.</p>
+<p>Nonetheless, <span class="citation" data-cites="chen2010a">Chen et al. (<a href="references.html#ref-chen2010a" role="doc-biblioref">2010</a>)</span> presents some guidelines that can serve as guides in most cases. Using the median values suggested by their results:</p>
+<ul>
+<li>“Small” <span class="math inline">\(\approx\)</span> 1.5</li>
+<li>“Medium” <span class="math inline">\(\approx\)</span> 2.75</li>
+<li>“Large” <span class="math inline">\(\approx\)</span> 5</li>
+</ul>
+<p>However, those suggestions can vary substantially based on the event rate in the reference group (infection rates in the non-exposed group in Chen et al.’s article):</p>
+<table class="table">
+<caption>Some Suggested Odds Ratios Corresponding to “Small,” “Medium,” and “Large” Effect Sizes Based on the Probability of the Event in the Reference Group (from Chen et al., 2010, p.&nbsp;<a href="https://articles.viriya.net/how_big_is_a_big_odds_ratio_interpreting_the_magnitudes_of_odds_ratios_in_epidemiological_studies.pdf#page=4">862</a>)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Probability of Event<br>
+in Reference Group</th>
+<th style="text-align: center;">“Small” OR</th>
+<th style="text-align: center;">“Medium” OR</th>
+<th style="text-align: center;">“Large” OR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">.01</td>
+<td style="text-align: center;">1.68</td>
+<td style="text-align: center;">3.47</td>
+<td style="text-align: center;">6.71</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">.05</td>
+<td style="text-align: center;">1.53</td>
+<td style="text-align: center;">2.74</td>
+<td style="text-align: center;">4.72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">.10</td>
+<td style="text-align: center;">1.46</td>
+<td style="text-align: center;">2.50</td>
+<td style="text-align: center;">4.14</td>
+</tr>
+</tbody>
+</table>
+<p>These estimates are based on simulations assuming a logistic model and are meant as heuristics, not rigid standards. Importantly, they illustrate that the magnitude of an odds ratio is not directly comparable across studies unless the base rates are similar.</p>
+</section>
+<section id="a-few-words-of-caution-about-effect-size-criteria" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="a-few-words-of-caution-about-effect-size-criteria"><span class="header-section-number">6.2.4</span> A Few Words of Caution About Effect Size Criteria</h3>
+<p>As useful as it is to talk about effect sizes being “small” or “large,” I must underline Cohen’s own admonition (e.g., p.&nbsp;<a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=25">42</a>) that we use this rule of thumb about “small,” “medium,” and “large” effects cautiously<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. He notes, for example, that</p>
+<blockquote class="blockquote">
+<p>when we consider <em>r</em> = .50 a large [effect size], the implication that .25 of the variance is accounted for is a large proportion [of the total variance] must be understood <em>relatively</em>, not absolutely.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The question, “relative to what?” is not answerable concretely. The frame of reference is the writer’s [i.e., Cohen’s own] subjective average of [proportions of variance] from his reading of the research literature in behavioral science. (pp.&nbsp;<a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=95">78 – 79</a>)</p>
+</blockquote>
+<p>Many people—including reviewers of manuscripts and grant proposals—take them to be nearly as canonical as <em>p</em> &lt; .05 for something being “significant.” This is a real shame since effect sizes offer us the opportunity to finally move beyond making important decisions based on simplistic, one-size-fits-all rules.</p>
+<p>Therefore, effect size measures, including Cohen’s <em>d</em>, are best used objectively to compare effects between studies—not to establish some standardized gauge of the absolute value of an intervention. This is indeed part of what is done in meta-analyses.</p>
+<p>It is also what I suggest doing within your own realm of research: Just like Cohen himself did, review what appears to be generally agreed on as “small,” “medium,” and “large” effects within <em>your</em> research realm. These could, for example, correspond to levels of clinical significance<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. Unfortunately, though, Cohen’s suggestions for <em>his</em> realm of research have become themselves canonized as the criteria for most lines of research in the health and social sciences.</p>
+<p>Indeed, interventions and factors that have “small” effects can be quite important. This seems especially true for long-term changes, such as those one strives for in educational interventions or for the <a href="https://theconversation.com/racism-produces-subtle-brain-changes-that-lead-to-increased-disease-risk-in-black-populations-214053">subtle but persistent effects of racism</a>. Teaching a diabetic patient how to check their blood insulin may have only a small effect on their A1C levels in a given day, but can save their life (or at least a few toes) in the long run.</p>
+<p>Given this, <span class="citation" data-cites="kraft2020">Kraft (<a href="references.html#ref-kraft2020" role="doc-biblioref">2020</a>)</span> used a review of educational research to <a href="https://articles.viriya.net/interpreting_effect_sizes_of_education_interventions.pdf">suggest</a> different criteria for gauging what should be considered as “small,” “medium,” or “large” effects in education interventions. His recommendations are also presented below.</p>
+</section>
+<section id="table-of-effect-size-statistics" class="level3" data-number="6.2.5">
+<h3 data-number="6.2.5" class="anchored" data-anchor-id="table-of-effect-size-statistics"><span class="header-section-number">6.2.5</span> Table of Effect Size Statistics</h3>
+<div id="tbl-effect_size" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Table&nbsp;6.3: Effect Size Interpretations</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Statistic</th>
+<th style="text-align: left;">Explanation</th>
+<th style="text-align: center;">Small</th>
+<th style="text-align: center;">Medium</th>
+<th style="text-align: center;">Large</th>
+<th style="text-align: left;">Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong><em>d</em></strong></td>
+<td style="text-align: left;">Difference between two means</td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.8</td>
+<td style="text-align: left;">Cohen (1988, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=41">p.&nbsp;25</a>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><em>d</em></strong></td>
+<td style="text-align: left;">For education interventions</td>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;"><span class="math inline">\(&lt;\)</span> .2</td>
+<td style="text-align: center;"><span class="math inline">\(\ge\)</span> .2</td>
+<td style="text-align: left;">Kraft (<a href="https://articles.viriya.net/interpreting_effect_sizes_of_education_interventions.pdf">2020</a>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><em>g</em></strong></td>
+<td style="text-align: left;">Hedges’ modification of Cohen’s <em>d</em> for small samples</td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.8</td>
+<td style="text-align: left;">Hedges (<a href="https://articles.viriya.net/distribution_theory_for_glasss_estimator_of_effect_size_and_related_estimators.pdf">1981</a>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><em>h</em></strong></td>
+<td style="text-align: left;">Difference between proportions</td>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.8</td>
+<td style="text-align: left;">Cohen (1988, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=200">p.&nbsp;184</a>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><em>w</em></strong><br>
+(also called <strong>φ</strong>)</td>
+<td style="text-align: left;">χ<sup>2</sup> goodness of fit &amp; <a href="https://statisticsbyjim.com/basics/contingency-table/">contingency tables</a>.<br>
+φ is also a measure of correlation in 2 <span class="math inline">\(\times\)</span> 2 contingency tables, and ranges between 0 and 1.</td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">0.3</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: left;">Cohen (1988, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=243">p.&nbsp;227</a>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Cramer’s</strong> <strong><em>V</em></strong></td>
+<td style="text-align: left;">Similar to φ, Cramer’s <em>V</em> is used to measure the differences in larger contingency tables.<br>
+Like φ (and other correlations) it ranges between 0 and 1.</td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">0.3</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: left;">Cohen (1988, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=237">p.&nbsp;223</a>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><em>r</em></strong></td>
+<td style="text-align: left;">Correlation coefficient (difference from <em>r</em> = 0)</td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">0.3</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: left;">Cohen (1988, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=99">p.&nbsp;83</a>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><em>q</em></strong></td>
+<td style="text-align: left;">Difference between correlations</td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">0.3</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: left;">Cohen (1988, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=130">p.&nbsp;115</a>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>η<sup>2</sup></strong></td>
+<td style="text-align: left;">Parameter in a linear regression &amp; AN(C)OVA</td>
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;"><span class="math inline">\(\ge\)</span> .14</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><em>f</em></strong></td>
+<td style="text-align: left;">AN(C)OVA model effect; equivalent to <span class="math inline">\(\sqrt{f^2}\)</span></td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">0.4</td>
+<td style="text-align: left;">Cohen (1988, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=300">p.&nbsp;285</a>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><em>f</em></strong></td>
+<td style="text-align: left;">For education interventions (i.e., <em>f</em> equivalent for Cohen’s <em>d</em>s suggested by Kraft,)</td>
+<td style="text-align: center;">0.025</td>
+<td style="text-align: center;"><span class="math inline">\(&lt;\)</span> .1</td>
+<td style="text-align: center;"><span class="math inline">\(\ge\)</span> .1</td>
+<td style="text-align: left;">Kraft (<a href="https://articles.viriya.net/interpreting_effect_sizes_of_education_interventions.pdf">2020</a>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><em>f</em><sup>2</sup></strong></td>
+<td style="text-align: left;">A translation of <em>R</em><sup>2</sup></td>
+<td style="text-align: center;">0.02</td>
+<td style="text-align: center;">0.15</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: left;">• For multiple regression / multiple correlation, Cohen (1988, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=428">p.&nbsp;413</a>);<br>
+• For multivariate linear regression, multivariate <em>R</em><sup>2</sup>, Cohen (1988, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=493">p.&nbsp;477</a>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><em>OR</em></strong></td>
+<td style="text-align: left;">Odds ratio; can be used as effect size for Fisher’s exact test and contingency tables in general.</td>
+<td style="text-align: center;">1.5<br>
+(or 0.67)</td>
+<td style="text-align: center;">2.75<br>
+(or 0.36)</td>
+<td style="text-align: center;">5<br>
+(or 0.20)</td>
+<td style="text-align: left;">Chen et al.&nbsp;(2010, <a href="https://articles.viriya.net/how_big_is_a_big_odds_ratio_interpreting_the_magnitudes_of_odds_ratios_in_epidemiological_studies.pdf#page=4">p.&nbsp;862</a>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="sec-effect_size_conversions" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="sec-effect_size_conversions"><span class="header-section-number">6.3</span> Converting Between Effect Size Measures</h2>
+<p></p>
+<p>Most effect size statistics can be converted into other ones, but the process isn’t always possible or direct (or requires additional assumptions). <a href="#tbl-effects_sizes_that_can_convert">Table&nbsp;<span>6.5</span></a> presents the effect sizes statistics covered here that <em>can</em> be converted (and the conditions/assumptions required for that); <a href="#tbl-effects_sizes_that_cannot_convert">Table&nbsp;<span>6.6</span></a> presents the effect size statistics that can’t be meaningfully converted.</p>
+<p>More usefully, <a href="#tbl-effect_sizes_conversions">Table&nbsp;<span>6.4</span></a> presents the formulas for convert between the effect size statistics that can be readily &amp; meaningfully done.</p>
+<p>Perhaps even more usefully, this <a href="https://wesamuels.net/courses/statistics/resources/Converting_effect_sizes_2009-06-25.xls">handy Excel spreadsheet</a> can convert between Cohen’s <em>d</em>, <em>r</em>, η<sup>2</sup>, odds ratios, and area under the curve.</p>
+<p>In <a href="https://articles.viriya.net/introduction_to_meta-analysis.pdf#page=65">Chapter 7</a> of their book on meta-analysis, <span class="citation" data-cites="borenstein2011">Borenstein et al. (<a href="references.html#ref-borenstein2011" role="doc-biblioref">2011</a>)</span> also cover well the conversions between measures. Finally, the <a href="https://cran.r-project.org/web/packages/effectsize/index.html"><code>effectsize</code></a> package for <code>R</code> can both compute and convert between many effect size measures, including all those mentioned here.</p>
+<div id="tbl-effect_sizes_conversions" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Table&nbsp;6.4: Formulas to Convert Between Common Effect Size Statistics</caption>
+<colgroup>
+<col style="width: 7%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">From&nbsp;↓<br>
+To&nbsp;→</th>
+<th style="text-align: center;">Cohen’s <span class="math inline">\(d\)</span></th>
+<th style="text-align: center;">Hedges’ <span class="math inline">\(g\)</span><a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></th>
+<th style="text-align: center;">Pearson’s <span class="math inline">\(r\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\eta^2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(f\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(f^2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\phi\)</span>, <span class="math inline">\(V\)</span><br>
+(2×2 only)</th>
+<th style="text-align: center;">OR<br>
+(logistic approx.)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;"><span class="math inline">\(g = d \cdot \left(1 - \frac{3}{4N - 9}\right)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(r = \frac{d}{\sqrt{d^2 + 4}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\eta^2 = \frac{d^2}{d^2 + 4}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f = \frac{d}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f^2 = \frac{d^2}{4}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\phi = \frac{d}{\sqrt{d^2 + 4}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = \frac{\ln(\text{OR}) \cdot \sqrt{3}}{\pi}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(g\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = \frac{g}{1 - \frac{3}{4N - 9}}\)</span></td>
+<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(r\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = \frac{2r}{\sqrt{1 - r^2}}\)</span></td>
+<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;"><span class="math inline">\(\eta^2 = r^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f = \frac{r}{\sqrt{1 - r^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f^2 = \frac{r^2}{1 - r^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\phi = r\)</span></td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\eta^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = \sqrt{\frac{4 \eta^2}{1 - \eta^2}}\)</span></td>
+<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(r = \sqrt{\eta^2}\)</span></td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;"><span class="math inline">\(f = \sqrt{\frac{\eta^2}{1 - \eta^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f^2 = \frac{\eta^2}{1 - \eta^2}\)</span></td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(f\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = 2f\)</span></td>
+<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(r = \frac{f}{\sqrt{f^2 + 1}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\eta^2 = \frac{f^2}{1 + f^2}\)</span></td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;"><span class="math inline">\((f)^2 = f^2\)</span></td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(f^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = 2\sqrt{f^2}\)</span></td>
+<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(r = \sqrt{\frac{f^2}{1 + f^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\eta^2 = \frac{f^2}{1 + f^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f = \sqrt{f^2}\)</span></td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\phi\)</span> or <span class="math inline">\(V\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = \frac{2\phi}{\sqrt{1 - \phi^2}}\)</span></td>
+<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(r = \phi\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\eta^2 = \phi^2\)</span></td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">OR</td>
+<td style="text-align: center;"><span class="math inline">\(d = \frac{\ln(\text{OR}) \cdot \sqrt{3}}{\pi}\)</span></td>
+<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-effects_sizes_that_can_convert" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Table&nbsp;6.5: Common Effect Size Statistics That Can Be Converted into Each Other</caption>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">This Effect Size Statistic…</th>
+<th style="text-align: center;">Can Be Converted To…</th>
+<th style="text-align: left;">Under These Conditions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Cohen’s <em>d</em></td>
+<td style="text-align: center;"><em>g</em>, <em>r</em>, η<sup>2</sup>, <em>f</em>, <em>f<sup>2</sup></em>, OR, φ</td>
+<td style="text-align: left;">Assumes continuous, normally distributed data; OR/φ require dichotomous approximation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Hedges’ <em>g</em></td>
+<td style="text-align: center;"><em>d</em></td>
+<td style="text-align: left;">Hedges’ <em>g</em> is a modification of Cohen’s <em>d</em> for small sample sizes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pearson’s <em>r</em></td>
+<td style="text-align: center;"><em>d</em>, <em>f</em>, <em>f<sup>2</sup></em>, η<sup>2</sup></td>
+<td style="text-align: left;">Assumes linear relationship</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">η<sup>2</sup></td>
+<td style="text-align: center;"><em>r</em>, <em>f</em>, <em>f<sup>2</sup></em>, <em>d</em></td>
+<td style="text-align: left;">Limited to ANOVA models</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cohen’s <em>f</em></td>
+<td style="text-align: center;"><em>d</em>, <em>r</em>, η<sup>2</sup>, <em>f<sup>2</sup></em></td>
+<td style="text-align: left;">In ANOVA models</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cohen’s <em>f²</em></td>
+<td style="text-align: center;"><em>R^2</em>, <em>f</em>, <em>r</em>, η<sup>2</sup></td>
+<td style="text-align: left;">In multiple regression contexts</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cohen’s <em>w</em></td>
+<td style="text-align: center;">φ or <em>V</em></td>
+<td style="text-align: left;">In 2 <span class="math inline">\(\times\)</span> 2 tables</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cramér’s <em>V</em></td>
+<td style="text-align: center;">φ, <em>w</em></td>
+<td style="text-align: left;">Only for 2 <span class="math inline">\(\times\)</span> 2; not convertible to <em>d</em>, <em>f</em>, etc.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">φ</td>
+<td style="text-align: center;"><em>r</em>, <em>w</em>, <em>V</em>, <em>d</em> (with assumptions)</td>
+<td style="text-align: left;">In 2 <span class="math inline">\(\times\)</span> 2 tables; n.b., this is an approximate <em>d</em> conversion</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Odds Ratio (OR)</td>
+<td style="text-align: center;"><em>d</em> (approx.), log-OR</td>
+<td style="text-align: left;">Approximate only; assumes logistic distribution</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Risk Ratio (RR)</td>
+<td style="text-align: center;"><em>d</em> (approx.)</td>
+<td style="text-align: left;">Approximate only; assumes log-binomial model</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-effects_sizes_that_cannot_convert" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Table&nbsp;6.6: Common Effect Size Statistics That <strong><em>Cannot</em></strong> Be Converted into Each Other</caption>
+<colgroup>
+<col style="width: 29%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pair</th>
+<th>Why Not Convertible</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>h</em> <span class="math inline">\(\leftrightarrow\)</span> <em>d</em>, <em>f</em>, <em>r</em></td>
+<td><em>h</em> is based on arc-sine transformed proportions (i.e., a different metric)</td>
+</tr>
+<tr class="even">
+<td><em>q</em> <span class="math inline">\(\leftrightarrow\)</span> <em>d</em>, <em>f</em>, <em>r</em></td>
+<td><em>q</em> compares correlations (via Fisher’s <em>z</em>)</td>
+</tr>
+<tr class="odd">
+<td><em>V</em> <span class="math inline">\(\leftrightarrow\)</span> <em>f</em></td>
+<td><em>V</em> is for categorical data (chi-square); <em>f</em> for continuous</td>
+</tr>
+<tr class="even">
+<td>OR <span class="math inline">\(\leftrightarrow\)</span> <em>r</em>, <em>f</em> (directly)</td>
+<td>Only approximate; depends on baseline prevalence</td>
+</tr>
+<tr class="odd">
+<td>RR <span class="math inline">\(\leftrightarrow\)</span> anything else (except OR)</td>
+<td>RR has no meaningful transformation outside risk models</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="a-few-notes-on-conversions" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="a-few-notes-on-conversions"><span class="header-section-number">6.3.1</span> A Few Notes on Conversions</h3>
+<p>In addition to simply listing the formulas for possible conversions, there are a few more points to make—and a couple more conversions that are worth knowing. Below are further considerations about converting Cohen’s <em>f</em> (and <em>f</em><sup>2</sup>) to Cohen’s <em>d</em> and about converting relevant effect size stats into the <em>t</em>-scores and <em>F</em>-scores used to test mean differences.</p>
+</section>
+<section id="cohens-f-and-f2-to-cohens-d" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="cohens-f-and-f2-to-cohens-d"><span class="header-section-number">6.3.2</span> Cohen’s <em>f</em> (and <em>f</em><sup>2</sup>) to Cohen’s <em>d</em></h3>
+<p>Cohen’s <em>f</em><sup>2</sup> (and <em>f</em>) measures the effect size of an entire model (usually an ANOVA). Cohen’s <em>d</em> measures the effect size between two levels of single variable<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. So, in order to convert between <em>f</em><sup>2</sup> and <em>d</em>, we have to know more about the model. For a one-way ANOVA with two groups<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>, <em>d</em> = 2<em>f</em> = 2<span class="math inline">\(\sqrt{f^2}\)</span>. In this particular case, then, <em>f</em> = <span class="math inline">\(\frac{d}{2}\)</span>.</p>
+<p>More generally, when there is only one term in the model:</p>
+<p><span class="math display">\[f^2 = \frac{d^2}{2k}\]</span></p>
+<p>It gets a bit more complicated when there are more than one terms in the model. <a href="https://www.ibm.com/support/pages/effect-size-relationship-between-partial-eta-squared-cohens-f-and-cohens-d">This site</a> covers some common situations.</p>
+</section>
+<section id="cohens-d-and-students-t" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="cohens-d-and-students-t"><span class="header-section-number">6.3.3</span> Cohen’s <em>d</em> and Student’s <em>t</em></h3>
+<p>This is the <em>t</em> in <em>t</em>-test. The only additional piece of information we need to know to transform between Cohen’s <em>d</em> and Student’s <em>t</em> is the sample size, <em>N</em>:</p>
+<p><span class="math display">\[t = d \times \sqrt{N}\]</span></p>
+<p><span class="math display">\[\text{Cohen's }d = \frac{t}{\sqrt{N}}\]</span></p>
+<!-- `R` code: -->
+<!-- ```{r eval=FALSE} -->
+<!-- # Assume the results of the t-test were saved as t.test.results: -->
+<!-- t.test.results <- t.test(y ~ x, data = df) -->
+<!-- # Then: -->
+<!-- d <- t.test.results$statistic / (sqrt(t.test.results$parameter)) -->
+<!-- ``` -->
+</section>
+<section id="η2-and-f-scores" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="η2-and-f-scores"><span class="header-section-number">6.3.4</span> η<sup>2</sup> and <em>F</em>-scores</h3>
+<p>This <em>F</em>-test score that is used in ANOVA-family models. Like the relationship between <em>d</em> and <em>t</em>, the only additional things we need to know to compute η<sup>2</sup> from <em>F</em> are degrees of freedom (which are closely related to sample size). Here, though, we have degrees of freedom in both the numerator (top) and denominator (bottom<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>):</p>
+<p><span class="math display">\[\eta^2 = \frac{F \times df_{Effect}}{F \times (df_{Effect} + df_{Error})}\]</span></p>
+<p>So, η<sup>2</sup> is dependent on the ratio of the <em>df</em>s allotted to the given effect and the <em>df</em>s allotted to it’s corresponding error term. Since we have the effect’s <em>df</em>s in both the numerator and denominator, their effect will generally cancel out; this suggests that having more levels to a variable doesn’t appreciably affect the size of its effect. However, being able to allot more <em>df</em>s to error does help us see the size of whatever effect is there. Larger samples won’t really change the size of the effects we’re measuring, but they can help us see ones that are there.</p>
+<!-- The following sections give the formulas for converting between most effect size statistics. I've also included simple `R` functions to do these, for those few who will find that useful. -->
+<!-- ```{r eval=FALSE} -->
+<!-- install.packages("effectsize") -->
+<!-- library(effectsize) -->
+<!-- t_to_d(t, df_error, paired = FALSE, ci = 0.95, alternative = "two.sided", ...) -->
+<!-- z_to_d(z, n, paired = FALSE, ci = 0.95, alternative = "two.sided", ...) -->
+<!-- F_to_d( -->
+<!--   f, -->
+<!--   df, -->
+<!--   df_error, -->
+<!--   paired = FALSE, -->
+<!--   ci = 0.95, -->
+<!--   alternative = "two.sided", -->
+<!--   ... -->
+<!-- ) -->
+<!-- ``` -->
+<!-- ### Cohen's *d* and Cohen's *f* & η^2^ -->
+<!-- Cohen's *d* is a measure of the difference between two means. *If* there is only one, dichotomous term in a given model then Cohen's *d* (or η^2^) can be easily computed from Cohen's *f* (or η^2^). However, if there are more than one term in the model or if the term for which an effect size is being measured has more than two levels to it (including if it's a continuous variable), then one must use [one of a few different formulas](https://www.ibm.com/support/pages/effect-size-relationship-between-partial-eta-squared-cohens-f-and-cohens-d). -->
+<!-- Converting between *partial* η^2^ and Cohen's *d* [can be done](https://haiyangjin.github.io/2020/05/eta2d/): -->
+<!-- $$\text{partial }\eta^{2} = \frac{d^{2} \times N}{d^{2} \times N + (N - 1)}$$ -->
+<!-- `R` code: -->
+<!-- ```{r eval=FALSE} -->
+<!-- eta2 <- (d^2 * N) / ((d^2 * N) + (N - 1)) -->
+<!-- ``` -->
+<!-- $$\text{Cohen's }d = \sqrt{\frac{(N - 1)}{N}\times \frac{\text{partial }\eta^{2}}{(1 - \text{partial }\eta^{2})}}$$ -->
+<!-- `R` code: -->
+<!-- ```{r eval=FALSE} -->
+<!-- d <- sqrt(((N - 1) / N) * (eta2 / (1 - eta2))) -->
+<!-- ``` -->
+<!-- where *N* is total number of participants in the analysis (and likely the study). -->
+<!-- ### η^2^ and Cohen's *f*^2^ (and *f*) -->
+<!-- If there is only one term in the model (e.g., for a one-way ANOVA), then η^2^ is equal to the model *R*^2^. If there is more than one term in the model, then it's in fact the *partial* η^2^ (which is what SPSS calls it). -->
+<!-- It has become more commonly used than Cohen's *f*^2^, but [can be transformed](https://www.ibm.com/support/pages/effect-size-relationship-between-partial-eta-squared-cohens-f-and-cohens-d) into *f*^2^ with: -->
+<!-- $$\eta^2 = \frac{f^2}{(1 - f^2)}$$ -->
+<!-- and -->
+<!-- $$f^2 = \frac{\eta^2}{(1 - \eta^2)}$$ -->
+<!-- when there is only one term in the model. Partial η^2^s are less easily transformed into *f*^2^. -->
+<!-- ### η^2^ to Cohen's *d*: -->
+<!-- $$d = 2(\sqrt{\frac{\eta^2}{1-\eta^2}})$$ -->
+<!-- `R` code: -->
+<!-- ```{r eval=FALSE} -->
+<!-- d <- 2*((eta2/(1 - eta2))^.5) -->
+<!-- ``` -->
+<!-- ### Correlation (*r*) to Cohen's *d* -->
+<!-- The equations below assume equal sample sizes for both groups. -->
+<!-- $$d = \frac{2r}{\sqrt{1-r^2}}$$ -->
+<!-- `R` code: -->
+<!-- ```{r eval=FALSE} -->
+<!-- d <- (2*r)/((1 - r^2)^.5) -->
+<!-- ``` -->
+<!-- $$r = \frac{d}{\sqrt{d^2 + 4}}$$ -->
+<!-- `R` code: -->
+<!-- ```{r eval=FALSE} -->
+<!-- r <- d/((d^2 + 4)^.5) -->
+<!-- ``` -->
+<!-- ### Odds Ratio to Cohen's *d* -->
+<!-- $$d = \log(OR)\times\frac{\sqrt{3}}{\pi}$$ -->
+<!-- `R` code: -->
+<!-- ```{r eval=FALSE} -->
+<!-- d <- log(OR)*((3^.5)/pi) -->
+<!-- ``` -->
+<!-- The variance of *d* ($V_{d}$) is simply and elegantly: -->
+<!-- $$V_{d} = V_{\log(OR)\times}\frac{\sqrt{3}}{\pi}$$ -->
+<!-- ### Hedges' *g* to Cohen's *d* -->
+<!-- $$\text{Hedges' }g = \frac{d}{\sqrt(\frac{N}{df})}$$ -->
+<!-- `R` code: -->
+<!-- ```{r eval=FALSE} -->
+<!-- g <- d/((N/df)^.5) -->
+<!-- ``` -->
+<!-- ```{r eval=FALSE} -->
+<!-- d <- g((N/df)^.5) -->
+<!-- ``` -->
+<!-- |     | *d* | *r* | *q* | *h* | *w* | η^2^ | *f* | *f*^2^ | *OR* | -->
+<!-- | *d* |     |     |     |     |     | $\eta^2 = \frac{d^2 \times N}{d^2 \times N \times (N - 1)}    |     |     |     | -->
+<!-- | *r* |     |     |     |     |     |     |     |     |     | -->
+<!-- | *q* |     |     |     |     |     |     |     |     |     | -->
+<!-- | *h |     |     |     |     |     |     |     |     |     | -->
+<!-- | *w* |     |     |     |     |     |     |     |     |     | -->
+<!-- | η^2^ | $d = 2(\sqrt{\frac{\eta^2}{1-\eta^2}})$ |     |     |     |     |     | $f = \frac{\sqrt{\eta^2}}{\sqrt{(1 - \eta^2)}}$ | $f^2 = \frac{\eta^2}{(1 - \eta^2)}$ |     | -->
+<!-- | *f* |     |     |     |     |     | $\eta^2 = \frac{f}{\sqrt{(1 - f^2)}}$ |     |     |     | -->
+<!-- | *f*^2^|     |     |     |     | $\eta^2 = \frac{f^2}{(1 - f^2)}$ |     |     |     |     | -->
+<!-- | *OR* |     |     |     |     |     |     |     |     |     | -->
+</section>
+</section>
+<section id="additional-resources" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">6.4</span> Additional Resources</h2>
+<ul>
+<li><a href="https://www.psychometrica.de/index.html"><em>Psychometrica</em></a> offers a wonderful and pretty thorough list of effect size measures along with freeware apps to compute them at <a href="https://www.psychometrica.de/effect_size.html">https://www.psychometrica.de/effect_size.html</a></li>
+<li>Hojat, M. &amp; Xu, G. (2004). <a href="https://articles.viriya.net/a_visitors_guide_to_effect_sizes_statistical_significance_versus_practical_clinical_importance_of_research_findings.pdf">A visitor’s guide to effect sizes: statistical significance versus practical (clinical) importance of research findings</a>. <em>Advances in Health Sciences Education: Theory and Practice</em>, <em>9</em>(3), 241–249. doi: <a href="https://doi.org/10.1023/B:AHSE.0000038173.00909.f6">10.1023/B:AHSE.0000038173.00909.f6</a></li>
+<li>Reichel, C. (2019). <a href="https://journalistsresource.org/home/effect-size-statistics-risk-ratio/">Statistics for journalists: Understanding what effect size means</a>. <a href="https://journalistsresource.org/"><em>The Journalist’s Resource</em></a>.</li>
+<li><a href="https://www.psychometrica.de/effect_size.html#transform">Psychometrica.de</a>, this very useful site contains:
+<ul>
+<li>Easy functions to compute every, commonly-used effect size measure</li>
+<li>Convert between <em>d</em>, <em>r</em>, <em>f</em>, <em>OR</em>, η<sup>2</sup>, and common language effect size statistics</li>
+<li>Table of “small,” “medium,” and “large” effects laid out and interpreted somewhat differently than I did here</li>
+<li>List of relevant sources</li>
+</ul></li>
+<li><a href="https://fastercapital.com/">FasterCapital</a>’s <a href="https://fastercapital.com/content/Phi-Coefficient--The-Phi-Coefficient-and-Yule-s-Q--Pioneers-in-Measuring-Association.html">Phi Coefficient: The Phi Coefficient and Yule s Q: Pioneers in Measuring Association</a> provides a very readable and thorough coverage of those two statistics.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/duck.png" class="img-fluid figure-img" style="width:30.0%"></p>
+<p></p><figcaption class="figure-caption">Cohen’s duck</figcaption><p></p>
+</figure>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-borenstein2011" class="csl-entry" role="listitem">
+Borenstein, M., Hedges, L. V., Higgins, J. P. T., &amp; Rothstein, H. R. (2011). <em>Introduction to <span>Meta-Analysis</span></em> (1. Aufl., p. xxix). <span>Wiley</span>. <a href="https://doi.org/10.1002/9780470743386">https://doi.org/10.1002/9780470743386</a>
+</div>
+<div id="ref-chen2010a" class="csl-entry" role="listitem">
+Chen, H., Cohen, P., &amp; Chen, S. (2010). How big is a big odds ratio? <span>Interpreting</span> the magnitudes of odds ratios in epidemiological studies. <em>Communications in Statistics - Simulation and Computation</em>, <em>39</em>(4), 860–864. <a href="https://doi.org/10.1080/03610911003650383">https://doi.org/10.1080/03610911003650383</a>
+</div>
+<div id="ref-cohen1988" class="csl-entry" role="listitem">
+Cohen, J. (1988). <em>Statistical power analysis for the behavioral sciences (2nd ed.)</em>. <span>Lawrence Erlbaum Associates</span>.
+</div>
+<div id="ref-kraft2020" class="csl-entry" role="listitem">
+Kraft, M. A. (2020). Interpreting effect sizes of education interventions. <em>Educational Researcher</em>, <em>49</em>(4), 241–253. <a href="https://doi.org/10.3102/0013189X20912798">https://doi.org/10.3102/0013189X20912798</a>
+</div>
+<div id="ref-okada2013" class="csl-entry" role="listitem">
+Okada, K. (2013). Is omega squared less biased? <span>A</span> comparison of three major effect size indices in one-way <span>ANOVA</span>. <em>Behaviormetrika</em>, <em>40</em>(2), 129–147. <a href="https://doi.org/10.2333/bhmk.40.129">https://doi.org/10.2333/bhmk.40.129</a>
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>In this case, it also would assume homoskedasticity. They also assume that samples are independently and identically distributed (“iid”), meaning that (a) the value of each data point in a given variable is independent from the value of all/any other data point for that variable and (b) each of those data points in that variable are drawn from the same distribution, e.g., they’re all drawn from a normal distribution.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>For what it’s worth, we actually take the square root of the sum of the variances, and then divide that by 2, i.e.: <span class="math inline">\(\text{Pooled }SD = \frac{\sqrt{(SD^2_{\text{First Mean}}+SD^2_{\text{Second Mean}})}}{2}\)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>If you’re curious about how the three measures—η<sup>2</sup>; ω<sup>2</sup>; and the next one, ε<sup>2</sup>—are computed (from Maxwell, Camp, &amp; Arvey, 1981, cited in Okada, 2013):<span class="math display">\[\eta^2 = \frac{SS_{b}}{SS_{t}}\]</span> <span class="math display">\[\omega^2 = \frac{SS_{b} - df_{b}MS_{w}}{SS_{t} + SS_w}\]</span> and <span class="math display">\[\epsilon^2 = \frac{SS_{b} - df_{b}MS_{w}}{SS_{t}}\]</span> where <em>SS<sub>b</sub></em> is the sum of squares between groups, <em>df<sub>b</sub></em> is the degrees of freedom between groups, <em>SS<sub>w</sub></em> is the sum of squares within each group, <em>MS<sub>w</sub></em> is mean sum of squares between groups, and <em>SS<sub>t</sub></em> is the total sum of squares (i.e., <em>SS<sub>t</sub></em> = <em>SS<sub>b</sub></em> + <em>SS<sub>w</sub></em>).<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>These percents of variance accounted for are for zero-order correlations (i.e., correlations between two variables). The percent accounted for considered “small,” “medium,” and “large” for model <em>R</em>^2s are slightly higher (2%, 13%, and 26%, respectively).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>The source for this—Husén, T. (1959). <em>Psychological twin research: A methodological study</em>. Stockholm: Almqvist &amp; Wiksell—was too old for me to see if he means mono- or dizygotic twins. But I tried!<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>So, I guess a full higher education career does have a large effect on a person. And, yeah, Cohen does seem a little pre-occupied with IQ, doesn’t he?<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>This is also true for, e.g., risk ratios, hazard ratios, means ratios, and hierarchical models.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Cohen also only directly considered these criteria as they applied to experimental psychology—not, e.g., the health sciences. Indeed, he <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=95">elsewhere</a> notes that what experimental psychologists would call a “large” effect would be paltry in the physical sciences.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>With, say, the target level of outcome denoting a “medium” effect. Reaching <span class="math inline">\(\frac{1}{3}\)</span> of that target could denote a “small” effect, and reaching <span class="math inline">\(\frac{2}{3}\)</span>s more (167%) a “large” one. (This corresponds to the range between many of Cohen’s criteria. For example, criteria for <em>r</em> are .1, .3, and .5.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>Hedges’ <span class="math inline">\(g\)</span> can be converted to any other effect size that Cohen’s <span class="math inline">\(d\)</span> can be be converted. To convert to Hedges’ <span class="math inline">\(g\)</span> instead of <span class="math inline">\(d\)</span>, multiply <span class="math inline">\(d\)</span> in the given equation by <span class="math inline">\(\left(1 - \frac{3}{4N - 9}\right)\)</span>.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Remember, Cohen’s <em>d</em> is just the difference between two means that is then standardized.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>Which is itself really just a <em>t</em>-test but using an ANOVA framework instead<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>My mnemonic to remember which is which is to think of the saying, “The lowest common denominator.”<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./Variance_Covariance_Correlations_and_Partial_Correlations.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Variance, Covariance, Correlations, and Partial Correlations</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./missing_data.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Missing Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+      <i class="bi bi-badge-cc" role="img">
+</i> 
+  </li>  
+    <li class="nav-item">
+ Creative Commons Attribution--NonCommercial--ShareAlike License
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
