@@ -8,7 +8,7 @@
 
 <meta name="description" content="A set of explanations, lectures, resources, and activities to complement the statistics curriculum that is part of Hunter College’s Ph.D.&nbsp;Program in Nursing Research and Health Equity and DNP Program.">
 
-<title>Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula - 15&nbsp; Introduction to SPSS &amp; Data Preparation</title>
+<title>Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula - 16&nbsp; Introduction to SPSS &amp; Data Preparation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Intro_to_GPower.html" rel="next">
-<link href="./Intro_to_Excel.html" rel="prev">
+<link href="./data_exploration_with_r.html" rel="next">
+<link href="./Intro_to_GPower.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -96,7 +96,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Using_Templates_and_a_Reference_Manager.html">Guides to Using Software</a></li><li class="breadcrumb-item"><a href="./Intro_to_SPSS.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Using_Templates_and_a_Reference_Manager.html">Guides to Using Software</a></li><li class="breadcrumb-item"><a href="./Intro_to_SPSS.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -248,14 +248,14 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Intro_to_SPSS.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></span></a>
+  <a href="./Intro_to_GPower.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Power and Sample Size Estimation Using Either G*Power or R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Intro_to_GPower.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to Power and Sample Size Estimation Using Either G*Power or R</span></span></a>
+  <a href="./Intro_to_SPSS.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -311,12 +311,12 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">15.1</span> Overview</a></li>
-  <li><a href="#orientation-to-spss" id="toc-orientation-to-spss" class="nav-link" data-scroll-target="#orientation-to-spss"><span class="header-section-number">15.2</span> Orientation to SPSS</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">16.1</span> Overview</a></li>
+  <li><a href="#orientation-to-spss" id="toc-orientation-to-spss" class="nav-link" data-scroll-target="#orientation-to-spss"><span class="header-section-number">16.2</span> Orientation to SPSS</a>
   <ul>
-  <li><a href="#accessing-spss" id="toc-accessing-spss" class="nav-link" data-scroll-target="#accessing-spss"><span class="header-section-number">15.2.1</span> Accessing SPSS</a></li>
-  <li><a href="#editing-global-options" id="toc-editing-global-options" class="nav-link" data-scroll-target="#editing-global-options"><span class="header-section-number">15.2.2</span> Editing Global Options</a></li>
-  <li><a href="#spss-windows" id="toc-spss-windows" class="nav-link" data-scroll-target="#spss-windows"><span class="header-section-number">15.2.3</span> SPSS Windows</a>
+  <li><a href="#accessing-spss" id="toc-accessing-spss" class="nav-link" data-scroll-target="#accessing-spss"><span class="header-section-number">16.2.1</span> Accessing SPSS</a></li>
+  <li><a href="#editing-global-options" id="toc-editing-global-options" class="nav-link" data-scroll-target="#editing-global-options"><span class="header-section-number">16.2.2</span> Editing Global Options</a></li>
+  <li><a href="#spss-windows" id="toc-spss-windows" class="nav-link" data-scroll-target="#spss-windows"><span class="header-section-number">16.2.3</span> SPSS Windows</a>
   <ul>
   <li><a href="#the-data-editor-window" id="toc-the-data-editor-window" class="nav-link" data-scroll-target="#the-data-editor-window">The <code>Data Editor</code> Window</a>
   <ul class="collapse">
@@ -332,27 +332,27 @@ div.csl-indent {
   <li><a href="#sec-syntax-window" id="toc-sec-syntax-window" class="nav-link" data-scroll-target="#sec-syntax-window">The <code>Sytnax</code> Window</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#data-preparation-cleaning" id="toc-data-preparation-cleaning" class="nav-link" data-scroll-target="#data-preparation-cleaning"><span class="header-section-number">15.3</span> Data Preparation &amp; Cleaning</a>
+  <li><a href="#data-preparation-cleaning" id="toc-data-preparation-cleaning" class="nav-link" data-scroll-target="#data-preparation-cleaning"><span class="header-section-number">16.3</span> Data Preparation &amp; Cleaning</a>
   <ul>
-  <li><a href="#change-id-to-nominal" id="toc-change-id-to-nominal" class="nav-link" data-scroll-target="#change-id-to-nominal"><span class="header-section-number">15.3.1</span> Change <code>id</code> to nominal</a></li>
-  <li><a href="#setting-values-labels" id="toc-setting-values-labels" class="nav-link" data-scroll-target="#setting-values-labels"><span class="header-section-number">15.3.2</span> Setting <code>Values</code> labels for <code>pollution</code></a></li>
-  <li><a href="#setting-missing" id="toc-setting-missing" class="nav-link" data-scroll-target="#setting-missing"><span class="header-section-number">15.3.3</span> Setting missing values for <code>wave</code></a></li>
-  <li><a href="#transform-city-into-a-numeric-variable-called-city.n" id="toc-transform-city-into-a-numeric-variable-called-city.n" class="nav-link" data-scroll-target="#transform-city-into-a-numeric-variable-called-city.n"><span class="header-section-number">15.3.4</span> Transform <code>city</code> into a numeric variable called <code>city.n</code></a></li>
-  <li><a href="#create-dummies" id="toc-create-dummies" class="nav-link" data-scroll-target="#create-dummies"><span class="header-section-number">15.3.5</span> Create a dummy variable for <code>Population</code> called <code>population.n</code></a>
+  <li><a href="#change-id-to-nominal" id="toc-change-id-to-nominal" class="nav-link" data-scroll-target="#change-id-to-nominal"><span class="header-section-number">16.3.1</span> Change <code>id</code> to nominal</a></li>
+  <li><a href="#setting-values-labels" id="toc-setting-values-labels" class="nav-link" data-scroll-target="#setting-values-labels"><span class="header-section-number">16.3.2</span> Setting <code>Values</code> labels for <code>pollution</code></a></li>
+  <li><a href="#setting-missing" id="toc-setting-missing" class="nav-link" data-scroll-target="#setting-missing"><span class="header-section-number">16.3.3</span> Setting missing values for <code>wave</code></a></li>
+  <li><a href="#transform-city-into-a-numeric-variable-called-city.n" id="toc-transform-city-into-a-numeric-variable-called-city.n" class="nav-link" data-scroll-target="#transform-city-into-a-numeric-variable-called-city.n"><span class="header-section-number">16.3.4</span> Transform <code>city</code> into a numeric variable called <code>city.n</code></a></li>
+  <li><a href="#create-dummies" id="toc-create-dummies" class="nav-link" data-scroll-target="#create-dummies"><span class="header-section-number">16.3.5</span> Create a dummy variable for <code>Population</code> called <code>population.n</code></a>
   <ul>
   <li><a href="#pivot-tables" id="toc-pivot-tables" class="nav-link" data-scroll-target="#pivot-tables">Frequencies &amp; Crosstabs</a></li>
   </ul></li>
-  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting"><span class="header-section-number">15.3.6</span> Subset the data to only include migrant students</a></li>
-  <li><a href="#compute-cheaks-total-from-other-variables" id="toc-compute-cheaks-total-from-other-variables" class="nav-link" data-scroll-target="#compute-cheaks-total-from-other-variables"><span class="header-section-number">15.3.7</span> Compute CHEAKS Total from Other Variables</a></li>
-  <li><a href="#standardize-variables" id="toc-standardize-variables" class="nav-link" data-scroll-target="#standardize-variables"><span class="header-section-number">15.3.8</span> Standardize Variables</a></li>
+  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting"><span class="header-section-number">16.3.6</span> Subset the data to only include migrant students</a></li>
+  <li><a href="#compute-cheaks-total-from-other-variables" id="toc-compute-cheaks-total-from-other-variables" class="nav-link" data-scroll-target="#compute-cheaks-total-from-other-variables"><span class="header-section-number">16.3.7</span> Compute CHEAKS Total from Other Variables</a></li>
+  <li><a href="#standardize-variables" id="toc-standardize-variables" class="nav-link" data-scroll-target="#standardize-variables"><span class="header-section-number">16.3.8</span> Standardize Variables</a></li>
   </ul></li>
-  <li><a href="#export-a-table-in-apa-format-to-word" id="toc-export-a-table-in-apa-format-to-word" class="nav-link" data-scroll-target="#export-a-table-in-apa-format-to-word"><span class="header-section-number">15.4</span> Export a Table in APA Format to Word</a>
+  <li><a href="#export-a-table-in-apa-format-to-word" id="toc-export-a-table-in-apa-format-to-word" class="nav-link" data-scroll-target="#export-a-table-in-apa-format-to-word"><span class="header-section-number">16.4</span> Export a Table in APA Format to Word</a>
   <ul>
-  <li><a href="#steps-to-export-a-table-in-apa-format-in-spss" id="toc-steps-to-export-a-table-in-apa-format-in-spss" class="nav-link" data-scroll-target="#steps-to-export-a-table-in-apa-format-in-spss"><span class="header-section-number">15.4.1</span> Steps to Export a Table in APA Format in SPSS:</a></li>
-  <li><a href="#example-export-in-word" id="toc-example-export-in-word" class="nav-link" data-scroll-target="#example-export-in-word"><span class="header-section-number">15.4.2</span> Example Export in Word:</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">15.4.3</span> Summary</a></li>
+  <li><a href="#steps-to-export-a-table-in-apa-format-in-spss" id="toc-steps-to-export-a-table-in-apa-format-in-spss" class="nav-link" data-scroll-target="#steps-to-export-a-table-in-apa-format-in-spss"><span class="header-section-number">16.4.1</span> Steps to Export a Table in APA Format in SPSS:</a></li>
+  <li><a href="#example-export-in-word" id="toc-example-export-in-word" class="nav-link" data-scroll-target="#example-export-in-word"><span class="header-section-number">16.4.2</span> Example Export in Word:</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">16.4.3</span> Summary</a></li>
   </ul></li>
-  <li><a href="#additiolnal-resources" id="toc-additiolnal-resources" class="nav-link" data-scroll-target="#additiolnal-resources"><span class="header-section-number">15.5</span> Additiolnal Resources</a></li>
+  <li><a href="#additiolnal-resources" id="toc-additiolnal-resources" class="nav-link" data-scroll-target="#additiolnal-resources"><span class="header-section-number">16.5</span> Additiolnal Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -361,7 +361,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-spss_intro" class="quarto-section-identifier"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></span></h1>
+<h1 class="title"><span id="sec-spss_intro" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></span></h1>
 </div>
 
 
@@ -376,15 +376,15 @@ div.csl-indent {
 
 </header>
 
-<section id="overview" class="level2" data-number="15.1">
-<h2 data-number="15.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">15.1</span> Overview</h2>
+<section id="overview" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">16.1</span> Overview</h2>
 <p>This document is intended to introduce you to a couple of things. First, we will review SPSS’s GUI<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and how data are prepared and handled therein. We will import a set of rather clean data that we will use to demonstrate ways to further prepare and manipulate data.</p>
 <p>Second, we will then introduce some common data exploration functions to understand these data better. We will use this opportunity to further consider some of the concepts we’re covering through our other class activities, including normality and outliers.</p>
 </section>
-<section id="orientation-to-spss" class="level2" data-number="15.2">
-<h2 data-number="15.2" class="anchored" data-anchor-id="orientation-to-spss"><span class="header-section-number">15.2</span> Orientation to SPSS</h2>
-<section id="accessing-spss" class="level3" data-number="15.2.1">
-<h3 data-number="15.2.1" class="anchored" data-anchor-id="accessing-spss"><span class="header-section-number">15.2.1</span> Accessing SPSS</h3>
+<section id="orientation-to-spss" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="orientation-to-spss"><span class="header-section-number">16.2</span> Orientation to SPSS</h2>
+<section id="accessing-spss" class="level3" data-number="16.2.1">
+<h3 data-number="16.2.1" class="anchored" data-anchor-id="accessing-spss"><span class="header-section-number">16.2.1</span> Accessing SPSS</h3>
 <!-- To the best of my knowledge, there are two ways to access SPSS (as well as RStudio and some other such programs) for Hunter students: -->
 <!-- - Virtual Desktop -->
 <!-- - Apporto -->
@@ -426,8 +426,8 @@ div.csl-indent {
 </ol>
 <p>Alternatively, you can open your email from within Apporto and send it to yourself as an attachment.</p>
 </section>
-<section id="editing-global-options" class="level3" data-number="15.2.2">
-<h3 data-number="15.2.2" class="anchored" data-anchor-id="editing-global-options"><span class="header-section-number">15.2.2</span> Editing Global Options</h3>
+<section id="editing-global-options" class="level3" data-number="16.2.2">
+<h3 data-number="16.2.2" class="anchored" data-anchor-id="editing-global-options"><span class="header-section-number">16.2.2</span> Editing Global Options</h3>
 <p>Before we dive into the windows and workings of SPSS, I’d like to note that there are a few useful options to consider modifying given your needs. There are, in fact, many options for tailor SPSS’s functioning, output, and performance given throughout its dialogues and within its rather large list of syntax commands. Here, however, we will simply note a few “global” options that can be set to adjust how SPSS acts in general.</p>
 <p>To access these, select <code>Edit &gt; Options</code> from the menu (in any window). When that dialogue opens, you will see many choices, including the <code>Variable Lists</code> section in the top right oft the <code>General</code> tab. In that section, you can choose to either have SPSS default to <code>Display names</code> or to <code>Display labels</code> of variables. As discussed further <a href="#variable_view">below</a>, a given variable can be identified by either the shorter, more-restricted name or by the longer label used to describe it. By choosing one of these option you can either show smaller, less-intuitive names or longer, more explanatory labels in (nearly) all of the output SPSS generates. Of course, you can also switch between these as needed.</p>
 <p>Some of the other options under the <code>General</code> tab are worth considering (such as whether you want to have SPSS display <code>No scientific notation for small numbers in tables</code>; I mean, we’re doing research here, not science). The <code>Language</code>, <code>Viewer</code>, <code>Data</code>, <code>Currency</code>, <code>Charts</code>, <code>Scipts</code>, and <code>Syntax Editor</code> tabs are less useful for most users, but the items in the <code>Output</code> tab’s <code>Outline Labeling</code> section may also be worth considering. Either of those options can let you choose whether to show only the variable names, labels, or both; I suggest using <code>Labels</code> for output you share with others, but you may want to use <code>Names</code> for your own analyses since it will make for simpler output.</p>
@@ -441,8 +441,8 @@ div.csl-indent {
 <li><a href="https://ezspss.com/how-to-create-apa-style-charts-in-spss/">Styling figures</a></li>
 </ul>
 </section>
-<section id="spss-windows" class="level3" data-number="15.2.3">
-<h3 data-number="15.2.3" class="anchored" data-anchor-id="spss-windows"><span class="header-section-number">15.2.3</span> SPSS Windows</h3>
+<section id="spss-windows" class="level3" data-number="16.2.3">
+<h3 data-number="16.2.3" class="anchored" data-anchor-id="spss-windows"><span class="header-section-number">16.2.3</span> SPSS Windows</h3>
 <p>SPSS is inherently a syntax-driven program, but its popularity is arguably due in large part to its useful GUI. The GUI has three main windows:</p>
 <ol type="1">
 <li>The <code>Data Editor</code> which is comprised of the <code>Data View</code> and <code>Variable View</code> tabs</li>
@@ -585,11 +585,11 @@ div.csl-indent {
 </section>
 </section>
 </section>
-<section id="data-preparation-cleaning" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="data-preparation-cleaning"><span class="header-section-number">15.3</span> Data Preparation &amp; Cleaning</h2>
+<section id="data-preparation-cleaning" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="data-preparation-cleaning"><span class="header-section-number">16.3</span> Data Preparation &amp; Cleaning</h2>
 <p>In this section, we will now build on this to further clean and prepare the data for analyses. Most of these tasks are here to demonstrate how to clean or improve data in ways that are commonly needed.</p>
-<section id="change-id-to-nominal" class="level3" data-number="15.3.1">
-<h3 data-number="15.3.1" class="anchored" data-anchor-id="change-id-to-nominal"><span class="header-section-number">15.3.1</span> Change <code>id</code> to nominal</h3>
+<section id="change-id-to-nominal" class="level3" data-number="16.3.1">
+<h3 data-number="16.3.1" class="anchored" data-anchor-id="change-id-to-nominal"><span class="header-section-number">16.3.1</span> Change <code>id</code> to nominal</h3>
 <p>The <code>id</code> variable is right now a <code>Scale</code> variable. That’s natural since it is a number after all. And it’s not uncommon for SPSS to import IDs as numbers since replacing names with numbers is a very typical way to anonymize participants. Frankly, leaving it as a number (a <code>Scale</code> level <code>Measure</code>) won’t likely create any problems in SPSS<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>, but it still presents a good opportunity to demonstrate changing the <code>Measure</code> of a variable. To do this:</p>
 <ol type="1">
 <li>Go to the <code>Variable View</code> tab of the <code>Data Editor</code> window.</li>
@@ -598,8 +598,8 @@ div.csl-indent {
 </ol>
 <p>Now, SPSS will “understand” that this is in fact a name that signifies each participants and should be treated as such in all analyses.</p>
 </section>
-<section id="setting-values-labels" class="level3" data-number="15.3.2">
-<h3 data-number="15.3.2" class="anchored" data-anchor-id="setting-values-labels"><span class="header-section-number">15.3.2</span> Setting <code>Values</code> labels for <code>pollution</code></h3>
+<section id="setting-values-labels" class="level3" data-number="16.3.2">
+<h3 data-number="16.3.2" class="anchored" data-anchor-id="setting-values-labels"><span class="header-section-number">16.3.2</span> Setting <code>Values</code> labels for <code>pollution</code></h3>
 <p>This next task is also, frankly, not necessary here. But it is a very useful one to know since—like giving good variable labels—it can really help make things clearer in output. We will give labels to each of the response values for the CHEAKS Pollution subscale. For a bit of background, all of the CHEAKS subscale scores—including that for <code>pollution</code>—are created from responses to two items. If a respondent indicates in a given item that they have done something to help, e.g., reduce pollution, then that item response is coded as a 1. If they do not report having done that, e.g., pollution-related tasks, then their response to that item is coded as a <code>0</code>. Since there are two items for each subscale, the scores on a subscale can range from <code>0</code> (i.e., didn’t do either task), through <code>1</code> (they did one of the two tasks), to <code>2</code> (they did both tasks). Let’s code the <code>pollution</code> score to reflect this:</p>
 <ol type="1">
 <li>Also in the <code>Variable View</code> of the <code>Data Editor</code>, click on the <code>Values</code> cell in the the <code>pollution</code> row.</li>
@@ -617,8 +617,8 @@ div.csl-indent {
 <p>Note that we have not actually changed the data. They are still numbers (<code>Scale</code> level measures). Right-click again on that variable (in either the <code>Data View</code> or <code>Variable View</code> tabs) and select <code>Descriptive Statistics</code>. You will see in the output that SPSS generates means, etc. just as it would for any interval/ratio variable.</p>
 <p>However, now in the drop-down menu click on <code>Analyze &gt; Descriptive Statistics &gt; Frequencies</code> and you will see that the level values are replaced with the more explanatory value labels, helping us (and out colleagues and readers) more easily see what the responses really meant.</p>
 </section>
-<section id="setting-missing" class="level3" data-number="15.3.3">
-<h3 data-number="15.3.3" class="anchored" data-anchor-id="setting-missing"><span class="header-section-number">15.3.3</span> Setting missing values for <code>wave</code></h3>
+<section id="setting-missing" class="level3" data-number="16.3.3">
+<h3 data-number="16.3.3" class="anchored" data-anchor-id="setting-missing"><span class="header-section-number">16.3.3</span> Setting missing values for <code>wave</code></h3>
 <p>As mentioned briefly <a href="#data-view">above</a>, we can set certain values to be recognized as representing missing values. Most of the variables in this set were imported with blank cells denoting missing values, but <code>wave</code> has a few values that are listed as <code>NA</code>. Right now, SPSS doesn’t recognize these as missing; to show this, simply right-click on that variable in the <code>Data Editor</code> and select <code>Descriptive Statistics</code><a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>, which shows that there are 1129 <code>Valid</code> cases and 0 <code>Missing</code>:</p>
 <p><img src="images/wave_1.png" class="img-fluid"></p>
 <p>while is also treating <code>NA</code> as a factor level:</p>
@@ -635,8 +635,8 @@ div.csl-indent {
 <p><img src="images/wave_3.png" class="img-fluid"></p>
 <p><img src="images/wave_4.png" class="img-fluid"></p>
 </section>
-<section id="transform-city-into-a-numeric-variable-called-city.n" class="level3" data-number="15.3.4">
-<h3 data-number="15.3.4" class="anchored" data-anchor-id="transform-city-into-a-numeric-variable-called-city.n"><span class="header-section-number">15.3.4</span> Transform <code>city</code> into a numeric variable called <code>city.n</code></h3>
+<section id="transform-city-into-a-numeric-variable-called-city.n" class="level3" data-number="16.3.4">
+<h3 data-number="16.3.4" class="anchored" data-anchor-id="transform-city-into-a-numeric-variable-called-city.n"><span class="header-section-number">16.3.4</span> Transform <code>city</code> into a numeric variable called <code>city.n</code></h3>
 <p>There are pretty often times when it’s useful to create a new variable based on the values of one or more existing variables. One occasion to do this is to make a nominal/ordinal variable into a numeric one<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>. Let’s create a new variable based on the <code>city</code> values<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a></p>
 <p>To do this:</p>
 <ol type="1">
@@ -652,8 +652,8 @@ div.csl-indent {
 <li>Click <code>Continue</code> ro return to the previous dialogue and then click <code>OK</code></li>
 </ol>
 </section>
-<section id="create-dummies" class="level3" data-number="15.3.5">
-<h3 data-number="15.3.5" class="anchored" data-anchor-id="create-dummies"><span class="header-section-number">15.3.5</span> Create a dummy variable for <code>Population</code> called <code>population.n</code></h3>
+<section id="create-dummies" class="level3" data-number="16.3.5">
+<h3 data-number="16.3.5" class="anchored" data-anchor-id="create-dummies"><span class="header-section-number">16.3.5</span> Create a dummy variable for <code>Population</code> called <code>population.n</code></h3>
 <p>I am a pretty strong advocate for using <a href="https://www.statology.org/dummy-variables-regression/">dummy variables</a>. They can make it easier to interpret the effects of each level of a nominal variable without needing to resort to, e.g., post hoc analyses. </p>
 <ol type="1">
 <li>Also under the <code>Transform</code> menu, select <code>Create Dummy Variables</code></li>
@@ -696,8 +696,8 @@ div.csl-indent {
 <p>reveals why the counts for both <code>Population</code> and <code>Group</code> were so uneven: There are no non-migrant students who participated in the CFL program<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a></p>
 </section>
 </section>
-<section id="subsetting" class="level3" data-number="15.3.6">
-<h3 data-number="15.3.6" class="anchored" data-anchor-id="subsetting"><span class="header-section-number">15.3.6</span> Subset the data to only include migrant students</h3>
+<section id="subsetting" class="level3" data-number="16.3.6">
+<h3 data-number="16.3.6" class="anchored" data-anchor-id="subsetting"><span class="header-section-number">16.3.6</span> Subset the data to only include migrant students</h3>
 <p>Given that there are no non-migrant students in the no-CFL group, it produces bias to include them as part of the CFL group. This is thus one of the few times when it is justified to subset one’s data: Although subsetting literally removes information from your analyses<a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a>, the information that they would include would make CFL – no-CFL comparisons like comparing apples to oranges.</p>
 <p>Let us thus subset our data to include only migrant students.</p>
 <p>Under the <code>Data</code> menu option, there are a few options for subsetting data:</p>
@@ -735,8 +735,8 @@ div.csl-indent {
 <p><img src="images/select-cases.png" class="img-fluid"> Under the <code>Variable View</code> tab, you’ll also see that a new variable called <code>filter_$</code> has been created. The label for this variable, at least, is informative: <code>Population = "Migrant" (FILTER)</code></p>
 <p>And now all subsequent analyses will disclude the non-migrants students<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a>. We can stop filtering out the non-migrant students simply by deleting (<code>Clear</code>ing) that filter variable. Being able to now subset our data is why I wanted to do this task a bit out of step with the rest of this guide.</p>
 </section>
-<section id="compute-cheaks-total-from-other-variables" class="level3" data-number="15.3.7">
-<h3 data-number="15.3.7" class="anchored" data-anchor-id="compute-cheaks-total-from-other-variables"><span class="header-section-number">15.3.7</span> Compute CHEAKS Total from Other Variables</h3>
+<section id="compute-cheaks-total-from-other-variables" class="level3" data-number="16.3.7">
+<h3 data-number="16.3.7" class="anchored" data-anchor-id="compute-cheaks-total-from-other-variables"><span class="header-section-number">16.3.7</span> Compute CHEAKS Total from Other Variables</h3>
 <p>This data set doesn’t contain the responses to individual items (or other things), but it’s obviously much more common for data to have things like that—and for us to need to compute scores based on these individual items. Intentionally, though, we can still do that here since the CHEAKS total score is itself comprised of the scores on the various CHEAKS subscales.</p>
 <ol type="1">
 <li>Click on <code>Transform &gt; Compute Variable</code></li>
@@ -752,8 +752,8 @@ div.csl-indent {
 </ol>
 <p>Note that if you are regularly importing data into SPSS (e.g., if you are “peeking” at data as they come in<a href="#fn27" class="footnote-ref" id="fnref27" role="doc-noteref"><sup>27</sup></a>), then this would be a great occasion to save the syntax created to rerun upon each data importation.</p>
 </section>
-<section id="standardize-variables" class="level3" data-number="15.3.8">
-<h3 data-number="15.3.8" class="anchored" data-anchor-id="standardize-variables"><span class="header-section-number">15.3.8</span> Standardize Variables</h3>
+<section id="standardize-variables" class="level3" data-number="16.3.8">
+<h3 data-number="16.3.8" class="anchored" data-anchor-id="standardize-variables"><span class="header-section-number">16.3.8</span> Standardize Variables</h3>
 <p>I’m also a big fan of standardized data. It doesn’t change the distribution of scores at all but makes values on one variable directly comparable to values on an other—even if they’re measured on very different scales<a href="#fn28" class="footnote-ref" id="fnref28" role="doc-noteref"><sup>28</sup></a></p>
 <p>SPSS makes it very easy to standardize variables:</p>
 <ol type="1">
@@ -767,11 +767,11 @@ div.csl-indent {
 <p>And that’s all it takes to create standardized variables.</p>
 </section>
 </section>
-<section id="export-a-table-in-apa-format-to-word" class="level2" data-number="15.4">
-<h2 data-number="15.4" class="anchored" data-anchor-id="export-a-table-in-apa-format-to-word"><span class="header-section-number">15.4</span> Export a Table in APA Format to Word</h2>
+<section id="export-a-table-in-apa-format-to-word" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="export-a-table-in-apa-format-to-word"><span class="header-section-number">16.4</span> Export a Table in APA Format to Word</h2>
 <p>To export a table in APA format in SPSS, you can use the following steps. This process involves generating the table, modifying it to meet APA style guidelines, and then exporting it.</p>
-<section id="steps-to-export-a-table-in-apa-format-in-spss" class="level3" data-number="15.4.1">
-<h3 data-number="15.4.1" class="anchored" data-anchor-id="steps-to-export-a-table-in-apa-format-in-spss"><span class="header-section-number">15.4.1</span> Steps to Export a Table in APA Format in SPSS:</h3>
+<section id="steps-to-export-a-table-in-apa-format-in-spss" class="level3" data-number="16.4.1">
+<h3 data-number="16.4.1" class="anchored" data-anchor-id="steps-to-export-a-table-in-apa-format-in-spss"><span class="header-section-number">16.4.1</span> Steps to Export a Table in APA Format in SPSS:</h3>
 <ol type="1">
 <li><strong>Generate the Table</strong>:
 <ul>
@@ -801,8 +801,8 @@ div.csl-indent {
 </ul></li>
 </ol>
 </section>
-<section id="example-export-in-word" class="level3" data-number="15.4.2">
-<h3 data-number="15.4.2" class="anchored" data-anchor-id="example-export-in-word"><span class="header-section-number">15.4.2</span> Example Export in Word:</h3>
+<section id="example-export-in-word" class="level3" data-number="16.4.2">
+<h3 data-number="16.4.2" class="anchored" data-anchor-id="example-export-in-word"><span class="header-section-number">16.4.2</span> Example Export in Word:</h3>
 <ol type="1">
 <li><strong>Open the Exported File</strong>:
 <ul>
@@ -817,13 +817,13 @@ div.csl-indent {
 </ul></li>
 </ol>
 </section>
-<section id="summary" class="level3" data-number="15.4.3">
-<h3 data-number="15.4.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">15.4.3</span> Summary</h3>
+<section id="summary" class="level3" data-number="16.4.3">
+<h3 data-number="16.4.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">16.4.3</span> Summary</h3>
 <p>To export a table in APA format from SPSS, generate the table through the appropriate analysis, modify it using the Pivot Table Editor to adhere to APA style, and then export it to a Word document. Make any final adjustments in Word to ensure the table fully complies with APA formatting standards.</p>
 </section>
 </section>
-<section id="additiolnal-resources" class="level2" data-number="15.5">
-<h2 data-number="15.5" class="anchored" data-anchor-id="additiolnal-resources"><span class="header-section-number">15.5</span> Additiolnal Resources</h2>
+<section id="additiolnal-resources" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="additiolnal-resources"><span class="header-section-number">16.5</span> Additiolnal Resources</h2>
 <ul>
 <li>Supplemental materials from <span class="citation" data-cites="polit2017">Polit &amp; Beck (<a href="references.html#ref-polit2017" role="doc-biblioref">2017</a>)</span>
 <ul>
@@ -1230,13 +1230,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./Intro_to_Excel.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Excel</span></span>
+      <a href="./Intro_to_GPower.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Power and Sample Size Estimation Using Either G*Power or R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Intro_to_GPower.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to Power and Sample Size Estimation Using Either G*Power or R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./data_exploration_with_r.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Exploration with R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
