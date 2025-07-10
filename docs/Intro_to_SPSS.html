@@ -755,22 +755,24 @@ This will make <code>Detached single-family</code> the “reference” group: If
 <section id="creating-dummy-variables-for-combined-variable-levels" class="level4">
 <h4 class="anchored" data-anchor-id="creating-dummy-variables-for-combined-variable-levels">Creating Dummy Variables for Combined Variable Levels</h4>
 <p>Some of these dwelling types are quite similar to each other; for at least preliminary analyses, then, we will combine some of them into the same dummy variable<a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a></p>
-<p>This process is not as straight-forward as a batch creation of the dummies, but still not onerous:</p>
-<p>You want to create <strong>four</strong> dummy variables from the <code>Dwelling_Types</code> variable:</p>
+<p>We could group these several ways, of course, but let’s group them thusly:</p>
+<ul>
+<li><code>Detached_House</code>: 1 if value = 1, else 0</li>
+<li><code>Mobile_or_RowHouse</code>: 1 if value = 2 or 3, else 0</li>
+<li><code>MultiUnit_Housing</code>: 1 if value = 4–7, else 0</li>
+<li><code>Other_Dwelling</code>: 1 if value = 8, else 0</li>
+</ul>
+<p>We will do this by using an other type of data transformation. This process is not as straight-forward as a batch creation of the dummies, but still not onerous. It’s also useful for many other types of transformations—not just into dummy variables:</p>
 <ol type="1">
-<li><p><code>Detached_House</code>: 1 if value = 1, else 0</p></li>
-<li><p><code>Mobile_or_RowHouse</code>: 1 if value = 2 or 3, else 0</p></li>
-<li><p><code>MultiUnit_Housing</code>: 1 if value = 4–7, else 0</p></li>
-<li><p><code>Other_Dwelling</code>: 1 if value = 8, else 0</p></li>
-<li><p>Under the <code>Transform</code> menu, select <code>Compute Variable</code></p></li>
-<li><p>In the <code>Target Variable</code> box, type <code>Detached_House</code></p></li>
-<li><p>In the <code>Numeric Expression</code> box, type: <code>(Dwelling_Types = 1)</code></p></li>
-<li><p>Click <code>OK</code> to create the variable. You now have a new variable <code>Detached_House</code> coded as:</p>
+<li>Under the <code>Transform</code> menu, select <code>Compute Variable</code></li>
+<li>In the <code>Target Variable</code> box, type <code>Detached_House</code></li>
+<li>In the <code>Numeric Expression</code> box, type: <code>(Dwelling_Types = 1)</code></li>
+<li>Click <code>OK</code> to create the variable. You now have a new variable <code>Detached_House</code> coded as:
 <ul>
 <li><code>1</code> if the respondent lives in a detached single-family house</li>
 <li><code>0</code> for all other types of dwellings</li>
 </ul></li>
-<li><p>Repeat Steps 1 -– 4 to create the second dummy variable, using:</p>
+<li>Repeat Steps 1 -– 4 to create the second dummy variable, using:
 <ul>
 <li><code>Target Variable</code>: <code>Mobile_or_RowHouse</code></li>
 <li><code>Numeric Expression</code>: <code>(Dwelling_Types = 2 OR Dwelling_Types = 3)</code><br>
@@ -778,7 +780,7 @@ This variable will equal:</li>
 <li>1 if the respondent lives in a <strong>mobile home/trailer</strong> or a <strong>row/town house</strong></li>
 <li>0 otherwise</li>
 </ul></li>
-<li><p>Now repeat Steps 1 –- 4 again to create the third dummy variable, using:</p>
+<li>Now repeat Steps 1 –- 4 again to create the third dummy variable, using:
 <ul>
 <li><code>Target Variable</code>: <code>MultiUnit_Housing</code></li>
 <li><code>Numeric Expression</code>: <code>(Dwelling_Types &gt;= 4 AND Dwelling_Types &lt;= 7)</code><br>
@@ -787,7 +789,7 @@ This captures all multi-unit dwellings:</li>
 <li>Small apartment buildings</li>
 <li>Larger apartments with or without doormen / locked entries</li>
 </ul></li>
-<li><p>One more time, repeat to create the final dummy:</p>
+<li>One more time, repeat to create the final dummy:
 <ul>
 <li><code>Target Variable</code>: <code>Other_Dwelling</code></li>
 <li><code>Numeric Expression</code>: <code>(Dwelling_Types = 8)</code><br>
