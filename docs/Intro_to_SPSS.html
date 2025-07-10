@@ -336,13 +336,14 @@ div.csl-indent {
   <ul>
   <li><a href="#change-aid-to-nominal" id="toc-change-aid-to-nominal" class="nav-link" data-scroll-target="#change-aid-to-nominal"><span class="header-section-number">16.3.1</span> Change <code>AID</code> to nominal</a></li>
   <li><a href="#creating-a-variable-label-for-aid" id="toc-creating-a-variable-label-for-aid" class="nav-link" data-scroll-target="#creating-a-variable-label-for-aid"><span class="header-section-number">16.3.2</span> Creating a Variable Label for <code>AID</code></a></li>
-  <li><a href="#recoding-bio_sex" id="toc-recoding-bio_sex" class="nav-link" data-scroll-target="#recoding-bio_sex"><span class="header-section-number">16.3.3</span> Recoding <code>BIO_SEX</code></a></li>
-  <li><a href="#setting-values-labels" id="toc-setting-values-labels" class="nav-link" data-scroll-target="#setting-values-labels"><span class="header-section-number">16.3.4</span> Setting <code>Values</code> labels for <code>BIO_SEX</code></a></li>
+  <li><a href="#recoding-bio_sex" id="toc-recoding-bio_sex" class="nav-link" data-scroll-target="#recoding-bio_sex"><span class="header-section-number">16.3.3</span> Recoding <code>Bio_Sex</code></a></li>
+  <li><a href="#setting-values-labels" id="toc-setting-values-labels" class="nav-link" data-scroll-target="#setting-values-labels"><span class="header-section-number">16.3.4</span> Setting <code>Values</code> labels for <code>Bio_Sex</code></a></li>
   <li><a href="#computing-participant-age" id="toc-computing-participant-age" class="nav-link" data-scroll-target="#computing-participant-age"><span class="header-section-number">16.3.5</span> Computing Participant Age</a></li>
   <li><a href="#setting-missing" id="toc-setting-missing" class="nav-link" data-scroll-target="#setting-missing"><span class="header-section-number">16.3.6</span> Setting missing values for <code>Weight</code></a></li>
   <li><a href="#create-dummies" id="toc-create-dummies" class="nav-link" data-scroll-target="#create-dummies"><span class="header-section-number">16.3.7</span> Create Dummy Variables for Different <code>Dwelling_Type</code>s</a>
   <ul>
   <li><a href="#quickly-creating-dummy-variables-for-variable-levels" id="toc-quickly-creating-dummy-variables-for-variable-levels" class="nav-link" data-scroll-target="#quickly-creating-dummy-variables-for-variable-levels">Quickly Creating Dummy Variables for Variable Levels</a></li>
+  <li><a href="#creating-dummy-variables-for-combined-variable-levels" id="toc-creating-dummy-variables-for-combined-variable-levels" class="nav-link" data-scroll-target="#creating-dummy-variables-for-combined-variable-levels">Creating Dummy Variables for Combined Variable Levels</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#old" id="toc-old" class="nav-link" data-scroll-target="#old"><span class="header-section-number">17</span> Old</a>
@@ -619,17 +620,21 @@ div.csl-indent {
 <p>Variable labels (in the <code>Label</code> column) can be much longer<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a> and contain many more types of characters<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a>. They do not work well in the SPSS dialogues, but are often great for tables and figures.</p>
 <p>To add a label to <code>AID</code> simply:</p>
 <ol type="1">
-<li>Single-left click in the <code>Label</code> cell for <code>AID</code>, and type/paste: <code>Unique Participant ID</code>.</li>
+<li>Single-left click in the <code>Label</code> cell for <code>AID</code>, and type/paste: <code>Unique Participant ID</code> or something like that.</li>
 </ol>
 </section>
 <section id="recoding-bio_sex" class="level3" data-number="16.3.3">
-<h3 data-number="16.3.3" class="anchored" data-anchor-id="recoding-bio_sex"><span class="header-section-number">16.3.3</span> Recoding <code>BIO_SEX</code></h3>
+<h3 data-number="16.3.3" class="anchored" data-anchor-id="recoding-bio_sex"><span class="header-section-number">16.3.3</span> Recoding <code>Bio_Sex</code></h3>
 <p>Participants’ self-reported biological sex is currently coded as 1 for male and 2 for female. I prefer to code dichotomous variables as 0/1.</p>
-<p>To recode <code>BIO_SEX</code>:</p>
+<p>To recode <code>Bio_Sex</code>:</p>
 <ol type="1">
 <li>Click on <code>Transform &gt; Recode into Same Variables...</code><a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a>.</li>
-<li>In the dialogue box that opens, move <code>BIO_SEX</code> to the right-hand field and select <code>Old and New Values...</code>:<br>
+<li>In the dialogue box that opens, move <code>Bio_Sex</code> to the right-hand field; to do this:</li>
+<li>Single left-click on <code>Bio_Sex</code> electing it in the left-hand field to select it</li>
+<li>Click on the arrow between the two fields (<img src="images/arrow1.png" class="img-fluid">)</li>
+<li><code>Bio_Sex</code> should now appear in the right-hand field:<br>
 <img src="images/recode_sex_1.png" class="img-fluid"></li>
+<li>Click on <code>Old and New Values...</code></li>
 <li>Under the <code>Old Value</code> section, type <code>1</code> in the <code>Value</code> field; under <code>New Value</code>, type <code>0</code>; then click <code>Add</code>. Under <code>Old -&gt; New</code>, you should now see <code>1 -&gt; 0</code>.</li>
 <li>Now, under the <code>Old Value</code> section, type <code>2</code> in the <code>Value</code> field; under <code>New Value</code>, type <code>1</code>; then click <code>Add</code>. Under <code>Old -&gt; New</code> and click <code>Add</code> to add that as well to the <code>Old -&gt; New</code> field:<br>
 <img src="images/recode_sex_2.png" class="img-fluid"></li>
@@ -637,10 +642,10 @@ div.csl-indent {
 </ol>
 </section>
 <section id="setting-values-labels" class="level3" data-number="16.3.4">
-<h3 data-number="16.3.4" class="anchored" data-anchor-id="setting-values-labels"><span class="header-section-number">16.3.4</span> Setting <code>Values</code> labels for <code>BIO_SEX</code></h3>
+<h3 data-number="16.3.4" class="anchored" data-anchor-id="setting-values-labels"><span class="header-section-number">16.3.4</span> Setting <code>Values</code> labels for <code>Bio_Sex</code></h3>
 <p>In addition to giving a more human-friendly label to a variable, we can give clearer labels to the levels of a variable. These can also be shown in figures and tables, making those easier to understand and helping avoid misinterpretation.</p>
 <ol type="1">
-<li>Also in the <code>Variable View</code> of the <code>Data Editor</code>, click on the <code>Values</code> cell in the the <code>BIO_SEX</code> row.</li>
+<li>Also in the <code>Variable View</code> of the <code>Data Editor</code>, click on the <code>Values</code> cell in the the <code>Bio_Sex</code> row.</li>
 <li>Click on the ellipsis button that appears.</li>
 <li>In the dialogue box that opens, enter a <code>0</code> in the <code>Values</code> field.</li>
 <li>Click the large plus sign to the right of the <code>Value Labels</code> field:<br>
@@ -652,7 +657,7 @@ div.csl-indent {
 <li>Again click the <code>Add</code> button to add this association as well.</li>
 <li>Click <code>OK</code></li>
 </ol>
-<p>Now when you click on the <code>values</code> cell for the <code>BIO_SEX</code> row, you will see these value labels added. Right-clicking on the <code>BIO_SEX</code> row and choosing to look at the <code>Variable Information</code> will show these in addition to the <a href="#data-view">other information</a>:</p>
+<p>Now when you click on the <code>values</code> cell for the <code>Bio_Sex</code> row, you will see these value labels added. Right-clicking on the <code>Bio_Sex</code> row and choosing to look at the <code>Variable Information</code> will show these in addition to the <a href="#data-view">other information</a>:</p>
 <p><img src="images/levels_sex_3.png" class="img-fluid"></p>
 <p>Note that we have not actually changed the data. They are still numbers (<code>Scale</code> level measures). Right-click again on that variable (in either the <code>Data View</code> or <code>Variable View</code> tabs) and select <code>Descriptive Statistics</code>. You will see in the output that SPSS generates means, etc. just as it would for any interval/ratio variable:</p>
 <p><img src="images/levels_sex_4.png" class="img-fluid"></p>
@@ -731,12 +736,13 @@ div.csl-indent {
 <h4 class="anchored" data-anchor-id="quickly-creating-dummy-variables-for-variable-levels">Quickly Creating Dummy Variables for Variable Levels</h4>
 <p>We could simply convert each level into a separate dummy variable. To do this:</p>
 <ol type="1">
-<li>Also under the <code>Transform</code> menu, select <code>Create Dummy Variables</code></li>
-<li>Select <code>Population</code> under <code>Variables</code> and then add that to the <code>Create Cummy Variables for:</code> field by again clicking on the arrow (<img src="images/arrow1.png" class="img-fluid">)</li>
+<li>Under the <code>Transform</code> menu, select <code>Create Dummy Variables</code></li>
+<li>Select <code>Dwelling_Type</code> under <code>Variables</code> and then add that to the <code>Create Cummy Variables for:</code> field by again clicking on the arrow (<img src="images/arrow1.png" class="img-fluid">)</li>
 <li>We are going to create a simple dummy variable—not, e.g., one derived from a combination of other variables—so leave <code>Create main-effect dummies</code> selected</li>
-<li>We didn’t create any value labels, but it’s fine to leave selected <code>Use value labels</code> under <code>Dummy Variable Labels</code> since neither choice matters for a simple “main effect” dummies.</li>
-<li>Under <code>Macros</code>, select to <code>Omit first dummy category from maro definitions</code>. We can nearly always select to do this because we usually need one fewer dummy variables than there are values in the original variable. The <code>Population</code> variables has two values (<code>Migrant</code> and <code>Non-Migrant</code>), so we only need one dummy variable (i.e., 2 - 1 = 1) to fully encode the information in the <code>Population</code> variable<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a></li>
-<li>In the <code>Root Names</code> field, type <code>population</code></li>
+<li>It’s fine to leave selected <code>Use value labels</code> under <code>Dummy Variable Labels</code> since neither choice matters for a simple “main effect” dummies</li>
+<li>Under <code>Macros</code>, select to <code>Omit first dummy category from macro definitions</code>. We can nearly always select to do this because we usually need one fewer dummy variables than there are values in the original variable. The <code>Population</code> variables has two values (<code>Migrant</code> and <code>Non-Migrant</code>), so we only need one dummy variable (i.e., 2 - 1 = 1) to fully encode the information in the <code>Population</code> variable<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a><br>
+This will make <code>Detached single-family</code> the “reference” group: If we included all of the dummy variables we’re creating in a model, then their effects would be relative to those living in single-family detached homes.</li>
+<li>In the <code>Root Names</code> field, type <code>Dwelling</code>. This will add that word to the each of the dummy variables to remind us where they came from and what they’re referring to.</li>
 <li>Click <code>OK</code></li>
 </ol>
 <p>Dummy variables can only take on the values of 0 or 1. For some reason, SPSS gives dummies it creates two decimal places. We clearly don’t need these, so:</p>
@@ -745,7 +751,50 @@ div.csl-indent {
 <li>Change the value to <code>0</code></li>
 </ol>
 <p>Note that we could also change to <code>Width</code> to <code>1</code> since we only need one digit to the left of the decimal.</p>
-<p>However, some of these types are quite similar to each other; for at least preliminary analyses, then, we will combine some of them into the same dummy variable<a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a></p>
+</section>
+<section id="creating-dummy-variables-for-combined-variable-levels" class="level4">
+<h4 class="anchored" data-anchor-id="creating-dummy-variables-for-combined-variable-levels">Creating Dummy Variables for Combined Variable Levels</h4>
+<p>Some of these dwelling types are quite similar to each other; for at least preliminary analyses, then, we will combine some of them into the same dummy variable<a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a></p>
+<p>This process is not as straight-forward as a batch creation of the dummies, but still not onerous:</p>
+<p>You want to create <strong>four</strong> dummy variables from the <code>Dwelling_Types</code> variable:</p>
+<ol type="1">
+<li><p><code>Detached_House</code>: 1 if value = 1, else 0</p></li>
+<li><p><code>Mobile_or_RowHouse</code>: 1 if value = 2 or 3, else 0</p></li>
+<li><p><code>MultiUnit_Housing</code>: 1 if value = 4–7, else 0</p></li>
+<li><p><code>Other_Dwelling</code>: 1 if value = 8, else 0</p></li>
+<li><p>Under the <code>Transform</code> menu, select <code>Compute Variable</code></p></li>
+<li><p>In the <code>Target Variable</code> box, type <code>Detached_House</code></p></li>
+<li><p>In the <code>Numeric Expression</code> box, type: <code>(Dwelling_Types = 1)</code></p></li>
+<li><p>Click <code>OK</code> to create the variable. You now have a new variable <code>Detached_House</code> coded as:</p>
+<ul>
+<li><code>1</code> if the respondent lives in a detached single-family house</li>
+<li><code>0</code> for all other types of dwellings</li>
+</ul></li>
+<li><p>Repeat Steps 1 -– 4 to create the second dummy variable, using:</p>
+<ul>
+<li><code>Target Variable</code>: <code>Mobile_or_RowHouse</code></li>
+<li><code>Numeric Expression</code>: <code>(Dwelling_Types = 2 OR Dwelling_Types = 3)</code><br>
+This variable will equal:</li>
+<li>1 if the respondent lives in a <strong>mobile home/trailer</strong> or a <strong>row/town house</strong></li>
+<li>0 otherwise</li>
+</ul></li>
+<li><p>Now repeat Steps 1 –- 4 again to create the third dummy variable, using:</p>
+<ul>
+<li><code>Target Variable</code>: <code>MultiUnit_Housing</code></li>
+<li><code>Numeric Expression</code>: <code>(Dwelling_Types &gt;= 4 AND Dwelling_Types &lt;= 7)</code><br>
+This captures all multi-unit dwellings:</li>
+<li>Divided house</li>
+<li>Small apartment buildings</li>
+<li>Larger apartments with or without doormen / locked entries</li>
+</ul></li>
+<li><p>One more time, repeat to create the final dummy:</p>
+<ul>
+<li><code>Target Variable</code>: <code>Other_Dwelling</code></li>
+<li><code>Numeric Expression</code>: <code>(Dwelling_Types = 8)</code><br>
+This dummy equals 1 only if the dwelling type is coded as <code>Other</code></li>
+</ul></li>
+</ol>
+<p>After creating the variables, go to <code>Variable View</code> to create variable labels and perhaps labels for the levels.</p>
 </section>
 </section>
 </section>
