@@ -346,7 +346,23 @@ div.csl-indent {
   <li><a href="#creating-dummy-variables-for-combined-variable-levels" id="toc-creating-dummy-variables-for-combined-variable-levels" class="nav-link" data-scroll-target="#creating-dummy-variables-for-combined-variable-levels">Creating Dummy Variables for Combined Variable Levels</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">16.4</span> Additional Resources</a></li>
+  <li><a href="#old" id="toc-old" class="nav-link" data-scroll-target="#old"><span class="header-section-number">17</span> Old</a>
+  <ul>
+  <li><a href="#transform-city-into-a-numeric-variable-called-city.n" id="toc-transform-city-into-a-numeric-variable-called-city.n" class="nav-link" data-scroll-target="#transform-city-into-a-numeric-variable-called-city.n"><span class="header-section-number">17.0.1</span> Transform <code>city</code> into a numeric variable called <code>city.n</code></a>
+  <ul>
+  <li><a href="#pivot-tables" id="toc-pivot-tables" class="nav-link" data-scroll-target="#pivot-tables">Frequencies &amp; Crosstabs</a></li>
+  </ul></li>
+  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting"><span class="header-section-number">17.0.2</span> Subset the data to only include migrant students</a></li>
+  <li><a href="#compute-cheaks-total-from-other-variables" id="toc-compute-cheaks-total-from-other-variables" class="nav-link" data-scroll-target="#compute-cheaks-total-from-other-variables"><span class="header-section-number">17.0.3</span> Compute CHEAKS Total from Other Variables</a></li>
+  <li><a href="#standardize-variables" id="toc-standardize-variables" class="nav-link" data-scroll-target="#standardize-variables"><span class="header-section-number">17.0.4</span> Standardize Variables</a></li>
+  <li><a href="#export-a-table-in-apa-format-to-word" id="toc-export-a-table-in-apa-format-to-word" class="nav-link" data-scroll-target="#export-a-table-in-apa-format-to-word"><span class="header-section-number">17.1</span> Export a Table in APA Format to Word</a>
+  <ul>
+  <li><a href="#steps-to-export-a-table-in-apa-format-in-spss" id="toc-steps-to-export-a-table-in-apa-format-in-spss" class="nav-link" data-scroll-target="#steps-to-export-a-table-in-apa-format-in-spss"><span class="header-section-number">17.1.1</span> Steps to Export a Table in APA Format in SPSS:</a></li>
+  <li><a href="#example-export-in-word" id="toc-example-export-in-word" class="nav-link" data-scroll-target="#example-export-in-word"><span class="header-section-number">17.1.2</span> Example Export in Word:</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">17.1.3</span> Summary</a></li>
+  </ul></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">17.2</span> Additional Resources</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -609,10 +625,10 @@ div.csl-indent {
 </section>
 <section id="recoding-bio_sex" class="level3" data-number="16.3.3">
 <h3 data-number="16.3.3" class="anchored" data-anchor-id="recoding-bio_sex"><span class="header-section-number">16.3.3</span> Recoding <code>Bio_Sex</code></h3>
-<p>Participants’ self-reported biological sex is currently coded as 1 for male and 2 for female. I prefer to code dichotomous variables as 0/1.</p>
+<p>Participants’ self-reported biological sex<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> is currently coded as 1 for male and 2 for female. I prefer to code dichotomous variables as 0/1.</p>
 <p>To recode <code>Bio_Sex</code>:</p>
 <ol type="1">
-<li>Click on <code>Transform &gt; Recode into Same Variables...</code><a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a>.</li>
+<li>Click on <code>Transform &gt; Recode into Same Variables...</code><a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a>.</li>
 <li>In the dialogue box that opens, move <code>Bio_Sex</code> to the right-hand field; to do this:</li>
 <li>Single left-click on <code>Bio_Sex</code> electing it in the left-hand field to select it</li>
 <li>Click on the arrow between the two fields (<img src="images/arrow1.png" class="img-fluid">)</li>
@@ -649,7 +665,7 @@ div.csl-indent {
 </section>
 <section id="computing-participant-age" class="level3" data-number="16.3.5">
 <h3 data-number="16.3.5" class="anchored" data-anchor-id="computing-participant-age"><span class="header-section-number">16.3.5</span> Computing Participant Age</h3>
-<p><code>H1GI1Y</code> is the last two digits of the participant’s birth year. <code>Study_year</code> contains the year in which a given row of longitudinal data were collected<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a> We can use those to compute their age at each wave.</p>
+<p><code>H1GI1Y</code> is the last two digits of the participant’s birth year. <code>Study_year</code> contains the year in which a given row of longitudinal data were collected<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a> We can use those to compute their age at each wave.</p>
 <ol type="1">
 <li>Click <code>Transform &gt; Compute Variable</code>.</li>
 <li>In the dialogue box that opens, type <code>Age</code> in the <code>Target Variable:</code> field; this will be the name of the variable we’re computing.</li>
@@ -660,7 +676,7 @@ div.csl-indent {
 </section>
 <section id="setting-missing" class="level3" data-number="16.3.6">
 <h3 data-number="16.3.6" class="anchored" data-anchor-id="setting-missing"><span class="header-section-number">16.3.6</span> Setting missing values for <code>Weight</code></h3>
-<p>As mentioned briefly <a href="#data-view">above</a>, we can set certain values to be recognized as representing missing values. Most of the variables in this set were imported with blank cells denoting missing values or missing values already established. However, running descriptives^[Again, you can either right-click on that variable in the <code>Data Editor</code> and select <code>Descriptive Statistics</code><a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a> on <code>Weight</code> shows that the maximum weight (in kgs) here is 9999. Since your momma was not a participant, that value is surely intended to denote missing values.</p>
+<p>As mentioned briefly <a href="#data-view">above</a>, we can set certain values to be recognized as representing missing values. Most of the variables in this set were imported with blank cells denoting missing values or missing values already established. However, running descriptives^[Again, you can either right-click on that variable in the <code>Data Editor</code> and select <code>Descriptive Statistics</code><a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a> on <code>Weight</code> shows that the maximum weight (in kgs) here is 9999. Since your momma was not a participant, that value is surely intended to denote missing values.</p>
 <p>We can easily fix this:</p>
 <ol type="1">
 <li>In the <code>Variable View</code> tab of the <code>Data Editor</code> window, click on the the ellipsis button in the <code>Missing</code> cell of the <code>Weight</code> row</li>
@@ -715,7 +731,7 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>We could leave this as single variable; for ANOVAs this may help since then we would only look for differences between these levels if the ANVOA found a significant main effect for this variable<a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a>. However, it is more flexible and efficient for other types of models to convert these levels into meaningful dummy variables that can be added as needed. (By not necessarily including all levels—all dummies—we could also save a few degrees of freedom, too.)</p>
+<p>We could leave this as single variable; for ANOVAs this may help since then we would only look for differences between these levels if the ANVOA found a significant main effect for this variable<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a>. However, it is more flexible and efficient for other types of models to convert these levels into meaningful dummy variables that can be added as needed. (By not necessarily including all levels—all dummies—we could also save a few degrees of freedom, too.)</p>
 <section id="quickly-creating-dummy-variables-for-variable-levels" class="level4">
 <h4 class="anchored" data-anchor-id="quickly-creating-dummy-variables-for-variable-levels">Quickly Creating Dummy Variables for Variable Levels</h4>
 <p>We could simply convert each level into a separate dummy variable. To do this:</p>
@@ -724,21 +740,21 @@ div.csl-indent {
 <li>Select <code>Dwelling_Type</code> under <code>Variables</code> and then add that to the <code>Create Cummy Variables for:</code> field by again clicking on the arrow (<img src="images/arrow1.png" class="img-fluid">)</li>
 <li>We are going to create a simple dummy variable—not, e.g., one derived from a combination of other variables—so leave <code>Create main-effect dummies</code> selected</li>
 <li>It’s fine to leave selected <code>Use value labels</code> under <code>Dummy Variable Labels</code> since neither choice matters for a simple “main effect” dummies</li>
-<li>Under <code>Macros</code>, select to <code>Omit first dummy category from macro definitions</code>. We can nearly always select to do this because we usually need one fewer dummy variables than there are values in the original variable. The <code>Population</code> variables has two values (<code>Migrant</code> and <code>Non-Migrant</code>), so we only need one dummy variable (i.e., 2 - 1 = 1) to fully encode the information in the <code>Population</code> variable<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a><br>
+<li>Under <code>Macros</code>, select to <code>Omit first dummy category from macro definitions</code>. We can nearly always select to do this because we usually need one fewer dummy variables than there are values in the original variable. The <code>Population</code> variables has two values (<code>Migrant</code> and <code>Non-Migrant</code>), so we only need one dummy variable (i.e., 2 - 1 = 1) to fully encode the information in the <code>Population</code> variable<a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a><br>
 This will make <code>Detached single-family</code> the “reference” group: If we included all of the dummy variables we’re creating in a model, then their effects would be relative to those living in single-family detached homes.</li>
 <li>In the <code>Root Names</code> field, type <code>Dwelling</code>. This will add that word to the each of the dummy variables to remind us where they came from and what they’re referring to.</li>
 <li>Click <code>OK</code></li>
 </ol>
 <p>Dummy variables can only take on the values of 0 or 1. For some reason, SPSS gives dummies it creates two decimal places. We clearly don’t need these, so:</p>
 <ol type="1">
-<li>In the <code>Variable View</code> tab, click into the <code>Decimals</code> cell of the <code>population_1</code> variable<a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a></li>
+<li>In the <code>Variable View</code> tab, click into the <code>Decimals</code> cell of the <code>population_1</code> variable<a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a></li>
 <li>Change the value to <code>0</code></li>
 </ol>
 <p>Note that we could also change to <code>Width</code> to <code>1</code> since we only need one digit to the left of the decimal.</p>
 </section>
 <section id="creating-dummy-variables-for-combined-variable-levels" class="level4">
 <h4 class="anchored" data-anchor-id="creating-dummy-variables-for-combined-variable-levels">Creating Dummy Variables for Combined Variable Levels</h4>
-<p>Some of these dwelling types are quite similar to each other; for at least preliminary analyses, then, we will combine some of them into the same dummy variable<a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a></p>
+<p>Some of these dwelling types are quite similar to each other; for at least preliminary analyses, then, we will combine some of them into the same dummy variable<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a></p>
 <p>We could group these several ways, of course, but let’s group them thusly:</p>
 <ul>
 <li><code>Detached_House</code>: <code>1</code> if the variable value is <code>1</code>, else it will be <code>0</code></li>
@@ -781,138 +797,180 @@ This dummy equals 1 only if the dwelling type is coded as <code>Other</code></li
 </ul></li>
 </ol>
 <p>After creating the variables, go to <code>Variable View</code> to create variable labels and perhaps labels for the levels.</p>
-<!-- # Old -->
-<!-- ### Transform `city` into a numeric variable called `city.n` -->
-<!-- There are pretty often times when it's useful to create a new variable based on the values of one or more existing variables. One occasion to do this is to make a nominal/ordinal variable into a numeric one^[Of course, we can simply [add value labels to existing (numeric) values](#setting-values-labels) in a `Scale` variable, but here we're not just adding labels but instead creating a whole new variable with different values.]. Let's create a new variable based on the `city` values^[I'm doing this as a way of anonymizing city, but since there are only two cities in these data, I'm really creating a dummy variable. There is a better way to create dummy variables that we'll cover [below](#create-dummies), but I just wanted to point this out now.] -->
-<!-- To do this: -->
-<!-- 1. In any window, click on `Transform > Recode into Different Variables`^[As you can see, we could also recode into the same variable and indeed anonymize city in one action. Personally, I tend to create new things instead of overwriting existing in case I make a mistake and can't easily recover what I overwrote.] -->
-<!-- 1. In the dialogue box that opens, click on `city` in the list of variables in the left-hand field. -->
-<!-- 1. Click on the arrow button (![](images/arrow1.png)) next to that list of variables. This adds `city` to the `Input Variable -> Output Variable` field. -->
-<!-- 1. In the `Output Variable` section, enter `city.n` into the `Name` field and `Numeric version of City` (Or something like that) into the `Label` field. -->
-<!-- 1. Click on the `Old and New Values` button -->
-<!-- 1. A new dialogue that opens; in the `Old Value` section, type in `Kunshan` in the `Value` field -->
-<!-- 1. In the `New Value` field, type in `0` -->
-<!-- 1. Click the `Add` button to add that to the `Old -> New` field -->
-<!-- 1. Repeat this for transforming `Shanghai` to `1`.  Note that since this is the only remaining option, we could instead select `All othe values` at the bottom of the `Old Value` section while still adding `1` to the `New Value` field. -->
-<!-- 1. Click `Continue` ro return to the previous dialogue and then click `OK` -->
-
-<!-- #### Frequencies & Crosstabs {#pivot-tables} -->
-<!-- So far, we've been mainly cleaning and prepping the data. I want to break this pattern to preface the step after this one in which we subset our data. -->
-<!-- A common way to examine nominal (and ordinal) variables is through frequencies and cross tabulations ("crosstabs") of those frequencies across pairs of variables. Let us do this with some of our `Population` and `Group`^[We could also do this with these variable's numeric equivalents---especially if we had given value labels to their numbers.]: -->
-<!-- 1. Click on `Anlayze > Descriptive Statistics > Frequencies` -->
-<!-- 1. In the dialogue that opens, select `Population` and `Group`. You can do this by clicking on them separately or, e.g., holding down the `Control`/`Command` key to select them both -->
-<!-- 1. Click on the arrow button to move them to the `Variable(s)` field -->
-<!-- 1. SPSS provides many options for displaying variables. Some of these are listed under the `Statistics` button, but since these are both nominal variables, we can only meaning select `Median` under `Central Tencency` (and perhaps `Quantiles`) -->
-<!-- 1. Under `Charts` we can select to add, e.g,. `Bar charts` for `Frequencies`. Note that pie charts are often misleading and rarely the best option for displaying data. -->
-<!-- 1. For now, there's not much of interest under `Format`, `Style`, or `Bootstrap` -->
-
-<!-- 1. But do notice on the main dialogue box that we can select whether we want to `Create APA style tables`, a nice option for preparing pieces for dissertations and manuscripts -->
-<!-- 1. Click `OK` -->
-
-<!-- We can see from both the tables and bar charts that we have many more migrant than non-migrant students and many more students who participated in the Caring for Life program (`CFL`) than those who didn't (`No-CFL`). Given that these were chosen variables---part of the study's manipulation---this is curious. Let's investigate further -->
-<!-- 1. Click on `Anlayze > Descriptive Statistics > Crosstabs` -->
-<!-- 1. From the variable list, select `Population` and use the arrow to move it to the `Row(s)` field -->
-<!-- 1. And move `Group` to the `Columns(s)` field -->
-<!-- 1. SPSS again offers many choices for options. For example, under `Statistics` we can (but won't) choose `Chi-square` to test whether the distribution of counts differs from expected values and, under `Cells`, whether to present not only the `Observed` cells counts but also the `Expected`. Now, though, simply click `OK` -->
-
-<!-- The table this produces: -->
-<!-- ![](images/crosstab.png) -->
-<!-- reveals why the counts for both `Population` and `Group` were so uneven: There are no non-migrant students who participated in the CFL program^[This was a consequence of working in the field---i.e., with data collected outside controlled, laboratory-like settings. Schools who participated in the control (i.e., no-CFL) group were essentially asked to give their time and resources to the study without getting anything in return since (that year), they were not getting the CFL program offered at their school. It can be hard to find busy schools with many demands that can afford to do this. To compensate for this, I was forced to use a non-migrant control group from a previous study. Hardly ideal, but necessary.] -->
-<!-- ### Subset the data to only include migrant students {#subsetting} -->
-<!-- Given that there are no non-migrant students in the no-CFL group, it produces bias to include them as part of the CFL group. This is thus one of the few times when it is justified to subset one's data: Although subsetting literally removes information from your analyses^[Which turns out to be a bad idea.], the information that they would include would make CFL -- no-CFL comparisons like comparing apples to oranges. -->
-<!-- Let us thus subset our data to include only migrant students. -->
-<!-- Under the `Data` menu option, there are a few options for subsetting data: -->
-<!-- - [`Split File`](https://www.spss-tutorials.com/spss-split-file-command/) -->
-<!--   - This keeps the data together, but produces separate output for the groups they are split into. -->
-<!--   - For example, we would split these data by population and then easily compare descriptives between the migrant and non-migrant. -->
-<!--   - For those who believe in "segregating" their groups, this is a good option^[As you may guess, I prefer not doing this. Better is to create a factor in one's analyses that measures the effect of the variable (e.g., `Migrant`) on outcomes than in essentially doubling the number of analyses conducted and thus nearly doubling the chances of errors.] -->
-<!-- - `Split into Files` -->
-<!--   - In which we can create two or more sets of data separated by values on one or more variables. -->
-<!--   - For example, we could separate these data into files that have first- and second-grade students that are either migrant or non-migrant students. Many do this. -->
-<!-- - [`Select Cases`](https://ezspss.com/how-to-select-cases-in-spss/) -->
-<!--   - This selects cases based on some criterion. The unselected cases can then be "hidden" from analyses, deleted, or moved to an other file. -->
-<!-- To do this: -->
-<!-- 1. Click on `Data > Select Cases` -->
-<!-- 1. In the dialogue box that opens, select `Population` -->
-<!-- 1. Make sure `If condition is satisfied` is selected^[`Random sampe of cases` woudl be used, e.g., to split the data into a "training" and "test" set of data to [create and test](https://ai.stackexchange.com/questions/17898/while-we-split-data-in-training-and-test-data-why-we-have-two-pairs-of-each), e.g., the generalizability of a model. Splitting `Based on a time or case range` would be done if we feel that, e.g., participants differ qualitatively over time or within ranges of cases. `Use filter variable` is essentially what we're doing, but we're first needing to create that filer variable.] -->
-<!-- 1. Click on the `If...` button^[Always a good thing to do in life.] -->
-<!-- 1. The the new dialogue, again select `Population` and move it to the field at the top right. -->
-<!-- 1. Either type or click on the `=` button -->
-<!-- 1. Type into that field `"Migrant"`. *Do* include the quotes so that that field now shows: \newline -->
-<!--   `Population = "Migrant"` -->
-<!-- 1. Click `Continue` -->
-<!-- 1. Under `Output`, make sure `Filter out unselected cases` is checked. This retains the unselected data, but removes it from any analyses. `Copy seleted cases to a new dataset` is tantamount to `Split into Files` -->
-<!-- 1. Click `OK` -->
-<!-- In the `Data View` of the `Data Edtiro` window, you can no see that the rows for non-migrant students have a line crossed through their row number: -->
-<!-- ![](images/select-cases.png) -->
-<!-- Under the `Variable View` tab, you'll also see that a new variable called `filter_$` has been created. The label for this variable, at least, is informative: \newline `Population = "Migrant" (FILTER)` -->
-<!-- And now all subsequent analyses will disclude the non-migrants students^[Don't worry, they're relatively privileged otherwise in life compared to the migrant students.]. We can stop filtering out the non-migrant students simply by deleting (`Clear`ing) that filter variable. Being able to now subset our data is why I wanted to do this task a bit out of step with the rest of this guide. -->
-<!-- ### Compute CHEAKS Total from Other Variables -->
-<!-- This data set doesn't contain the responses to individual items (or other things), but it's obviously much more common for data to have things like that---and for us to need to compute scores based on these individual items. Intentionally, though, we can still do that here since the CHEAKS total score is itself comprised of the scores on the various CHEAKS subscales. -->
-<!-- 1. Click on `Transform > Compute Variable` -->
-<!-- 1. In the dialogue that opens, type in `cheaks.total` in the `Target Variable` field -->
-<!-- 1. Just to do it, click on the `Type &* Label` button -->
-<!--   1. To make the label `CHEAKS Total Score` (although selecting `Use expression as label` isn't a bad idea to make a clear history of what you've done) -->
-<!--   1. And leave the `Type` as `Numeric` -->
-<!-- 1. In the list of variables, scroll down to `pollution` and click on that -->
-<!-- 1. Click on `pollution` from the list of variables, and then the blue arrow to move it to the `Numeric Expression` field -->
-<!-- 1. In that numeric expression field, type `+` and then move `general` over before following that with another `+`. -->
-<!-- 1. Continue to do this until the `Numeric Expression` field shows: \newline `pollution + general + water + energy + animals + recycling`^[Yeah, or just copying that line into the `Numeric Expression` field to save some typing. Note too that we could also have chosen either `All` or `Statistical` from the `Function group` field and then `Sum` from the `Functions and Special Variables` field and made the sum of those variables.] -->
-<!-- 1. Click on `OK` -->
-<!-- Note that if you are regularly importing data into SPSS (e.g., if you are "peeking" at data as they come in^[Which, of course, you should never do, and that no one ever does.]), then this would be a great occasion to save the syntax created to rerun upon each data importation. -->
-<!-- ### Standardize Variables -->
-<!-- I'm also a big fan of standardized data. It doesn't change the distribution of scores at all but makes values on one variable directly comparable to values on an other---even if they're measured on very different scales^[In analytic models---if all variables are either standardized or dummy-coded---it also lets us remove the intercept term, making our analyses a bit more powerful ... but more on that in Stat 2.] -->
-<!-- SPSS makes it very easy to standardize variables:\index{Standardized Variables} -->
-<!-- 1. Click on `Anlayze > Descriptive Statistics > Descriptives` -->
-<!-- 1. Click on `toca.pro` -->
-<!-- 1. Now, *holding down the* `Shift` *key* either single-(left-)click on `recyclilng` or tap the down-arrow key until you have selected all of the variables from `toca.pro` to `recycing` -->
-<!-- 1. *Now* click on the blue arrow to move all of those variables to the `varialbe(s)` field -->
-<!-- 1. Under the `Options` dialogue, we might as well check to review, e.g., the `Mean`, `Std. Deviation`, `Minimum`, `Maximum`, and `S. E. Mean` (i.e., the [standard error of the mean](https://www.indeed.com/career-advice/career-development/standard-error-mean) that we covered in our [first lecture](https://wesamuels.net/courses/statistics/N915/Overview/Stats_Overview.html)) -->
-<!-- 1. But our real goal here is to check the `Save standardized values as variables` before clicking on `OK` -->
-<!-- And that's all it takes to create standardized variables. -->
-
-<!-- ## Export a Table in APA Format to Word -->
-<!-- To export a table in APA format in SPSS, you can use the following steps. This process involves generating the table, modifying it to meet APA style guidelines, and then exporting it. -->
-<!-- ### Steps to Export a Table in APA Format in SPSS: -->
-<!-- 1. **Generate the Table**: -->
-<!--    - First, create the table you need by running the appropriate analysis. -->
-<!--    - For example, to create a descriptive statistics table, go to `Analyze` > `Descriptive Statistics` > `Descriptives...`, select the variables, and run the analysis. -->
-<!-- 2. **Modify the Table**: -->
-<!--    - Once the table is generated, it will appear in the `Output Viewer`. -->
-<!--    - To modify the table, double-click on it to open it in the `Pivot Table Editor`. -->
-<!--    - Adjust the table's appearance to match APA style as closely as possible. This might include: -->
-<!--      - Ensuring that the table uses a simple grid with minimal lines. -->
-<!--      - Aligning text correctly (typically left-aligned for text, right-aligned for numbers). -->
-<!--      - Using appropriate font and size (Times New Roman, 12-point is common for APA). -->
-<!--      - Including relevant statistics (e.g., means, standard deviations). -->
-
-<!-- 3. **Export the Table**: -->
-<!--    - After making the necessary adjustments, you can export the table. -->
-<!--    - Click on `File` > `Export...` in the `Output Viewer`. -->
-
-<!--    - In the `Export Output` dialog box, choose the desired file format. For APA tables, Microsoft Word (.doc or .docx) is typically a good choice. -->
-<!--    - Specify the file name and location where you want to save the file. -->
-
-<!--    - Under `Objects to Export`, select `All Visible Objects` or choose the specific table you modified. -->
-<!--    - Click `OK` to export the table. -->
-<!-- ### Example Export in Word: -->
-<!-- 1. **Open the Exported File**: -->
-<!--    - Open the exported Word document. -->
-
-<!--    - Review the table to ensure it adheres to APA formatting guidelines. -->
-<!-- 2. **Adjust in Word if Necessary**: -->
-<!--    - If further adjustments are needed, you can make them directly in Word. -->
-
-<!--    - Ensure the table is labeled correctly with a table number and title (e.g., `Table 1`). -->
-<!--    - Include any notes below the table, formatted according to APA guidelines. -->
-<!-- ### Summary -->
-
-<!-- To export a table in APA format from SPSS, generate the table through the appropriate analysis, modify it using the Pivot Table Editor to adhere to APA style, and then export it to a Word document. Make any final adjustments in Word to ensure the table fully complies with APA formatting standards. -->
 </section>
 </section>
 </section>
-<section id="additional-resources" class="level2" data-number="16.4">
-<h2 data-number="16.4" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">16.4</span> Additional Resources</h2>
+<section id="old" class="level1" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> Old</h1>
+<section id="transform-city-into-a-numeric-variable-called-city.n" class="level3" data-number="17.0.1">
+<h3 data-number="17.0.1" class="anchored" data-anchor-id="transform-city-into-a-numeric-variable-called-city.n"><span class="header-section-number">17.0.1</span> Transform <code>city</code> into a numeric variable called <code>city.n</code></h3>
+<p>There are pretty often times when it’s useful to create a new variable based on the values of one or more existing variables. One occasion to do this is to make a nominal/ordinal variable into a numeric one<a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a>. Let’s create a new variable based on the <code>city</code> values<a href="#fn27" class="footnote-ref" id="fnref27" role="doc-noteref"><sup>27</sup></a></p>
+<p>To do this:</p>
+<ol type="1">
+<li>In any window, click on <code>Transform &gt; Recode into Different Variables</code><a href="#fn28" class="footnote-ref" id="fnref28" role="doc-noteref"><sup>28</sup></a></li>
+<li>In the dialogue box that opens, click on <code>city</code> in the list of variables in the left-hand field.</li>
+<li>Click on the arrow button (<img src="images/arrow1.png" class="img-fluid">) next to that list of variables. This adds <code>city</code> to the <code>Input Variable -&gt; Output Variable</code> field.</li>
+<li>In the <code>Output Variable</code> section, enter <code>city.n</code> into the <code>Name</code> field and <code>Numeric version of City</code> (Or something like that) into the <code>Label</code> field.</li>
+<li>Click on the <code>Old and New Values</code> button</li>
+<li>A new dialogue that opens; in the <code>Old Value</code> section, type in <code>Kunshan</code> in the <code>Value</code> field</li>
+<li>In the <code>New Value</code> field, type in <code>0</code></li>
+<li>Click the <code>Add</code> button to add that to the <code>Old -&gt; New</code> field</li>
+<li>Repeat this for transforming <code>Shanghai</code> to <code>1</code>. Note that since this is the only remaining option, we could instead select <code>All othe values</code> at the bottom of the <code>Old Value</code> section while still adding <code>1</code> to the <code>New Value</code> field.</li>
+<li>Click <code>Continue</code> ro return to the previous dialogue and then click <code>OK</code></li>
+</ol>
+<section id="pivot-tables" class="level4">
+<h4 class="anchored" data-anchor-id="pivot-tables">Frequencies &amp; Crosstabs</h4>
+<p>So far, we’ve been mainly cleaning and prepping the data. I want to break this pattern to preface the step after this one in which we subset our data.</p>
+<p>A common way to examine nominal (and ordinal) variables is through frequencies and cross tabulations (“crosstabs”) of those frequencies across pairs of variables. Let us do this with some of our <code>Population</code> and <code>Group</code><a href="#fn29" class="footnote-ref" id="fnref29" role="doc-noteref"><sup>29</sup></a>:</p>
+<ol type="1">
+<li>Click on <code>Anlayze &gt; Descriptive Statistics &gt; Frequencies</code></li>
+<li>In the dialogue that opens, select <code>Population</code> and <code>Group</code>. You can do this by clicking on them separately or, e.g., holding down the <code>Control</code>/<code>Command</code> key to select them both</li>
+<li>Click on the arrow button to move them to the <code>Variable(s)</code> field</li>
+<li>SPSS provides many options for displaying variables. Some of these are listed under the <code>Statistics</code> button, but since these are both nominal variables, we can only meaning select <code>Median</code> under <code>Central Tencency</code> (and perhaps <code>Quantiles</code>)</li>
+<li>Under <code>Charts</code> we can select to add, e.g,. <code>Bar charts</code> for <code>Frequencies</code>. Note that pie charts are often misleading and rarely the best option for displaying data.</li>
+<li>For now, there’s not much of interest under <code>Format</code>, <code>Style</code>, or <code>Bootstrap</code></li>
+<li>But do notice on the main dialogue box that we can select whether we want to <code>Create APA style tables</code>, a nice option for preparing pieces for dissertations and manuscripts</li>
+<li>Click <code>OK</code></li>
+</ol>
+<p>We can see from both the tables and bar charts that we have many more migrant than non-migrant students and many more students who participated in the Caring for Life program (<code>CFL</code>) than those who didn’t (<code>No-CFL</code>). Given that these were chosen variables—part of the study’s manipulation—this is curious. Let’s investigate further</p>
+<ol type="1">
+<li>Click on <code>Anlayze &gt; Descriptive Statistics &gt; Crosstabs</code></li>
+<li>From the variable list, select <code>Population</code> and use the arrow to move it to the <code>Row(s)</code> field</li>
+<li>And move <code>Group</code> to the <code>Columns(s)</code> field</li>
+<li>SPSS again offers many choices for options. For example, under <code>Statistics</code> we can (but won’t) choose <code>Chi-square</code> to test whether the distribution of counts differs from expected values and, under <code>Cells</code>, whether to present not only the <code>Observed</code> cells counts but also the <code>Expected</code>. Now, though, simply click <code>OK</code></li>
+</ol>
+<p>The table this produces:</p>
+<p><img src="images/crosstab.png" class="img-fluid"></p>
+<p>reveals why the counts for both <code>Population</code> and <code>Group</code> were so uneven: There are no non-migrant students who participated in the CFL program<a href="#fn30" class="footnote-ref" id="fnref30" role="doc-noteref"><sup>30</sup></a></p>
+</section>
+</section>
+<section id="subsetting" class="level3" data-number="17.0.2">
+<h3 data-number="17.0.2" class="anchored" data-anchor-id="subsetting"><span class="header-section-number">17.0.2</span> Subset the data to only include migrant students</h3>
+<p>Given that there are no non-migrant students in the no-CFL group, it produces bias to include them as part of the CFL group. This is thus one of the few times when it is justified to subset one’s data: Although subsetting literally removes information from your analyses<a href="#fn31" class="footnote-ref" id="fnref31" role="doc-noteref"><sup>31</sup></a>, the information that they would include would make CFL – no-CFL comparisons like comparing apples to oranges.</p>
+<p>Let us thus subset our data to include only migrant students.</p>
+<p>Under the <code>Data</code> menu option, there are a few options for subsetting data:</p>
+<ul>
+<li><a href="https://www.spss-tutorials.com/spss-split-file-command/"><code>Split File</code></a>
+<ul>
+<li>This keeps the data together, but produces separate output for the groups they are split into.</li>
+<li>For example, we would split these data by population and then easily compare descriptives between the migrant and non-migrant.</li>
+<li>For those who believe in “segregating” their groups, this is a good option<a href="#fn32" class="footnote-ref" id="fnref32" role="doc-noteref"><sup>32</sup></a></li>
+</ul></li>
+<li><code>Split into Files</code>
+<ul>
+<li>In which we can create two or more sets of data separated by values on one or more variables.</li>
+<li>For example, we could separate these data into files that have first- and second-grade students that are either migrant or non-migrant students. Many do this.</li>
+</ul></li>
+<li><a href="https://ezspss.com/how-to-select-cases-in-spss/"><code>Select Cases</code></a>
+<ul>
+<li>This selects cases based on some criterion. The unselected cases can then be “hidden” from analyses, deleted, or moved to an other file.</li>
+</ul></li>
+</ul>
+<p>To do this:</p>
+<ol type="1">
+<li>Click on <code>Data &gt; Select Cases</code></li>
+<li>In the dialogue box that opens, select <code>Population</code></li>
+<li>Make sure <code>If condition is satisfied</code> is selected<a href="#fn33" class="footnote-ref" id="fnref33" role="doc-noteref"><sup>33</sup></a></li>
+<li>Click on the <code>If...</code> button<a href="#fn34" class="footnote-ref" id="fnref34" role="doc-noteref"><sup>34</sup></a></li>
+<li>The the new dialogue, again select <code>Population</code> and move it to the field at the top right.</li>
+<li>Either type or click on the <code>=</code> button</li>
+<li>Type into that field <code>"Migrant"</code>. <em>Do</em> include the quotes so that that field now shows: <code>Population = "Migrant"</code></li>
+<li>Click <code>Continue</code></li>
+<li>Under <code>Output</code>, make sure <code>Filter out unselected cases</code> is checked. This retains the unselected data, but removes it from any analyses. <code>Copy seleted cases to a new dataset</code> is tantamount to <code>Split into Files</code></li>
+<li>Click <code>OK</code></li>
+</ol>
+<p>In the <code>Data View</code> of the <code>Data Edtiro</code> window, you can no see that the rows for non-migrant students have a line crossed through their row number:</p>
+<p><img src="images/select-cases.png" class="img-fluid"> Under the <code>Variable View</code> tab, you’ll also see that a new variable called <code>filter_$</code> has been created. The label for this variable, at least, is informative: <code>Population = "Migrant" (FILTER)</code></p>
+<p>And now all subsequent analyses will disclude the non-migrants students<a href="#fn35" class="footnote-ref" id="fnref35" role="doc-noteref"><sup>35</sup></a>. We can stop filtering out the non-migrant students simply by deleting (<code>Clear</code>ing) that filter variable. Being able to now subset our data is why I wanted to do this task a bit out of step with the rest of this guide.</p>
+</section>
+<section id="compute-cheaks-total-from-other-variables" class="level3" data-number="17.0.3">
+<h3 data-number="17.0.3" class="anchored" data-anchor-id="compute-cheaks-total-from-other-variables"><span class="header-section-number">17.0.3</span> Compute CHEAKS Total from Other Variables</h3>
+<p>This data set doesn’t contain the responses to individual items (or other things), but it’s obviously much more common for data to have things like that—and for us to need to compute scores based on these individual items. Intentionally, though, we can still do that here since the CHEAKS total score is itself comprised of the scores on the various CHEAKS subscales.</p>
+<ol type="1">
+<li>Click on <code>Transform &gt; Compute Variable</code></li>
+<li>In the dialogue that opens, type in <code>cheaks.total</code> in the <code>Target Variable</code> field</li>
+<li>Just to do it, click on the <code>Type &amp;* Label</code> button</li>
+<li>To make the label <code>CHEAKS Total Score</code> (although selecting <code>Use expression as label</code> isn’t a bad idea to make a clear history of what you’ve done)</li>
+<li>And leave the <code>Type</code> as <code>Numeric</code></li>
+<li>In the list of variables, scroll down to <code>pollution</code> and click on that</li>
+<li>Click on <code>pollution</code> from the list of variables, and then the blue arrow to move it to the <code>Numeric Expression</code> field</li>
+<li>In that numeric expression field, type <code>+</code> and then move <code>general</code> over before following that with another <code>+</code>.</li>
+<li>Continue to do this until the <code>Numeric Expression</code> field shows: <code>pollution + general + water + energy + animals + recycling</code><a href="#fn36" class="footnote-ref" id="fnref36" role="doc-noteref"><sup>36</sup></a></li>
+<li>Click on <code>OK</code></li>
+</ol>
+<p>Note that if you are regularly importing data into SPSS (e.g., if you are “peeking” at data as they come in<a href="#fn37" class="footnote-ref" id="fnref37" role="doc-noteref"><sup>37</sup></a>), then this would be a great occasion to save the syntax created to rerun upon each data importation.</p>
+</section>
+<section id="standardize-variables" class="level3" data-number="17.0.4">
+<h3 data-number="17.0.4" class="anchored" data-anchor-id="standardize-variables"><span class="header-section-number">17.0.4</span> Standardize Variables</h3>
+<p>I’m also a big fan of standardized data. It doesn’t change the distribution of scores at all but makes values on one variable directly comparable to values on an other—even if they’re measured on very different scales<a href="#fn38" class="footnote-ref" id="fnref38" role="doc-noteref"><sup>38</sup></a></p>
+<p>SPSS makes it very easy to standardize variables:</p>
+<ol type="1">
+<li>Click on <code>Anlayze &gt; Descriptive Statistics &gt; Descriptives</code></li>
+<li>Click on <code>toca.pro</code></li>
+<li>Now, <em>holding down the</em> <code>Shift</code> <em>key</em> either single-(left-)click on <code>recyclilng</code> or tap the down-arrow key until you have selected all of the variables from <code>toca.pro</code> to <code>recycing</code></li>
+<li><em>Now</em> click on the blue arrow to move all of those variables to the <code>varialbe(s)</code> field</li>
+<li>Under the <code>Options</code> dialogue, we might as well check to review, e.g., the <code>Mean</code>, <code>Std. Deviation</code>, <code>Minimum</code>, <code>Maximum</code>, and <code>S. E. Mean</code> (i.e., the <a href="https://www.indeed.com/career-advice/career-development/standard-error-mean">standard error of the mean</a> that we covered in our <a href="https://wesamuels.net/courses/statistics/N915/Overview/Stats_Overview.html">first lecture</a>)</li>
+<li>But our real goal here is to check the <code>Save standardized values as variables</code> before clicking on <code>OK</code></li>
+</ol>
+<p>And that’s all it takes to create standardized variables.</p>
+</section>
+<section id="export-a-table-in-apa-format-to-word" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="export-a-table-in-apa-format-to-word"><span class="header-section-number">17.1</span> Export a Table in APA Format to Word</h2>
+<p>To export a table in APA format in SPSS, you can use the following steps. This process involves generating the table, modifying it to meet APA style guidelines, and then exporting it.</p>
+<section id="steps-to-export-a-table-in-apa-format-in-spss" class="level3" data-number="17.1.1">
+<h3 data-number="17.1.1" class="anchored" data-anchor-id="steps-to-export-a-table-in-apa-format-in-spss"><span class="header-section-number">17.1.1</span> Steps to Export a Table in APA Format in SPSS:</h3>
+<ol type="1">
+<li><strong>Generate the Table</strong>:
+<ul>
+<li>First, create the table you need by running the appropriate analysis.</li>
+<li>For example, to create a descriptive statistics table, go to <code>Analyze</code> &gt; <code>Descriptive Statistics</code> &gt; <code>Descriptives...</code>, select the variables, and run the analysis.</li>
+</ul></li>
+<li><strong>Modify the Table</strong>:
+<ul>
+<li>Once the table is generated, it will appear in the <code>Output Viewer</code>.</li>
+<li>To modify the table, double-click on it to open it in the <code>Pivot Table Editor</code>.</li>
+<li>Adjust the table’s appearance to match APA style as closely as possible. This might include:
+<ul>
+<li>Ensuring that the table uses a simple grid with minimal lines.</li>
+<li>Aligning text correctly (typically left-aligned for text, right-aligned for numbers).</li>
+<li>Using appropriate font and size (Times New Roman, 12-point is common for APA).</li>
+<li>Including relevant statistics (e.g., means, standard deviations).</li>
+</ul></li>
+</ul></li>
+<li><strong>Export the Table</strong>:
+<ul>
+<li>After making the necessary adjustments, you can export the table.</li>
+<li>Click on <code>File</code> &gt; <code>Export...</code> in the <code>Output Viewer</code>.</li>
+<li>In the <code>Export Output</code> dialog box, choose the desired file format. For APA tables, Microsoft Word (.doc or .docx) is typically a good choice.</li>
+<li>Specify the file name and location where you want to save the file.</li>
+<li>Under <code>Objects to Export</code>, select <code>All Visible Objects</code> or choose the specific table you modified.</li>
+<li>Click <code>OK</code> to export the table.</li>
+</ul></li>
+</ol>
+</section>
+<section id="example-export-in-word" class="level3" data-number="17.1.2">
+<h3 data-number="17.1.2" class="anchored" data-anchor-id="example-export-in-word"><span class="header-section-number">17.1.2</span> Example Export in Word:</h3>
+<ol type="1">
+<li><strong>Open the Exported File</strong>:
+<ul>
+<li>Open the exported Word document.</li>
+<li>Review the table to ensure it adheres to APA formatting guidelines.</li>
+</ul></li>
+<li><strong>Adjust in Word if Necessary</strong>:
+<ul>
+<li>If further adjustments are needed, you can make them directly in Word.</li>
+<li>Ensure the table is labeled correctly with a table number and title (e.g., <code>Table 1</code>).</li>
+<li>Include any notes below the table, formatted according to APA guidelines.</li>
+</ul></li>
+</ol>
+</section>
+<section id="summary" class="level3" data-number="17.1.3">
+<h3 data-number="17.1.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">17.1.3</span> Summary</h3>
+<p>To export a table in APA format from SPSS, generate the table through the appropriate analysis, modify it using the Pivot Table Editor to adhere to APA style, and then export it to a Word document. Make any final adjustments in Word to ensure the table fully complies with APA formatting standards.</p>
+</section>
+</section>
+<section id="additional-resources" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">17.2</span> Additional Resources</h2>
 <ul>
 <li>Supplemental materials from <span class="citation" data-cites="polit2017">Polit &amp; Beck (<a href="references.html#ref-polit2017" role="doc-biblioref">2017</a>)</span>
 <ul>
@@ -934,6 +992,7 @@ Polit, D. F., &amp; Beck, C. E., Cheryl T. (2017). <em>Nursing <span>Research</s
 </div>
 </div>
 </section>
+</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
@@ -954,13 +1013,27 @@ Polit, D. F., &amp; Beck, C. E., Cheryl T. (2017). <em>Nursing <span>Research</s
 <li id="fn15"><p>We can change whether we see variable names or labels in dialogues via <code>Edit &gt; Options</code>; under the<code>General</code> tab, go to the <code>Variable Lists</code> section near the top left; there, select either <code>Display labels</code> or <code>Display names</code>.<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn16"><p>SPSS variable labels can be up to 256 characters long.<a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn17"><p>SPSS variable labels can contain nearly any printable character including spaces, punctuation, and even emojis. 😫!<a href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn18"><p>We can instead choose to <code>Recode into Different Variables...</code> if we want to retain the original variable and the way it’s coded.<a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn19"><p>Many variables were not linked to a single year and are the same for a given participant—a given AID—across all years, i.e., are the same for every row for that AID.<a href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn20"><p>Or go to <code>Analyze &gt; Descriptive Statistics &gt; Descriptives</code> in the drop-down menu.<a href="#fnref20" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn21"><p>Remember that ANOVAs conduct an “omnibus” <em>F</em>-test to first find if there is any significant difference anywhere between the levels. We then conduct post hoc analyses to investigate where those differences are.<a href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn22"><p>Note that SPSS may create two variables anyway. I’m not sure why it does this, but we can simply delete (<code>Clear</code>) the one with the <code>Population=Non-Migrant</code> label since we’ll only work with the migrant students.<a href="#fnref22" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn23"><p>Or whichever is the dummy with the <code>Population=Migrant</code> label that we’ll be keeping.<a href="#fnref23" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn24"><p>Of course, if it later turned out that this combined dummy variable was important to unpack we easily could by then creating separate dummies for them.<a href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn18"><p>Here coded simply as female and male, ignoring intersex, androgen insensitive, etc.<a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn19"><p>We can instead choose to <code>Recode into Different Variables...</code> if we want to retain the original variable and the way it’s coded.<a href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn20"><p>Many variables were not linked to a single year and are the same for a given participant—a given AID—across all years, i.e., are the same for every row for that AID.<a href="#fnref20" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn21"><p>Or go to <code>Analyze &gt; Descriptive Statistics &gt; Descriptives</code> in the drop-down menu.<a href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn22"><p>Remember that ANOVAs conduct an “omnibus” <em>F</em>-test to first find if there is any significant difference anywhere between the levels. We then conduct post hoc analyses to investigate where those differences are.<a href="#fnref22" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn23"><p>Note that SPSS may create two variables anyway. I’m not sure why it does this, but we can simply delete (<code>Clear</code>) the one with the <code>Population=Non-Migrant</code> label since we’ll only work with the migrant students.<a href="#fnref23" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn24"><p>Or whichever is the dummy with the <code>Population=Migrant</code> label that we’ll be keeping.<a href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn25"><p>Of course, if it later turned out that this combined dummy variable was important to unpack we easily could by then creating separate dummies for them.<a href="#fnref25" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn26"><p>Of course, we can simply <a href="#setting-values-labels">add value labels to existing (numeric) values</a> in a <code>Scale</code> variable, but here we’re not just adding labels but instead creating a whole new variable with different values.<a href="#fnref26" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn27"><p>I’m doing this as a way of anonymizing city, but since there are only two cities in these data, I’m really creating a dummy variable. There is a better way to create dummy variables that we’ll cover <a href="#create-dummies">below</a>, but I just wanted to point this out now.<a href="#fnref27" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn28"><p>As you can see, we could also recode into the same variable and indeed anonymize city in one action. Personally, I tend to create new things instead of overwriting existing in case I make a mistake and can’t easily recover what I overwrote.<a href="#fnref28" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn29"><p>We could also do this with these variable’s numeric equivalents—especially if we had given value labels to their numbers.<a href="#fnref29" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn30"><p>This was a consequence of working in the field—i.e., with data collected outside controlled, laboratory-like settings. Schools who participated in the control (i.e., no-CFL) group were essentially asked to give their time and resources to the study without getting anything in return since (that year), they were not getting the CFL program offered at their school. It can be hard to find busy schools with many demands that can afford to do this. To compensate for this, I was forced to use a non-migrant control group from a previous study. Hardly ideal, but necessary.<a href="#fnref30" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn31"><p>Which turns out to be a bad idea.<a href="#fnref31" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn32"><p>As you may guess, I prefer not doing this. Better is to create a factor in one’s analyses that measures the effect of the variable (e.g., <code>Migrant</code>) on outcomes than in essentially doubling the number of analyses conducted and thus nearly doubling the chances of errors.<a href="#fnref32" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn33"><p><code>Random sampe of cases</code> woudl be used, e.g., to split the data into a “training” and “test” set of data to <a href="https://ai.stackexchange.com/questions/17898/while-we-split-data-in-training-and-test-data-why-we-have-two-pairs-of-each">create and test</a>, e.g., the generalizability of a model. Splitting <code>Based on a time or case range</code> would be done if we feel that, e.g., participants differ qualitatively over time or within ranges of cases. <code>Use filter variable</code> is essentially what we’re doing, but we’re first needing to create that filer variable.<a href="#fnref33" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn34"><p>Always a good thing to do in life.<a href="#fnref34" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn35"><p>Don’t worry, they’re relatively privileged otherwise in life compared to the migrant students.<a href="#fnref35" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn36"><p>Yeah, or just copying that line into the <code>Numeric Expression</code> field to save some typing. Note too that we could also have chosen either <code>All</code> or <code>Statistical</code> from the <code>Function group</code> field and then <code>Sum</code> from the <code>Functions and Special Variables</code> field and made the sum of those variables.<a href="#fnref36" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn37"><p>Which, of course, you should never do, and that no one ever does.<a href="#fnref37" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn38"><p>In analytic models—if all variables are either standardized or dummy-coded—it also lets us remove the intercept term, making our analyses a bit more powerful … but more on that in Stat 2.<a href="#fnref38" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
