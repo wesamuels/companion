@@ -334,18 +334,16 @@ div.csl-indent {
   </ul></li>
   <li><a href="#data-preparation-cleaning" id="toc-data-preparation-cleaning" class="nav-link" data-scroll-target="#data-preparation-cleaning"><span class="header-section-number">16.3</span> Data Preparation &amp; Cleaning</a>
   <ul>
-  <li><a href="#change-aid-to-nominal" id="toc-change-aid-to-nominal" class="nav-link" data-scroll-target="#change-aid-to-nominal"><span class="header-section-number">16.3.1</span> Change <code>AID</code> to nominal</a></li>
+  <li><a href="#changing-the-measurement-level-of-a-variable" id="toc-changing-the-measurement-level-of-a-variable" class="nav-link" data-scroll-target="#changing-the-measurement-level-of-a-variable"><span class="header-section-number">16.3.1</span> Changing the Measurement Level of a Variable</a></li>
   <li><a href="#creating-a-variable-label-for-aid" id="toc-creating-a-variable-label-for-aid" class="nav-link" data-scroll-target="#creating-a-variable-label-for-aid"><span class="header-section-number">16.3.2</span> Creating a Variable Label for <code>AID</code></a></li>
-  <li><a href="#recoding-bio_sex" id="toc-recoding-bio_sex" class="nav-link" data-scroll-target="#recoding-bio_sex"><span class="header-section-number">16.3.3</span> Recoding <code>Bio_Sex</code></a></li>
-  <li><a href="#setting-values-labels" id="toc-setting-values-labels" class="nav-link" data-scroll-target="#setting-values-labels"><span class="header-section-number">16.3.4</span> Setting <code>Values</code> labels for <code>Bio_Sex</code></a></li>
-  <li><a href="#computing-participant-age" id="toc-computing-participant-age" class="nav-link" data-scroll-target="#computing-participant-age"><span class="header-section-number">16.3.5</span> Computing Participant Age</a></li>
-  <li><a href="#setting-missing" id="toc-setting-missing" class="nav-link" data-scroll-target="#setting-missing"><span class="header-section-number">16.3.6</span> Setting missing values for <code>Weight</code></a></li>
-  <li><a href="#create-dummies" id="toc-create-dummies" class="nav-link" data-scroll-target="#create-dummies"><span class="header-section-number">16.3.7</span> Create Dummy Variables for Different <code>Dwelling_Type</code>s</a>
+  <li><a href="#sec-setting-values-labels" id="toc-sec-setting-values-labels" class="nav-link" data-scroll-target="#sec-setting-values-labels"><span class="header-section-number">16.3.3</span> Setting <code>Values</code> Labels for a Variable</a></li>
+  <li><a href="#setting-missing" id="toc-setting-missing" class="nav-link" data-scroll-target="#setting-missing"><span class="header-section-number">16.3.4</span> Setting Missing Values</a></li>
+  <li><a href="#create-dummies" id="toc-create-dummies" class="nav-link" data-scroll-target="#create-dummies"><span class="header-section-number">16.3.5</span> Create Dummy Variables for Different <code>Dwelling_Type</code>s</a>
   <ul>
   <li><a href="#quickly-creating-dummy-variables-for-variable-levels" id="toc-quickly-creating-dummy-variables-for-variable-levels" class="nav-link" data-scroll-target="#quickly-creating-dummy-variables-for-variable-levels">Quickly Creating Dummy Variables for Variable Levels</a></li>
   <li><a href="#creating-dummy-variables-for-combined-variable-levels" id="toc-creating-dummy-variables-for-combined-variable-levels" class="nav-link" data-scroll-target="#creating-dummy-variables-for-combined-variable-levels">Creating Dummy Variables for Combined Variable Levels</a></li>
   </ul></li>
-  <li><a href="#transform-an-old-variable-into-a-new-one" id="toc-transform-an-old-variable-into-a-new-one" class="nav-link" data-scroll-target="#transform-an-old-variable-into-a-new-one"><span class="header-section-number">16.3.8</span> Transform an Old Variable into a New One</a>
+  <li><a href="#transform-an-old-variable-into-a-new-one" id="toc-transform-an-old-variable-into-a-new-one" class="nav-link" data-scroll-target="#transform-an-old-variable-into-a-new-one"><span class="header-section-number">16.3.6</span> Transform an Old Variable into a New One</a>
   <ul>
   <li><a href="#recode-variables" id="toc-recode-variables" class="nav-link" data-scroll-target="#recode-variables">Recode Variables</a></li>
   <li><a href="#sec-compute_score" id="toc-sec-compute_score" class="nav-link" data-scroll-target="#sec-compute_score">Compute an Overall Score</a></li>
@@ -602,8 +600,8 @@ div.csl-indent {
 </ul>
 <p>After downloading that set of data, please upload them into SPSS (e.g., via Apporto, <a href="#sec-apporto"><span>Section&nbsp;16.2.1</span></a>).</p>
 <p>These data are indeed nearly ready for further analyses, but have a few issues to address to demonstrate how to clean or improve data in ways that are commonly needed.</p>
-<section id="change-aid-to-nominal" class="level3" data-number="16.3.1">
-<h3 data-number="16.3.1" class="anchored" data-anchor-id="change-aid-to-nominal"><span class="header-section-number">16.3.1</span> Change <code>AID</code> to nominal</h3>
+<section id="changing-the-measurement-level-of-a-variable" class="level3" data-number="16.3.1">
+<h3 data-number="16.3.1" class="anchored" data-anchor-id="changing-the-measurement-level-of-a-variable"><span class="header-section-number">16.3.1</span> Changing the Measurement Level of a Variable</h3>
 <p>The <code>AID</code> variable is right now a <code>Scale</code> variable; it is a number after all. And it’s not uncommon for SPSS to import IDs as numbers since replacing names with numbers is a very typical way to anonymize participants. And leaving it as a number (a <code>Scale</code> level <code>Measure</code>) won’t likely create any problems in SPSS<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>, but it still presents a good opportunity to demonstrate changing the <code>Measure</code> of a variable. To do this:</p>
 <ol type="1">
 <li>Go to the <code>Variable View</code> tab of the <code>Data Editor</code> window.</li>
@@ -621,26 +619,8 @@ div.csl-indent {
 <li>Single-left click in the <code>Label</code> cell for <code>AID</code>, and type/paste: <code>Unique Participant ID</code> or something like that.</li>
 </ol>
 </section>
-<section id="recoding-bio_sex" class="level3" data-number="16.3.3">
-<h3 data-number="16.3.3" class="anchored" data-anchor-id="recoding-bio_sex"><span class="header-section-number">16.3.3</span> Recoding <code>Bio_Sex</code></h3>
-<p>Participants’ self-reported biological sex<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> is currently coded as 1 for male and 2 for female. I prefer to code dichotomous variables as 0/1.</p>
-<p>To recode <code>Bio_Sex</code>:</p>
-<ol type="1">
-<li>Click on <code>Transform &gt; Recode into Same Variables...</code><a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a>.</li>
-<li>In the dialogue box that opens, move <code>Bio_Sex</code> to the right-hand field; to do this:</li>
-<li>Single left-click on <code>Bio_Sex</code> electing it in the left-hand field to select it</li>
-<li>Click on the arrow between the two fields (<img src="images/arrow1.png" class="img-fluid">)</li>
-<li><code>Bio_Sex</code> should now appear in the right-hand field:<br>
-<img src="images/recode_sex_1.png" class="img-fluid"></li>
-<li>Click on <code>Old and New Values...</code></li>
-<li>Under the <code>Old Value</code> section, type <code>1</code> in the <code>Value</code> field; under <code>New Value</code>, type <code>0</code>; then click <code>Add</code>. Under <code>Old -&gt; New</code>, you should now see <code>1 -&gt; 0</code>.</li>
-<li>Now, under the <code>Old Value</code> section, type <code>2</code> in the <code>Value</code> field; under <code>New Value</code>, type <code>1</code>; then click <code>Add</code>. Under <code>Old -&gt; New</code> and click <code>Add</code> to add that as well to the <code>Old -&gt; New</code> field:<br>
-<img src="images/recode_sex_2.png" class="img-fluid"></li>
-<li>Click <code>Continue</code>; you will be taken back to the original <code>Recode into Same Variables</code> dialogue where you can click <code>OK</code> to complete this.</li>
-</ol>
-</section>
-<section id="setting-values-labels" class="level3" data-number="16.3.4">
-<h3 data-number="16.3.4" class="anchored" data-anchor-id="setting-values-labels"><span class="header-section-number">16.3.4</span> Setting <code>Values</code> labels for <code>Bio_Sex</code></h3>
+<section id="sec-setting-values-labels" class="level3" data-number="16.3.3">
+<h3 data-number="16.3.3" class="anchored" data-anchor-id="sec-setting-values-labels"><span class="header-section-number">16.3.3</span> Setting <code>Values</code> Labels for a Variable</h3>
 <p>In addition to giving a more human-friendly label to a variable, we can give clearer labels to the levels of a variable. These can also be shown in figures and tables, making those easier to understand and helping avoid misinterpretation.</p>
 <ol type="1">
 <li>Also in the <code>Variable View</code> of the <code>Data Editor</code>, click on the <code>Values</code> cell in the the <code>Bio_Sex</code> row.</li>
@@ -661,20 +641,9 @@ div.csl-indent {
 <p><img src="images/levels_sex_4.png" class="img-fluid"></p>
 <p>However, now in the drop-down menu click on <code>Analyze &gt; Descriptive Statistics &gt; Frequencies</code> and you will see that the level values are replaced with the more explanatory value labels, helping us (and out colleagues and readers) more easily see what the responses really meant:</p>
 </section>
-<section id="computing-participant-age" class="level3" data-number="16.3.5">
-<h3 data-number="16.3.5" class="anchored" data-anchor-id="computing-participant-age"><span class="header-section-number">16.3.5</span> Computing Participant Age</h3>
-<p><code>H1GI1Y</code> is the last two digits of the participant’s birth year. <code>Study_year</code> contains the year in which a given row of longitudinal data were collected<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a> We can use those to compute their age at each wave.</p>
-<ol type="1">
-<li>Click <code>Transform &gt; Compute Variable</code>.</li>
-<li>In the dialogue box that opens, type <code>Age</code> in the <code>Target Variable:</code> field; this will be the name of the variable we’re computing.</li>
-<li>In the <code>Numeric Expression:</code> field, type: <code>Study_year - (1900 + Birth_year)</code>. You can also select and move over each of these variables from the list to the left so you don’t have to type them. (You can also use the “keypad” just below the <code>Numeric Expression:</code> field, but that’s very cumbersome except for functions you don’t know the name or format of.)<br>
-<img src="images/compute_age.png" class="img-fluid"></li>
-<li>Click <code>OK</code> to finish.</li>
-</ol>
-</section>
-<section id="setting-missing" class="level3" data-number="16.3.6">
-<h3 data-number="16.3.6" class="anchored" data-anchor-id="setting-missing"><span class="header-section-number">16.3.6</span> Setting missing values for <code>Weight</code></h3>
-<p>As mentioned briefly <a href="#data-view">above</a>, we can set certain values to be recognized as representing missing values. Most of the variables in this set were imported with blank cells denoting missing values or missing values already established. However, running descriptives^[Again, you can either right-click on that variable in the <code>Data Editor</code> and select <code>Descriptive Statistics</code><a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a> on <code>Weight</code> shows that the maximum weight (in kgs) here is 9999. Since your momma was not a participant, that value is surely intended to denote missing values.</p>
+<section id="setting-missing" class="level3" data-number="16.3.4">
+<h3 data-number="16.3.4" class="anchored" data-anchor-id="setting-missing"><span class="header-section-number">16.3.4</span> Setting Missing Values</h3>
+<p>As mentioned briefly <a href="#data-view">above</a>, we can set certain values to be recognized as representing missing values. Most of the variables in this set were imported with blank cells denoting missing values or missing values already established. However, running descriptives^[Again, you can either right-click on that variable in the <code>Data Editor</code> and select <code>Descriptive Statistics</code><a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> on <code>Weight</code> shows that the maximum weight (in kgs) here is 9999. Since your momma was not a participant, that value is surely intended to denote missing values.</p>
 <p>We can easily fix this:</p>
 <ol type="1">
 <li>In the <code>Variable View</code> tab of the <code>Data Editor</code> window, click on the the ellipsis button in the <code>Missing</code> cell of the <code>Weight</code> row</li>
@@ -683,8 +652,8 @@ div.csl-indent {
 <li>Click <code>OK</code></li>
 </ol>
 </section>
-<section id="create-dummies" class="level3" data-number="16.3.7">
-<h3 data-number="16.3.7" class="anchored" data-anchor-id="create-dummies"><span class="header-section-number">16.3.7</span> Create Dummy Variables for Different <code>Dwelling_Type</code>s</h3>
+<section id="create-dummies" class="level3" data-number="16.3.5">
+<h3 data-number="16.3.5" class="anchored" data-anchor-id="create-dummies"><span class="header-section-number">16.3.5</span> Create Dummy Variables for Different <code>Dwelling_Type</code>s</h3>
 <p>I am a pretty strong advocate for using <a href="https://www.statology.org/dummy-variables-regression/">dummy variables</a>. They can make it easier to interpret the effects of each level of a nominal variable without needing to resort to, e.g., post hoc analyses. </p>
 <p><code>Dwelling_Type</code> is coded right now as a numeric variable. Clicking on the ellipsis button in the <code>Values</code> column for that variable presents the following definitions for the values:</p>
 <table class="table">
@@ -729,7 +698,7 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>We could leave this as single variable; for ANOVAs this may help since then we would only look for differences between these levels if the ANVOA found a significant main effect for this variable<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a>. However, it is more flexible and efficient for other types of models to convert these levels into meaningful dummy variables that can be added as needed. (By not necessarily including all levels—all dummies—we could also save a few degrees of freedom, too.)</p>
+<p>We could leave this as single variable; for ANOVAs this may help since then we would only look for differences between these levels if the ANVOA found a significant main effect for this variable<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a>. However, it is more flexible and efficient for other types of models to convert these levels into meaningful dummy variables that can be added as needed. (By not necessarily including all levels—all dummies—we could also save a few degrees of freedom, too.)</p>
 <section id="quickly-creating-dummy-variables-for-variable-levels" class="level4">
 <h4 class="anchored" data-anchor-id="quickly-creating-dummy-variables-for-variable-levels">Quickly Creating Dummy Variables for Variable Levels</h4>
 <p>We could simply convert each level into a separate dummy variable. To do this:</p>
@@ -738,21 +707,21 @@ div.csl-indent {
 <li>Select <code>Dwelling_Type</code> under <code>Variables</code> and then add that to the <code>Create Cummy Variables for:</code> field by again clicking on the arrow (<img src="images/arrow1.png" class="img-fluid">)</li>
 <li>We are going to create a simple dummy variable—not, e.g., one derived from a combination of other variables—so leave <code>Create main-effect dummies</code> selected</li>
 <li>It’s fine to leave selected <code>Use value labels</code> under <code>Dummy Variable Labels</code> since neither choice matters for a simple “main effect” dummies</li>
-<li>Under <code>Macros</code>, select to <code>Omit first dummy category from macro definitions</code>. We can nearly always select to do this because we usually need one fewer dummy variables than there are values in the original variable. The <code>Population</code> variables has two values (<code>Migrant</code> and <code>Non-Migrant</code>), so we only need one dummy variable (i.e., 2 - 1 = 1) to fully encode the information in the <code>Population</code> variable<a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a><br>
+<li>Under <code>Macros</code>, select to <code>Omit first dummy category from macro definitions</code>. We can nearly always select to do this because we usually need one fewer dummy variables than there are values in the original variable. The <code>Population</code> variables has two values (<code>Migrant</code> and <code>Non-Migrant</code>), so we only need one dummy variable (i.e., 2 - 1 = 1) to fully encode the information in the <code>Population</code> variable<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a><br>
 This will make <code>Detached single-family</code> the “reference” group: If we included all of the dummy variables we’re creating in a model, then their effects would be relative to those living in single-family detached homes.</li>
 <li>In the <code>Root Names</code> field, type <code>Dwelling</code>. This will add that word to the each of the dummy variables to remind us where they came from and what they’re referring to.</li>
 <li>Click <code>OK</code></li>
 </ol>
 <p>Dummy variables can only take on the values of 0 or 1. For some reason, SPSS gives dummies it creates two decimal places. We clearly don’t need these, so:</p>
 <ol type="1">
-<li>In the <code>Variable View</code> tab, click into the <code>Decimals</code> cell of the <code>population_1</code> variable<a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a></li>
+<li>In the <code>Variable View</code> tab, click into the <code>Decimals</code> cell of the <code>population_1</code> variable<a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a></li>
 <li>Change the value to <code>0</code></li>
 </ol>
 <p>Note that we could also change to <code>Width</code> to <code>1</code> since we only need one digit to the left of the decimal.</p>
 </section>
 <section id="creating-dummy-variables-for-combined-variable-levels" class="level4">
 <h4 class="anchored" data-anchor-id="creating-dummy-variables-for-combined-variable-levels">Creating Dummy Variables for Combined Variable Levels</h4>
-<p>Some of these dwelling types are quite similar to each other; for at least preliminary analyses, then, we will combine some of them into the same dummy variable<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a></p>
+<p>Some of these dwelling types are quite similar to each other; for at least preliminary analyses, then, we will combine some of them into the same dummy variable<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a></p>
 <p>We could group these several ways, of course, but let’s group them thusly:</p>
 <ul>
 <li><code>Detached_House</code>: <code>1</code> if the variable value is <code>1</code>, else it will be <code>0</code></li>
@@ -795,10 +764,24 @@ This dummy equals 1 only if the dwelling type is coded as <code>Other</code></li
 </ul></li>
 </ol>
 <p>After creating the variables, go to <code>Variable View</code> to create variable labels and perhaps labels for the levels.</p>
+<!-- ### Recoding a Variable's Levels -->
+<!-- Participants' self-reported biological sex^[Here coded simply as female and male, ignoring intersex, androgen insensitive, etc.] is currently coded as 1 for male and 2 for female. I prefer to code dichotomous variables as 0/1. -->
+<!-- To recode `Bio_Sex`: -->
+<!-- 1. Click on `Transform > Recode into Same Variables...`^[We can instead choose to `Recode into Different Variables...` if we want to retain the original variable and the way it's coded.]. -->
+<!-- 1. In the dialogue box that opens, move `Bio_Sex` to the right-hand field; to do this: -->
+<!--   1. Single left-click on `Bio_Sex` electing it in the left-hand field to select it -->
+<!--   1. Click on the arrow between the two fields (![](images/arrow1.png)) -->
+<!--   1. `Bio_Sex` should now appear in the right-hand field:\ -->
+<!-- ![](images/recode_sex_1.png) -->
+<!-- 1. Click on `Old and New Values...` -->
+<!-- 1. Under the `Old Value` section, type `1` in the `Value` field; under `New Value`, type `0`; then click `Add`. Under `Old -> New`, you should now see `1 -> 0`. -->
+<!-- 1. Now, under the `Old Value` section, type `2` in the `Value` field; under `New Value`, type `1`; then click `Add`. Under `Old -> New` and click `Add` to add that as well to the `Old -> New` field:\ -->
+<!-- ![](images/recode_sex_2.png) -->
+<!-- 1. Click `Continue`; you will be taken back to the original `Recode into Same Variables` dialogue where you can click `OK` to complete this. -->
 </section>
 </section>
-<section id="transform-an-old-variable-into-a-new-one" class="level3" data-number="16.3.8">
-<h3 data-number="16.3.8" class="anchored" data-anchor-id="transform-an-old-variable-into-a-new-one"><span class="header-section-number">16.3.8</span> Transform an Old Variable into a New One</h3>
+<section id="transform-an-old-variable-into-a-new-one" class="level3" data-number="16.3.6">
+<h3 data-number="16.3.6" class="anchored" data-anchor-id="transform-an-old-variable-into-a-new-one"><span class="header-section-number">16.3.6</span> Transform an Old Variable into a New One</h3>
 <p>It’s often necessary or useful to create a new variable based on the values of one or more existing variables. For example, we may want to recode a variable or to compute an overall score.</p>
 <p>A common reason to recode variables is to “reverse” score them—switch the direction of the values so they match either what is more intuitive or to work better with other variables in your data. In other words, to change the values like this:</p>
 <div id="tbl-reverse_scoring" class="anchored">
@@ -842,9 +825,9 @@ This dummy equals 1 only if the dwelling type is coded as <code>Other</code></li
 <p>It may also be useful to create an <code>Overall_Positive_Affect</code> score—and to code it so that higher values denote more positive affect. One way to do this would be to first reverse score those positive affect items and then to compute an overall score for them.</p>
 <section id="recode-variables" class="level4">
 <h4 class="anchored" data-anchor-id="recode-variables">Recode Variables</h4>
-<p>We will reverse score the positive affect items near the end of the Add Health dataset<a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a>.</p>
+<p>We will reverse score the positive affect items near the end of the Add Health dataset<a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a>.</p>
 <ol type="1">
-<li>Click on <code>Transform &gt; Recode into Different Variables...</code><a href="#fn27" class="footnote-ref" id="fnref27" role="doc-noteref"><sup>27</sup></a></li>
+<li>Click on <code>Transform &gt; Recode into Different Variables...</code><a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a></li>
 <li>In the dialogue that opens, move <code>Happy</code>, <code>Enjoyed_Life</code>, <code>Just_as_Good</code>, and <code>Hopeful</code> to the <code>Numeric Variable -&gt; Output Variable</code> field.</li>
 <li>Left-click on the first row in the <code>Numeric Variable -&gt; Output Variable</code> field, thus selecting <code>Happy --&gt; ?</code>.</li>
 <li>In the <code>Output Variable</code> section just to the right, type <code>Happy_Reversed</code> in the <code>Name</code> field and—if you want—<code>How Often Felt HAPPY Past Week - Reverse Scored</code> in the <code>Label</code> field. Click the <code>Change</code> button under those fields in the <code>Output Variable</code> section.<br>
@@ -860,7 +843,7 @@ Continue with creating a <code>Just_as_Good_Reversed</code> (labeled <code>How O
 <img src="images/recoding.png" class="img-fluid">.</li>
 <li>Click <code>Continue</code> and then <code>OK</code> in the original dialogue box.</li>
 </ol>
-<p>Note that the variables are created as nominal. This won’t affect the score computation <a href="#sec-compute_score">in&nbsp;<span>16.3.8.2</span></a>, but will need to be changed for proper analyses otherwise.</p>
+<p>Note that the variables are created as nominal. This won’t affect the score computation <a href="#sec-compute_score">in&nbsp;<span>16.3.6.2</span></a>, but will need to be changed for proper analyses otherwise.</p>
 </section>
 <section id="sec-compute_score" class="level4">
 <h4 class="anchored" data-anchor-id="sec-compute_score">Compute an Overall Score</h4>
@@ -875,7 +858,7 @@ Continue with creating a <code>Just_as_Good_Reversed</code> (labeled <code>How O
 <li>Select <code>Happy_Reversed</code> from the list of variables and click on the right arrow to add that where the first <code>?</code> appears in the <code>Mean(?,?)</code> formula.</li>
 <li>Next, add <code>Enjoyed_Life_Reversed</code> to the formula.<br>
 Note that the values within the parentheses of the <code>Mean(?,?)</code> formula need to be separated by commas, so make sure there is a comma separating it from <code>Happy_Reversed</code>.</li>
-<li>Continue to add <code>Just_as_Good_Reversed</code> and <code>Hopeful_Reversed</code> to the formula, ensuring that commas separate each<a href="#fn28" class="footnote-ref" id="fnref28" role="doc-noteref"><sup>28</sup></a>.:<br>
+<li>Continue to add <code>Just_as_Good_Reversed</code> and <code>Hopeful_Reversed</code> to the formula, ensuring that commas separate each<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a>.:<br>
 <img src="images/computing_happiness.png" class="img-fluid"></li>
 <li>Click <code>OK</code> to finish.</li>
 </ol>
@@ -949,7 +932,7 @@ Note that the values within the parentheses of the <code>Mean(?,?)</code> formul
 </ul>
 <section id="standardize-variables" class="level3" data-number="16.5.1">
 <h3 data-number="16.5.1" class="anchored" data-anchor-id="standardize-variables"><span class="header-section-number">16.5.1</span> Standardize Variables</h3>
-<p>I’m a big fan of standardized data. It doesn’t change the distribution of scores at all but makes values on one variable directly comparable to values on an other—even if they’re measured on very different scales<a href="#fn29" class="footnote-ref" id="fnref29" role="doc-noteref"><sup>29</sup></a></p>
+<p>I’m a big fan of standardized data. It doesn’t change the distribution of scores at all but makes values on one variable directly comparable to values on an other—even if they’re measured on very different scales<a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a></p>
 <p>SPSS makes it very easy to standardize variables: </p>
 <ol type="1">
 <li>Click on <code>Anlayze &gt; Descriptive Statistics &gt; Descriptives</code></li>
@@ -1047,24 +1030,21 @@ Polit, D. F., &amp; Beck, C. E., Cheryl T. (2017). <em>Nursing <span>Research</s
 <li id="fn15"><p>We can change whether we see variable names or labels in dialogues via <code>Edit &gt; Options</code>; under the<code>General</code> tab, go to the <code>Variable Lists</code> section near the top left; there, select either <code>Display labels</code> or <code>Display names</code>.<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn16"><p>SPSS variable labels can be up to 256 characters long.<a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn17"><p>SPSS variable labels can contain nearly any printable character including spaces, punctuation, and even emojis. 😫!<a href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn18"><p>Here coded simply as female and male, ignoring intersex, androgen insensitive, etc.<a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn19"><p>We can instead choose to <code>Recode into Different Variables...</code> if we want to retain the original variable and the way it’s coded.<a href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn20"><p>Many variables were not linked to a single year and are the same for a given participant—a given AID—across all years, i.e., are the same for every row for that AID.<a href="#fnref20" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn21"><p>Or go to <code>Analyze &gt; Descriptive Statistics &gt; Descriptives</code> in the drop-down menu.<a href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn22"><p>Remember that ANOVAs conduct an “omnibus” <em>F</em>-test to first find if there is any significant difference anywhere between the levels. We then conduct post hoc analyses to investigate where those differences are.<a href="#fnref22" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn23"><p>Note that SPSS may create two variables anyway. I’m not sure why it does this, but we can simply delete (<code>Clear</code>) the one with the <code>Population=Non-Migrant</code> label since we’ll only work with the migrant students.<a href="#fnref23" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn24"><p>Or whichever is the dummy with the <code>Population=Migrant</code> label that we’ll be keeping.<a href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn25"><p>Of course, if it later turned out that this combined dummy variable was important to unpack we easily could by then creating separate dummies for them.<a href="#fnref25" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn26"><p>We could also reverse code by subtracting the variable from a constant. Here, we could subtract from 3. This would make an initial <code>2</code> into 3 – <code>2</code> = <code>1</code>, etc.<br>
+<li id="fn18"><p>Or go to <code>Analyze &gt; Descriptive Statistics &gt; Descriptives</code> in the drop-down menu.<a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn19"><p>Remember that ANOVAs conduct an “omnibus” <em>F</em>-test to first find if there is any significant difference anywhere between the levels. We then conduct post hoc analyses to investigate where those differences are.<a href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn20"><p>Note that SPSS may create two variables anyway. I’m not sure why it does this, but we can simply delete (<code>Clear</code>) the one with the <code>Population=Non-Migrant</code> label since we’ll only work with the migrant students.<a href="#fnref20" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn21"><p>Or whichever is the dummy with the <code>Population=Migrant</code> label that we’ll be keeping.<a href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn22"><p>Of course, if it later turned out that this combined dummy variable was important to unpack we easily could by then creating separate dummies for them.<a href="#fnref22" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn23"><p>We could also reverse code by subtracting the variable from a constant. Here, we could subtract from 3. This would make an initial <code>2</code> into 3 – <code>2</code> = <code>1</code>, etc.<br>
 Often, though, we want the numbers to range from <code>1</code> to the maximum. In that case, we subtract the variable from 1 greater than the max value. If, e.g., instead we had variables that ranged from <code>1</code> to <code>4</code>, we could reverse code them by subtracting from 5:<br>
 5 – <code>1</code> = <code>4</code><br>
 5 – <code>2</code> = <code>3</code><br>
 5 – <code>3</code> = <code>2</code><br>
-5 – <code>4</code> = <code>1</code>.<a href="#fnref26" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn27"><p>You may <code>Recode into Same Variables...</code>—and sometimes I do—but this can be dangerous if you make a mistake or tedious if you decide you want the original scaling back. Recoding into a different variable also makes it clearer that you indeed did just that in case you come back later and don’t quite remember if you did or not.<a href="#fnref27" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn28"><p>You can also simply type into that <code>Numberic Expression:</code> field, so here you can simply paste this into that field:<br>
-<code>MEAN(Happy_Reversed,Enjoyed_Life_Reversed,Just_as_Good_Reversed,Hopeful_Reversed)</code><a href="#fnref28" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn29"><p>In analytic models—if all variables are either standardized or dummy-coded—it also lets us remove the intercept term, making our analyses a bit more powerful … but more on that in Stat 2.<a href="#fnref29" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+5 – <code>4</code> = <code>1</code>.<a href="#fnref23" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn24"><p>You may <code>Recode into Same Variables...</code>—and sometimes I do—but this can be dangerous if you make a mistake or tedious if you decide you want the original scaling back. Recoding into a different variable also makes it clearer that you indeed did just that in case you come back later and don’t quite remember if you did or not.<a href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn25"><p>You can also simply type into that <code>Numberic Expression:</code> field, so here you can simply paste this into that field:<br>
+<code>MEAN(Happy_Reversed,Enjoyed_Life_Reversed,Just_as_Good_Reversed,Hopeful_Reversed)</code><a href="#fnref25" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn26"><p>In analytic models—if all variables are either standardized or dummy-coded—it also lets us remove the intercept term, making our analyses a bit more powerful … but more on that in Stat 2.<a href="#fnref26" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
