@@ -851,9 +851,9 @@ This dummy equals 1 only if the dwelling type is coded as <code>Other</code></li
 The first row in the <code>Numeric Variable -&gt; Output Variable</code> field now shows that <code>Happy</code> is going to be recoded into a new <code>Happy_Reversed</code> variable:<br>
 <img src="images/reverse_happiness.png" class="img-fluid"></li>
 <li>Now select the <code>Enjoyed_Life --&gt; ?</code>and type <code>Enjoyed_Life_Reversed</code> in the <code>Name</code> field, <code>How Often ENJOYED LIFE Past Week - Reverse Scored</code> in the <code>Label</code> field before again clicking the <code>Change</code> button.<br>
-Continue with creating a <code>Just_as_Good_Reversed</code> (lebeled <code>How Often Felt JUST AS GOOD AS OTHER PEOPLE Past Week - Reverse Scored</code>) and <code>Hopeful_Reversed</code> (labeled <code>How Often Felt HOPEFUL ABOUT THE FUTURE Past Week - Reverse Scored</code>) variables.</li>
+Continue with creating a <code>Just_as_Good_Reversed</code> (labeled <code>How Often Felt JUST AS GOOD AS OTHER PEOPLE Past Week - Reverse Scored</code>) and <code>Hopeful_Reversed</code> (labeled <code>How Often Felt HOPEFUL ABOUT THE FUTURE Past Week - Reverse Scored</code>) variables.</li>
 <li>Now, click on the <code>Old and New Values</code> button underneath the <code>Numeric Variable -&gt; Output Variable</code> field section.</li>
-<li>In the dialogue that opens, type <code>0</code> in the <code>Value</code> field in the <code>Old Value</code> section and <code>3</code> in the <code>Value</code> field in the <code>New Variable</code> section. Next, click the <code>Add</code> button in the <code>Old --&gt; New:</code> section under the the <code>New Variable</code> section. <code>0 --&lt; 3</code> will now appear in there:<br>
+<li>In the dialogue that opens, type <code>0</code> in the <code>Value</code> field in the <code>Old Value</code> section and <code>3</code> in the <code>Value</code> field in the <code>New Variable</code> section. Next, click the <code>Add</code> button in the <code>Old --&gt; New:</code> section under the the <code>New Variable</code> section. <code>0 --&gt; 3</code> will now appear in there:<br>
 <img src="images/recode_0_3.png" class="img-fluid"></li>
 <li>Continue setting up the recoding by adding <code>1 --&gt; 2</code>, <code>2 --&gt; 1</code>, and <code>3 --&gt; 3</code> into the <code>Old --&gt; New:</code> section.</li>
 <li>To ensure any other values are addressed (e.g., <code>999</code> for missing values), click the <code>All other values</code> radio button at the bottom of the <code>Old Value</code> section and the <code>System missing</code> button in the <code>New Value</code> section; <code>Add</code> that as well to the <code>Old --&gt; New:</code> section:<br>
@@ -964,16 +964,16 @@ Note that the values within the parentheses of the <code>Mean(?,?)</code> formul
 <li>Under the <code>Options</code> dialogue, we might as well check to review, e.g., the <code>Mean</code>, <code>Std. Deviation</code>, <code>Minimum</code>, <code>Maximum</code>, and <code>S. E. Mean</code> (i.e., the <a href="https://www.indeed.com/career-advice/career-development/standard-error-mean">standard error of the mean</a> that we covered in our <a href="https://wesamuels.net/courses/statistics/N915/Overview/Stats_Overview.html">first lecture</a>)</li>
 <li>But our real goal here is to check the <code>Save standardized values as variables</code> before clicking on <code>OK</code></li>
 </ol>
-<p>And that’s all it takes to create standardized variables. They will now all appear at the end of the dataset. The variable names will be like the original, prepending with a <code>Z</code>, e.g., <code>Waist_Circum</code> becomes <code>ZWaist_Circum</code>.</p>
+<p>And that’s all it takes to create standardized variables. They will now all appear at the end of the dataset. The variable names will be like the original, pre-pending with a <code>Z</code>, e.g., <code>Waist_Circum</code> becomes <code>ZWaist_Circum</code>.</p>
 <!-- # Old -->
 
 <!-- #### Frequencies & Crosstabs {#pivot-tables} -->
 <!-- So far, we've been mainly cleaning and prepping the data. I want to break this pattern to preface the step after this one in which we subset our data. -->
 <!-- A common way to examine nominal (and ordinal) variables is through frequencies and cross tabulations ("crosstabs") of those frequencies across pairs of variables. Let us do this with some of our `Population` and `Group`^[We could also do this with these variable's numeric equivalents---especially if we had given value labels to their numbers.]: -->
-<!-- 1. Click on `Anlayze > Descriptive Statistics > Frequencies` -->
+<!-- 1. Click on `Analyze > Descriptive Statistics > Frequencies` -->
 <!-- 1. In the dialogue that opens, select `Population` and `Group`. You can do this by clicking on them separately or, e.g., holding down the `Control`/`Command` key to select them both -->
 <!-- 1. Click on the arrow button to move them to the `Variable(s)` field -->
-<!-- 1. SPSS provides many options for displaying variables. Some of these are listed under the `Statistics` button, but since these are both nominal variables, we can only meaning select `Median` under `Central Tencency` (and perhaps `Quantiles`) -->
+<!-- 1. SPSS provides many options for displaying variables. Some of these are listed under the `Statistics` button, but since these are both nominal variables, we can only meaning select `Median` under `Central Tendency` (and perhaps `Quantiles`) -->
 <!-- 1. Under `Charts` we can select to add, e.g,. `Bar charts` for `Frequencies`. Note that pie charts are often misleading and rarely the best option for displaying data. -->
 <!-- 1. For now, there's not much of interest under `Format`, `Style`, or `Bootstrap` -->
 
@@ -981,7 +981,7 @@ Note that the values within the parentheses of the <code>Mean(?,?)</code> formul
 <!-- 1. Click `OK` -->
 
 <!-- We can see from both the tables and bar charts that we have many more migrant than non-migrant students and many more students who participated in the Caring for Life program (`CFL`) than those who didn't (`No-CFL`). Given that these were chosen variables---part of the study's manipulation---this is curious. Let's investigate further -->
-<!-- 1. Click on `Anlayze > Descriptive Statistics > Crosstabs` -->
+<!-- 1. Click on `Analyze > Descriptive Statistics > Crosstabs` -->
 <!-- 1. From the variable list, select `Population` and use the arrow to move it to the `Row(s)` field -->
 <!-- 1. And move `Group` to the `Columns(s)` field -->
 <!-- 1. SPSS again offers many choices for options. For example, under `Statistics` we can (but won't) choose `Chi-square` to test whether the distribution of counts differs from expected values and, under `Cells`, whether to present not only the `Observed` cells counts but also the `Expected`. Now, though, simply click `OK` -->
@@ -1005,16 +1005,16 @@ Note that the values within the parentheses of the <code>Mean(?,?)</code> formul
 <!-- To do this: -->
 <!-- 1. Click on `Data > Select Cases` -->
 <!-- 1. In the dialogue box that opens, select `Population` -->
-<!-- 1. Make sure `If condition is satisfied` is selected^[`Random sampe of cases` woudl be used, e.g., to split the data into a "training" and "test" set of data to [create and test](https://ai.stackexchange.com/questions/17898/while-we-split-data-in-training-and-test-data-why-we-have-two-pairs-of-each), e.g., the generalizability of a model. Splitting `Based on a time or case range` would be done if we feel that, e.g., participants differ qualitatively over time or within ranges of cases. `Use filter variable` is essentially what we're doing, but we're first needing to create that filer variable.] -->
+<!-- 1. Make sure `If condition is satisfied` is selected^[`Random sample of cases` would be used, e.g., to split the data into a "training" and "test" set of data to [create and test](https://ai.stackexchange.com/questions/17898/while-we-split-data-in-training-and-test-data-why-we-have-two-pairs-of-each), e.g., the generalizability of a model. Splitting `Based on a time or case range` would be done if we feel that, e.g., participants differ qualitatively over time or within ranges of cases. `Use filter variable` is essentially what we're doing, but we're first needing to create that filer variable.] -->
 <!-- 1. Click on the `If...` button^[Always a good thing to do in life.] -->
 <!-- 1. The the new dialogue, again select `Population` and move it to the field at the top right. -->
 <!-- 1. Either type or click on the `=` button -->
 <!-- 1. Type into that field `"Migrant"`. *Do* include the quotes so that that field now shows: \newline -->
 <!--   `Population = "Migrant"` -->
 <!-- 1. Click `Continue` -->
-<!-- 1. Under `Output`, make sure `Filter out unselected cases` is checked. This retains the unselected data, but removes it from any analyses. `Copy seleted cases to a new dataset` is tantamount to `Split into Files` -->
+<!-- 1. Under `Output`, make sure `Filter out unselected cases` is checked. This retains the unselected data, but removes it from any analyses. `Copy selected cases to a new dataset` is tantamount to `Split into Files` -->
 <!-- 1. Click `OK` -->
-<!-- In the `Data View` of the `Data Edtiro` window, you can no see that the rows for non-migrant students have a line crossed through their row number: -->
+<!-- In the `Data View` of the `Data Editor` window, you can no see that the rows for non-migrant students have a line crossed through their row number: -->
 <!-- ![](images/select-cases.png) -->
 <!-- Under the `Variable View` tab, you'll also see that a new variable called `filter_$` has been created. The label for this variable, at least, is informative: \newline `Population = "Migrant" (FILTER)` -->
 <!-- And now all subsequent analyses will disclude the non-migrants students^[Don't worry, they're relatively privileged otherwise in life compared to the migrant students.]. We can stop filtering out the non-migrant students simply by deleting (`Clear`ing) that filter variable. Being able to now subset our data is why I wanted to do this task a bit out of step with the rest of this guide. -->
@@ -1056,7 +1056,7 @@ Polit, D. F., &amp; Beck, C. E., Cheryl T. (2017). <em>Nursing <span>Research</s
 <li id="fn24"><p>Or whichever is the dummy with the <code>Population=Migrant</code> label that we’ll be keeping.<a href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn25"><p>Of course, if it later turned out that this combined dummy variable was important to unpack we easily could by then creating separate dummies for them.<a href="#fnref25" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn26"><p>We could also reverse code by subtracting the variable from a constant. Here, we could subtract from 3. This would make an initial <code>2</code> into 3 – <code>2</code> = <code>1</code>, etc.<br>
-Often, though, we want the numbers to range from <code>1</code> to the maximum. In htat case, we subtract the variable from 1 greater than the max value. If, e.g., instead we had variables that ranged from <code>1</code> to <code>4</code>, we could reverse code them by subtracting from 5:<br>
+Often, though, we want the numbers to range from <code>1</code> to the maximum. In that case, we subtract the variable from 1 greater than the max value. If, e.g., instead we had variables that ranged from <code>1</code> to <code>4</code>, we could reverse code them by subtracting from 5:<br>
 5 – <code>1</code> = <code>4</code><br>
 5 – <code>2</code> = <code>3</code><br>
 5 – <code>3</code> = <code>2</code><br>
