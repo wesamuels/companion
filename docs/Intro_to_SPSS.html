@@ -348,6 +348,7 @@ div.csl-indent {
   <li><a href="#recode-variables" id="toc-recode-variables" class="nav-link" data-scroll-target="#recode-variables">Recode Variables</a></li>
   <li><a href="#sec-compute_score" id="toc-sec-compute_score" class="nav-link" data-scroll-target="#sec-compute_score">Compute an Overall Score</a></li>
   </ul></li>
+  <li><a href="#standardize-variables" id="toc-standardize-variables" class="nav-link" data-scroll-target="#standardize-variables"><span class="header-section-number">16.3.7</span> Standardize Variables</a></li>
   </ul></li>
   <li><a href="#export-a-table-in-apa-format-to-word" id="toc-export-a-table-in-apa-format-to-word" class="nav-link" data-scroll-target="#export-a-table-in-apa-format-to-word"><span class="header-section-number">16.4</span> Export a Table in APA Format to Word</a>
   <ul>
@@ -355,10 +356,7 @@ div.csl-indent {
   <li><a href="#example-export-in-word" id="toc-example-export-in-word" class="nav-link" data-scroll-target="#example-export-in-word"><span class="header-section-number">16.4.2</span> Example Export in Word:</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">16.4.3</span> Summary</a></li>
   </ul></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">16.5</span> Additional Resources</a>
-  <ul>
-  <li><a href="#standardize-variables" id="toc-standardize-variables" class="nav-link" data-scroll-target="#standardize-variables"><span class="header-section-number">16.5.1</span> Standardize Variables</a></li>
-  </ul></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">16.5</span> Additional Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -864,6 +862,20 @@ Note that the values within the parentheses of the <code>Mean(?,?)</code> formul
 </ol>
 </section>
 </section>
+<section id="standardize-variables" class="level3" data-number="16.3.7">
+<h3 data-number="16.3.7" class="anchored" data-anchor-id="standardize-variables"><span class="header-section-number">16.3.7</span> Standardize Variables</h3>
+<p>I’m a big fan of standardized data. It doesn’t change the distribution of scores at all but makes values on one variable directly comparable to values on an other—even if they’re measured on very different scales<a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a></p>
+<p>SPSS makes it very easy to standardize variables: </p>
+<ol type="1">
+<li>Click on <code>Anlayze &gt; Descriptive Statistics &gt; Descriptives</code></li>
+<li>Click on <code>Waist_Circum</code></li>
+<li>Now, <em>holding down the</em> <code>Shift</code> <em>key</em> either single-(left-)click on <code>EBV</code> or tap the down-arrow key until you have selected all of the variables from <code>Waist_Circum</code> to <code>EBV</code></li>
+<li><em>Now</em> click on the blue arrow to move all of those variables to the <code>varialbe(s)</code> field</li>
+<li>Under the <code>Options</code> dialogue, we might as well check to review, e.g., the <code>Mean</code>, <code>Std. Deviation</code>, <code>Minimum</code>, <code>Maximum</code>, and <code>S. E. Mean</code> (i.e., the <a href="https://www.indeed.com/career-advice/career-development/standard-error-mean">standard error of the mean</a> that we covered in our <a href="https://wesamuels.net/courses/statistics/N915/Overview/Stats_Overview.html">first lecture</a>)</li>
+<li>But our real goal here is to check the <code>Save standardized values as variables</code> before clicking on <code>OK</code></li>
+</ol>
+<p>And that’s all it takes to create standardized variables. They will now all appear at the end of the dataset. The variable names will be like the original, pre-pending with a <code>Z</code>, e.g., <code>Waist_Circum</code> becomes <code>ZWaist_Circum</code>.</p>
+</section>
 </section>
 <section id="export-a-table-in-apa-format-to-word" class="level2" data-number="16.4">
 <h2 data-number="16.4" class="anchored" data-anchor-id="export-a-table-in-apa-format-to-word"><span class="header-section-number">16.4</span> Export a Table in APA Format to Word</h2>
@@ -930,19 +942,6 @@ Note that the values within the parentheses of the <code>Mean(?,?)</code> formul
 <li><a href="https://articles.viriya.net/SPSS_Analysis_and_Multivariate_Statistics.pdf"><em>SPSS Analysis and Multivariate Statistics</em></a></li>
 </ul></li>
 </ul>
-<section id="standardize-variables" class="level3" data-number="16.5.1">
-<h3 data-number="16.5.1" class="anchored" data-anchor-id="standardize-variables"><span class="header-section-number">16.5.1</span> Standardize Variables</h3>
-<p>I’m a big fan of standardized data. It doesn’t change the distribution of scores at all but makes values on one variable directly comparable to values on an other—even if they’re measured on very different scales<a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a></p>
-<p>SPSS makes it very easy to standardize variables: </p>
-<ol type="1">
-<li>Click on <code>Anlayze &gt; Descriptive Statistics &gt; Descriptives</code></li>
-<li>Click on <code>Waist_Circum</code></li>
-<li>Now, <em>holding down the</em> <code>Shift</code> <em>key</em> either single-(left-)click on <code>EBV</code> or tap the down-arrow key until you have selected all of the variables from <code>Waist_Circum</code> to <code>EBV</code></li>
-<li><em>Now</em> click on the blue arrow to move all of those variables to the <code>varialbe(s)</code> field</li>
-<li>Under the <code>Options</code> dialogue, we might as well check to review, e.g., the <code>Mean</code>, <code>Std. Deviation</code>, <code>Minimum</code>, <code>Maximum</code>, and <code>S. E. Mean</code> (i.e., the <a href="https://www.indeed.com/career-advice/career-development/standard-error-mean">standard error of the mean</a> that we covered in our <a href="https://wesamuels.net/courses/statistics/N915/Overview/Stats_Overview.html">first lecture</a>)</li>
-<li>But our real goal here is to check the <code>Save standardized values as variables</code> before clicking on <code>OK</code></li>
-</ol>
-<p>And that’s all it takes to create standardized variables. They will now all appear at the end of the dataset. The variable names will be like the original, pre-pending with a <code>Z</code>, e.g., <code>Waist_Circum</code> becomes <code>ZWaist_Circum</code>.</p>
 <!-- # Old -->
 
 <!-- #### Frequencies & Crosstabs {#pivot-tables} -->
@@ -1009,7 +1008,6 @@ Polit, D. F., &amp; Beck, C. E., Cheryl T. (2017). <em>Nursing <span>Research</s
 </div>
 </div>
 </section>
-</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
@@ -1044,7 +1042,7 @@ Often, though, we want the numbers to range from <code>1</code> to the maximum. 
 <li id="fn24"><p>You may <code>Recode into Same Variables...</code>—and sometimes I do—but this can be dangerous if you make a mistake or tedious if you decide you want the original scaling back. Recoding into a different variable also makes it clearer that you indeed did just that in case you come back later and don’t quite remember if you did or not.<a href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn25"><p>You can also simply type into that <code>Numberic Expression:</code> field, so here you can simply paste this into that field:<br>
 <code>MEAN(Happy_Reversed,Enjoyed_Life_Reversed,Just_as_Good_Reversed,Hopeful_Reversed)</code><a href="#fnref25" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn26"><p>In analytic models—if all variables are either standardized or dummy-coded—it also lets us remove the intercept term, making our analyses a bit more powerful … but more on that in Stat 2.<a href="#fnref26" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn26"><p>In analytic models—if all variables are either standardized or dummy-coded—it also lets us remove the intercept term, making our analyses a bit more powerful.<a href="#fnref26" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
