@@ -70,46 +70,39 @@
     "text": "2.2 Presenting Results \n\nVisualization\n\nSelf Sufficiency\nEfficient Information Transfer\nData-to-Ink Ratio\nFollow Conventions & Readers’ Expectations\n\n\n\n2.2.1 Writing Results \n\nWriting Results Sections\n\nTell a Story\nUse Figures & Tables as Talking Points\nUse Statistics as Citations to Support Assertions\n\n\nAdditional information and resources are given in Chapter 3."
   },
   {
-    "objectID": "915.html#sec-testing_hypotheses_lecture",
-    "href": "915.html#sec-testing_hypotheses_lecture",
-    "title": "2  NURS 915 & 916: Applied Statistics 1 & 2",
-    "section": "2.3 Testing Hypotheses ",
-    "text": "2.3 Testing Hypotheses \n\nReview of Assumptions in Inferential Statistics\nHypothesis Testing\nSignal-to-Noise Ratio\nCommon Tests: t & F"
-  },
-  {
     "objectID": "915.html#sec-fundamentals_of_linear_regression_lecture",
     "href": "915.html#sec-fundamentals_of_linear_regression_lecture",
     "title": "2  NURS 915 & 916: Applied Statistics 1 & 2",
-    "section": "2.4 Fundamentals of Linear Relationships ",
-    "text": "2.4 Fundamentals of Linear Relationships \n\nReview of Correlations & Partial Correlations\n\nAdditional information and resources are given in Chapter 5.\n\nLinear Models vs. Correlation\nLinear Models vs. ANOVAs\nLinear Models: Signal-to-Noise\nGeneralized Linear Models & Link Functions\nEvaluating Distributions: Q-Q Plots\nFurther Concepts in Linear Regression\n\nDummy Variables\nMulticollinearity\nIndependence of Cases\n\n\nRecording of Lecture - A Zoom recording from a previous semester\nAdditional information and resources—including steps to conducting them in SPSS—are given in Chapters 8 and 9"
+    "section": "2.3 Fundamentals of Linear Relationships ",
+    "text": "2.3 Fundamentals of Linear Relationships \n\nReview of Correlations & Partial Correlations\n\nAdditional information and resources are given in Chapter 5.\n\nLinear Models vs. Correlation\nLinear Models vs. ANOVAs\nLinear Models: Signal-to-Noise\nGeneralized Linear Models & Link Functions\nEvaluating Distributions: Q-Q Plots\nFurther Concepts in Linear Regression\n\nDummy Variables\nMulticollinearity\nIndependence of Cases\n\n\nRecording of Lecture - A Zoom recording from a previous semester\nAdditional information and resources—including steps to conducting them in SPSS—are given in Chapters 8 and 9"
   },
   {
     "objectID": "915.html#sec-testing_models_lecture",
     "href": "915.html#sec-testing_models_lecture",
     "title": "2  NURS 915 & 916: Applied Statistics 1 & 2",
-    "section": "2.5 Testing Models Theoretically ",
-    "text": "2.5 Testing Models Theoretically \n\nReview of Linear Regression Model\nPartialling out Variance\nCombining Similar Sources of Variance\nOstensible & Non-Ostensible Variables\nModel Fit\n\nRecording 1 - A Zoom recording from a previous semester, this recording contains a review of linear models and introduction to tests of model fits.\nRecording 2 - An other Zoom recording from a prior semester, this covers an explanation of ANOVAs and their qualities vs. general linear models"
+    "section": "2.4 Testing Models Theoretically ",
+    "text": "2.4 Testing Models Theoretically \n\nReview of Linear Regression Model\nPartialling out Variance\nCombining Similar Sources of Variance\nOstensible & Non-Ostensible Variables\nModel Fit\n\nRecording 1 - A Zoom recording from a previous semester, this recording contains a review of linear models and introduction to tests of model fits.\nRecording 2 - An other Zoom recording from a prior semester, this covers an explanation of ANOVAs and their qualities vs. general linear models"
   },
   {
     "objectID": "915.html#sec-longitudinal_analyses_lecture",
     "href": "915.html#sec-longitudinal_analyses_lecture",
     "title": "2  NURS 915 & 916: Applied Statistics 1 & 2",
-    "section": "2.6 Analyses of Longitudinal Data ",
-    "text": "2.6 Analyses of Longitudinal Data \n\nLongitudinal analyses, including some of their benefits and challenges\nA brief comparison of the merits of pre-post difference scores, including pretest covariates in ANCOVAs, and repeated-measures ANOVAs.\nAn introduction to the sorts of multilevel models of change that Singer & Willett (2003) describe\n\nRecording\nAdditional information and resources—including steps to conducting them in SPSS—are all currently located in Chapter 10."
+    "section": "2.5 Analyses of Longitudinal Data ",
+    "text": "2.5 Analyses of Longitudinal Data \n\nLongitudinal analyses, including some of their benefits and challenges\nA brief comparison of the merits of pre-post difference scores, including pretest covariates in ANCOVAs, and repeated-measures ANOVAs.\nAn introduction to the sorts of multilevel models of change that Singer & Willett (2003) describe\n\nRecording\nAdditional information and resources—including steps to conducting them in SPSS—are all currently located in Chapter 10."
   },
   {
     "objectID": "915.html#sec-logistic_regression_lecture",
     "href": "915.html#sec-logistic_regression_lecture",
     "title": "2  NURS 915 & 916: Applied Statistics 1 & 2",
-    "section": "2.7 Logistic Regresssion ",
-    "text": "2.7 Logistic Regresssion \n\nLogistic regression vs. general linear regression\nExplanation of the math\nTesting effects & model fit\nTypes of logistic regression\nExamples"
+    "section": "2.6 Logistic Regresssion ",
+    "text": "2.6 Logistic Regresssion \n\nLogistic regression vs. general linear regression\nExplanation of the math\nTesting effects & model fit\nTypes of logistic regression\nExamples"
   },
   {
     "objectID": "915.html#sec-sem_lecture",
     "href": "915.html#sec-sem_lecture",
     "title": "2  NURS 915 & 916: Applied Statistics 1 & 2",
-    "section": "2.8 Structural Equation Modeling ",
-    "text": "2.8 Structural Equation Modeling \nStructural equation models can be considered a sort of bridge between generalized linear regression and the factor analyses we’ll cover in NURS 925, Psychometrics.\n\nCore Concepts\nMechanics of SEMs\nComparing Models\nExample of SEMs"
+    "section": "2.7 Structural Equation Modeling ",
+    "text": "2.7 Structural Equation Modeling \nStructural equation models can be considered a sort of bridge between generalized linear regression and the factor analyses we’ll cover in NURS 925, Psychometrics.\n\nCore Concepts\nMechanics of SEMs\nComparing Models\nExample of SEMs"
   },
   {
     "objectID": "writing_results.html#overview",
