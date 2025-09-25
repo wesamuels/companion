@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A set of explanations, lectures, resources, and activities to complement the statistics curriculum that is part of Hunter College’s Ph.D.&nbsp;Program in Nursing Research and Health Equity and DNP Program.">
+
+<title>Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula - 16&nbsp; Introduction to SPSS &amp; Data Preparation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./data_exploration_with_r.html" rel="next">
+<link href="./Intro_to_GPower.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Using_Templates_and_a_Reference_Manager.html">Guides to Using Software</a></li><li class="breadcrumb-item"><a href="./Intro_to_SPSS.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Companion-to-the-Nursing-Ph.D.---DNP-Statistics-Curricula.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./curricula.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applied Statistics Curriculum</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./60N.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 60<span style="font-size: .7em">N</span>: Foundations of Biostatistics for Nursing Research and Evidence-Based Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./915.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 915 &amp; 916: Applied Statistics 1 &amp; 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./writing_results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Writing Results Sections</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./significance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to Measuring Relationships and Building Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Variance_Covariance_Correlations_and_Partial_Correlations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Variance, Covariance, Correlations, and Partial Correlations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./effect_size.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Effect Size: Explanation and Guidelines</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./missing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lrm_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 1: Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lrm_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 2: More about ANOVAs and Dummy Coding</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mlm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Longitudinal Analyses: Why and How to Conduct Multilevel Linear Modeling</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Psychometrics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./925.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">N<span style="font-size: .7em">URS</span> 925: Psychometrics Course</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./efa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Exploratory Factor Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Guides to Using Software</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Using_Templates_and_a_Reference_Manager.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Using Templates and a Reference Manager</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_Excel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to Excel</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_GPower.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Power and Sample Size Estimation Using Either G*Power or R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Intro_to_SPSS.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_exploration_with_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Exploration with R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common_statistical_symbols.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Common Statistical Symbols</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vocab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Common/Confusing Statistical &amp; Scientific Terms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decision_trees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Statistical Analysis Decision Trees and Guides</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">16.1</span> Overview</a></li>
+  <li><a href="#orientation-to-spss" id="toc-orientation-to-spss" class="nav-link" data-scroll-target="#orientation-to-spss"><span class="header-section-number">16.2</span> Orientation to SPSS</a>
+  <ul>
+  <li><a href="#sec-apporto" id="toc-sec-apporto" class="nav-link" data-scroll-target="#sec-apporto"><span class="header-section-number">16.2.1</span> Accessing SPSS Through Apporto</a></li>
+  <li><a href="#editing-global-options" id="toc-editing-global-options" class="nav-link" data-scroll-target="#editing-global-options"><span class="header-section-number">16.2.2</span> Editing Global Options</a></li>
+  <li><a href="#spss-windows" id="toc-spss-windows" class="nav-link" data-scroll-target="#spss-windows"><span class="header-section-number">16.2.3</span> SPSS Windows</a>
+  <ul>
+  <li><a href="#the-data-editor-window" id="toc-the-data-editor-window" class="nav-link" data-scroll-target="#the-data-editor-window">The <code>Data Editor</code> Window</a>
+  <ul class="collapse">
+  <li><a href="#data-view" id="toc-data-view" class="nav-link" data-scroll-target="#data-view">The <code>Data View</code> Tab</a></li>
+  <li><a href="#variable_view" id="toc-variable_view" class="nav-link" data-scroll-target="#variable_view">The <code>Variable View</code> Tab</a></li>
+  </ul></li>
+  <li><a href="#the-output-window" id="toc-the-output-window" class="nav-link" data-scroll-target="#the-output-window">The <code>Output</code> Window</a>
+  <ul class="collapse">
+  <li><a href="#annotating-output" id="toc-annotating-output" class="nav-link" data-scroll-target="#annotating-output">Annotating Output</a></li>
+  <li><a href="#exporting-output" id="toc-exporting-output" class="nav-link" data-scroll-target="#exporting-output">Exporting Output</a></li>
+  <li><a href="#sec-spss_syntax" id="toc-sec-spss_syntax" class="nav-link" data-scroll-target="#sec-spss_syntax">Syntax in Output</a></li>
+  </ul></li>
+  <li><a href="#sec-syntax-window" id="toc-sec-syntax-window" class="nav-link" data-scroll-target="#sec-syntax-window">The <code>Sytnax</code> Window</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#data-preparation-cleaning" id="toc-data-preparation-cleaning" class="nav-link" data-scroll-target="#data-preparation-cleaning"><span class="header-section-number">16.3</span> Data Preparation &amp; Cleaning</a>
+  <ul>
+  <li><a href="#changing-the-measurement-level-of-a-variable" id="toc-changing-the-measurement-level-of-a-variable" class="nav-link" data-scroll-target="#changing-the-measurement-level-of-a-variable"><span class="header-section-number">16.3.1</span> Changing the Measurement Level of a Variable</a></li>
+  <li><a href="#creating-a-variable-label-for-a-variable" id="toc-creating-a-variable-label-for-a-variable" class="nav-link" data-scroll-target="#creating-a-variable-label-for-a-variable"><span class="header-section-number">16.3.2</span> Creating a Variable Label for a Variable</a></li>
+  <li><a href="#sec-setting-values-labels" id="toc-sec-setting-values-labels" class="nav-link" data-scroll-target="#sec-setting-values-labels"><span class="header-section-number">16.3.3</span> Setting <code>Values</code> Labels for a Variable</a></li>
+  <li><a href="#setting-missing" id="toc-setting-missing" class="nav-link" data-scroll-target="#setting-missing"><span class="header-section-number">16.3.4</span> Setting Missing Values</a></li>
+  <li><a href="#create-dummies" id="toc-create-dummies" class="nav-link" data-scroll-target="#create-dummies"><span class="header-section-number">16.3.5</span> Create Dummy Variables from Different Levels of a Nominal Variable</a>
+  <ul>
+  <li><a href="#quickly-creating-dummy-variables-for-variable-levels" id="toc-quickly-creating-dummy-variables-for-variable-levels" class="nav-link" data-scroll-target="#quickly-creating-dummy-variables-for-variable-levels">Quickly Creating Dummy Variables for Variable Levels</a></li>
+  <li><a href="#creating-dummy-variables-for-combined-variable-levels" id="toc-creating-dummy-variables-for-combined-variable-levels" class="nav-link" data-scroll-target="#creating-dummy-variables-for-combined-variable-levels">Creating Dummy Variables for Combined Variable Levels</a></li>
+  </ul></li>
+  <li><a href="#transform-an-old-variable-into-a-new-one" id="toc-transform-an-old-variable-into-a-new-one" class="nav-link" data-scroll-target="#transform-an-old-variable-into-a-new-one"><span class="header-section-number">16.3.6</span> Transform an Old Variable into a New One</a>
+  <ul>
+  <li><a href="#recode-variables" id="toc-recode-variables" class="nav-link" data-scroll-target="#recode-variables">Recode Variables</a></li>
+  <li><a href="#sec-compute_score" id="toc-sec-compute_score" class="nav-link" data-scroll-target="#sec-compute_score">Compute an Overall Score From Several Variables</a></li>
+  </ul></li>
+  <li><a href="#standardize-variables" id="toc-standardize-variables" class="nav-link" data-scroll-target="#standardize-variables"><span class="header-section-number">16.3.7</span> Standardize Variables</a></li>
+  </ul></li>
+  <li><a href="#export-a-table-in-apa-format-to-word" id="toc-export-a-table-in-apa-format-to-word" class="nav-link" data-scroll-target="#export-a-table-in-apa-format-to-word"><span class="header-section-number">16.4</span> Export a Table in APA Format to Word</a>
+  <ul>
+  <li><a href="#steps-to-export-a-table-in-apa-format-in-spss" id="toc-steps-to-export-a-table-in-apa-format-in-spss" class="nav-link" data-scroll-target="#steps-to-export-a-table-in-apa-format-in-spss"><span class="header-section-number">16.4.1</span> Steps to Export a Table in APA Format in SPSS:</a></li>
+  <li><a href="#example-export-in-word" id="toc-example-export-in-word" class="nav-link" data-scroll-target="#example-export-in-word"><span class="header-section-number">16.4.2</span> Example Export in Word:</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">16.4.3</span> Summary</a></li>
+  </ul></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">16.5</span> Additional Resources</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-spss_intro" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Introduction to SPSS &amp; Data Preparation</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="overview" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">16.1</span> Overview</h2>
+<p>This document is intended to introduce you to a couple of things. First, we will review SPSS’s GUI<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and how data are prepared and handled therein. We will import a set of rather clean data that we will use to demonstrate ways to further prepare and manipulate data.</p>
+<p>Second, we will then introduce some common data exploration functions to understand these data better. We will use this opportunity to further consider some of the concepts we’re covering through our other class activities, including normality and outliers.</p>
+</section>
+<section id="orientation-to-spss" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="orientation-to-spss"><span class="header-section-number">16.2</span> Orientation to SPSS</h2>
+<section id="sec-apporto" class="level3" data-number="16.2.1">
+<h3 data-number="16.2.1" class="anchored" data-anchor-id="sec-apporto"><span class="header-section-number">16.2.1</span> Accessing SPSS Through Apporto</h3>
+<!-- To the best of my knowledge, there are two ways to access SPSS (as well as RStudio and some other such programs) for Hunter students: -->
+<!-- - Virtual Desktop -->
+<!-- - Apporto -->
+<!-- Both access SPSS through the Internet. The virtual desktop creates an "OS within your OS" on your desktop. Apporto accesses SPSS remotely through your browser. -->
+<!-- #### Virtual Desktop -->
+<!-- One option is to access SPSS through CUNY's [virtual desktop](https://www.cuny.edu/about/administration/offices/cis/virtual-desktop/). Although---like all web-based software---this interface can be a bit slow, it does allow you access SPSS (and several other programs) anywhere. -->
+<!-- Basic instructions for using it are given there, but if you need help setting up the virtual desktop or accessing SPSS through it, please refer to the [Brief Intro to SPSS &amp; Accessing It via CUNY's Virtual Machine](https://wesamuels.net/courses/statistics/Handouts/Introduction_to_SPSS_via_Virtual_Machine.pdf) guide posted in the `Course Materials > Handling Data and Using Stat Programs > SPSS` folder in BlackBoard. That file also gives a review of the SPSS windows and main functions in each. -->
+<!-- **For a Mac**, please note that, under `Global Options`, you should ignore it asking for a connection server. Instead, go back to the [virtual desktop website](https://www.cuny.edu/about/administration/offices/cis/virtual-desktop/) and click on the app you want to open (viz., here SPSS); this will indeed open that in the virtual desktop. -->
+<p>SPSS can be accessed online with your CUNY ID through <a href="https://www.cuny.edu/about/administration/offices/cis/technology-services/apporto/">Apporto</a>—as long as “your browser” is <a href="https://lifehacker.com/yes-you-should-quit-using-google-chrome-1844408232">Chrome</a>.</p>
+<p><strong>To access SPSS through Apporto</strong>:</p>
+<ol type="1">
+<li>Go to CUNY’s Apporto login page: <a href="https://cuny.apporto.com/">https://cuny.apporto.com/</a></li>
+<li>Enter your CUNY login credentials (your <code>@login.cuny.edu</code> “email” address)</li>
+<li>If you don’t already see an icon for SPSS, in the Apporto <a href="https://cuny.apporto.com/home">home page</a>, click on the <code>App Store</code> button in the top, left corner, just below the hamburger icon that opens up that left-hand menu.</li>
+<li>Click to Launch SPSS and follow any steps to “optimize<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>” and reconnect.</li>
+</ol>
+<p><strong>To open data in Apporto</strong>, there are two ways:</p>
+<p>1, Uploading files via dialogue</p>
+<ol type="1">
+<li>Locate the menu bar immediately above the Apporto window:<br>
+<img src="images/apporto_menu.jpg" class="img-fluid"></li>
+<li>Click on the <code>File upload</code> button (<img src="images/apporto_upload.jpg" class="img-fluid">)</li>
+<li>Follow the dialogue therein</li>
+</ol>
+<p>2, Dragging files into the Apporto window</p>
+<ol type="1">
+<li>Open up a file manager <em>outside</em> of the Apporto environment (i.e., in a normal window outside the browser in which Apporto is running)</li>
+<li>Left click to grab and drag a data file from your file manager into the Apporto window. Apporto will open a notification window letting you know that the file has indeed been imported; it should also now appear in the Apporto window</li>
+<li>You can then drag the file from Apporto window into the SPSS window that is itself inside Apporto<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
+</ol>
+<p>Files you save in Apporto will (at least eventually) appear in <strong><em>either</em></strong> the <code>This PC &gt; Desktop</code> folder (accessible from the <code>Desktop</code> folder under <code>Quick Access</code> in Windows’ native file manager) <strong><em>or</em></strong> in the <code>This PC &gt; Documents</code> folder (<code>Documents</code> under <code>Quick Access</code>).</p>
+<p>Clicking on the <code>Settings</code> gear to the right of the Apporto menu bar gives the option to access USBs, although this proved to not always be reliable for all OSs for me.</p>
+<p><strong>To export files from Apporto</strong>:</p>
+<ol type="1">
+<li>In that menu bar immediately above the Apporto window:<br>
+<img src="images/apporto_menu.jpg" class="img-fluid"></li>
+<li>Click on the <code>File download</code> button (<img src="images/apporto_download.jpg" class="img-fluid">)</li>
+<li>You get the idea</li>
+</ol>
+<p>Alternatively, you can open your email from within Apporto and send it to yourself as an attachment.</p>
+</section>
+<section id="editing-global-options" class="level3" data-number="16.2.2">
+<h3 data-number="16.2.2" class="anchored" data-anchor-id="editing-global-options"><span class="header-section-number">16.2.2</span> Editing Global Options</h3>
+<p>Before we dive into the windows and workings of SPSS, I’d like to note that there are a few useful options to consider modifying given your needs. There are, in fact, many options for tailor SPSS’s functioning, output, and performance given throughout its dialogues and within its rather large list of syntax commands. Here, however, we will simply note a few “global” options that can be set to adjust how SPSS acts in general.</p>
+<p>To access these, select <code>Edit &gt; Options</code> from the menu (in any window). When that dialogue opens, you will see many choices, including the <code>Variable Lists</code> section in the top right oft the <code>General</code> tab. In that section, you can choose to either have SPSS default to <code>Display names</code> or to <code>Display labels</code> of variables. As discussed further <a href="#variable_view">below</a>, a given variable can be identified by either the shorter, more-restricted name or by the longer label used to describe it. By choosing one of these option you can either show smaller, less-intuitive names or longer, more explanatory labels in (nearly) all of the output SPSS generates. Of course, you can also switch between these as needed.</p>
+<p>Some of the other options under the <code>General</code> tab are worth considering (such as whether you want to have SPSS display <code>No scientific notation for small numbers in tables</code>; I mean, we’re doing research here, not science). The <code>Language</code>, <code>Viewer</code>, <code>Data</code>, <code>Currency</code>, <code>Charts</code>, <code>Scipts</code>, and <code>Syntax Editor</code> tabs are less useful for most users, but the items in the <code>Output</code> tab’s <code>Outline Labeling</code> section may also be worth considering. Either of those options can let you choose whether to show only the variable names, labels, or both; I suggest using <code>Labels</code> for output you share with others, but you may want to use <code>Names</code> for your own analyses since it will make for simpler output.</p>
+<p>Under the <code>Pivot Tables</code> tab, you may want to consider changing the <code>TagbleLook</code> to <code>APA_TimesRoma_12pt</code> when you’re ready to produce <a href="#pivot-tables">pivot tables</a> for your dissertation or publishable manuscripts.</p>
+<p><code>File Locations</code> can be nice to change if you store your data and analyses in dedicated folders.</p>
+<p>Finally, you may (or may not) wish to change settings in the <code>Privacy</code> tab.</p>
+<p>There is more one can do to customize SPSS output and set defaults that allow for automatic APA styling. Including:</p>
+<ul>
+<li><a href="https://www.statsmakemecry.com/smmctheblog/how-to-make-spss-produce-all-tables-in-apa-format-automatica.html">Using an APA-formatted table to serve as the style for subsequent tables</a></li>
+<li>Styling a given table using <code>Format &gt;</code><a href="https://ezspss.com/how-to-format-spss-tables-in-apa-style/"><code>TableLooks</code></a></li>
+<li><a href="https://ezspss.com/how-to-create-apa-style-charts-in-spss/">Styling figures</a></li>
+</ul>
+</section>
+<section id="spss-windows" class="level3" data-number="16.2.3">
+<h3 data-number="16.2.3" class="anchored" data-anchor-id="spss-windows"><span class="header-section-number">16.2.3</span> SPSS Windows</h3>
+<p>SPSS is inherently a syntax-driven program, but its popularity is arguably due in large part to its useful GUI. The GUI has three main windows:</p>
+<ol type="1">
+<li>The <code>Data Editor</code> which is comprised of the <code>Data View</code> and <code>Variable View</code> tabs</li>
+<li>The <code>Output</code> window</li>
+<li>The <code>Syntax Editor</code> window</li>
+</ol>
+<section id="the-data-editor-window" class="level4">
+<h4 class="anchored" data-anchor-id="the-data-editor-window">The <code>Data Editor</code> Window</h4>
+<p>The <code>Data Editor</code> window is the one most commonly used to interface with SPSS. I think one reason for this is that is can help to be looking at one’s data while working with it—if nothing else to remember what variables there are and what their names are.</p>
+<p>Another reason, though, is because you will have one <code>Data Editor</code> window for each data set you have open; when you access the drop-down menu at the top to, e.g., <code>Analyze</code> your data, SPSS will assume you want to work with the data in whatever window is either currently raised or that was last raised. So, if you have more than one data set open, simply cycle through to the one you want to work with and then choose what you want to be from the drop-down menu—from either the <code>Data Editor</code>, <code>Output</code>, or even <code>Syntax</code> window.</p>
+<p>Relatedly, you will notice that the drop-down menu at the top is the same<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> for all of the windows. This indeed means that you don’t have to cycle back to the <code>Data Edtior</code> window before you do anything. In fact, it can be sometimes easier top use the menu from the <code>Output</code> window so you can look at the results of one command to know what to do with the next. (Anyway, you can see the whole list of variables accessible to a given command in that command’s dialogue boxes.)</p>
+<section id="data-view" class="level5">
+<h5 class="anchored" data-anchor-id="data-view">The <code>Data View</code> Tab</h5>
+<p>The <code>Data View</code> tab<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> presents a spreadsheet of the data. Just like other spreadsheet programs, you can enter, edit, and scroll through your data here. You can use the <code>Page up</code> and <code>Page Down</code> or the arrow keys to scroll. Holding down the <code>Control</code>/<a href="https://support.apple.com/en-ca/HT201236"><code>Command</code></a> button while tapping arrow keys will go to the ends of the data; e.g., <code>Control</code>/<code>Command</code> + <span class="math inline">\(\Downarrow\)</span> will go to the bottom of the data set; <code>Control</code>/<code>Command</code> + <span class="math inline">\(\Rightarrow\)</span> will go to far right of it, etc. One way this works differently from, e.g., Excel though is that SPSS will skip over empty cells whereas Excel will stop right before each empty cell instead of going all the way to the end.</p>
+<p>Right-clicking on things in the <code>Data View</code> tab lets you do some useful things.</p>
+<ul>
+<li>Right-clicking on a <strong>column header</strong> (i.e., the part at the top that list the variable name) lets you:
+<ul>
+<li>Sort the entire data set by that variable</li>
+<li>Copy the variable name or label (more about those things under <a href="#variable_view"><code>Variable View</code></a>)</li>
+<li><code>Clear</code> the data set of that variable. <strong>This is the command to delete something in SPSS.</strong> Right-clicking and then choosing <code>Clear</code> will delete the selected cell, row, or column in either the <code>Data View</code> or <code>Variable view</code> tab.</li>
+<li>Get <code>Variable Information</code> including the variable’s name, label, type<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, any codes for missing values, and the measurement scale for that or any other variable.</li>
+<li>Send a command to give a nice set of descriptive statistics to the <code>Output</code> window (and go there automatically to see those results)</li>
+</ul></li>
+<li>Right-clicking on a <strong>row number</strong> lets you:
+<ul>
+<li><code>Cut</code> or <code>Copy</code> that row</li>
+<li><code>Clear</code> (i.e., delete) that row</li>
+<li><code>Insert Cases</code> to manually enter a new row of data (or paste one that you said to cut or copy)</li>
+</ul></li>
+<li>Right-clicking on a <strong>cell</strong> lets you:
+<ul>
+<li><code>Cut</code> or <code>Copy</code> the values in that cell</li>
+<li><code>Paste</code> values selected from cutting or copying
+<ul>
+<li>You can also <code>Paste with Variable Names</code>, useful (or confusing) for pasting into a different column</li>
+</ul></li>
+<li><code>Copy</code> the variable name or label</li>
+<li>Access <code>Variable Information</code> or <code>Descriptive Statistics</code> for that entire variable</li>
+<li><code>Clear</code> (i.e., delete) the information in that cell</li>
+<li>Check the spelling against SPSS’s dictionary</li>
+<li>Change the font slightly</li>
+</ul></li>
+</ul>
+</section>
+<section id="variable_view" class="level5">
+<h5 class="anchored" data-anchor-id="variable_view">The <code>Variable View</code> Tab</h5>
+<p>The <code>Variable View</code> presents what is essentially, a <a href="https://www.datafiles.samhsa.gov/get-help/codebooks/what-codebook">codebook</a>, a list of the variables and information about them, including:</p>
+<ul>
+<li><code>Name</code>,
+<ul>
+<li>the name that SPSS uses to access that variable. These are best kept short so that you can see the whole thing in some of SPSS’s unnecessarily-small dialogues. They also <a href="https://ezspss.com/rules-for-naming-variables-in-spss/">can only contain</a> letters, numbers, periods, and underscores.</li>
+</ul></li>
+<li><code>Type</code>
+<ul>
+<li>indicates whether the variable is a <code>String</code> (alphanumeric), <code>Numeric</code> (numbers not specially formatted), or a number with <a href="https://libguides.library.kent.edu/SPSS/VariableTypes">various types of special formatting</a>, such as dates, currency, etc. The <code>Comma</code> and <code>Dot</code> types are for numbers with thousands etc. indicated by commas or dots, respectively<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. <code>Scientific notation</code> is for numbers formatted like 1 <span class="math inline">\(\times\)</span> 10<sup>3</sup> to denote 1,000. Clicking on the button with an ellipsis opens a dialogue where you can change the number type (as well as change the length of the variable—how many characters long it can be).</li>
+</ul></li>
+<li><code>Width</code>,
+<ul>
+<li>which simply indicates how many characters long or how many digits a variable has left of a decimal. No big deal</li>
+</ul></li>
+<li><code>Decimals</code>
+<ul>
+<li>presents how many decimal places a (numeric) has been assigned.</li>
+</ul></li>
+<li><code>Label</code>
+<ul>
+<li>is very useful. In this field you can write a <a href="https://www.ibm.com/docs/en/spss-statistics/SaaS?topic=labels-overview-variable-command">rather long</a> description of what a given variable measures. You can use nearly any characters here to explain it well. To create or change a label, simply left-click inside that field and start typing.</li>
+</ul></li>
+<li><code>Values</code>
+<ul>
+<li>is also quite useful; for variables that are encoded with numbers, you can use this field to indicate what each level of the variable actually denotes. For example, if you have a Likert-style response encoded a number from 1 to 5, you can click on the ellipsis button to denote that <code>1</code> = <code>Strongly Disagree</code>, etc. When you explore the variable with descriptives, etc. SPSS will use these value labels instead, making output considerably easier to read. We will show an example of doing this <a href="#setting-values-labels">below</a>.</li>
+</ul></li>
+<li><code>Missing</code>
+<ul>
+<li>is yet another useful field. Sometimes a certain character or value will be used to denote a missing value. For example, <code>99</code> or <code>NA</code> may be used a place-holders to signify that that datum is actually missing. By clicking on the ellipsis button, you can denote this. We do this <a href="#setting-missing">below</a>.</li>
+</ul></li>
+<li><code>Columns</code>
+<ul>
+<li>simply notes how many characters wide a column is. You can change the value here or, under the <code>Data View</code> tab, left-click the space between two rows to change this.</li>
+</ul></li>
+<li><code>Align</code>
+<ul>
+<li>just indicates the left, right, or center alignment of a column.</li>
+</ul></li>
+<li><code>Measure</code>
+<ul>
+<li>is an unexpectedly important attribute of a variable. SPSS is quite finicky about the “measure” type of a variable: You can only perform actions on a variable that match that variable type. For example, you can only run correlations on continuous variables. The measurement types that SPSS allows are:</li>
+<li><code>Scale</code> denotes a “scalar” variable, which corresponds to either of Steven’s “interval” or “ratio” levels. It is indicated by a little ruler (<img src="images/scale.png" class="img-fluid">).</li>
+<li><code>Ordinal</code> denotes a, well, ordinal variable and is indicated by a little histogram (<img src="images/ordinal.png" class="img-fluid">).</li>
+<li><code>Nominal</code> denotes a nominal variable is is indicated by a cute little Venn diagram (<img src="images/nominal.png" class="img-fluid">).</li>
+</ul></li>
+<li><code>Role</code>
+<ul>
+<li>is a rather under-utilized field. It can be used to indicate whether a variable is a predictor / independent variable (<code>Input</code>), a outcome / dependent variable (<code>Target</code>), <code>Both</code>, or whether it is used to <code>Partition</code> or <code>Split</code> the data set. We will create a variable that indeed partitions when we <a href="#subsetting">subset the data to only include migrant students</a>.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="the-output-window" class="level4">
+<h4 class="anchored" data-anchor-id="the-output-window">The <code>Output</code> Window</h4>
+<p>Another reason I think SPSS is so widely used is because, with just a few mouse clicks, it delivers copious amounts of output. As I noted in class, personally I’ve found that some researchers use this output to determine their analyses, assuming that if some stat program spits it out, it must be good. Nonetheless, it <em>can</em> be good—and certainly makes it worth annotating the output.</p>
+<section id="annotating-output" class="level5">
+<h5 class="anchored" data-anchor-id="annotating-output">Annotating Output</h5>
+<p>The <code>Output</code> window is comprised of two sections, an outline and a main window. The information in either can be changed or added to manually. This can be a good idea. First, of course, because SPSS <em>does</em> return a lot of results and sifting through even a few sets of analyses can be tedious.</p>
+<p>Second, I strongly recommend taking notes on what you are doing in your analyses and what your thoughts on them are. With data and analyses of any real size and complexity, it can be difficult to jump back in to your analyses even a week or so later; steps that seemed obvious and important at the time can quickly become obscure and lost.</p>
+<p>Ways of annotating your output:</p>
+<ul>
+<li><strong>Insert a heading in the outline</strong> by clicking <code>Insert &gt; New Heading</code>. This will create a new heading at the cursor; double-click on this heading to type in a phrase that will remind you of what you are doing in that section of the output.
+<ul>
+<li>Alternatively, you can simply double-click on an existing heading to change it. For example, if you conduct more than one <em>t</em>-test output, you can double click on the first to change it to <code>t-test of toca.pro by group</code> and the second to <code>t-test of toca.dis by group</code>. You can left-click and drag the spacer between the windows to make the outline section wider, but you’ll still not want to make the headings too long since they’ll quickly become longer than a useful outline window.</li>
+</ul></li>
+<li><strong>Insert notes into the output itself</strong> by clicking <code>Insert &gt; New Text</code>. This will create a text box in the output section into which you can write pretty much whatever you want. Unlike a heading, this can be as long as you want to give yourself and your colleagues as much information about what you are doing and what it means.</li>
+<li>You can use the <code>Insert</code> menu to <strong>insert other things</strong>, too, including whole titles for the output, images, etc.</li>
+</ul>
+<p>Note that you can also double-click on any element in the main output section to manipulate that element. This way, you can modify the colors, fonts, or even the text within tables, figures, etc.</p>
+<p>Of course, you can then save your output (to a <code>.spv</code> file) as notes on your analyses.</p>
+</section>
+<section id="exporting-output" class="level5">
+<h5 class="anchored" data-anchor-id="exporting-output">Exporting Output</h5>
+<p>Right-clicking on an element lets you copy it to then paste it into, e.g., your manuscript (as we will do in <a href="writing_results.html">Chapter&nbsp;<span>3</span></a>: Writing Results).</p>
+<p>Alternatively, you can <code>Export</code> an element. When you right-click on an element and choose to do that, you will be able to export it as a .html, .pdf, .ppt, .doc, etc. For importing into, e.g., Word, I suggest exporting as an .html file.</p>
+</section>
+<section id="sec-spss_syntax" class="level5">
+<h5 class="anchored" data-anchor-id="sec-spss_syntax">Syntax in Output</h5>
+<p></p>
+<p>SPSS is a powerful stats program, but I personally think that its GUI is a big reason for its success. Nonetheless, SPSS’s GUI is in fact just an “overlay” that just lets us access its most common commands more intuitively; SPSS is in fact running the syntax that those mouse clicks created.</p>
+<p>SPSS versions 27 and earlier return the syntax it used to generate results in the <code>Output</code> window by default right above the given results<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. As of version 28, it does not. We can set SPSS to automatically return the syntax used in the output by going to <code>Edit &gt; Options &gt; Viewer</code> and then checking the <code>Display commands in the log</code> box in the lower-left of that <code>Viewer</code> window<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>.</p>
+<p>Why do this? Because there are several ways in which the syntax that SPSS posts can be quite useful. First, you can copy that syntax into the <code>Syntax Editor</code> (as noted <a href="@syntax-window">below</a>) to rerun any analyses. This is useful when you are returning to analyses later on and, e.g., want to generate a smaller set of analyses.</p>
+<p>Second, as you learn what SPSS can do, you can use the syntax to learn better <em>how</em> to do it—and how to tweak your analyses to get exactly the output you want. Reviewing existing syntax is a lot easier than learning it from scratch.</p>
+<p>Third, once you’ve gained some facility using SPSS, you will find that there are things you want to do that you can’t through the GUI. Instead, you will need to do things directly withe the syntax. Although you certainly can type syntax directly into the <code>Syntax Editor</code>, it’s often easier to paste in existing syntax and edit it as needed. In fact, in the long run, that’s also faster.</p>
+<p>Fourth, you can annotate syntax a bit like you can annotate output. This way, you can create and save a syntax file (saved as a <code>.sps</code> file) that’s a <em>lot</em> smaller and easier to navigate through than some massive output file—and still be able to generate that mountain of results with a few quick keystrokes<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>.</p>
+</section>
+</section>
+<section id="sec-syntax-window" class="level4">
+<h4 class="anchored" data-anchor-id="sec-syntax-window">The <code>Sytnax</code> Window</h4>
+<p>SPSS doesn’t open a <code>Syntax</code> window automatically, like it does a <code>Date Editor</code> or <code>Output</code> window, but simply clicking <code>File &gt; New &gt; Syntax</code> opens one. We will demonstrate using it <a href="#box-syntax">below</a>, but the <a href="https://www.spss-tutorials.com/spss-syntax/">general way</a> to use it is to either paste in or type some syntax command and, with the cursor in some part of that syntax, either click on the big, green play button<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> or type <code>Control</code>/<code>Command</code> + <code>R</code>.</p>
+<p>SPSS syntax itself follows a set grammar. Some command is given first; often this is immediately followed by a “statement” that just tells SPSS what variables, etc. to run that command on. This is followed by one or more options, for example whether to print out both figures and tables based on the command. Critically, each command must end with a period.</p>
+<p>As you might expect, SPSS has <a href="https://www.ibm.com/docs/en/spss-statistics/25.0.0?topic=reference-command-syntax">many</a> commands to choose from; <a href="https://www.liquisearch.com/spss/add-ons">more</a> are available if you pay them more (and have your own copy of SPSS; this won’t work with the version we have access to through CUNY).</p>
+</section>
+</section>
+</section>
+<section id="data-preparation-cleaning" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="data-preparation-cleaning"><span class="header-section-number">16.3</span> Data Preparation &amp; Cleaning</h2>
+<p>This section will use selections for the publicly-available data from the University of North Carolina at Chapel Hill’s National Longitudinal Study of Adolescent to Adult Health (<a href="https://addhealth.cpc.unc.edu/">Add Health</a>) study (stored on the University of Michigan’s <a href="https://www.icpsr.umich.edu/web/ICPSR/studies/21600/datadocumentation">ICPSR</a> repository). This study “is a longitudinal study of a nationally representative sample of over 20,000 adolescents who were in grades 7-12 during the 1994-95 school year, and have been followed for five waves to date, most recently in 2016-18. Over the years, Add Health has collected rich demographic, social, familial, behavioral, psycho social, cognitive, and health survey data from participants and their parents … [including] data from participants’ schools, neighborhoods … and in-home physical and biological data.”</p>
+<p>Please access that the selection of data we will use here from:</p>
+<ul>
+<li><a href="https://wesamuels.net/courses/statistics/activities/add_health/add_health.sav"><strong>Add Health Data <em>Mostly</em> Ready</strong></a></li>
+</ul>
+<p>After downloading that set of data, please upload them into SPSS (e.g., via Apporto, <a href="#sec-apporto"><span>Section&nbsp;16.2.1</span></a>).</p>
+<p>These data are indeed nearly ready for further analyses, but have a few issues to address to demonstrate how to clean or improve data in ways that are commonly needed.</p>
+<p>Note that we will be using these data for some future activities, so you may want to save them after you’ve taken the steps below to fully clean them.</p>
+<section id="changing-the-measurement-level-of-a-variable" class="level3" data-number="16.3.1">
+<h3 data-number="16.3.1" class="anchored" data-anchor-id="changing-the-measurement-level-of-a-variable"><span class="header-section-number">16.3.1</span> Changing the Measurement Level of a Variable</h3>
+<p>The <code>AID</code> variable is right now a <code>Scale</code> variable; it is a number after all. And it’s not uncommon for SPSS to import IDs as numbers since replacing names with numbers is a very typical way to anonymize participants. And leaving it as a number (a <code>Scale</code> level <code>Measure</code>) won’t likely create any problems in SPSS<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>, but it still presents a good opportunity to demonstrate changing the <code>Measure</code> of a variable. To do this:</p>
+<ol type="1">
+<li>Go to the <code>Variable View</code> tab of the <code>Data Editor</code> window.</li>
+<li>Left-click on the <code>Measure</code> cell in the <code>AID</code> variable’s row. When you do, a drop-down menu will appear listing the three measure levels.</li>
+<li>Select to make <code>AID</code> a <code>Nominal</code> variable.</li>
+</ol>
+<p>Now, SPSS will “understand” that this is in fact a name that signifies each participants and should be treated as such in all analyses.</p>
+</section>
+<section id="creating-a-variable-label-for-a-variable" class="level3" data-number="16.3.2">
+<h3 data-number="16.3.2" class="anchored" data-anchor-id="creating-a-variable-label-for-a-variable"><span class="header-section-number">16.3.2</span> Creating a Variable Label for a Variable</h3>
+<p>Continuing to prepare <code>AID</code>, let’s now give it a variable label. SPSS requires that variable names (in the <code>Names</code> column) be relatively brief<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> and only use certain characters<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>. In fact, it’s often good to keep them short since too-long variable names can be hard to read in the tiny windows SPSS uses for most dialogues<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>.</p>
+<p>Variable labels (in the <code>Label</code> column) can be much longer<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a> and contain many more types of characters<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a>. They do not work well in the SPSS dialogues, but are often great for tables and figures.</p>
+<p>To add a label to <code>AID</code> simply:</p>
+<ol type="1">
+<li>Single-left click in the <code>Label</code> cell for <code>AID</code>, and type/paste: <code>Unique Participant ID</code> or something like that.</li>
+</ol>
+</section>
+<section id="sec-setting-values-labels" class="level3" data-number="16.3.3">
+<h3 data-number="16.3.3" class="anchored" data-anchor-id="sec-setting-values-labels"><span class="header-section-number">16.3.3</span> Setting <code>Values</code> Labels for a Variable</h3>
+<p>In addition to giving a more human-friendly label to a variable, we can give clearer labels to the levels of a variable. These can also be shown in figures and tables, making those easier to understand and helping avoid misinterpretation.</p>
+<ol type="1">
+<li>Also in the <code>Variable View</code> of the <code>Data Editor</code>, click on the <code>Values</code> cell in the the <code>Bio_Sex</code> row.</li>
+<li>Click on the ellipsis button that appears.</li>
+<li>In the dialogue box that opens, enter a <code>0</code> in the <code>Values</code> field.</li>
+<li>Click the large plus sign to the right of the <code>Value Labels</code> field:<br>
+<img src="images/levels_sex_1.png" class="img-fluid"></li>
+<li>Type <code>Male</code> in the <code>Label</code> field.</li>
+<li>Click the plus sign again. <code>0</code> and <code>Male</code> now appear in the field next to the Add button, and an other row below that has appeared.</li>
+<li>In that second row, type a <code>1</code> in the <code>Values</code> field and <code>Female</code> in the <code>Label</code> field:<br>
+<img src="images/levels_sex_2.png" class="img-fluid"></li>
+<li>Again click the <code>Add</code> button to add this association as well.</li>
+<li>Click <code>OK</code></li>
+</ol>
+<p>Now when you click on the <code>values</code> cell for the <code>Bio_Sex</code> row, you will see these value labels added. Right-clicking on the <code>Bio_Sex</code> row and choosing to look at the <code>Variable Information</code> will show these in addition to the <a href="#data-view">other information</a>:</p>
+<p><img src="images/levels_sex_3.png" class="img-fluid"></p>
+<p>Note that we have not actually changed the data. They are still numbers (<code>Scale</code> level measures). Right-click again on that variable (in either the <code>Data View</code> or <code>Variable View</code> tabs) and select <code>Descriptive Statistics</code>. You will see in the output that SPSS generates means, etc. just as it would for any interval/ratio variable:</p>
+<p><img src="images/levels_sex_4.png" class="img-fluid"></p>
+<p>However, now in the drop-down menu click on <code>Analyze &gt; Descriptive Statistics &gt; Frequencies</code> and you will see that the level values are replaced with the more explanatory value labels, helping us (and out colleagues and readers) more easily see what the responses really meant:</p>
+</section>
+<section id="setting-missing" class="level3" data-number="16.3.4">
+<h3 data-number="16.3.4" class="anchored" data-anchor-id="setting-missing"><span class="header-section-number">16.3.4</span> Setting Missing Values</h3>
+<p>As mentioned briefly <a href="#data-view">above</a>, we can set certain values to be recognized as representing missing values. Most of the variables in this set were imported with blank cells denoting missing values or missing values already established. However, running descriptives^[Again, you can either right-click on that variable in the <code>Data Editor</code> and select <code>Descriptive Statistics</code><a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> on <code>Weight</code> shows that the maximum weight (in kgs) here is 9999. Since your momma was not a participant, that value is surely intended to denote missing values.</p>
+<p>We can easily fix this:</p>
+<ol type="1">
+<li>In the <code>Variable View</code> tab of the <code>Data Editor</code> window, click on the the ellipsis button in the <code>Missing</code> cell of the <code>Weight</code> row</li>
+<li>Click on the radio button next to <code>Discrete missing values</code></li>
+<li>In the first field under that, type in <code>9999</code></li>
+<li>Click <code>OK</code></li>
+</ol>
+</section>
+<section id="create-dummies" class="level3" data-number="16.3.5">
+<h3 data-number="16.3.5" class="anchored" data-anchor-id="create-dummies"><span class="header-section-number">16.3.5</span> Create Dummy Variables from Different Levels of a Nominal Variable</h3>
+<p>I am anadvocate for using <a href="https://www.statology.org/dummy-variables-regression/">dummy variables</a>. They can make it easier to interpret the effects of each level of a nominal variable without needing to resort to, e.g., post hoc analyses. </p>
+<p><code>Dwelling_Type</code> is coded right now as a numeric variable. Clicking on the ellipsis button in the <code>Values</code> column for that variable presents the following definitions for the values:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Value</th>
+<th style="text-align: left;">Label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">(1) Detached single-family house</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">(2) Mobile Home/trailer</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">(3) Single-family row/town house (2 or more attached units)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">(4) Divided house</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">(5) Small apartment building (2-4 units)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">(6) Apt building (5 or more units)/free access to housing un[it]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">(7) Apt building (5 or more units)/locked entry/doorman/both</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">(8) Other</td>
+</tr>
+</tbody>
+</table>
+<p>We could leave this as single variable; for ANOVAs this may help since then we would only look for differences between these levels if the ANVOA found a significant main effect for this variable<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a>. However, it is more flexible and efficient for other types of models to convert these levels into meaningful dummy variables that can be added as needed. (By not necessarily including all levels—all dummies—we could also save a few degrees of freedom, too.)</p>
+<section id="quickly-creating-dummy-variables-for-variable-levels" class="level4">
+<h4 class="anchored" data-anchor-id="quickly-creating-dummy-variables-for-variable-levels">Quickly Creating Dummy Variables for Variable Levels</h4>
+<p>We could simply convert each level into a separate dummy variable. To do this:</p>
+<ol type="1">
+<li>Under the <code>Transform</code> menu, select <code>Create Dummy Variables</code></li>
+<li>Select <code>Dwelling_Type</code> under <code>Variables</code> and then add that to the <code>Create Cummy Variables for:</code> field by again clicking on the arrow (<img src="images/arrow1.png" class="img-fluid">)</li>
+<li>We are going to create a simple dummy variable—not, e.g., one derived from a combination of other variables—so leave <code>Create main-effect dummies</code> selected</li>
+<li>It’s fine to leave selected <code>Use value labels</code> under <code>Dummy Variable Labels</code> since neither choice matters for a simple “main effect” dummies</li>
+<li>Under <code>Macros</code>, select to <code>Omit first dummy category from macro definitions</code>. We can nearly always select to do this because we usually need one fewer dummy variables than there are values in the original variable. The <code>Population</code> variables has two values (<code>Migrant</code> and <code>Non-Migrant</code>), so we only need one dummy variable (i.e., 2 - 1 = 1) to fully encode the information in the <code>Population</code> variable<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a><br>
+This will make <code>Detached single-family</code> the “reference” group: If we included all of the dummy variables we’re creating in a model, then their effects would be relative to those living in single-family detached homes.</li>
+<li>In the <code>Root Names</code> field, type <code>Dwelling</code>. This will add that word to the each of the dummy variables to remind us where they came from and what they’re referring to.</li>
+<li>Click <code>OK</code></li>
+</ol>
+<p>Dummy variables can only take on the values of 0 or 1. For some reason, SPSS gives dummies it creates two decimal places. We clearly don’t need these, so:</p>
+<ol type="1">
+<li>In the <code>Variable View</code> tab, click into the <code>Decimals</code> cell of the <code>population_1</code> variable<a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a></li>
+<li>Change the value to <code>0</code></li>
+</ol>
+<p>Note that we could also change to <code>Width</code> to <code>1</code> since we only need one digit to the left of the decimal.</p>
+</section>
+<section id="creating-dummy-variables-for-combined-variable-levels" class="level4">
+<h4 class="anchored" data-anchor-id="creating-dummy-variables-for-combined-variable-levels">Creating Dummy Variables for Combined Variable Levels</h4>
+<p>Some of these dwelling types are quite similar to each other; for at least preliminary analyses, then, we will combine some of them into the same dummy variable<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a></p>
+<p>We could group these several ways, of course, but let’s group them thusly:</p>
+<ul>
+<li><code>Detached_House</code>: <code>1</code> if the variable value is <code>1</code>, else it will be <code>0</code></li>
+<li><code>Mobile_or_RowHouse</code>: <code>1</code> if the variable value is either <code>2</code> or <code>3</code>, else <code>0</code></li>
+<li><code>MultiUnit_Housing</code>: <code>1</code> if the value is <code>4</code> – <code>7</code>, else <code>0</code></li>
+<li><code>Other_Dwelling</code>: <code>1</code> if the value = <code>8</code>, else <code>0</code></li>
+</ul>
+<p>We will do this by using an other type of data transformation. This process is not as straight-forward as a batch creation of the dummies, but still not onerous. It’s also useful for many other types of transformations—not just into dummy variables:</p>
+<ol type="1">
+<li>Under the <code>Transform</code> menu, select <code>Compute Variable</code></li>
+<li>In the <code>Target Variable</code> box, type <code>Detached_House</code></li>
+<li>In the <code>Numeric Expression</code> box, type: <code>(Dwelling_Types = 1)</code></li>
+<li>Click <code>OK</code> to create the variable. You now have a new variable <code>Detached_House</code> coded as:
+<ul>
+<li><code>1</code> if the respondent lives in a detached single-family house</li>
+<li><code>0</code> for all other types of dwellings</li>
+</ul></li>
+<li>Repeat Steps 1 -– 4 to create the second dummy variable, using:
+<ul>
+<li>For <code>Target Variable</code> type <code>Mobile_or_RowHouse</code></li>
+<li>For <code>Numeric Expression</code> type <code>(Dwelling_Types = 2 OR Dwelling_Types = 3)</code><br>
+This variable will equal:</li>
+<li>1 if the respondent lives in a <strong>mobile home/trailer</strong> or a <strong>row/town house</strong></li>
+<li>0 otherwise</li>
+</ul></li>
+<li>Now repeat Steps 1 –- 4 again to create the third dummy variable, using:
+<ul>
+<li>For <code>Target Variable</code> type <code>MultiUnit_Housing</code></li>
+<li>For <code>Numeric Expression</code> type <code>(Dwelling_Types &gt;= 4 AND Dwelling_Types &lt;= 7)</code><br>
+This captures all multi-unit dwellings:</li>
+<li>Divided house</li>
+<li>Small apartment buildings</li>
+<li>Larger apartments with or without doormen / locked entries</li>
+</ul></li>
+<li>One more time, repeat to create the final dummy:
+<ul>
+<li>For <code>Target Variable</code> type <code>Other_Dwelling</code></li>
+<li>For <code>Numeric Expression</code> type <code>(Dwelling_Types = 8)</code><br>
+This dummy equals 1 only if the dwelling type is coded as <code>Other</code></li>
+</ul></li>
+</ol>
+<p>After creating the variables, go to <code>Variable View</code> to create variable labels and perhaps labels for the levels.</p>
+<!-- ### Recoding a Variable's Levels -->
+<!-- Participants' self-reported biological sex^[Here coded simply as female and male, ignoring intersex, androgen insensitive, etc.] is currently coded as 1 for male and 2 for female. I prefer to code dichotomous variables as 0/1. -->
+<!-- To recode `Bio_Sex`: -->
+<!-- 1. Click on `Transform > Recode into Same Variables...`^[We can instead choose to `Recode into Different Variables...` if we want to retain the original variable and the way it's coded.]. -->
+<!-- 1. In the dialogue box that opens, move `Bio_Sex` to the right-hand field; to do this: -->
+<!--   1. Single left-click on `Bio_Sex` electing it in the left-hand field to select it -->
+<!--   1. Click on the arrow between the two fields (![](images/arrow1.png)) -->
+<!--   1. `Bio_Sex` should now appear in the right-hand field:\ -->
+<!-- ![](images/recode_sex_1.png) -->
+<!-- 1. Click on `Old and New Values...` -->
+<!-- 1. Under the `Old Value` section, type `1` in the `Value` field; under `New Value`, type `0`; then click `Add`. Under `Old -> New`, you should now see `1 -> 0`. -->
+<!-- 1. Now, under the `Old Value` section, type `2` in the `Value` field; under `New Value`, type `1`; then click `Add`. Under `Old -> New` and click `Add` to add that as well to the `Old -> New` field:\ -->
+<!-- ![](images/recode_sex_2.png) -->
+<!-- 1. Click `Continue`; you will be taken back to the original `Recode into Same Variables` dialogue where you can click `OK` to complete this. -->
+</section>
+</section>
+<section id="transform-an-old-variable-into-a-new-one" class="level3" data-number="16.3.6">
+<h3 data-number="16.3.6" class="anchored" data-anchor-id="transform-an-old-variable-into-a-new-one"><span class="header-section-number">16.3.6</span> Transform an Old Variable into a New One</h3>
+<p>It’s often necessary or useful to create a new variable based on the values of one or more existing variables. For example, we may want to recode a variable or to compute an overall score.</p>
+<p>A common reason to recode variables is to “reverse” score them—switch the direction of the values so they match either what is more intuitive or to work better with other variables in your data. In other words, to change the values like this:</p>
+<div id="tbl-reverse_scoring" class="anchored">
+<table class="table">
+<caption>Table&nbsp;16.1: Example of Reverse Scoring Items</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Participant’s Response</th>
+<th style="text-align: center;">Original Values</th>
+<th style="text-align: center;">New Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Most/all of the time</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A lot of the time</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sometimes</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Never/rarely</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Among the variables selected from the Add Health data are a series that ask about the participants feelings during the past week. The prompts follow this template:</p>
+<p>“How often was each of the following things true during the past seven days?: You were ______.”</p>
+<p>Most of these items ask about negative emotions/affects, things like feeling sad or lonely. A few, however, ask about positive emotions/affects.</p>
+<p>Right now, the position-affect items are scored like the <code>Original Values</code> in <a href="#tbl-reverse_scoring">Table&nbsp;<span>16.1</span></a>, just above. This allowed us to create the <code>Overall_Negative_Affect</code> score, which is simply the average of all of a participant’s responses to those items; higher numbers on this variable denote more <em>negative</em> emotions/affects. Since the positive affect items are part of this score, it was easiest to have them coded in the opposite direction from the negative affect items; the <code>Overall_Negative_Affect</code> score thus represents both more negative affects and fewer positive ones.</p>
+<p>It may also be useful to create an <code>Overall_Positive_Affect</code> score—and to code it so that higher values denote more positive affect. One way to do this would be to first reverse score those positive affect items and then to compute an overall score for them.</p>
+<section id="recode-variables" class="level4">
+<h4 class="anchored" data-anchor-id="recode-variables">Recode Variables</h4>
+<p>We will reverse score the positive affect items near the end of the Add Health dataset<a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a>.</p>
+<ol type="1">
+<li>Click on <code>Transform &gt; Recode into Different Variables...</code><a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a></li>
+<li>In the dialogue that opens, move <code>Happy</code>, <code>Enjoyed_Life</code>, <code>Just_as_Good</code>, and <code>Hopeful</code> to the <code>Numeric Variable -&gt; Output Variable</code> field.</li>
+<li>Left-click on the first row in the <code>Numeric Variable -&gt; Output Variable</code> field, thus selecting <code>Happy --&gt; ?</code>.</li>
+<li>In the <code>Output Variable</code> section just to the right, type <code>Happy_Reversed</code> in the <code>Name</code> field and—if you want—<code>How Often Felt HAPPY Past Week - Reverse Scored</code> in the <code>Label</code> field. Click the <code>Change</code> button under those fields in the <code>Output Variable</code> section.<br>
+The first row in the <code>Numeric Variable -&gt; Output Variable</code> field now shows that <code>Happy</code> is going to be recoded into a new <code>Happy_Reversed</code> variable:<br>
+<img src="images/reverse_happiness.png" class="img-fluid"></li>
+<li>Now select the <code>Enjoyed_Life --&gt; ?</code>and type <code>Enjoyed_Life_Reversed</code> in the <code>Name</code> field, <code>How Often ENJOYED LIFE Past Week - Reverse Scored</code> in the <code>Label</code> field before again clicking the <code>Change</code> button.<br>
+Continue with creating a <code>Just_as_Good_Reversed</code> (labeled <code>How Often Felt JUST AS GOOD AS OTHER PEOPLE Past Week - Reverse Scored</code>) and <code>Hopeful_Reversed</code> (labeled <code>How Often Felt HOPEFUL ABOUT THE FUTURE Past Week - Reverse Scored</code>) variables.</li>
+<li>Now, click on the <code>Old and New Values</code> button underneath the <code>Numeric Variable -&gt; Output Variable</code> field section.</li>
+<li>In the dialogue that opens, type <code>0</code> in the <code>Value</code> field in the <code>Old Value</code> section and <code>3</code> in the <code>Value</code> field in the <code>New Variable</code> section. Next, click the <code>Add</code> button in the <code>Old --&gt; New:</code> section under the the <code>New Variable</code> section. <code>0 --&gt; 3</code> will now appear in there:<br>
+<img src="images/recode_0_3.png" class="img-fluid"></li>
+<li>Continue setting up the recoding by adding <code>1 --&gt; 2</code>, <code>2 --&gt; 1</code>, and <code>3 --&gt; 3</code> into the <code>Old --&gt; New:</code> section.</li>
+<li>To ensure any other values are addressed (e.g., <code>999</code> for missing values), click the <code>All other values</code> radio button at the bottom of the <code>Old Value</code> section and the <code>System missing</code> button in the <code>New Value</code> section; <code>Add</code> that as well to the <code>Old --&gt; New:</code> section:<br>
+<img src="images/recoding.png" class="img-fluid">.</li>
+<li>Click <code>Continue</code> and then <code>OK</code> in the original dialogue box.</li>
+</ol>
+<p>Note that the variables are created as nominal. This won’t affect the score computation <a href="#sec-compute_score">in&nbsp;<span>16.3.6.2</span></a>, but will need to be changed for proper analyses otherwise.</p>
+</section>
+<section id="sec-compute_score" class="level4">
+<h4 class="anchored" data-anchor-id="sec-compute_score">Compute an Overall Score From Several Variables</h4>
+<p>We will compute an <code>Overall_Positive_Affect</code> score from those four variables we just created. We will compute it from the average of those four variables, however we could instead sum them. Taking the average, though, keeps the score on the same scale as the variables that comprise it, which can make interpreting and comparing them easier. (Of course, standardizing them all does that even better.)</p>
+<ol type="1">
+<li>Click on <code>Transform &gt; Compute Variable</code>.</li>
+<li>Type <code>Overall_Positive_Affect</code> in the <code>Target Variable</code> field in the top left of the dialogue that opens.</li>
+<li>Under the <code>Functions and Special Variables</code> section in the bottom right of that dialogue, click on <code>Mean</code>.</li>
+<li>Next, click on the “up” arrow (<img src="images/up_arrow.png" class="img-fluid">) next to that section.</li>
+<li><code>MEAN(?,?)</code> will now appear in the <code>Numeric Expression:</code> field at the top:<br>
+<img src="images/compute_mean.png" class="img-fluid"></li>
+<li>Select <code>Happy_Reversed</code> from the list of variables and click on the right arrow to add that where the first <code>?</code> appears in the <code>Mean(?,?)</code> formula.</li>
+<li>Next, add <code>Enjoyed_Life_Reversed</code> to the formula.<br>
+Note that the values within the parentheses of the <code>Mean(?,?)</code> formula need to be separated by commas, so make sure there is a comma separating it from <code>Happy_Reversed</code>.</li>
+<li>Continue to add <code>Just_as_Good_Reversed</code> and <code>Hopeful_Reversed</code> to the formula, ensuring that commas separate each<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a>:<br>
+<img src="images/computing_happiness.png" class="img-fluid"></li>
+<li>Click <code>OK</code> to finish.</li>
+</ol>
+</section>
+</section>
+<section id="standardize-variables" class="level3" data-number="16.3.7">
+<h3 data-number="16.3.7" class="anchored" data-anchor-id="standardize-variables"><span class="header-section-number">16.3.7</span> Standardize Variables</h3>
+<p>I’m a big fan of standardized data. It doesn’t change the distribution of scores at all but makes values on one variable directly comparable to values on an other—even if they’re measured on very different scales<a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a></p>
+<p>SPSS makes it very easy to standardize variables: </p>
+<ol type="1">
+<li>Click on <code>Anlayze &gt; Descriptive Statistics &gt; Descriptives</code></li>
+<li>Click on <code>Waist_Circum</code></li>
+<li>Now, <em>holding down the</em> <code>Shift</code> <em>key</em> either single-(left-)click on <code>EBV</code> or tap the down-arrow key until you have selected all of the variables from <code>Waist_Circum</code> to <code>EBV</code></li>
+<li><em>Now</em> click on the blue arrow to move all of those variables to the <code>varialbe(s)</code> field</li>
+<li>Under the <code>Options</code> dialogue, we might as well check to review, e.g., the <code>Mean</code>, <code>Std. Deviation</code>, <code>Minimum</code>, <code>Maximum</code>, and <code>S. E. Mean</code> (i.e., the <a href="https://www.indeed.com/career-advice/career-development/standard-error-mean">standard error of the mean</a> that we covered in our <a href="https://wesamuels.net/courses/statistics/N915/Overview/Stats_Overview.html">first lecture</a>)</li>
+<li>But our real goal here is to check the <code>Save standardized values as variables</code> before clicking on <code>OK</code></li>
+</ol>
+<p>And that’s all it takes to create standardized variables. They will now all appear at the end of the dataset. The variable names will be like the original, pre-pending with a <code>Z</code>, e.g., <code>Waist_Circum</code> becomes <code>ZWaist_Circum</code>.</p>
+</section>
+</section>
+<section id="export-a-table-in-apa-format-to-word" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="export-a-table-in-apa-format-to-word"><span class="header-section-number">16.4</span> Export a Table in APA Format to Word</h2>
+<p>To export a table in APA format in SPSS, you can use the following steps. This process involves generating the table, modifying it to meet APA style guidelines, and then exporting it.</p>
+<section id="steps-to-export-a-table-in-apa-format-in-spss" class="level3" data-number="16.4.1">
+<h3 data-number="16.4.1" class="anchored" data-anchor-id="steps-to-export-a-table-in-apa-format-in-spss"><span class="header-section-number">16.4.1</span> Steps to Export a Table in APA Format in SPSS:</h3>
+<ol type="1">
+<li><strong>Generate the Table</strong>:
+<ul>
+<li>First, create the table you need by running the appropriate analysis.</li>
+<li>For example, to create a descriptive statistics table, go to <code>Analyze</code> &gt; <code>Descriptive Statistics</code> &gt; <code>Descriptives...</code>, select the variables, and run the analysis.</li>
+</ul></li>
+<li><strong>Modify the Table</strong>:
+<ul>
+<li>Once the table is generated, it will appear in the <code>Output Viewer</code>.</li>
+<li>To modify the table, double-click on it to open it in the <code>Pivot Table Editor</code>.</li>
+<li>Adjust the table’s appearance to match APA style as closely as possible. This might include:
+<ul>
+<li>Ensuring that the table uses a simple grid with minimal lines.</li>
+<li>Aligning text correctly (typically left-aligned for text, right-aligned for numbers).</li>
+<li>Using appropriate font and size (Times New Roman, 12-point is common for APA).</li>
+<li>Including relevant statistics (e.g., means, standard deviations).</li>
+</ul></li>
+</ul></li>
+<li><strong>Export the Table</strong>:
+<ul>
+<li>After making the necessary adjustments, you can export the table.</li>
+<li>Click on <code>File</code> &gt; <code>Export...</code> in the <code>Output Viewer</code>.</li>
+<li>In the <code>Export Output</code> dialog box, choose the desired file format. For APA tables, Microsoft Word (.doc or .docx) is typically a good choice.</li>
+<li>Specify the file name and location where you want to save the file.</li>
+<li>Under <code>Objects to Export</code>, select <code>All Visible Objects</code> or choose the specific table you modified.</li>
+<li>Click <code>OK</code> to export the table.</li>
+</ul></li>
+</ol>
+</section>
+<section id="example-export-in-word" class="level3" data-number="16.4.2">
+<h3 data-number="16.4.2" class="anchored" data-anchor-id="example-export-in-word"><span class="header-section-number">16.4.2</span> Example Export in Word:</h3>
+<ol type="1">
+<li><strong>Open the Exported File</strong>:
+<ul>
+<li>Open the exported Word document.</li>
+<li>Review the table to ensure it adheres to APA formatting guidelines.</li>
+</ul></li>
+<li><strong>Adjust in Word if Necessary</strong>:
+<ul>
+<li>If further adjustments are needed, you can make them directly in Word.</li>
+<li>Ensure the table is labeled correctly with a table number and title (e.g., <code>Table 1</code>).</li>
+<li>Include any notes below the table, formatted according to APA guidelines.</li>
+</ul></li>
+</ol>
+</section>
+<section id="summary" class="level3" data-number="16.4.3">
+<h3 data-number="16.4.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">16.4.3</span> Summary</h3>
+<p>To export a table in APA format from SPSS, generate the table through the appropriate analysis, modify it using the Pivot Table Editor to adhere to APA style, and then export it to a Word document. Make any final adjustments in Word to ensure the table fully complies with APA formatting standards.</p>
+</section>
+</section>
+<section id="additional-resources" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">16.5</span> Additional Resources</h2>
+<ul>
+<li>Supplemental materials from <span class="citation" data-cites="polit2017">Polit &amp; Beck (<a href="references.html#ref-polit2017" role="doc-biblioref">2017</a>)</span>
+<ul>
+<li><a href="https://articles.viriya.net/SPSS_Analysis_of_Descriptives.pdf"><em>SPSS Analysis of Descriptive Statistics</em></a></li>
+<li><a href="https://articles.viriya.net/SPSS_Analysis_of_Inferentials.pdf"><em>SPSS Analysis of Inferential Statistics</em></a></li>
+<li><a href="https://articles.viriya.net/SPSS_Analysis_and_Multivariate_Statistics.pdf"><em>SPSS Analysis and Multivariate Statistics</em></a></li>
+</ul></li>
+</ul>
+<!-- # Old -->
+
+<!-- #### Frequencies & Crosstabs {#pivot-tables} -->
+<!-- So far, we've been mainly cleaning and prepping the data. I want to break this pattern to preface the step after this one in which we subset our data. -->
+<!-- A common way to examine nominal (and ordinal) variables is through frequencies and cross tabulations ("crosstabs") of those frequencies across pairs of variables. Let us do this with some of our `Population` and `Group`^[We could also do this with these variable's numeric equivalents---especially if we had given value labels to their numbers.]: -->
+<!-- 1. Click on `Analyze > Descriptive Statistics > Frequencies` -->
+<!-- 1. In the dialogue that opens, select `Population` and `Group`. You can do this by clicking on them separately or, e.g., holding down the `Control`/`Command` key to select them both -->
+<!-- 1. Click on the arrow button to move them to the `Variable(s)` field -->
+<!-- 1. SPSS provides many options for displaying variables. Some of these are listed under the `Statistics` button, but since these are both nominal variables, we can only meaning select `Median` under `Central Tendency` (and perhaps `Quantiles`) -->
+<!-- 1. Under `Charts` we can select to add, e.g,. `Bar charts` for `Frequencies`. Note that pie charts are often misleading and rarely the best option for displaying data. -->
+<!-- 1. For now, there's not much of interest under `Format`, `Style`, or `Bootstrap` -->
+
+<!-- 1. But do notice on the main dialogue box that we can select whether we want to `Create APA style tables`, a nice option for preparing pieces for dissertations and manuscripts -->
+<!-- 1. Click `OK` -->
+
+<!-- We can see from both the tables and bar charts that we have many more migrant than non-migrant students and many more students who participated in the Caring for Life program (`CFL`) than those who didn't (`No-CFL`). Given that these were chosen variables---part of the study's manipulation---this is curious. Let's investigate further -->
+<!-- 1. Click on `Analyze > Descriptive Statistics > Crosstabs` -->
+<!-- 1. From the variable list, select `Population` and use the arrow to move it to the `Row(s)` field -->
+<!-- 1. And move `Group` to the `Columns(s)` field -->
+<!-- 1. SPSS again offers many choices for options. For example, under `Statistics` we can (but won't) choose `Chi-square` to test whether the distribution of counts differs from expected values and, under `Cells`, whether to present not only the `Observed` cells counts but also the `Expected`. Now, though, simply click `OK` -->
+
+<!-- The table this produces: -->
+<!-- ![](images/crosstab.png) -->
+<!-- reveals why the counts for both `Population` and `Group` were so uneven: There are no non-migrant students who participated in the CFL program^[This was a consequence of working in the field---i.e., with data collected outside controlled, laboratory-like settings. Schools who participated in the control (i.e., no-CFL) group were essentially asked to give their time and resources to the study without getting anything in return since (that year), they were not getting the CFL program offered at their school. It can be hard to find busy schools with many demands that can afford to do this. To compensate for this, I was forced to use a non-migrant control group from a previous study. Hardly ideal, but necessary.] -->
+<!-- ### Subset the data to only include migrant students {#subsetting} -->
+<!-- Given that there are no non-migrant students in the no-CFL group, it produces bias to include them as part of the CFL group. This is thus one of the few times when it is justified to subset one's data: Although subsetting literally removes information from your analyses^[Which turns out to be a bad idea.], the information that they would include would make CFL -- no-CFL comparisons like comparing apples to oranges. -->
+<!-- Let us thus subset our data to include only migrant students. -->
+<!-- Under the `Data` menu option, there are a few options for subsetting data: -->
+<!-- - [`Split File`](https://www.spss-tutorials.com/spss-split-file-command/) -->
+<!--   - This keeps the data together, but produces separate output for the groups they are split into. -->
+<!--   - For example, we would split these data by population and then easily compare descriptives between the migrant and non-migrant. -->
+<!--   - For those who believe in "segregating" their groups, this is a good option^[As you may guess, I prefer not doing this. Better is to create a factor in one's analyses that measures the effect of the variable (e.g., `Migrant`) on outcomes than in essentially doubling the number of analyses conducted and thus nearly doubling the chances of errors.] -->
+<!-- - `Split into Files` -->
+<!--   - In which we can create two or more sets of data separated by values on one or more variables. -->
+<!--   - For example, we could separate these data into files that have first- and second-grade students that are either migrant or non-migrant students. Many do this. -->
+<!-- - [`Select Cases`](https://ezspss.com/how-to-select-cases-in-spss/) -->
+<!--   - This selects cases based on some criterion. The unselected cases can then be "hidden" from analyses, deleted, or moved to an other file. -->
+<!-- To do this: -->
+<!-- 1. Click on `Data > Select Cases` -->
+<!-- 1. In the dialogue box that opens, select `Population` -->
+<!-- 1. Make sure `If condition is satisfied` is selected^[`Random sample of cases` would be used, e.g., to split the data into a "training" and "test" set of data to [create and test](https://ai.stackexchange.com/questions/17898/while-we-split-data-in-training-and-test-data-why-we-have-two-pairs-of-each), e.g., the generalizability of a model. Splitting `Based on a time or case range` would be done if we feel that, e.g., participants differ qualitatively over time or within ranges of cases. `Use filter variable` is essentially what we're doing, but we're first needing to create that filer variable.] -->
+<!-- 1. Click on the `If...` button^[Always a good thing to do in life.] -->
+<!-- 1. The the new dialogue, again select `Population` and move it to the field at the top right. -->
+<!-- 1. Either type or click on the `=` button -->
+<!-- 1. Type into that field `"Migrant"`. *Do* include the quotes so that that field now shows: \newline -->
+<!--   `Population = "Migrant"` -->
+<!-- 1. Click `Continue` -->
+<!-- 1. Under `Output`, make sure `Filter out unselected cases` is checked. This retains the unselected data, but removes it from any analyses. `Copy selected cases to a new dataset` is tantamount to `Split into Files` -->
+<!-- 1. Click `OK` -->
+<!-- In the `Data View` of the `Data Editor` window, you can no see that the rows for non-migrant students have a line crossed through their row number: -->
+<!-- ![](images/select-cases.png) -->
+<!-- Under the `Variable View` tab, you'll also see that a new variable called `filter_$` has been created. The label for this variable, at least, is informative: \newline `Population = "Migrant" (FILTER)` -->
+<!-- And now all subsequent analyses will disclude the non-migrants students^[Don't worry, they're relatively privileged otherwise in life compared to the migrant students.]. We can stop filtering out the non-migrant students simply by deleting (`Clear`ing) that filter variable. Being able to now subset our data is why I wanted to do this task a bit out of step with the rest of this guide. -->
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/owl.png" class="img-fluid figure-img" style="width:30.0%"></p>
+</figure>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-polit2017" class="csl-entry" role="listitem">
+Polit, D. F., &amp; Beck, C. E., Cheryl T. (2017). <em>Nursing <span>Research</span>: <span>Generating</span> and <span>Assessing Evidence</span> for <span>Nursing Practice</span></em> (Tenth). <span>Wolters Kluwer</span>.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>“Graphical user interface”<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Because following all of the steps they already laid out for you could not be optimal.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>You can load it from the Apporto file system via, e.g., <code>This PC &gt; Desktop</code>, but files don’t immediately appear there (needing connection refreshes?), so simply dragging it into the SPSS Data Editor window seems most reliable to me.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Well, actually the <code>Syntax</code> window has a few extra menu items related to running syntax and accessing additional extensions.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>The tabs are at the bottom left of the window.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>This “type” is given as either the letter (<code>A</code> or <code>F</code>) or word (<code>DATE</code>, <code>TIME</code>, <code>PCT</code> (for percent), <code>DOLLAR</code>, etc.) followed by a number. An <code>A</code> means that it is a string variable (i.e., <code>A</code>lphanumeric), and an <code>F</code> means it’s a number (an “<code>F</code>” is used for <a href="https://www.spss-tutorials.com/spss-variable-types-and-formats/">esoteric reasons</a>). The number presents the number of digits possible before and after the decimal point; if the value has no decimal (e.g., <code>F4</code>), then that variable has no decimals.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>I.e., <code>Comma</code> is for numbers formatted like 1,000.00 and <code>Dot</code> is for numbers formatted like 1.000,00<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>The syntax is posted under <code>Log</code> headings in the outline. This is useful for finding it, but the log is also used by SPSS to report errors and warnings, so it can be a little confusing to find to the syntax or even know that errors/warnings were generated.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>We can also turn on outputting syntax with <em>syntax</em>: <code>SET PRINTBACK LISTING.</code> turns it on, and <code>SET PRINTBACK NONE.</code> turns it off.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p><code>Control</code>/<code>Command</code> + <code>A</code> to select all of the syntax in the window, and then <code>Control</code>/<code>Command</code> + <code>R</code> to run it all.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>I.e., this button: <img src="images/run.png" class="img-fluid"><a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>As we’ll discuss briefly in the measurement class, interval and ratio variables—those that SPSS calls <code>Scale</code> variables—can be analyzed in more ways than ordinal variables; ordinal, in turn, can be analyzed in more ways than nominal.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>SPSS variable names can be up to 64 characters long.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>SPSS variable names can include letters, numbers, periods, and underscores (<code>_</code>). They must also begin with a letter.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>We can change whether we see variable names or labels in dialogues via <code>Edit &gt; Options</code>; under the<code>General</code> tab, go to the <code>Variable Lists</code> section near the top left; there, select either <code>Display labels</code> or <code>Display names</code>.<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn16"><p>SPSS variable labels can be up to 256 characters long.<a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn17"><p>SPSS variable labels can contain nearly any printable character including spaces, punctuation, and even emojis. 😫!<a href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn18"><p>Or go to <code>Analyze &gt; Descriptive Statistics &gt; Descriptives</code> in the drop-down menu.<a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn19"><p>Remember that ANOVAs conduct an “omnibus” <em>F</em>-test to first find if there is any significant difference anywhere between the levels. We then conduct post hoc analyses to investigate where those differences are.<a href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn20"><p>Note that SPSS may create two variables anyway. I’m not sure why it does this, but we can simply delete (<code>Clear</code>) the one with the <code>Population=Non-Migrant</code> label since we’ll only work with the migrant students.<a href="#fnref20" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn21"><p>Or whichever is the dummy with the <code>Population=Migrant</code> label that we’ll be keeping.<a href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn22"><p>Of course, if it later turned out that this combined dummy variable was important to unpack we easily could by then creating separate dummies for them.<a href="#fnref22" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn23"><p>We could also reverse code by subtracting the variable from a constant. Here, we could subtract from 3. This would make an initial <code>2</code> into 3 – <code>2</code> = <code>1</code>, etc.<br>
+Often, though, we want the numbers to range from <code>1</code> to the maximum. In that case, we subtract the variable from 1 greater than the max value. If, e.g., instead we had variables that ranged from <code>1</code> to <code>4</code>, we could reverse code them by subtracting from 5:<br>
+5 – <code>1</code> = <code>4</code><br>
+5 – <code>2</code> = <code>3</code><br>
+5 – <code>3</code> = <code>2</code><br>
+5 – <code>4</code> = <code>1</code>.<a href="#fnref23" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn24"><p>You may <code>Recode into Same Variables...</code>—and sometimes I do—but this can be dangerous if you make a mistake or tedious if you decide you want the original scaling back. Recoding into a different variable also makes it clearer that you indeed did just that in case you come back later and don’t quite remember if you did or not.<a href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn25"><p>You can also type into that <code>Numberic Expression:</code> field, so here you can simply paste this into that field:<br>
+<code>MEAN(Happy_Reversed,Enjoyed_Life_Reversed,Just_as_Good_Reversed,Hopeful_Reversed)</code><a href="#fnref25" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn26"><p>In analytic models—if all variables are either standardized or dummy-coded—it also lets us remove the intercept term, making our analyses a bit more powerful.<a href="#fnref26" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./Intro_to_GPower.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Power and Sample Size Estimation Using Either G*Power or R</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./data_exploration_with_r.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Exploration with R</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+      <i class="bi bi-badge-cc" role="img">
+</i> 
+  </li>  
+    <li class="nav-item">
+ Creative Commons Attribution--NonCommercial--ShareAlike License
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
