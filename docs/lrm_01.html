@@ -319,16 +319,37 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   </ul></li>
   </ul></li>
-  <li><a href="#multivariate-linear-regression-with-three-predictors-using-enter-term-selection" id="toc-multivariate-linear-regression-with-three-predictors-using-enter-term-selection" class="nav-link" data-scroll-target="#multivariate-linear-regression-with-three-predictors-using-enter-term-selection"><span class="header-section-number">8.4</span> Multivariate Linear Regression with Three Predictors Using <code>Enter</code> Term Selection</a>
+  <li><a href="#analyzing-residuals" id="toc-analyzing-residuals" class="nav-link" data-scroll-target="#analyzing-residuals"><span class="header-section-number">9</span> Analyzing Residuals</a>
   <ul>
-  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1"><span class="header-section-number">8.4.1</span> Results</a>
+  <li><a href="#set-up-your-model" id="toc-set-up-your-model" class="nav-link" data-scroll-target="#set-up-your-model"><span class="header-section-number">9.1</span> Set up Your Model</a>
   <ul>
+  <li><a href="#steps-to-evaluate-residuals" id="toc-steps-to-evaluate-residuals" class="nav-link" data-scroll-target="#steps-to-evaluate-residuals"><span class="header-section-number">9.1.1</span> Steps to Evaluate Residuals</a>
+  <ul class="collapse">
+  <li><a href="#request-residual-plots" id="toc-request-residual-plots" class="nav-link" data-scroll-target="#request-residual-plots">Request Residual Plots</a></li>
+  <li><a href="#save-residuals-and-predicted-values" id="toc-save-residuals-and-predicted-values" class="nav-link" data-scroll-target="#save-residuals-and-predicted-values">Save Residuals and Predicted Values</a></li>
+  </ul></li>
+  <li><a href="#interpretation-of-outputs" id="toc-interpretation-of-outputs" class="nav-link" data-scroll-target="#interpretation-of-outputs"><span class="header-section-number">9.1.2</span> Interpretation of Outputs</a>
+  <ul class="collapse">
+  <li><a href="#histogram-of-residuals" id="toc-histogram-of-residuals" class="nav-link" data-scroll-target="#histogram-of-residuals">Histogram of Residuals</a></li>
+  <li><a href="#q-q-plot-normal-p-p-plot" id="toc-q-q-plot-normal-p-p-plot" class="nav-link" data-scroll-target="#q-q-plot-normal-p-p-plot">Q-Q Plot (Normal P-P Plot)</a></li>
+  <li><a href="#scatterplot-of-zresid-vs.-zpred" id="toc-scatterplot-of-zresid-vs.-zpred" class="nav-link" data-scroll-target="#scatterplot-of-zresid-vs.-zpred">Scatterplot of <code>ZRESID</code> vs.&nbsp;<code>ZPRED</code></a></li>
+  <li><a href="#studentized-residuals" id="toc-studentized-residuals" class="nav-link" data-scroll-target="#studentized-residuals">Studentized Residuals</a></li>
+  <li><a href="#cooks-distance" id="toc-cooks-distance" class="nav-link" data-scroll-target="#cooks-distance">Cook’s Distance</a></li>
+  <li><a href="#leverage-values" id="toc-leverage-values" class="nav-link" data-scroll-target="#leverage-values">Leverage Values</a></li>
+  </ul></li>
+  <li><a href="#best-practice-summary" id="toc-best-practice-summary" class="nav-link" data-scroll-target="#best-practice-summary"><span class="header-section-number">9.1.3</span> Best Practice Summary</a></li>
+  </ul></li>
+  <li><a href="#multivariate-linear-regression-with-three-predictors-using-enter-term-selection" id="toc-multivariate-linear-regression-with-three-predictors-using-enter-term-selection" class="nav-link" data-scroll-target="#multivariate-linear-regression-with-three-predictors-using-enter-term-selection"><span class="header-section-number">9.2</span> Multivariate Linear Regression with Three Predictors Using <code>Enter</code> Term Selection</a>
+  <ul>
+  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1"><span class="header-section-number">9.2.1</span> Results</a>
+  <ul class="collapse">
   <li><a href="#variables-entered-removed" id="toc-variables-entered-removed" class="nav-link" data-scroll-target="#variables-entered-removed">Variables Entered / Removed</a></li>
   <li><a href="#model-summary-1" id="toc-model-summary-1" class="nav-link" data-scroll-target="#model-summary-1">Model Summary</a></li>
   <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova">ANOVA</a></li>
   <li><a href="#coefficients-1" id="toc-coefficients-1" class="nav-link" data-scroll-target="#coefficients-1">Coefficients</a></li>
   <li><a href="#excluded-variables-1" id="toc-excluded-variables-1" class="nav-link" data-scroll-target="#excluded-variables-1">Excluded Variables</a></li>
   <li><a href="#collinearity-diagnostics-1" id="toc-collinearity-diagnostics-1" class="nav-link" data-scroll-target="#collinearity-diagnostics-1">Collinearity Diagnostics</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -369,16 +390,17 @@ ul.task-list li input[type="checkbox"] {
 <section id="consider-removing-the-intercept" class="level3" data-number="8.2.2">
 <h3 data-number="8.2.2" class="anchored" data-anchor-id="consider-removing-the-intercept"><span class="header-section-number">8.2.2</span> Consider Removing the Intercept</h3>
 <p>O.K., removing the intercept isn’t a core concept, but it can be a good idea nonetheless. One of the best predictors of the future is the past<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, so simply knowing where participants are when they start participating is often among the most efficient and powerful ways of knowing where they will be later on in the study.</p>
-<p>But wouldn’t it be nice to know <em>what</em> about their initial state matters most later one? Leaving the intercept in lets it “suck up” a lot of information that could otherwise be explained by other terms in your model. Removing the intercept may allow that information to “flow back” into other predictors to allow those other predictors to explain your outcome.</p>
-<p>Removing the intercept also frees up the degree of freedom used to estimate its value. This gives our other analyses that much more power. No, that’s not usually a lot, but it does help us maximize the information in our data, making us that much more efficient and conscious of the real value of data.</p>
+<p>But wouldn’t it be nice to know <em>what</em> about their initial state matters most later one? Leaving the intercept in lets it “suck up” a lot of information that could otherwise be explained by other terms in your model. Removing the intercept may allow that information to “flow back” into other predictors to allow those other predictors to explain more of your outcome.</p>
+<p>Removing the intercept also frees up the degree of freedom used to estimate its value. This gives our other analyses a bit more power. No, that’s not usually a lot, but it does help us maximize the information in our data, making us that much more efficient and conscious of the real value of data.</p>
 </section>
 </section>
 <section id="sec-intro_to_lrm" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="sec-intro_to_lrm"><span class="header-section-number">8.3</span> Introduction to Linear Regression Models</h2>
-<p>I have tried to emphasize the similarity between correlations (including partial and semipartial) and linear regressions. I did this in part to help use your understanding of correlations as a stepping stone to understanding linear regressions and in part to explain interpreting terms in linear regressions. Let us explore that relationship between those two analyses now.</p>
+<p>Correlation and linear regression are closely related tools that both describe the linear association between two variables. Correlations quantify the strength and direction of a linear relationship without making assumptions about the sources of error. A linear regression, on the other hand, models that relationship explicitly, allowing us to quantify and test different parts of that relationship. Linear regressions also allow us to model more complex relationships and—or course—to test the associations between more than two variables.</p>
+<p>Throughout this tutorial, we will use a subset of variables from the <a href="https://addhealth.cpc.unc.edu/">Add Health study</a>, which measured a set of “rich demographic, social, familial, behavioral, psychosocial, cognitive, and health survey data” for over 20,000 people in five waves of data collection from 1995 to 2018. It’s also worth investigating since their website now bears the <a href="images/mark_the_beasts.jpg">mark of MAGA</a>, stating that “[o]n March 31, 2025, as a sponsor of this project, NIH requested that the following language be added to this website: This repository is under review for potential modification in compliance with Administration directives.” I’ve preserved some of the data <a href="https://wesamuels.net/courses/statistics/activities/add_health/add_health.sav">here</a>; we will be using that data now with SPSS (v. 31). More about using SPSS through CUNY’s Apporto service is in <a href="#sec-apporto"><span class="quarto-unresolved-ref">sec-apporto</span></a>.</p>
 <section id="correlation-vs.-simple-linear-regression" class="level3" data-number="8.3.1">
 <h3 data-number="8.3.1" class="anchored" data-anchor-id="correlation-vs.-simple-linear-regression"><span class="header-section-number">8.3.1</span> Correlation vs.&nbsp;Simple Linear Regression</h3>
-<p>First, let’s compare the results of a simple linear regression against the results of a zero-order correlation containing the same variables. A simple linear regression is a linear regression that contains only one predictor (like a one-way ANOVA).</p>
+<p>Let’s begin by comparing the results of a simple linear regression against the results of a zero-order correlation containing the same variables. A simple linear regression is a linear regression that contains only one predictor (like a one-way ANOVA).</p>
 <section id="correlation" class="level4">
 <h4 class="anchored" data-anchor-id="correlation">Correlation</h4>
 <ol type="1">
@@ -406,12 +428,12 @@ ul.task-list li input[type="checkbox"] {
 <p>where <span class="math inline">\(b\)</span> is the slope of the regression line that best fits the cluster of <span class="math inline">\(X\)</span> values plotted against <span class="math inline">\(Y\)</span> and <span class="math inline">\(e\)</span> is the average distance<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> of each individual <span class="math inline">\(X\)</span> value from that line—the variance unique to <span class="math inline">\(X\)</span> that is relegated to error:</p>
 <p><img src="images/lrm_02.png" class="img-fluid"></p>
 <p>Although our assumptions are different, we are still doing the same basic function: determining a line of best fit computed by minimizing the unique variance in our data—here in the values of our criterion, <span class="math inline">\(X\)</span><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
-<p>Separating out error like is done in a linear regression will eventually allow us more flexibility in how we deal with error. For now, I simply want to show the similarity between a correlation and a linear regression. So, in SPSS:</p>
+<p>Separating out error like is done in a linear regression will eventually allow us more flexibility in how we deal with error. For now, I simply want to show the similarity between a correlation and a linear regression.</p>
 <ol type="1">
 <li><p>In whatever window you have active, click <code>Analyze &gt; Regression &gt; Linear...</code>.</p></li>
 <li><p>Add <code>ZAll_EFs_SR_Slope</code> to the <code>Dependent</code> field and <code>DBT</code> to the <code>Independent(s)</code> field. SPSS is calling the outcome “<code>Dependent</code>” and the predictor(s) “<code>Independent(s)</code>”, as in DVs and IVs.</p></li>
 <li><p>Under <code>Statistics</code>, have <code>Estimates and Confidence intervals</code> selected under <code>Regression Coefficients</code> (the latter since confidence intervals are slowly replacing up-and-down significance tests), and <code>Model fit</code>, <code>Part and partial correlations</code>, and—might as well—<code>Descriptives</code> also selected. For now, leave <code>R squared change</code> unselected.</p>
-<p>(<code>Casewise diagnostics</code> lets you evaluate whether there are extreme outliers in the data that may be skewing the results. <code>Durbin-Watson</code> tests whether there is nonignorable autocorrelation between the errors of longitudinal data, with a value of “2” indicating ignorable autocorrelation and values approaching either 0 or 4 indicating that error values are not independent of each other and thus that, e.g., one should consider the nested nature of the data, q.v. <a href="mlm.html"><span>Chapter&nbsp;10</span></a>.)</p></li>
+<p>(<code>Casewise diagnostics</code> lets you evaluate whether there are extreme outliers in the data that may be skewing the results. <code>Durbin-Watson</code> tests whether there is nonignorable autocorrelation between the errors of longitudinal data, with a value of “2” indicating ignorable autocorrelation and values approaching either 0 or 4 indicating that error values are not independent of each other and thus that, e.g., one should consider the nested nature of the data, q.v. <a href="#sec-mlm"><span class="quarto-unresolved-ref">sec-mlm</span></a>.)</p></li>
 <li><p>Under <code>Options</code>, select <code>Exclude cases pairwise</code> under <code>Missing values</code> for the reasons discussed above; <code>Replace with mean</code> is a defensible strategy for handling missing data, although multiple imputation would be preferred in all ways … were it easy performed in SPSS.</p>
 <p>We will not be use any <code>Stepping Method Criteria</code>, so the default (or really any values since this doesn’t apply) are fine.</p>
 <p>Finally, leave <code>Include constant in equation</code> selected. The constant of which they speak is the intercept since not all of our variables are standardized.</p></li>
@@ -432,7 +454,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="semipartial-correlation-vs.-multivariate-linear-regression" class="level4">
 <h4 class="anchored" data-anchor-id="semipartial-correlation-vs.-multivariate-linear-regression">Semipartial Correlation vs.&nbsp;Multivariate Linear Regression</h4>
-<p>Remember (e.g., from <a href="Variance_Covariance_Correlations_and_Partial_Correlations.html#sec-partial_semipartial_correlations"><span>Section&nbsp;5.3</span></a>) that a semipartial correlation removes the effect of a third variable<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> from <em>one</em> of the two variables in a correlation. Remember too that as odd as this may seem a thing to do, in fact it’s done all the time: It’s the basis for having two (or more) predictors in a linear model; the effects of each predictor are (mathematically) isolated from each other so that the effect of one is independent of the effect of the other.</p>
+<p>Remember (e.g., from <a href="#sec-partial_semipartial_correlations"><span class="quarto-unresolved-ref">sec-partial_semipartial_correlations</span></a>) that a semipartial correlation removes the effect of a third variable<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> from <em>one</em> of the two variables in a correlation. Remember too that as odd as this may seem a thing to do, in fact it’s done all the time: It’s the basis for having two (or more) predictors in a linear model; the effects of each predictor are (mathematically) isolated from each other so that the effect of one is independent of the effect of the other.</p>
 <p>If the two predictors are strongly correlated with each other, then the model will perform quite differently if only one is included versus if both are. Exactly in what way it will “act differently” is hard to anticipate ahead of time, but act differently it will. Let’s look at examples of that now.</p>
 </section>
 </section>
@@ -504,12 +526,154 @@ ul.task-list li input[type="checkbox"] {
 <h5 class="anchored" data-anchor-id="collinearity-diagnostics">Collinearity Diagnostics</h5>
 <p><img src="images/lrm_08.png" class="img-fluid"></p>
 <p>We had told SPSS to include collinearity diagnostics above, so this table also doesn’t present much new, but it does give some more information about what we know already. The <code>Eigenvalue</code> column can be used to ascertain where most of the collinearity in a model resides; this is especially useful if there are more than two variables that share unignorable levels of multicollinearity. In investigating multicollinearity, Eigenvalues greater than 15 are generally seen as important; Eigenvalues less than 1 are always ignorable. The <code>Condition Index</code> essentially measures the cumulative effect of the various sources of multicollinearity; values greater than 15 for condition indices are seen as problematic.</p>
+<hr>
 </section>
 </section>
 </section>
 </section>
-<section id="multivariate-linear-regression-with-three-predictors-using-enter-term-selection" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="multivariate-linear-regression-with-three-predictors-using-enter-term-selection"><span class="header-section-number">8.4</span> Multivariate Linear Regression with Three Predictors Using <code>Enter</code> Term Selection</h2>
+<section id="analyzing-residuals" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Analyzing Residuals</h1>
+<section id="set-up-your-model" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="set-up-your-model"><span class="header-section-number">9.1</span> Set up Your Model</h2>
+<ol type="1">
+<li>Open your dataset in SPSS.</li>
+<li>Go to <code>Analyze &gt; Regression &gt; Linear</code>.</li>
+<li>Move your <code>dependent variable</code> into the <code>Dependent</code> box.</li>
+<li>Move your <code>independent variable(s)</code> into the <code>Independent(s)</code> box.</li>
+<li>Click <code>Plots</code> and <code>Save</code> (details below), then click <code>OK</code> to run the regression.</li>
+</ol>
+<section id="steps-to-evaluate-residuals" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="steps-to-evaluate-residuals"><span class="header-section-number">9.1.1</span> Steps to Evaluate Residuals</h3>
+<section id="request-residual-plots" class="level4">
+<h4 class="anchored" data-anchor-id="request-residual-plots">Request Residual Plots</h4>
+<ul>
+<li>In the <code>Linear Regression</code> dialogue:
+<ul>
+<li>Click <code>Plots</code>.</li>
+<li>In the <code>Y</code> box, enter: <code>ZRESID</code> (standardized residuals).</li>
+<li>In the <code>X</code> box, enter: <code>ZPRED</code> (standardized predicted values).</li>
+<li>Check <code>Histogram</code> and <code>Normal probability plot</code>.</li>
+<li>Click <code>Continue</code>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="save-residuals-and-predicted-values" class="level4">
+<h4 class="anchored" data-anchor-id="save-residuals-and-predicted-values">Save Residuals and Predicted Values</h4>
+<ul>
+<li>In the <code>Linear Regression</code> dialogue:
+<ul>
+<li>Click <code>Save</code>.</li>
+<li>Under <code>Predicted Values</code>, check:
+<ul>
+<li><code>Unstandardized</code></li>
+<li><code>Standardized</code></li>
+</ul></li>
+<li>Under <code>Residuals</code>, check:
+<ul>
+<li><code>Unstandardized</code></li>
+<li><code>Standardized</code></li>
+<li><code>Studentized</code></li>
+</ul></li>
+<li>Optionally under <code>Influence Statistics</code>, check:
+<ul>
+<li><code>Cook's distance</code></li>
+<li><code>Leverage values</code></li>
+</ul></li>
+<li>Click <code>Continue</code>, then <code>OK</code>.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="interpretation-of-outputs" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="interpretation-of-outputs"><span class="header-section-number">9.1.2</span> Interpretation of Outputs</h3>
+<section id="histogram-of-residuals" class="level4">
+<h4 class="anchored" data-anchor-id="histogram-of-residuals">Histogram of Residuals</h4>
+<ul>
+<li>Evaluates <strong>normality</strong> of residuals.</li>
+<li>Should appear approximately bell-shaped.</li>
+<li>For more rigorous assessment, use the <code>Normal P-P Plot</code> or a <code>Shapiro-Wilk test</code>.</li>
+</ul>
+</section>
+<section id="q-q-plot-normal-p-p-plot" class="level4">
+<h4 class="anchored" data-anchor-id="q-q-plot-normal-p-p-plot">Q-Q Plot (Normal P-P Plot)</h4>
+<ul>
+<li>Points should follow the 45-degree line.</li>
+<li>Deviations indicate non-normality.</li>
+</ul>
+</section>
+<section id="scatterplot-of-zresid-vs.-zpred" class="level4">
+<h4 class="anchored" data-anchor-id="scatterplot-of-zresid-vs.-zpred">Scatterplot of <code>ZRESID</code> vs.&nbsp;<code>ZPRED</code></h4>
+<ul>
+<li>Assesses <strong>linearity</strong> and <strong>homoscedasticity</strong>.</li>
+<li>Should display a random cloud of points.
+<ul>
+<li>Patterns (e.g., curves, funnels) suggest violations.</li>
+</ul></li>
+</ul>
+</section>
+<section id="studentized-residuals" class="level4">
+<h4 class="anchored" data-anchor-id="studentized-residuals">Studentized Residuals</h4>
+<ul>
+<li>Check for outliers, e.g., values above ±2 or ±3 may be influential.</li>
+</ul>
+</section>
+<section id="cooks-distance" class="level4">
+<h4 class="anchored" data-anchor-id="cooks-distance">Cook’s Distance</h4>
+<ul>
+<li>Evaluates <strong>influence</strong> of observations on the regression model.</li>
+<li>Values &gt; 1 may indicate problematic cases.</li>
+</ul>
+</section>
+<section id="leverage-values" class="level4">
+<h4 class="anchored" data-anchor-id="leverage-values">Leverage Values</h4>
+<ul>
+<li>Identifies points with unusual predictor values.</li>
+<li>High leverage + large residual = influential observation.</li>
+</ul>
+</section>
+</section>
+<section id="best-practice-summary" class="level3" data-number="9.1.3">
+<h3 data-number="9.1.3" class="anchored" data-anchor-id="best-practice-summary"><span class="header-section-number">9.1.3</span> Best Practice Summary</h3>
+<table class="table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 42%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Assumption</th>
+<th>Tool in SPSS</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Linearity</strong></td>
+<td>Scatterplot of ZRESID vs.&nbsp;ZPRED</td>
+<td>Random cloud indicates assumption met</td>
+</tr>
+<tr class="even">
+<td><strong>Normality</strong></td>
+<td>Histogram &amp; P-P Plot</td>
+<td>Approx. normal shape and diagonal line</td>
+</tr>
+<tr class="odd">
+<td><strong>Homoscedasticity</strong></td>
+<td>Same scatterplot (ZRESID vs.&nbsp;ZPRED)</td>
+<td>Equal spread across values</td>
+</tr>
+<tr class="even">
+<td><strong>Influence</strong></td>
+<td>Cook’s Distance, Leverage, Studentized Resid</td>
+<td>Values near limits may need closer look</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="multivariate-linear-regression-with-three-predictors-using-enter-term-selection" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="multivariate-linear-regression-with-three-predictors-using-enter-term-selection"><span class="header-section-number">9.2</span> Multivariate Linear Regression with Three Predictors Using <code>Enter</code> Term Selection</h2>
 <p>Now that we (hopefully!) have some understanding of multivariate linear regression, we can look at a slightly more complex one. Here, we are considering three variables, two of which we know are themselves mildly but significantly interrelated: DBT participation and economic distress (φ = -.08, <em>p</em> = 0.48). We’ll also consider adult sisters at home to build upon what we did above.</p>
 <p>We will also move to what I believe is a more generally-defensible method of building and comparing models. Presuming we are interested in testing if DBT participation affects changes in students’ executive functioning, we are probably interested not only if DBT participation matters, but if it matters more than other, theoretically-uninteresting factors—like how many adult sisters one lives with. Controlling for economic distress also removes an important source of variance we couldn’t control through experimental design, and so is worth including here for that reason<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>. Therefore, we will add all (both) of the theoretically-uninteresting predictors to the first model. Although we can (and should) investigate the statistics of this first model, it is primarily intended to serve simply as the null model—the baseline of comparison—for testing the effect of DBT participation. Looked at this way, we see if DBT participation predicts changes in EF—while controlling for known sources of variance that could otherwise mislead our interpretation of the effects of the DBT program.</p>
 <ol type="1">
@@ -521,8 +685,8 @@ ul.task-list li input[type="checkbox"] {
 <li>In the <code>Options</code> dialogue box, makes sure <code>Include constant in equation</code> and <code>Exclude cases pairwise</code> are also selected.</li>
 <li>Hit <code>OK</code>.</li>
 </ol>
-<section id="results-1" class="level3" data-number="8.4.1">
-<h3 data-number="8.4.1" class="anchored" data-anchor-id="results-1"><span class="header-section-number">8.4.1</span> Results</h3>
+<section id="results-1" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="results-1"><span class="header-section-number">9.2.1</span> Results</h3>
 <section id="variables-entered-removed" class="level4">
 <h4 class="anchored" data-anchor-id="variables-entered-removed">Variables Entered / Removed</h4>
 <p><img src="images/lrm_09.png" class="img-fluid"></p>
@@ -560,6 +724,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
 </section>
 </section>
 </section>

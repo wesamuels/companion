@@ -478,7 +478,7 @@ div.csl-indent {
 <section id="overview" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">10.1</span> Overview</h2>
 <p>After reviewing a few common ways to analyze longitudinal data, this chapter then focuses on conducting a rather sophisticated approach, variously called hierarchical linear regression, multilevel modeling, or mixed models. These models can be used to analyze more than just longitudinal data, but that will be our focus here.</p>
-<p>As is usual for these chapters on using software, I will try to present two things related to the relevant analyses. This time, the first (in <a href="#sec-mlm_data_prep_spss"><span>Section&nbsp;10.3</span></a>) will be a bit more “down-and-dirty” data preparation using both a spreadsheet program and SPSS. The second (in <a href="#sec-condudting_mlm_spss"><span>Section&nbsp;10.11</span></a>) will be using SPSS to review these data and to conduct a multilevel model (MLM) of change on them.</p>
+<p>As is usual for these chapters on using software, I will try to present two things related to the relevant analyses. This time, the first (in <a href="#sec-mlm_data_prep_spss"><span class="quarto-unresolved-ref">sec-mlm_data_prep_spss</span></a>) will be a bit more “down-and-dirty” data preparation using both a spreadsheet program and SPSS. The second (in <a href="#sec-condudting_mlm_spss"><span class="quarto-unresolved-ref">sec-condudting_mlm_spss</span></a>) will be using SPSS to review these data and to conduct a multilevel model (MLM) of change on them.</p>
 </section>
 <section id="comparison-of-analyses-of-longitudinal-data" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="comparison-of-analyses-of-longitudinal-data"><span class="header-section-number">10.2</span> Comparison of Analyses of Longitudinal Data</h2>
@@ -606,8 +606,8 @@ div.csl-indent {
 <ul>
 <li>RDiT versus other methods, including comparisons of it with traditional regression discontinuity designs
 <ul>
-<li>Hausman, C., &amp; Rapson, D. S. <span class="citation" data-cites="hausman2018">(<a href="references.html#ref-hausman2018" role="doc-biblioref">2018</a>)</span>. <a href="https://articles.viriya.net/regression_discontinuity_in_time_considerations_for_empirical_applications.pdf">Regression discontinuity in time: Considerations for empirical applications</a>. <em>Annual Review of Resource Economics</em>, <em>10</em>(1), 533–552. https://doi.org/10.1146/annurev-resource-121517-033306</li>
-<li>Hausman, C., &amp; Rapson, D. S. <span class="citation" data-cites="hausman2017">(<a href="references.html#ref-hausman2017" role="doc-biblioref">2017</a>)</span>. <a href="https://articles.viriya.net/nber_working_paper_series_regression_discontinuity_in_time_considerations_for_empirical_applications.pdf">Regression discontinuity in time: Considerations for empirical applications</a>. National Bureau of Economic Research Working Paper Series, No.&nbsp;23602. https://doi.org/10.3386/w23602.
+<li>Hausman, C., &amp; Rapson, D. S. <span class="citation" data-cites="hausman2018">(<a href="#ref-hausman2018" role="doc-biblioref">2018</a>)</span>. <a href="https://articles.viriya.net/regression_discontinuity_in_time_considerations_for_empirical_applications.pdf">Regression discontinuity in time: Considerations for empirical applications</a>. <em>Annual Review of Resource Economics</em>, <em>10</em>(1), 533–552. https://doi.org/10.1146/annurev-resource-121517-033306</li>
+<li>Hausman, C., &amp; Rapson, D. S. <span class="citation" data-cites="hausman2017">(<a href="#ref-hausman2017" role="doc-biblioref">2017</a>)</span>. <a href="https://articles.viriya.net/nber_working_paper_series_regression_discontinuity_in_time_considerations_for_empirical_applications.pdf">Regression discontinuity in time: Considerations for empirical applications</a>. National Bureau of Economic Research Working Paper Series, No.&nbsp;23602. https://doi.org/10.3386/w23602.
 <ul>
 <li>This version is a little longer and more detailed than the 2018 version published in the <em>Annual Review of Resource Economics</em>, just above.</li>
 </ul></li>
@@ -741,7 +741,7 @@ div.csl-indent {
 <p>But first, let’s get some familiarity with using SPSS’s syntax to do anything.</p>
 <section id="introduction-to-spsss-syntax" class="level3" data-number="10.11.1">
 <h3 data-number="10.11.1" class="anchored" data-anchor-id="introduction-to-spsss-syntax"><span class="header-section-number">10.11.1</span> Introduction to SPSS’s Syntax</h3>
-<p>As noted in <a href="Intro_to_SPSS.html#sec-spss_syntax"><span>Section&nbsp;16.2.3.2.3</span></a>, as of version 28, the syntax SPSS used to generate output is no longer presented by default in the output, but <code>Edit &gt; Options &gt; Viewer &gt; Display commands in the log</code> will let it be subsequently presented there. With the syntax is presented in the output<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a>, we can copy and paste that syntax right into the <code>Syntax</code> window to rerun or to modify and then run.</p>
+<p>As noted in <a href="#sec-spss_syntax"><span class="quarto-unresolved-ref">sec-spss_syntax</span></a>, as of version 28, the syntax SPSS used to generate output is no longer presented by default in the output, but <code>Edit &gt; Options &gt; Viewer &gt; Display commands in the log</code> will let it be subsequently presented there. With the syntax is presented in the output<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a>, we can copy and paste that syntax right into the <code>Syntax</code> window to rerun or to modify and then run.</p>
 <p>Let’s briefly go over the pieces of SPSS syntax through an example doing just that.</p>
 <ol type="1">
 <li>We will be using the merged, long-form data set for the rest of this chapter, so close the other sets of data.</li>
@@ -1217,7 +1217,7 @@ MIXED global.exec.comp.sr with wave by economic.distress
 <section id="multivariate-mlm" class="level2" data-number="10.13">
 <h2 data-number="10.13" class="anchored" data-anchor-id="multivariate-mlm"><span class="header-section-number">10.13</span> Multivariate MLM</h2>
 <p>We will now demonstrate using multiple predictors, thus creating a multivariate MLM.</p>
-<p>Since we are now using more than one predictor, there is the chance of multicollinearity affecting the value (and stability) of the model parameters—especially for those predictors that are highly correlated with each other. Although there are analyses that can detect multicollinearity in multi-level (hierarchical) models <span class="citation" data-cites="yu2015">(q.v., <a href="references.html#ref-yu2015" role="doc-biblioref">Yu et al., 2015</a>)</span>, reviewing them is outside of the pale of this course. Note that in general, multicollinearity is usually less of a problem than it’s sometimes conceived to be, and that it matters in MLMs more when it is between nested groups than within one.</p>
+<p>Since we are now using more than one predictor, there is the chance of multicollinearity affecting the value (and stability) of the model parameters—especially for those predictors that are highly correlated with each other. Although there are analyses that can detect multicollinearity in multi-level (hierarchical) models <span class="citation" data-cites="yu2015">(q.v., <a href="#ref-yu2015" role="doc-biblioref">Yu et al., 2015</a>)</span>, reviewing them is outside of the pale of this course. Note that in general, multicollinearity is usually less of a problem than it’s sometimes conceived to be, and that it matters in MLMs more when it is between nested groups than within one.</p>
 <section id="base-model" class="level3" data-number="10.13.1">
 <h3 data-number="10.13.1" class="anchored" data-anchor-id="base-model"><span class="header-section-number">10.13.1</span> Base Model</h3>
 <p>We create our base, comparison model with:</p>
@@ -1286,7 +1286,7 @@ MIXED global.exec.comp.sr with wave by economic.distress iep.status gender
 <p>We know from our univariate analysis that economic distress—when taken alone—significantly predicts changes in executive functioning. However, we now see from this analysis that the effect of economic distress here is arguably explainable through the effects of IEP status and/or gender.</p>
 <p>Of course, this oughtn’t be the final word on the issue. We do not know yet if the covariance between economic distress and changes in executive functioning overlaps that of IEP status, gender, or both. We could look at this by next taking out those terms systematically. We could also, e.g., add an <code>economic.distress * gender * wave</code> interaction to test the effects of more complex relationships.</p>
 <p>Wholly beyond the pale of the current chapter would be to see if perhaps <code>iep.status</code> (or maybe even gender) mediate the relationship between <code>economic.distress</code> and wave. That will require another course to discuss—perhaps one on measurement and factor analysis….</p>
-<p><span class="citation" data-cites="monsalves2020">Monsalves et al. (<a href="references.html#ref-monsalves2020" role="doc-biblioref">2020</a>)</span> provides good advice on writing up models like these. A couple other guides are given in the <a href="./writing_results.html#writing_results_resources">Resources</a> section of <a href="writing_results.html">Chapter&nbsp;<span>3</span></a>: Writing Results Sections.</p>
+<p><span class="citation" data-cites="monsalves2020">Monsalves et al. (<a href="#ref-monsalves2020" role="doc-biblioref">2020</a>)</span> provides good advice on writing up models like these. A couple other guides are given in the <a href="./writing_results.html#writing_results_resources">Resources</a> section of <a href="#sec-writing-results">Chapter&nbsp;<span class="quarto-unresolved-ref ref-noprefix">sec-writing-results</span></a>: Writing Results Sections.</p>
 </section>
 </section>
 </section>
@@ -1300,7 +1300,7 @@ MIXED global.exec.comp.sr with wave by economic.distress iep.status gender
 <p>Statistical process control is a more graphical approach to longitudinal analyses. It focuses on visually scanning for changes in some outcomes up to and then after some discrete event, like when an intervention or new procedure was implemented.</p>
 <p>Some resources about it are:</p>
 <ul>
-<li>[<em>Statistical Process Control</em>], a supplement to <span class="citation" data-cites="polit2017">Polit &amp; Beck (<a href="references.html#ref-polit2017" role="doc-biblioref">2017</a>)</span></li>
+<li>[<em>Statistical Process Control</em>], a supplement to <span class="citation" data-cites="polit2017">Polit &amp; Beck (<a href="#ref-polit2017" role="doc-biblioref">2017</a>)</span></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1309,7 +1309,7 @@ MIXED global.exec.comp.sr with wave by economic.distress iep.status gender
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
 <div id="ref-hausman2017" class="csl-entry" role="listitem">
 Hausman, C., &amp; Rapson, D. S. (2017). Regression discontinuity in time: <span>Considerations</span> for empirical applications. <em>National Bureau of Economic Research Working Paper Series</em>, <em>No. 23602</em>. <a href="https://doi.org/10.3386/w23602">https://doi.org/10.3386/w23602</a>
 </div>
