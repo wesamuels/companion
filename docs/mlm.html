@@ -485,6 +485,7 @@ div.csl-indent {
 <h4 class="anchored" data-anchor-id="pre-post-difference-scores">Pre-Post Difference Scores</h4>
 <p>Along with repeated-measures ANOVAs, analyzing pre-post difference scores is probably the most common method of analyzing changes over time.</p>
 <p>Of course, pre-post difference score analyses require only two waves of data collected before and after some event. One first usually subtracts a given participant’s<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> pretest score from their posttest score to compute this difference. These differences scores are then compared between groups using, e.g., <em>t</em>-tests to see whether the mean difference between groups differs significantly.</p>
+<p>It may be worth noting that comparing whether, e.g., pre-post differences are greater in an experimental group than the pre-post differences in a control group is an example of what is sometimes called “<a href="">differences in differences</a>” (DiD). <span class="citation" data-cites="lechner">(<a href="references.html#ref-lechner" role="doc-biblioref">Lechner, n.d.</a>)</span> and <span class="citation" data-cites="annurev:/content/journals/10.1146/annurev-publhealth-040617-013507">(<a href="references.html#ref-annurev:/content/journals/10.1146/annurev-publhealth-040617-013507" role="doc-biblioref">Wing et al., 2018</a>)</span> present more on DiD and designing such studies.</p>
 <section id="advantages" class="level5">
 <h5 class="anchored" data-anchor-id="advantages">Advantages</h5>
 <p>They are easy to compute and intuitively easy to interpret.</p>
@@ -590,7 +591,7 @@ div.csl-indent {
 <p><img src="mlm_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>it would miss the important detail that it’s only in May that the groups start to differ. (Repeated measures ANOVA would be a better choice for here; interrupted time series<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> would be even better.)</p>
+<p>it would miss the important detail that it’s only in May that the groups start to differ. (Repeated measures ANOVA would be a better choice here; interrupted time series<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> would be even better.)</p>
 <p>Another disadvantage is that MLMs do take more sophisticated understanding to conduct—and to understand as a reader. Sometimes, the best analysis is the one your readers understand best.</p>
 <!-- #### Regression Discontinuity in Time -->
 <!-- Regression discontinuity in time (RDiT).... -->
@@ -1299,11 +1300,20 @@ MIXED global.exec.comp.sr with wave by economic.distress iep.status gender
 <div id="ref-bernal2017" class="csl-entry" role="listitem">
 Bernal, J. L., Cummins, S., &amp; Gasparrini, A. (2017). Interrupted time series regression for the evaluation of public health interventions: A tutorial. <em>International Journal of Epidemiology</em>, <em>46</em>(1), 348355. <a href="https://doi.org/10.1093/ije/dyw098">https://doi.org/10.1093/ije/dyw098</a>
 </div>
+<div id="ref-bernal2020" class="csl-entry" role="listitem">
+Bernal, J. L., Cummins, S., &amp; Gasparrini, A. (2020). Corrigendum to: Interrupted time series regression for the evaluation of public health interventions: A tutorial. <em>International Journal of Epidemiology</em>, <em>50</em>(3), 1045–1045. <a href="https://doi.org/10.1093/ije/dyaa118">https://doi.org/10.1093/ije/dyaa118</a>
+</div>
+<div id="ref-lechner" class="csl-entry" role="listitem">
+Lechner, M. (n.d.). The estimation of causal effects by difference<span>-</span>in<span>-</span>differences methods. <em>Foundations and Trends in Econometrics</em>, <em>4</em>(3).
+</div>
 <div id="ref-monsalves2020" class="csl-entry" role="listitem">
 Monsalves, M. J., Bangdiwala, A. S., Thabane, A., &amp; Bangdiwala, S. I. (2020). <span>LEVEL</span> (<span>Logical Explanations</span> &amp; <span>Visualizations</span> of <span>Estimates</span> in <span>Linear</span> mixed models): Recommendations for reporting multilevel data and analyses. <em>BMC Medical Research Methodology</em>, <em>20</em>, 1–9. <a href="https://doi.org/10.1186/s12874-019-0876-8">https://doi.org/10.1186/s12874-019-0876-8</a>
 </div>
 <div id="ref-polit2017" class="csl-entry" role="listitem">
 Polit, D. F., &amp; Beck, C. E., Cheryl T. (2017). <em>Nursing <span>Research</span>: <span>Generating</span> and <span>Assessing Evidence</span> for <span>Nursing Practice</span></em> (Tenth). <span>Wolters Kluwer</span>.
+</div>
+<div id="ref-annurev:/content/journals/10.1146/annurev-publhealth-040617-013507" class="csl-entry" role="listitem">
+Wing, C., Simon, K., &amp; Bello-Gomez, R. A. (2018). Designing difference in difference studies: Best practices for public health policy research. <em>Annual Review of Public Health</em>, <em>39</em>(Volume 39, 2018), 453–469. https://doi.org/<a href="https://doi.org/10.1146/annurev-publhealth-040617-013507">https://doi.org/10.1146/annurev-publhealth-040617-013507</a>
 </div>
 <div id="ref-yu2015" class="csl-entry" role="listitem">
 Yu, H., Jiang, S., &amp; Land, K. C. (2015). Multicollinearity in hierarchical linear models. <em>Social Science Research</em>, <em>53</em>, 118–136. <a href="https://doi.org/10.1016/j.ssresearch.2015.04.008">https://doi.org/10.1016/j.ssresearch.2015.04.008</a>
@@ -1326,7 +1336,7 @@ Yu, H., Jiang, S., &amp; Land, K. C. (2015). Multicollinearity in hierarchical l
 <li id="fn9"><p>It’s called sphericity (it’s also called circularity, and a type of compound symmetry) because it posits that—with three waves—the variance in wave 1 equals the variance in wave 2 which equals the variance in wave 3, or <span class="math inline">\(\sigma^2_{wave 1} = \sigma^2_{wave 2} = \sigma^2_{wave 3}\)</span>. They create a little circle—or I guess sphere—of the variances all being equal to each other.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn10"><p>There are other ways to handle time—and even ones more flexible than MLMs. Latent growth curve (<a href="https://www.publichealth.columbia.edu/research/population-health-methods/latent-growth-curve-analysis">LGC</a>) modeling is one example that allows even finer tests of change over time, e.g., that different participants show different growth curve (say, some showing linear growth while others show exponential.)<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn11"><p>As well as for estimating the intercept if the intercept is set to be something other than one of the waves, e.g., if you don’t/can’t assume the first wave of data is the intercept for the participants.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn12"><p><span class="citation" data-cites="bernal2017">(<a href="references.html#ref-bernal2017" role="doc-biblioref">Bernal et al., 2017</a>)</span> provides a good introduction to interrupted times series designs and their analyses.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p><span class="citation" data-cites="bernal2017">(<a href="references.html#ref-bernal2017" role="doc-biblioref">Bernal et al., 2017</a>)</span> provides a good introduction to interrupted times series designs and their analyses. Note the slight correction to this paper in <span class="citation" data-cites="bernal2020">(<a href="references.html#ref-bernal2020" role="doc-biblioref">Bernal et al., 2020</a>)</span>.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn13"><p>It is the number of days since January 1, 4713 BCE, presuming use of the modern. Western calendar to count back that far. It was developed by an historian, Joseph Scaliger (whence the date range), and named after his father, whence the important-sounding name. Note, however, that the dates here are not computed along the lines set out by Scaliger, but a derivative method used by a standard package in the <code>R</code> programming language.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn14"><p>To finally create a footnote of actual value: In the early stages of this ling of research, I didn’t limit myself to using Julian age, but also, e.g., simply used the calendar year or—at most—semester. However, those measures of time proved not to be precise enough to track the rather subtle effects we investigate here. Only when I used Julian dates—i.e., only when I measured time as precisely as I could—did I reliably find interesting insights. I guess I shouldn’t have been surprised that analyses of times-varying effects benefited from good measures of time.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn15"><p>“STEM” is the rather aspirational acronym for courses related to science, technology, engineering, and math.<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
