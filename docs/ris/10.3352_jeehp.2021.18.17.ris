@@ -1,0 +1,15 @@
+TY  - JOUR
+JF  - Journal of educational evaluation for health professions
+DO  - 10.3352/jeehp.2021.18.17
+PB  - Korea Health Personnel Licensing Examination Institute
+Y1  - 2021
+VL  - 18
+ID  - cdi_doaj_primary_oai_doaj_org_article_0dde9f70c871406b82494635a5a441fe
+N2  - Appropriate sample size calculation and power analysis have become major issues in research and publication processes. However, the complexity and difficulty of calculating sample size and power require broad statistical knowledge, there is a shortage of personnel with programming skills, and commercial programs are often too expensive to use in practice. The review article aimed to explain the basic concepts of sample size calculation and power analysis; the process of sample estimation; and how to calculate sample size using G*Power software (latest ver. 3.1.9.7; Heinrich-Heine-Universität Düsseldorf, Düsseldorf, Germany) with 5 statistical examples. The null and alternative hypothesis, effect size, power, alpha, type I error, and type II error should be described when calculating the sample size or power. G*Power is recommended for sample size and power calculations for various statistical methods (F, t, χ2, Z, and exact tests), because it is easy to use and free. The process of sample estimation consists of establishing research goals and hypotheses, choosing appropriate statistical tests, choosing one of 5 possible power analysis methods, inputting the required variables for analysis, and selecting the “calculate” button. The G*Power software supports sample size and power calculation for various statistical methods (F, t, χ2, z, and exact tests). This software is helpful for researchers to estimate the sample size and to conduct power analysis. 
+KW  - Biometry ; Correlation of data ; Research personnel ; Review ; Sample size ; Software
+EP  - 17
+AU  - Kang, Hyun
+SN  - 1975-5937
+SP  - 17
+T1  - Sample size determination and power analysis using the GPower software
+ER  -

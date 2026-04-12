@@ -8,7 +8,7 @@
 
 <meta name="description" content="A set of explanations, lectures, resources, and activities to complement the statistics curriculum that is part of Hunter College’s Ph.D.&nbsp;Program in Nursing Research and Health Equity and DNP Program.">
 
-<title>Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula - 5&nbsp; Introduction to Measuring Relationships and Building Models</title>
+<title>Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula - Appendix B — Common/Confusing Statistical &amp; Scientific Terms</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,26 +21,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,8 +31,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Variance_Covariance_Correlations_and_Partial_Correlations.html" rel="next">
-<link href="./writing_results.html" rel="prev">
+<link href="./estimating_sample_size.html" rel="next">
+<link href="./common_statistical_symbols.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -96,7 +77,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./topics.html">“Statistical Concepts and Strategies”</a></li><li class="breadcrumb-item"><a href="./significance.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to Measuring Relationships and Building Models</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./common_statistical_symbols.html">Appendices</a></li><li class="breadcrumb-item"><a href="./vocab.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Common/Confusing Statistical &amp; Scientific Terms</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -177,7 +158,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./significance.html" class="sidebar-item-text sidebar-link active">
+  <a href="./significance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to Measuring Relationships and Building Models</span></span></a>
   </div>
 </li>
@@ -289,7 +270,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vocab.html" class="sidebar-item-text sidebar-link">
+  <a href="./vocab.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Common/Confusing Statistical &amp; Scientific Terms</span></span></a>
   </div>
 </li>
@@ -317,9 +298,8 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#measuring-relationships" id="toc-measuring-relationships" class="nav-link active" data-scroll-target="#measuring-relationships"><span class="header-section-number">5.1</span> Measuring Relationships</a></li>
-  <li><a href="#signal-to-noise-ratios" id="toc-signal-to-noise-ratios" class="nav-link" data-scroll-target="#signal-to-noise-ratios"><span class="header-section-number">5.2</span> Signal-to-Noise Ratios </a></li>
-  <li><a href="#building-models" id="toc-building-models" class="nav-link" data-scroll-target="#building-models"><span class="header-section-number">5.3</span> Building Models</a></li>
+  <li><a href="#commonconfusing-statistical-scientific-terms" id="toc-commonconfusing-statistical-scientific-terms" class="nav-link active" data-scroll-target="#commonconfusing-statistical-scientific-terms"><span class="header-section-number">B.1</span> Common/Confusing Statistical &amp; Scientific Terms</a></li>
+  <li><a href="#terms-for-different-types-of-analyses" id="toc-terms-for-different-types-of-analyses" class="nav-link" data-scroll-target="#terms-for-different-types-of-analyses"><span class="header-section-number">B.2</span> Terms for Different Types of Analyses</a></li>
   </ul>
 </nav>
     </div>
@@ -328,7 +308,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-intro_to_models" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction to Measuring Relationships and Building Models</span></span></h1>
+<h1 class="title"><span id="sec-stat-vocab" class="quarto-section-identifier">Appendix B — Common/Confusing Statistical &amp; Scientific Terms</span></h1>
 </div>
 
 
@@ -343,74 +323,286 @@ div.csl-indent {
 
 </header>
 
-<p>One of my goals in this curriculum is to give you a strong foundation in what I’ve learned to be among the principles and practices guiding major, currently-recommended analyses. As you may have also realized, doing this differs somewhat from how statistics is usually taught. I very sincerely hope my gamble is well made, and that you not only gain the same skills that others would gain from doctoral statistics courses, but that you magnify that with a good understanding of what the heck is going on.</p>
-<p>To this end, I have tried to convey the importance of a few, inter-related concepts that permeate much of modern analyses.</p>
-<section id="measuring-relationships" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="measuring-relationships"><span class="header-section-number">5.1</span> Measuring Relationships</h2>
-<p>In a very readable <a href="https://www.sciencealert.com/night-owls-tend-to-die-sooner-but-its-not-late-bedtimes-killing-them"><em>ScienceAlert</em> article</a>, Neild describes a study in which researchers found that, although night owls tend to have shorter lives than morning larks, being a night owl <em>per se</em> doesn’t increase mortality in older adults. Instead, it was the riskier behavior these people of the night prefer more to do. But how could the researchers determine this? If pretty much all night owls didn’t live as long, how could they say that being a night owl didn’t increase mortality? What sort of analysis would allow them to remove—isolate—the effect of being a night owl (more technically, having a nocturnal chronotype)?</p>
-<p>Isolating an effect begins with being able to measure the effect—more specifically, being able to measure the main effect of a variable (here, chronotype—early birds vs.&nbsp;night owls). Measuring it so allows us to circumscribe its effect—to locate and measure the size (and location) of its effect. That then lets us isolate the effect of it on other variables. We can “partial” out the effect, letting us see <em>other</em> relationships with that effect removed.</p>
-<p>We must thus be able to measure the extent of these relationships well. The better it is measured, the better we can detect its boundaries and thus isolate it. Estimating the relationship between variables thus not only allows us to see how much they are related, but to isolate that relationship from <em>other</em> relationships.</p>
-<p>How much two variables are associated with each other is often modeled as a linear relationship where the slope of the line (when the two variables plotted on the axes) shows how much they’re related: The greater that slope (the more it deviates from a flat line with a slope of zero), the stronger the relationship between them. We often use some assumptions to estimate the underlying nature of the variables, and then use some criterion (e.g., being 95% sure we’re right) based on those assumptions to decide whether we think the association between those two variables matters—whether it is “statistically significant.”</p>
-<p>If the two variables are measured on the same scale—say <em>z</em>-scores—then the greatest relationship would be represented by a straight line going up (or down if it’s a negative relationship) at a 45<sup>0</sup> angle; whenever the line goes one unit to the right, it also goes exactly one unit up. The slope is <span class="math inline">\(\frac{1}{1}\)</span>, or simply 1. Anything less than a perfect relationship results in a slope that is less than 1.</p>
-<p>If we make no further assumptions about the two variables than that they have a linear relationship and that both sets of data are roughly homoscedastic, then we can compute a correlation coefficient. The exact method we use depends on the measurement level (dichotomous, ordinal, interval, etc.) of the variables, but all correlations are set to range between 0 and 1 (or -1) by convention.</p>
-<p>So, one way to look at a correlation is the strength of the (linear) relationship between variables.</p>
+<p>In addition to obtuse jargon<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, both science in general and statistics in particular use fairly-common words in particular ways. Some of these common and confusing terms are listed below.</p>
+<section id="commonconfusing-statistical-scientific-terms" class="level2" data-number="B.1">
+<h2 data-number="B.1" class="anchored" data-anchor-id="commonconfusing-statistical-scientific-terms"><span class="header-section-number">B.1</span> Common/Confusing Statistical &amp; Scientific Terms</h2>
+<div id="tbl-stat-vocab" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Table&nbsp;B.1: Common/Confusing Statistical &amp; Scientific Terms</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Term</strong></th>
+<th style="text-align: left;"><strong>Meaning in Science &amp; Statistics</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Criterion</td>
+<td style="text-align: left;">The output/outcome variable, the variable that is measured to see the effects of other variables on it. (See Predictor, below).<br>
+Also called:<br>
+• Dependent variable (DV)<br>
+• <a href="https://www.statology.org/endogenous-vs-exogenous-variables/">Exogenous variable</a><br>
+• Outcome (or “output”) variable<br>
+• Response variable<br>
+• Regressand<br>
+• Target<br>
+Calling it a criterion implies that it is being used as the basis or standard by which to test the importance of the predictors (or input variables) or even the success of our endeavors.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Descriptive</td>
+<td style="text-align: left;">Descriptive statistics simply, well, describe a sample of data. They nearly always make no assumptions about the data—and make none about the population from which they were drawn (except perhaps that each datum is drawn independently from any other data and from the identical population.)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://www.statistics.com/factor/">Factor</a></td>
+<td style="text-align: left;">Either:<br>
+• A predictor variable of any type<br>
+• An independent variable <a href="https://statisticsbyjim.com/glossary/factors/">manipulated or controlled</a> by researchers; in this sense, a factor is usually—but not necessarily—a catagorical variable<br>
+• A common source of variance/information in one or more ostensible variables</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fixed</td>
+<td style="text-align: left;">No, nothing in science is every fixed (or broken : ). “Fixed” has two, mostly-different uses in statistics:<br>
+1. A <strong>fixed variable</strong> is one in which all possible levels are present in the sample data. For example, if a sample of nursing home residents indicated that some had fallen while others had not (and there are no other possible categories), then <code>falls</code> would be a fixed factor.<br>
+Variables in which not all levels are present in the data are called <strong>random</strong>. Often (but not always), these are continuous variables where it is imnpossible for all levels to be present in a sample of data, such as height which could be measured to nearly infinite levels.<br>
+The important difference between fixed and random factors is that analyses must estimate the effects of levels <em>not</em> present for random factors, an issue that can eat up degrees of freedom, etc.<br>
+2. <strong>Fixed effects</strong> in a linear regression (like in <code>SPSS</code>’s <code>MIXED</code> function, <a href="mlm.html"><span>Chapter&nbsp;11</span></a>) are terms that have the same coefficient (e.g., same β weight for that term in the model) for all participants. For example, if all participants were assigned to either the Experimental or Control group, regardless of which hospital they were admitted to, then this would be a fixed effect. In hierarchical models, these are usually the levels that have something else nested in them, e.g., if patients were nested in hospitals.<br>
+In this sense, <strong>random</strong> effects are terms that are nested within an other level<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">iid</td>
+<td style="text-align: left;">An abbreviation that describes two, important characteristics of a set of data collected on a given variable. It stands for “independently and identically distributed,” meaning that:<br>
+1. the value of each data point in a given variable is independent from the value of all/any other data point for that variable and<br>
+2. each of those data points in that variable are drawn from the same distribution, e.g., they’re all drawn from a normal distribution.<br>
+That the data in a given variable is iid is one of the most important assumptions in inferential statistics. Often, it can’t be violated without us loosing the validity of conclusions drawn from those data.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Indicator</td>
+<td style="text-align: left;">A synonym for a dummy variable that indicates whether something is present or not present, e.g., recovered versus not recovered.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Inferential</td>
+<td style="text-align: left;">Inferential analyses rely on assumptions being made about the population from which those data were drawn. This often includes assuming that the population is normally distributed. They are typically distinguished from descriptive statistics that make no (or fewer) assumptions about the population.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mean</td>
+<td style="text-align: left;">The average of a set of data. I’m including it in this list of common/confusing terms simply to note the main ways a mean can be computed, and their respective uses:<br>
+• <strong>Arthmetic</strong> mean: The one you know, in which values are summed and then divided by the number of values. It is used when there are no particular reasons to use an other method.<br>
+• <strong>Geometric</strong> mean: Values are multiplied instead of added. We then <a href="https://www.investopedia.com/terms/g/geometricmean.asp">take the <em>n</em>th root of this product</a>. Geometric means are useful to compare very different values; to get the mean of percents, proportions, etc., and when the values are related to each other (like all the percents being of the same thing, like inflation).<br>
+• <strong>Harmonic</strong> mean: It is computed as “<a href="https://byjus.com/maths/harmonic-mean/">the reciprocal of the average of the reciprocals of the data values</a>”. It is used when we want to reduce the weight of larger values, such as when a distribution is positively skewed (i.e., has disproportionate number of large values). An example is length of time where events can’t be shorter than zero, but sometimes can take a lot longer than they should<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a><br>
+• <strong>Weighted</strong> mean: Any of the above types of means can also be weighted. In a weighted mean, some of the values are given heavier<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> weights (their values are multiplied by some number to make them affect the overall mean differently) than other values so that those weighted values contribute more to the overall mean. This is commonly done when we were unable to sample enough people of a certain type, such as when we were unable to sample enough members of a minoritized group.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Multiple vs.&nbsp;multivariate<br>
+(e.g., multiple vs.&nbsp;multivariate linear regression)</td>
+<td style="text-align: left;">• “<strong>Multiple</strong>” indicates that there is more than one linear regression equation; this would happen if there is <strong>more than one outcome</strong><br>
+• “<strong>Multivariate</strong>” indicates that there is <strong>more than one predictor</strong>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Non-ostensible</td>
+<td style="text-align: left;">A variable that cannot be directly observed or other perceived. These are usually theoretical and abstract concepts—constructed ideas—that are assumed to give rise to “ostensible” variables that can be empirically perceived. Other terms for these and related concepts are:<br>
+• Latent<br>
+• Unobserved<br>
+These are similar—sometimes even defined by—the factors that emerge from factor (latent variable) analysis.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Non-parametric</td>
+<td style="text-align: left;">Non-parametric analyses make no (or few) assumptions about the population distribution, viz., that it is normally distributed. Non-parametric analyses tend to be more robust than parametric analyses; they also tend to be used for variables of lower measurement levels (e.g., for ordinal instead of interval/ratio data).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ostensible</td>
+<td style="text-align: left;">A variable that can be directly, empirically observed. This is used to distinguish a variable from non-ostensible ones that are theorized to manifest in observable ways (through ostensible variables). Other terms for these and related concepts are:<br>
+• <a href="https://www.investopedia.com/terms/m/manifest-variable.asp">Manifest variable</a><br>
+• Observable variable</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://statisticsbyjim.com/hypothesis-testing/nonparametric-parametric-tests/">Parametric</a></td>
+<td style="text-align: left;">Parametric analyses are inferential analyses that make assumptions about the mathematical values (“parameters”) about the population’s distribution. Nearly always, this is the assumption that the population distribution is normal. Therefore, parametric analyses are those that assume normality. The term is also nearly always used to contrast these analyses with non-parametric ones that do not require (as many) assumptions about the population distribution. Making fewer assumptions, non-parametric analyses tend to be more robust.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Parsimony</td>
+<td style="text-align: left;">The desirable trait of communicating efficiently, saying a lot of information clearly and succinctly. It is also said of explanations and theories, suggesting a strong explanation that is “elegantly” simple yet generally useful.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Population</td>
+<td style="text-align: left;">A well-defined and -delimited group of individuals (patients, nurses, etc.) about which insights are made based on a smaller sample of members of that population. The sample are those chosen to be studied directly; the population are those to whom conclusions made from the sample can be justifiably applied.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Power</td>
+<td style="text-align: left;">The probability to detect a real effect. The chance <em>not</em> to make a false negative (Type 2) error.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Predict</td>
+<td style="text-align: left;">In statistics, prediction is our ability to use what we know to make inferences about what we don’t. This could be information we have from the past and present that we use to guess at the future. But it could also be using known information about the past to make inferences about other, past events we don’t know about. And yes, this certainly includes using sample data to infer population values.<br>
+A rather clever use of prediction is to randomly split a larger set of data in half. Use half to create a model with a given set of parameters &amp; values. And then see how well those parameters, etc. predict the other half of the data. This allow us to conduct a very authentic test of how good our estimates were.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Predictor</td>
+<td style="text-align: left;">One of the many terms used to indicate the variables added to a linear regression model to test the effect on the outcome.<br>
+Also called:<br>
+• <a href="https://www.scribbr.com/methodology/explanatory-and-response-variables/">Explanatory variable</a><br>
+• <a href="https://stats.stackexchange.com/questions/263636/whats-the-difference-between-exogenous-variables-and-independent-variables">Independent variable</a> (IV)<br>
+• Input variable<br>
+• Regressor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Random</td>
+<td style="text-align: left;">Generally, the crux of randomness is that the value is unbiased and—in the long run—therefore an accurate representation of the true state. However, it can also refere to:<br>
+• The process of selecting a participant, level, etc. without bias so that any value is either equally likely to be chosen or at least chosen by the same rules &amp; odds as any other value<br>
+• A “random variable” is a rather generic term for any empirical value that can take multiple values, and that the value is takes is “iid”: independent from and identically distributed as all other measurements taken on that variable<br>
+• A “random effect” is a term in a hierarchical linear modle (aka multilevel model, <a href="mlm.html"><span>Chapter&nbsp;11</span></a>) that is nested within an other variable, like patients nested in hospitals.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Spell</td>
+<td style="text-align: left;">In longitudinal analyses, an occasion on which some outcome is present. For example, each time when a woman is pregnant or when someone with a substance abuse disorder recidivates. “Spell” is usually (but not always) used when an event can happen more than once in a longitudinal study.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Variance</td>
+<td style="text-align: left;">A measure of dispersion. It is the square of the standard deviation (when computed for the dispersion of a variable); it is the square of the distance from a regression line (when computed in a linear regression).<br>
+It is also a measure of the total amount of information in a variable; the more information, the richer a variable is, but the more there is to try to understand.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Wave</td>
+<td style="text-align: left;">An instance of data collection at a given point in time. This terms is usually only used when there are more than one data collection occasions, viz., when a study is longitudinal.<br>
+Also called:<br>
+• Event<br>
+• Endogenous variable<br>
+• Instance<br>
+• Period<br>
+• Phase<br>
+• Time point</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section id="signal-to-noise-ratios" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="signal-to-noise-ratios"><span class="header-section-number">5.2</span> Signal-to-Noise Ratios </h2>
-<p>Another way to look at correlations is that they are one of the ways of measuring a “signal-to-noise” ratio—another idea that permeates much of statistics. Here, it’s not just a question of how much two variables are associated, but how much that association accounts for all the information we have in our data about those variables–how much of the total variance is covariance between those things. The amount that the variables move together—the amount they covary—is a measure of the strength of their relationship. The amount they move independent of each other—the amount they do not share variance—is a measure of how weak their relationship is. If they have a weak relationship, then we obviously don’t have a very good representation of what makes these two variables take on whatever values they have.</p>
-</section>
-<section id="building-models" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="building-models"><span class="header-section-number">5.3</span> Building Models</h2>
-<p>The models we’re analyzing in the class activities—that, say, participating in a DBT program is linearly related to growths in executive functions—are not very good; they don’t account for much of the total variance in the data. Nonetheless, building models and testing how well they account for our observations (e.g., the data we have on hand and future observations we will make) is a third idea that permeates much of statistics.</p>
-<p>Let’s go back to our example of a very simple model: a correlation between two variables. LEt us also say in this example that it’s a weak correlation, and we want to improve on this model to make it a better representation of what’s really going on in our data. We could do this by utterly throwing out that first model and trying another one (e.g., by seeing if another zero-order correlation is stronger). Or we could try tweaking our model, say, by adding in another, third variable (i.e., testing out some <a href="./Variance_Covariance_Correlations_and_Partial_Correlations.html#sec-partial_semipartial_correlations">partial or semipartial correlations</a>). This third variable may clarify the relationship between the first two variables or add new and unique information to our model. This third variable may also (or instead) “suck up” the information that exists in that first zero-order correlation thus making the original, direct relationship matter even less<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p>For example, imagine we want to <a href="vocab.html">predict</a> what makes adolescents develop an important set of cognitive skills (those executive functions, EFs). To do this, we start with an outcome—a criterion—of interest, e.g., how much a general, self-report measure of all EFs changes throughout middle and high school. We want to see what is related to that measure of growth–to predict why one teen shows strong development and another in fact becomes worse.</p>
-<p>We could look into what is related to the EF growth by looking at a bunch of correlations, Indeed, we started by doing just that: just getting a since of what is related to what in the data set, focusing on what is related to EF growth. But then we (I) decided to up our game: We started asking more specific questions of the data; we demanded more precise answers from it at the expense of having to make more precise assumptions.</p>
-<p>In positioning EF growth as an outcome—a criterion or DV—and any other variables as the input / predictors / IVs, we are assuming that EF growth is a <em>result</em> of the other variables. One way to think about what we’re doing is this: We set EF growth down in our model, add another variable to it as a predictor, use ordinary least squares to “regress” the predictor down to a line, and then see how steep that line is. Mathematically, this is only slightly different than conducting a correlation: In a correlation, we choose a line based on the regression of both variables down to that line; in linear regression, we only regress the predictor down to that line. Although the math is slightly different, the values we derive are the same (as long as the scores are standardized).</p>
-<p>So why go through the trouble of doing a linear regression at all if a correlation (or even a semipartial) gets us to the same point? Because linear regressions let us ask more precise questions and thus get more sophisticated answers. We can look at specific pieces of the model, for example looking at only the effect of one predictor on the criterion isolated from any influence of other predictors. We can also look at the error term and even run tests on it (e.g., to see if the error indeed approximates the normal distribution we assume it does). Linear models thus represent a more flexible approach that can be adapted to a wider range of data—and still generate more specific answers from it. (In fact, this approach is so flexible that—conceived of as <a href="http://userwww.sfsu.edu/efc/classes/biol710/Glz/Generalized%20Linear%20Models.htm">generalized linear models</a>—they undergird perhaps every analysis you will ever make.) </p>
-<p>And so in linear regressions, we can test rather specific terms to see if those terms alone are significant. Does an adolescent’s 6th-grade EF score predict EF growth in subsequent years (is the intercept term significant)? Does DBT participation matter (is the β-weight for that term significant)? Even if DBT participation matters, does the economic hardship a student experiences moderate the effectiveness of the DBT program (is a DBT <span class="math inline">\(\times\)</span> economic distress term significant)?</p>
-<p>If we already know how much economic distress a student is facing, do we really need to know about the DBT program at all?</p>
-<p>That last question is more sophisticated than it may first seem. The questions before it (about intercept, a main effect of DBT, and a DBT <span class="math inline">\(\times\)</span> economic distress interaction) are all answerable through an ANOVA. That last one about whether DBT adds significant and significantly new information to a model that already contains economic distress requires a bit more—and a change in perspective about what we’re doing in these analyses.</p>
-<p>Another way to think about what we’re doing in linear regression is this: We gather together a set of variables to act as predictors. Using some eldritch process, we produce a value for EF growth that we would expect to see based on these predictors. Then, we see how close the actual EF growth score (for that set of conditions) is to the value we predicted it would be; if our predicted score is close to the actual score, we say we can created a good model that can well explain what determines that level of EF growth we actually see.</p>
-<p>In other words, <strong>not only can we build and test models, we can build two <em>different</em> models and see which model performs (predicts) better</strong>. This is an idea that not only permeates (more advanced) statistics, but guides much of experimental design. One way to design a study is to create two groups—and experimental and a control—and test if having something (the treatment given to the experimental group) is better than nothing. One way of testing significance is whether we can argue we have something (can reject the null) or whether we can’t argue that we have something (cannot reject the null)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>We can still test if a predictor itself is significant while we think in terms of the model: Is the overall model more significant when that predictor is added to it? The math going on under the hood is different when we think in terms of changes in the overall model, but the end result is the same whether we test the significance of that one term (as we do in an ANOVA) or whether we test the change in significance of the overall model (as we do in this new method). (Given certain assumptions &amp; arrangements) we get the same value for a relationship between two variables when we compute a correlation coefficient a we do when we compute a β-weight in a simple linear regression.</p>
-<p>Given certain assumptions &amp; arrangements, predictors that we find are significant when testing them as terms alone will also be significant when we test them in terms of changes to model fit. But looking at analyses in terms of changes to model fit gives us more flexibility and precision. Yes, this means we also gain yet another layer of things to learn, but I am hopeful that we can learn how to compute analyses this new way, and thus have you all gain a more powerful and flexible tool to use in your burgeoning careers.</p>
-<hr>
-<p>It may or may not be worth noting that all of the things I’ve discussed in this chapter are situated within the traditional statistical “<em>Zeitgeist</em>” of using models to simulate / test theories. Since the advent of “big data,” however, there has been a nearly countervailing strategy of not worrying (much, if at all) about modeling relationships between variables / constructs. Instead, the focus in this other wheelhouse is making good predictions from one set of data to other sets. This other tradition often worries so little about why their analyses work that they sometimes can’t even tell why it does. This underlies, e.g., the random forests and machine learning strategies that have taken firm root in a growing number of industries. And who knows? Maybe in ten years I’ll be including these in a course like this. But for now, I’ll only give you a few links to read more about this if somehow you’re superhuman enough to have time and temerity to read them:</p>
-<ul>
-<li><p><span class="citation" data-cites="raper2020">Raper (<a href="references.html#ref-raper2020" role="doc-biblioref">2020</a>)</span> <a href="https://rss.onlinelibrary.wiley.com/doi/pdf/10.1111/j.1740-9713.2020.01357.x">Leo Breiman’s “Two Cultures.”</a> <em>Significance</em>, <em>17</em>: 34–37. doi: <a href="https://doi.org/10.1111/j.1740-9713.2020.01357.x">10.1111/j.1740-9713.2020.01357.x</a></p></li>
-<li><p><span class="citation" data-cites="breiman2001">Breiman (<a href="references.html#ref-breiman2001" role="doc-biblioref">2001</a>)</span> <a href="https://articles.viriya.net/statistical_modeling_the_two_cultures.pdf">Statistical Modeling: The Two Cultures (with comments and a rejoinder by the author). <em>Statistical Science</em>, <em>16</em>(3), 199–231.</a></p></li>
-<li><p><a href="https://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm">Breiman, L, &amp; Cutler, A. <em>Random Forests</em>.</a></p></li>
-</ul>
-<!-- ## Additional Resources & Topies -->
-<!-- ### Clinical Relevance -->
-<!-- I believe the difference between statistical significance and clinical relevance should be self-evident to any competent researcher^[Confidence intervals, effect size (@sec-effect_size), and generalizability are some strategies to help guide decisions about clinical relevance]. However, the over-reliance on *p*-values---and lazier critical thinking in general---has led not only to misinterpretations of study outcomes but also with conflating a significant effect with clear clinical relevance. -->
-<!-- Resources about the distinction between : -->
-<!-- - Di Bartolo, C. A. & Braun, M. K. (2017). [Significance: Statistical versus clinical](https://articles.viriya.net/pediatricians_guide_to_discussing_research_with_patients.pdf#page-65). In: *Pediatrician's Guide to Discussing Research with Patients*. Springer, Cham. doi: [10.1007/978-3-319-49547-7_4](https://doi.org/10.1007/978-3-319-49547-7_4) -->
-<!-- #### The Jacobson-Truax Approach -->
-<!-- One strategy to determine clinical relevance is the Jacobson-Truax Approach. This approach seems to me hauntingly similar to simply indicating effect sizes, but it does have a following and can be helpful. -->
-<!-- More about it is at: -->
-<!-- - [*Clinical Signifcance Assessment with the Jacobson–Truax Approach*](https://articles.viriya.net/Clinical_Signifcance_Assessment_With_the_Jacobson–Truax_Approach.pdf), a supplement to #polit2017 -->
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/octopus.png" class="img-fluid figure-img" style="width:30.0%"></p>
-</figure>
+<section id="terms-for-different-types-of-analyses" class="level2" data-number="B.2">
+<h2 data-number="B.2" class="anchored" data-anchor-id="terms-for-different-types-of-analyses"><span class="header-section-number">B.2</span> Terms for Different Types of Analyses</h2>
+<div id="tbl-analyses-vocab" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Table&nbsp;B.2: Terms for Different Types of Analyses</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>Measurement</strong></th>
+<th style="text-align: left;"><strong>Level</strong></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Analysis</strong></td>
+<td style="text-align: left;"><strong>Outcome Variables(s)</strong></td>
+<td style="text-align: left;"><strong>Predictor(s)</strong></td>
+<td style="text-align: left;"><strong>Uses &amp; Notes</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ANOVA</td>
+<td style="text-align: left;">Continuous</td>
+<td style="text-align: left;">Nominal</td>
+<td style="text-align: left;">• Understood by many, so easily communicated<br>
+• Variance determined by ordinary least squares<br>
+• Typically only used to test significance of individual (main effect and/or interaction) terms</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">One-way ANOVA etc.</td>
+<td style="text-align: left;">Continuous</td>
+<td style="text-align: left;">One Nominal</td>
+<td style="text-align: left;">• The “one-way” indicates that there is only one predictor.<br>
+• If there are two predictors, it’s instead called a “two-way” ANOVA.<br>
+• We <em>could</em> also use “three-way” ANOVA, etc., but we instead just give up and call them “multi-way” ANOVAs when there are ≥3 nomain predictors.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ANCOVA</td>
+<td style="text-align: left;">Continuous</td>
+<td style="text-align: left;">≥1 Nominal &amp;<br>
+≥1 Continuous</td>
+<td style="text-align: left;">• Contains one or more continuous “covariates”<br>
+• Variance determined by ordinary least squares<br>
+• Typically only used to test significance of individual (main effect and/or interaction) terms</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Repeated-measures ANOVA</td>
+<td style="text-align: left;">Continuous</td>
+<td style="text-align: left;">Nominal</td>
+<td style="text-align: left;">• A repeated-measures ANOVA not only tests the effect of ≥1 predictors, but also whether the effect(s) of the predictor(s) changes over time.<br>
+• The times when data are collected must be evenly spaced<br>
+• An, e.g., “repeated-measures AN<strong>C</strong>OVA” is an ANCOVA (with ≥1 nominal and ≥1 continuous) that tests differences in predictors’ effects over time</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MANOVA</td>
+<td style="text-align: left;">≥2 Continuous</td>
+<td style="text-align: left;">Nominal</td>
+<td style="text-align: left;">• A MANOVA includes two or more outcome variables.<br>
+• The benefit of conducting a MANOVA over two (or more), separate ANOVAs (one for each outcome) is that a MANOVA also tests for (and accounts for) the relationships between the outcomes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://statsthinking21.github.io/statsthinking21-core-site/the-general-linear-model.html">General linear model</a></td>
+<td style="text-align: left;">Continuous</td>
+<td style="text-align: left;">Nominal and/or continuous</td>
+<td style="text-align: left;">“General linear model” is the term for any linear model that:<br>
+• Has a continuous outcome<br>
+• Assumes a linear relationship between the predictors and the outcome.<br>
+General linear models include ANOVAs (and their ilk), <em>t</em>-tests, <em>F</em>-tests, etc. They are one of the types of generalized linear models.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://online.stat.psu.edu/stat504/lesson/6/6.1">Generalized linear model</a></td>
+<td style="text-align: left;">Any</td>
+<td style="text-align: left;">Any</td>
+<td style="text-align: left;">• “General<strong>ized</strong> linear model” is the term used for <em>any</em> inferential analysis that uses the general formula of <span class="math inline">\(Y = b_{0} + b_{1}X_{1} + ... + b_{k}X_{k} + e\)</span> to describe the relationship between <span class="math inline">\(k\)</span> predictors and ≥1 outcomes. This includes general linear models (and thus ANOVAs, etc.), logistic regression, structural equation models, etc.<br>
+• Although the formula is written as a linear equation, generalized linear models can model many types of non-linear relationships between predictors and outcomes.<br>
+ ◦ They can test dichotomous outcomes (viz., logistic regression), logarithmic outcomes, etc.<br>
+• Data can be <a href="https://www.statology.org/heteroscedasticity-regression/">heteroskedastic</a>.<br>
+• Variables need not be normally distributed (but their distribution must still be correctly modeled by the equation)<br>
+The term “generalized linear model” is not as commonly used as “general linear model” (instead one uses the term for the type of model conducted), but it is still useful to know the difference.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Logistic regression</td>
+<td style="text-align: left;">Dichotomous</td>
+<td style="text-align: left;">Nominal or continuous</td>
+<td style="text-align: left;">Logistic regression models are used to estimate the effects on a dichotomous outcome, such as whether or not a patient has a given condition.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ordinal regression</td>
+<td style="text-align: left;">Ordinal</td>
+<td style="text-align: left;">Nominal or continuous</td>
+<td style="text-align: left;">Although I believe we can often treat ordinal variables as continuous (i.e., lump them in with interval &amp; ratio variables), there are times when we should indeed treat a variable as assuming nothing more than ordinalism, such as when we have only a few levels and know the distances between them vary, but don’t know how much.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Multinomial (logistic) regression</td>
+<td style="text-align: left;">Nominal</td>
+<td style="text-align: left;">Nominal or continuous</td>
+<td style="text-align: left;">These are very similar to logistic regression, differing mainly in that there are more than two levels to the outcome variable. Like logistic regression, one of the main goals of multinomial regression is to determine (predict) the category one falls into based on one’s values for the predictors.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Multiple linear regression</td>
+<td style="text-align: left;">Continuous</td>
+<td style="text-align: left;">≥2 Nominal or continuous</td>
+<td style="text-align: left;">This is a general term for a linear model that has two or more predictors.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>t</em>-test</td>
+<td style="text-align: left;">Continuous</td>
+<td style="text-align: left;">One dichotomous</td>
+<td style="text-align: left;">• <em>t</em>-Tests are used to test the difference in two values. They are used, for example, to test:<br>
+• The difference between the means of two groups<br>
+ ◦ Such as two study groups (e.g,. experimental &amp; control),<br>
+ ◦ Or the means for each level of a nominal variable with two levels (e.g., those diagnosed / not diagnosed with a condition)<br>
+• Changes in one outcome at two, different points in time (a “paired” <em>t</em>-test).<br>
+• Whether a single mean is different than some value, e.g., if the mean is not zero (a “one-sample <em>t</em>-test”). These are often done in linear regressions to test of a given parameter weight is significantly different from zero.</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-breiman2001" class="csl-entry" role="listitem">
-Breiman, L. (2001). Statistical modeling: <span>T</span>he two cultures. <em>Statistical Science</em>, <em>16</em>(3), 199–231. <a href="https://articles.viriya.net/statistical_modeling_the_two_cultures.pdf">https://articles.viriya.net/statistical_modeling_the_two_cultures.pdf</a>
-</div>
-<div id="ref-raper2020" class="csl-entry" role="listitem">
-Raper, S. (2020). Leo <span>B</span>reiman’s "two cultures". <em>Significance</em>, <em>17</em>, 34–37. <a href="https://doi.org/10.1111/j.1740-9713.2020.01357.x">https://doi.org/10.1111/j.1740-9713.2020.01357.x</a>
-</div>
-</div>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>That last possibility of “sucking up” the information can be investigated by seeing if the third variable is acting as a <a href="https://psychdrop.com/2020/04/05/mediation-versus-moderation-whats-the-difference/">mediator or moderator</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Remember, though, that a more powerful and sophisticated test is not if we have something that’s better than nothing, but whether what we have is better than an alternative: which drug has fewer side effects, which type of prevention is most effective, which man is a better choice for husband.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>“<a href="https://www.explainxkcd.com/wiki/index.php/2326:_Five_Word_Jargon">Generalized autoregressive conditional heteroskedasticity model</a>” anyone?<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>More specifically, these are terms were the intercept and/or slope is allowed to vary for each level, e.g., for each patient.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Which, of course, never applies to dissertations.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Sure, you could also/instead give lighter weights to some values—e.g., values from over-represented groups—but we usually instead give heavier weights to members of <em>under</em>represented groups.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -765,13 +957,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./writing_results.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Writing Results Sections</span></span>
+      <a href="./common_statistical_symbols.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Common Statistical Symbols</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Variance_Covariance_Correlations_and_Partial_Correlations.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Variance, Covariance, Correlations, and Partial Correlations</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./estimating_sample_size.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Estimating Sample Size a Priori</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
