@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Companion to the Nursing Ph.D. & DNP Statistics Curricula",
     "section": "",
-    "text": "Preface\n\n\n\n\n\n\n\n\n\nThis “book” is a companion to the statistics courses offered as part of the Ph.D. in Nursing Research program at Hunter College, CUNY. It also provides supplemental materials for Hunter’s Doctor of Nursing Practice program.\nVery much a work in progress—and anyway intended to be in addition to and not instead of the many resources elsewhere—this companion currently contains:\n\nLectures and essays on topics covered in the applied statistics curriculum:\n\nNURS 60N lectures & materials (Chap. 1)\nNURS 915 & 916 lectures & materials (Chap. 2)\nA hands-on guide to writing Results sections (Chap. 4)\nDiscussions and activities expand upon the statistical concepts of significance (Chap. 5), correlations & partial/semipartial correlations (Chap. 6), effect size (Chap. 7), missing data (Chap. 8), and model building (Chaps. 9 – 11)\n\nLectures and essays on topics covered in the introduction to psychometrics course, NURS 925 (Chaps. 3 & 12)\nStep-by-step guides to using various stat-related software (Chaps. 13 – 17)\nTables of common statistical abbreviations and terms along with their meanings (Apps. A & B)\nA small collection of decision trees (flowcharts) to decide which analysis to conduct (App. D)\n\nColophon\n\nThis companion is created 2022 – present by William Ellery Samuels, Ph.D., under a Creative Commons Attribution–NonCommercial–ShareAlike license. (Note that the “Published” date given above is in fact the date of the most-recent revisions.)\nLight-themed HTML-version typefaces are Bona Nova for text, Ubuntu Mono for code blocks, and Latin Modern Math for formulas. The dark HTML is theme is unmodified solar, which is based on Ethan Schoonover’s eye-friendly Solarized dark theme.\nPDF-version typefaces are TeX Gyre Bonum for both text & formulas and TeX Gyre Adventor for code blocks.\nOpenAI’s ChatGPT has been occasionally used for clarity and content review—and extensively to debug code errors and issues (I’m looking at you, Quarto).\nThis Companion is produced through Bookdown in the RStudio environment with:\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.5.3 (2026-03-11)\n os       Ubuntu 24.04.4 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  en_US.UTF-8\n ctype    en_US.UTF-8\n tz       America/New_York\n date     2026-06-12\n pandoc   3.1.3 @ /usr/bin/ (via rmarkdown)\n quarto   1.3.313 @ /usr/local/bin/quarto\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.6.5   2025-04-23 [1] CRAN (R 4.5.3)\n digest        0.6.37  2024-08-19 [1] CRAN (R 4.5.1)\n evaluate      1.0.5   2025-08-27 [1] CRAN (R 4.5.2)\n fastmap       1.2.0   2024-05-15 [1] CRAN (R 4.5.3)\n htmltools     0.5.9   2025-12-04 [1] CRAN (R 4.5.3)\n htmlwidgets   1.6.4   2023-12-06 [1] CRAN (R 4.5.3)\n jsonlite      2.0.0   2025-03-27 [1] RSPM (R 4.5.3)\n knitr         1.51    2025-12-20 [1] CRAN (R 4.5.3)\n otel          0.2.0   2025-08-29 [1] CRAN (R 4.5.3)\n rlang         1.1.7   2026-01-09 [1] CRAN (R 4.5.3)\n rmarkdown     2.30    2025-09-28 [1] CRAN (R 4.5.3)\n sessioninfo   1.2.3   2025-02-05 [1] CRAN (R 4.5.3)\n xfun          0.56    2026-01-18 [1] CRAN (R 4.5.3)\n\n [1] /home/wes/R/x86_64-pc-linux-gnu-library/4.5\n [2] /usr/local/lib/R/site-library\n [3] /usr/lib/R/site-library\n [4] /usr/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────\n\n\n\\[\\circledcirc--\\oint============\\succ\\] \n\\[\\text{七転八起}\\]"
+    "text": "Preface\n\n\n\n\n\n\n\n\n\nThis “book” is a companion to the statistics courses offered as part of the Ph.D. in Nursing Research program at Hunter College, CUNY. It also provides supplemental materials for Hunter’s Doctor of Nursing Practice program.\nVery much a work in progress—and anyway intended to be in addition to and not instead of the many resources elsewhere—this companion currently contains:\n\nLectures and essays on topics covered in the applied statistics curriculum:\n\nNURS 60N lectures & materials (Chap. 1)\nNURS 915 & 916 lectures & materials (Chap. 2)\nA hands-on guide to writing Results sections (Chap. 4)\nDiscussions and activities expand upon the statistical concepts of significance (Chap. 5), correlations & partial/semipartial correlations (Chap. 6), effect size (Chap. 7), missing data (Chap. 8), and model building (Chaps. 9 – 11)\n\nLectures and essays on topics covered in the introduction to psychometrics course, NURS 925 (Chaps. 3 & 12)\nStep-by-step guides to using various stat-related software (Chaps. 13 – 17)\nTables of common statistical abbreviations and terms along with their meanings (Apps. A & B)\nA small collection of decision trees (flowcharts) to decide which analysis to conduct (App. D)\n\nColophon\n\nThis companion is created 2022 – present by William Ellery Samuels, Ph.D., under a Creative Commons Attribution–NonCommercial–ShareAlike license. (Note that the “Published” date given above is in fact the date of the most-recent revisions.)\nLight-themed HTML-version typefaces are Bona Nova for text, Ubuntu Mono for code blocks, and Latin Modern Math for formulas. The dark HTML is theme is unmodified solar, which is based on Ethan Schoonover’s eye-friendly Solarized dark theme.\nPDF-version typefaces are TeX Gyre Bonum for both text & formulas and TeX Gyre Adventor for code blocks.\nOpenAI’s ChatGPT has been occasionally used for clarity and content review—and extensively to debug code errors and issues (I’m looking at you, Quarto).\nThis Companion is produced through Bookdown in the RStudio environment with:\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.5.3 (2026-03-11)\n os       Ubuntu 24.04.4 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  en_US.UTF-8\n ctype    en_US.UTF-8\n tz       America/New_York\n date     2026-06-14\n pandoc   3.1.3 @ /usr/bin/ (via rmarkdown)\n quarto   1.3.313 @ /usr/local/bin/quarto\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.6.5   2025-04-23 [1] CRAN (R 4.5.3)\n digest        0.6.37  2024-08-19 [1] CRAN (R 4.5.1)\n evaluate      1.0.5   2025-08-27 [1] CRAN (R 4.5.2)\n fastmap       1.2.0   2024-05-15 [1] CRAN (R 4.5.3)\n htmltools     0.5.9   2025-12-04 [1] CRAN (R 4.5.3)\n htmlwidgets   1.6.4   2023-12-06 [1] CRAN (R 4.5.3)\n jsonlite      2.0.0   2025-03-27 [1] RSPM (R 4.5.3)\n knitr         1.51    2025-12-20 [1] CRAN (R 4.5.3)\n otel          0.2.0   2025-08-29 [1] CRAN (R 4.5.3)\n rlang         1.1.7   2026-01-09 [1] CRAN (R 4.5.3)\n rmarkdown     2.30    2025-09-28 [1] CRAN (R 4.5.3)\n sessioninfo   1.2.3   2025-02-05 [1] CRAN (R 4.5.3)\n xfun          0.56    2026-01-18 [1] CRAN (R 4.5.3)\n\n [1] /home/wes/R/x86_64-pc-linux-gnu-library/4.5\n [2] /usr/local/lib/R/site-library\n [3] /usr/lib/R/site-library\n [4] /usr/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────\n\n\n\\[\\circledcirc--\\oint============\\succ\\] \n\\[\\text{七転八起}\\]"
   },
   {
     "objectID": "curricula.html",
@@ -14,102 +14,32 @@
     "text": "The content of the sequence of stat courses is:\nNURS 60N\n\nMajor Principles\n\nRandomness & Variables\nSamples vs. Populations\n\nEvaluation vs. Research\n\nDescriptive vs. Inferential Statistics\n\nParametric vs. Non-Parametric Analyses\n\n\nFrequencies & Counts\n\nFrequencies & relative frequencies\nProbabilities\n\nRisks & risk ratios\nHazards & hazard ratios\n\nOdds & odds ratios\nContingency / cross tables\n\nFisher’s exact test\n\nImportant distributions\n\nNormal distribution\nχ² distribution\n\n\nMeasuring & Testing Differences\n\nReview of Assumptions in Inferential Statistics\nHypothesis Testing\nSignal-to-Noise Ratio\nCommon Tests: t & F\n\nPower and Effect Size\n\nReview & Elaboration of Hypothesis Testing\nPower\nEffect Size\n\nAssociation & Causation\n\nIndividual Differences and Correlations\nTypes of Correlation Statistics\nPartial and Semipartial Correlations\nConcerning Causality\n\nThe ANOVA Family of Tests\n\nBasic Concepts of ANOVAs\nMain Effects & Interactions\n\nR² & η²\n\nReading Source Tables\nTypes of ANOVAs\nFamily-Wise Error, Post hoc, & Planned Comparisons\n\n\nNURS 915 & 916\n\nOverview & Review\nHandling Data\nPresenting Data\nPower & Significance\n\nPost hoc power\nSample size estimation\n\nIntroduction to Linear Regressions\n\nMethod of Ordinary Least Squares\nModel Assumptions\n\nOrdinary Least Squares & Maximum Likelihood Estimation\n\nGeneral & Generalized Linear Models\n\nTests of Model Fit\n\nInformation Criteria\nResidual Analysis\nStepwise Analysis\nBootstrapping\nMissing Values & Outliers\n\nOccurrence, Association, & Causation\n\nCounterfactuals & Hill’s Criteria\nConfounds, Mediators, & Moderators\n\nLogistic Regression\n\nMultinomial & Ordinal Logistic Regression\n\nHierarchical Regression\nLongitudinal Analyses\n\nPre–Post Differences (“Differences in Differences”)\n(Repeated-Measures) ANCOVAs with Pretest as Covariate\nMultilevel Models of Change\nInterrupted Time Series Analysis\n\nRobust Statistics\n\nBootstrapping\nMissing Values & Outliers\n\nStructural Equation Modeling\n\nNURS 925\n\nFoundations of Measurement and Scaling\n\nPsychophysics & Psychometrics\n\nValidity\n\nTraditional, Trinity View\nThe 1999–2014 Standards & Validity as “Use”\n\nReliability\n\nClassical Measurement Theory View\nAs a Measure of a Unitary Construct\nAs a Measure of Internal Consistency\n\nCronbach’s α\nKuder-Richardson Formulae 20 & 21\n\nOther Forms (Test-Retest, etc.)\n\nFactor Analysis\n\nConcept and Basic Ideas\nEigenvalues\nExploratory Factor Analysis\n\nUses and abuses \n\nConfirmatory Factor Analysis\n\nMeasures of Model Fit\n\n\nReturn to Structural Equation Modelling"
   },
   {
-    "objectID": "60N.html#sec-random_variables",
-    "href": "60N.html#sec-random_variables",
+    "objectID": "60N.html#presentations",
+    "href": "60N.html#presentations",
     "title": "1  Foundations of Biostatistics for Nursing Research and Evidence-Based Practice (NURS 60N)",
-    "section": "1.1 Major Principles ",
-    "text": "1.1 Major Principles \n\nRandomness & Variables\nSamples vs. Populations\n\nEvaluation vs. Research\n\nDescriptive vs. Inferential Statistics\n\nParametric vs. Non-Parametric Analyses\n\n\nRelated is this app demonstrating the Central Limit Theorem"
+    "section": "1.1 Presentations",
+    "text": "1.1 Presentations\n\n1.1.1 Major Principles \n\nRandomness & Variables\nSamples vs. Populations\n\nEvaluation vs. Research\n\nDescriptive vs. Inferential Statistics\n\nParametric vs. Non-Parametric Analyses\n\n\nRelated is this app demonstrating the Central Limit Theorem \n\n\n1.1.2 Frequencies & Counts \n\nFrequencies & Relative Frequencies\nProbabilities\n\nRisks & Risk Ratios\nHazards & Hazard Ratios\n\nOdds & Odds Ratios\nContingency / cross tables\n\nFisher’s Exact Test\n\nImportant Distributions\n\nNormal Distribution\n\nQ-Q Plots\n\nχ² Distribution\n\n\nRelated is this app to practice matching the distribution to the Q-Q plot \n\n\n1.1.3 Measuring & Testing Differences \n\nReview of Assumptions in Inferential Statistics\nHypothesis Testing\nSignal-to-Noise Ratio\nCommon Tests: t & F\n\nRelated is this app to demonstrate draws from a null distribution and a non-null distribution of difference scores \n\n\n1.1.4 Power and Effect Size \n\nReview & Elaboration of Hypothesis Testing\nPower\nEffect Size\n\n\n\n1.1.5 Association & Causation \n\nIndividual Differences and Correlations\nTypes of Correlation Statistics\nPartial and Semipartial Correlations\nConcerning Causality\n\n\n\n1.1.6 The ANOVA Family of Tests \n\nBasic Concepts of ANOVAs\nExample of Main Effects & Interactions\nTypes of ANOVAs\nt- & F-Tests Roles & Nature\nPost hoc Comparisons\nReference Tables for ANOVA Terms"
   },
   {
-    "objectID": "60N.html#sec-freqencies_and_counts",
-    "href": "60N.html#sec-freqencies_and_counts",
+    "objectID": "60N.html#materials-resources",
+    "href": "60N.html#materials-resources",
     "title": "1  Foundations of Biostatistics for Nursing Research and Evidence-Based Practice (NURS 60N)",
-    "section": "1.2 Frequencies & Counts ",
-    "text": "1.2 Frequencies & Counts \n\nFrequencies & Relative Frequencies\nProbabilities\n\nRisks & Risk Ratios\nHazards & Hazard Ratios\n\nOdds & Odds Ratios\nContingency / cross tables\n\nFisher’s Exact Test\n\nImportant Distributions\n\nNormal Distribution\n\nQ-Q Plots\n\nχ² Distribution\n\n\nRelated is this app to practice matching the distribution to the Q-Q plot"
+    "section": "1.2 Materials & Resources",
+    "text": "1.2 Materials & Resources\n\n1.2.1 Assignments\n\n1. Exploring Descriptive Statistics in HHS’s Medical Expenditure Panel Survey Data\n\nInstructions\nData used in assignment\n\nThe first assignment is a practice of using Excel/Calc or SPSS to explore and present univariate and bivariate descriptions of data from the University of Michigan’s Health and Retirement Study (HRS), a “longitudinal panel study that surveys a representative sample of approximately 20,000 people in America.”\nAlthough it is supported by the National Institute on Aging and the Social Security Administration, the Trump administration has posted a notice that “This repository is under review for potential modification in compliance with Administration directives.”\n\n\n2.\n\n\n3.\n\n\n4.\n\n\n1."
   },
   {
-    "objectID": "60N.html#sec-hypothesis_testing",
-    "href": "60N.html#sec-hypothesis_testing",
-    "title": "1  Foundations of Biostatistics for Nursing Research and Evidence-Based Practice (NURS 60N)",
-    "section": "1.3 Measuring & Testing Differences ",
-    "text": "1.3 Measuring & Testing Differences \n\nReview of Assumptions in Inferential Statistics\nHypothesis Testing\nSignal-to-Noise Ratio\nCommon Tests: t & F\n\nRelated is this app to demonstrate draws from a null distribution and a non-null distribution of difference scores"
-  },
-  {
-    "objectID": "60N.html#sec-power",
-    "href": "60N.html#sec-power",
-    "title": "1  Foundations of Biostatistics for Nursing Research and Evidence-Based Practice (NURS 60N)",
-    "section": "1.4 Power and Effect Size ",
-    "text": "1.4 Power and Effect Size \n\nReview & Elaboration of Hypothesis Testing\nPower\nEffect Size"
-  },
-  {
-    "objectID": "60N.html#sec-association_and_causation",
-    "href": "60N.html#sec-association_and_causation",
-    "title": "1  Foundations of Biostatistics for Nursing Research and Evidence-Based Practice (NURS 60N)",
-    "section": "1.5 Association & Causation ",
-    "text": "1.5 Association & Causation \n\nIndividual Differences and Correlations\nTypes of Correlation Statistics\nPartial and Semipartial Correlations\nConcerning Causality"
-  },
-  {
-    "objectID": "60N.html#sec-intro_to_anovas",
-    "href": "60N.html#sec-intro_to_anovas",
-    "title": "1  Foundations of Biostatistics for Nursing Research and Evidence-Based Practice (NURS 60N)",
-    "section": "1.6 The ANOVA Family of Tests ",
-    "text": "1.6 The ANOVA Family of Tests \n\nBasic Concepts of ANOVAs\nExample of Main Effects & Interactions\nTypes of ANOVAs\nt- & F-Tests Roles & Nature\nPost hoc Comparisons\nReference Tables for ANOVA Terms"
-  },
-  {
-    "objectID": "915.html#sec-fundamental_01",
-    "href": "915.html#sec-fundamental_01",
+    "objectID": "915.html#presentations",
+    "href": "915.html#presentations",
     "title": "2  Applied Statistics 1 & 2 (NURS 915 & 916)",
-    "section": "2.1 Review of Some Major Principles & Practices in Biostatistics ",
-    "text": "2.1 Review of Some Major Principles & Practices in Biostatistics \n\nVariability & Randomness\nLevels of Measurement\nDescriptive & Inferential Statistics\nSources of Variance and the Signal-to-Noise Ratio\nDesigning and Answering Questions\nHypothesis Testing"
+    "section": "2.1 Presentations",
+    "text": "2.1 Presentations\n\n2.1.1 Review of Some Major Principles & Practices in Biostatistics \n\nVariability & Randomness\nLevels of Measurement\nDescriptive & Inferential Statistics\nSources of Variance and the Signal-to-Noise Ratio\nDesigning and Answering Questions\nHypothesis Testing\n\n\n\n\n2.1.2 Presenting Results \n\nVisualization\n\nSelf Sufficiency\nEfficient Information Transfer\nData-to-Ink Ratio\nFollow Conventions & Readers’ Expectations\n\n\n\n\n2.1.3 Writing Results \n\nWriting Results Sections\n\nTell a Story\nUse Figures & Tables as Talking Points\nUse Statistics as Citations to Support Assertions\n\n\nAdditional information and resources are given in Chapter 4.\n\n\n2.1.4 Introduction to Linear Models \n\nReview of Underlying Concepts in Inferential Statistics\n\nAdditional information and resources are given in Chapter 6\n\nUnderstanding Linear Models\n\nBasic Concepts\nLinear Models Vs. Correlations\nUnderstanding the Linear Equation\nLinear Models Vs. ANOVAs\n\nTerms in Linear Models\n\nAdding Terms to Models\nSignal-to-Noise in Linear Models\nGeneralized Linear Models\n\nAn Example\nFurther Considerations\n\nMulticollinearity\nIndependence of Cases\n\n\n\nPDF of Lecture\nDOCX of Lecture\nAdditional information and resources—including steps to conducting them in SPSS—are given in Chapters 9 and 10\n\n\n2.1.5 Testing Models Theoretically \n\nReview of Linear Regression Model\nPartialling out Variance\nCombining Similar Sources of Variance\nOstensible & Non-Ostensible Variables\nModel Fit\n\n\n\n\n\n\n\n2.1.6 Analyses of Longitudinal Data \n\nLongitudinal analyses, including some of their benefits and challenges\nA brief comparison of the merits of pre-post difference scores, including pretest covariates in ANCOVAs, and repeated-measures ANOVAs.\nAn introduction to the sorts of multilevel models of change that Singer & Willett (2003) describe\n\n\nAdditional information and resources—including steps to conducting them in SPSS—are all currently located in Chapter 11.\n\n\n2.1.7 Logistic Regresssion \n\nLogistic regression vs. general linear regression\nExplanation of the math\nTesting effects & model fit\nTypes of logistic regression\nExamples\n\n\n\n2.1.8 Structural Equation Modeling \nStructural equation models can be considered a sort of bridge between generalized linear regression and the factor analyses we’ll cover in NURS 925, Psychometrics.\n\nCore Concepts\nMechanics of SEMs\nComparing Models\nExample of SEMs\n\n\n\n2.1.9 Handling Missing Data \n\nGeneral Considerations\nReasons for Missing Data\nTesting Type of Missingness\nStrategies to Handle Missing Data"
   },
   {
-    "objectID": "915.html#sec-presenting_results_lecture",
-    "href": "915.html#sec-presenting_results_lecture",
+    "objectID": "915.html#materials-and-resources",
+    "href": "915.html#materials-and-resources",
     "title": "2  Applied Statistics 1 & 2 (NURS 915 & 916)",
-    "section": "2.2 Presenting Results ",
-    "text": "2.2 Presenting Results \n\nVisualization\n\nSelf Sufficiency\nEfficient Information Transfer\nData-to-Ink Ratio\nFollow Conventions & Readers’ Expectations\n\n\n\n2.2.1 Writing Results \n\nWriting Results Sections\n\nTell a Story\nUse Figures & Tables as Talking Points\nUse Statistcs as Citations to Support Assertions\n\n\nAdditional information and resources are given in Chapter 4."
-  },
-  {
-    "objectID": "915.html#sec-fundamentals_of_linear_regression_lecture",
-    "href": "915.html#sec-fundamentals_of_linear_regression_lecture",
-    "title": "2  Applied Statistics 1 & 2 (NURS 915 & 916)",
-    "section": "2.3 Introduction to Linear Models ",
-    "text": "2.3 Introduction to Linear Models \n\nReview of Underlying Concepts in Inferential Statistics\n\nAdditional information and resources are given in Chapter 6\n\nUnderstanding Linear Models\n\nBasic Concepts\nLinear Models Vs. Correlations\nUnderstanding the Linear Equation\nLinear Models Vs. ANOVAs\n\nTerms in Linear Models\n\nAdding Terms to Models\nSignal-to-Noise in Linear Models\nGeneralized Linear Models\n\nAn Example\nFurther Considerations\n\nMulticollinearity\nIndependence of Cases\n\n\n\nPDF of Lecture\nDOCX of Lecture\nAdditional information and resources—including steps to conducting them in SPSS—are given in Chapters 9 and 10"
-  },
-  {
-    "objectID": "915.html#sec-testing_models_lecture",
-    "href": "915.html#sec-testing_models_lecture",
-    "title": "2  Applied Statistics 1 & 2 (NURS 915 & 916)",
-    "section": "2.4 Testing Models Theoretically ",
-    "text": "2.4 Testing Models Theoretically \n\nReview of Linear Regression Model\nPartialling out Variance\nCombining Similar Sources of Variance\nOstensible & Non-Ostensible Variables\nModel Fit"
-  },
-  {
-    "objectID": "915.html#sec-longitudinal_analyses_lecture",
-    "href": "915.html#sec-longitudinal_analyses_lecture",
-    "title": "2  Applied Statistics 1 & 2 (NURS 915 & 916)",
-    "section": "2.5 Analyses of Longitudinal Data ",
-    "text": "2.5 Analyses of Longitudinal Data \n\nLongitudinal analyses, including some of their benefits and challenges\nA brief comparison of the merits of pre-post difference scores, including pretest covariates in ANCOVAs, and repeated-measures ANOVAs.\nAn introduction to the sorts of multilevel models of change that Singer & Willett (2003) describe\n\n\nAdditional information and resources—including steps to conducting them in SPSS—are all currently located in Chapter 11."
-  },
-  {
-    "objectID": "915.html#sec-logistic_regression_lecture",
-    "href": "915.html#sec-logistic_regression_lecture",
-    "title": "2  Applied Statistics 1 & 2 (NURS 915 & 916)",
-    "section": "2.6 Logistic Regresssion ",
-    "text": "2.6 Logistic Regresssion \n\nLogistic regression vs. general linear regression\nExplanation of the math\nTesting effects & model fit\nTypes of logistic regression\nExamples"
-  },
-  {
-    "objectID": "915.html#sec-sem_lecture",
-    "href": "915.html#sec-sem_lecture",
-    "title": "2  Applied Statistics 1 & 2 (NURS 915 & 916)",
-    "section": "2.7 Structural Equation Modeling ",
-    "text": "2.7 Structural Equation Modeling \nStructural equation models can be considered a sort of bridge between generalized linear regression and the factor analyses we’ll cover in NURS 925, Psychometrics.\n\nCore Concepts\nMechanics of SEMs\nComparing Models\nExample of SEMs"
-  },
-  {
-    "objectID": "915.html#sec-missing_data_lecture",
-    "href": "915.html#sec-missing_data_lecture",
-    "title": "2  Applied Statistics 1 & 2 (NURS 915 & 916)",
-    "section": "2.8 Handling Missing Data ",
-    "text": "2.8 Handling Missing Data \n\nGeneral Considerations\nReasons for Missing Data\nTesting Type of Missingness\nStrategies to Handle Missing Data"
+    "section": "2.2 Materials and Resources",
+    "text": "2.2 Materials and Resources\n\n2.2.1 Health and Retirement Study\nThrough these courses, we use a small subset of data from the Health and Retirement Study."
   },
   {
     "objectID": "925.html#sec-foundations_measurement",
