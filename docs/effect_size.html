@@ -896,11 +896,13 @@ Like φ (and other correlations) it ranges between 0 and 1.</td>
 <section id="sec-effect_size_conversions" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="sec-effect_size_conversions"><span class="header-section-number">7.3</span> Converting Between Effect Size Measures</h2>
 <p></p>
-<p>Most effect size statistics can be converted into other ones, but the process isn’t always possible or direct (or requires additional assumptions). <a href="#tbl-effects_sizes_that_can_convert">Table&nbsp;<span>7.5</span></a> presents the effect sizes statistics covered here that <em>can</em> be converted (and the conditions/assumptions required for that); <span class="quarto-unresolved-ref">?tbl-effects_sizes_that_cannot_convert</span> presents the effect size statistics that can’t be meaningfully converted.</p>
+<p>Most effect size statistics can be converted into other ones, but the process isn’t always possible or direct (or requires additional assumptions). <a href="#tbl-effects_sizes_that_can_convert">Table&nbsp;<span>7.5</span></a> presents the effect sizes statistics covered here that <em>can</em> be converted (and the conditions/assumptions required for that); <a href="#tbl-effects_sizes_that_cannot_convert">Table&nbsp;<span>7.6</span></a> presents the effect size statistics that can’t be meaningfully converted.</p>
 <p>More usefully, <a href="#tbl-effect_sizes_conversions">Table&nbsp;<span>7.4</span></a> presents the formulas for converting between the effect size statistics that can be readily &amp; meaningfully done.</p>
 <p>Perhaps even more useful is this <a href="https://wesamuels.net/courses/statistics/resources/Converting_effect_sizes_2009-06-25.xls">handy Excel spreadsheet</a> that can be used to convert between Cohen’s <em>d</em>, <em>r</em>, η<sup>2</sup>, odds ratios, and area under the curve.</p>
 <p>In <a href="https://articles.viriya.net/introduction_to_meta-analysis.pdf#page=65">Chapter 7</a> of their book on meta-analysis, <span class="citation" data-cites="borenstein2011">Borenstein et al. (<a href="references.html#ref-borenstein2011" role="doc-biblioref">2011</a>)</span> also cover well the conversions between measures. Finally, the <a href="https://cran.r-project.org/web/packages/effectsize/index.html"><code>effectsize</code></a> package for <code>R</code> can both compute and convert between many effect size measures, including all those mentioned here.</p>
-<table class="table">
+<div id="tbl-effect_sizes_conversions" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Table&nbsp;7.4: Formulas to Convert Between Common Effect Size Statistics</caption>
 <colgroup>
 <col style="width: 7%">
 <col style="width: 11%">
@@ -917,7 +919,7 @@ Like φ (and other correlations) it ranges between 0 and 1.</td>
 <th style="text-align: center;">From&nbsp;↓<br>
 To&nbsp;→</th>
 <th style="text-align: center;">Cohen’s <span class="math inline">\(d\)</span></th>
-<th style="text-align: center;">Hedges’ <span class="math inline">\(g\)</span>*</th>
+<th style="text-align: center;">Hedges’ <span class="math inline">\(g\)</span><a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></th>
 <th style="text-align: center;">Pearson’s <span class="math inline">\(r\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(\eta^2\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(f\)</span></th>
@@ -1019,12 +1021,10 @@ To&nbsp;→</th>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>Hedges’ <span class="math inline">\(g\)</span> can be converted to any other effect size that Cohen’s <span class="math inline">\(d\)</span> can be be converted. To convert to Hedges’ <span class="math inline">\(g\)</span> instead of <span class="math inline">\(d\)</span>, multiply <span class="math inline">\(d\)</span> in the given equation by <span class="math inline">\(\left(1 - \frac{3}{4N - 9}\right)\)</span>.</li>
-</ul>
-<div id="tbl-effect_sizes_conversions" class="anchored">
+</div>
+<div id="tbl-effects_sizes_that_can_convert" class="anchored">
 <table class="table-striped table-hover table">
-<caption>Table&nbsp;7.4: Formulas to Convert Between Common Effect Size Statistics</caption>
+<caption>Table&nbsp;7.5: Common Effect Size Statistics That Can Be Converted into Each Other</caption>
 <colgroup>
 <col style="width: 21%">
 <col style="width: 21%">
@@ -1096,9 +1096,9 @@ To&nbsp;→</th>
 </tbody>
 </table>
 </div>
-<div id="tbl-effects_sizes_that_can_convert" class="anchored">
+<div id="tbl-effects_sizes_that_cannot_convert" class="anchored">
 <table class="table-striped table-hover table">
-<caption>Table&nbsp;7.5: Common Effect Size Statistics That Can Be Converted into Each Other</caption>
+<caption>Table&nbsp;7.6: Common Effect Size Statistics That <strong><em>Cannot</em></strong> Be Converted into Each Other</caption>
 <colgroup>
 <col style="width: 29%">
 <col style="width: 70%">
@@ -1133,14 +1133,13 @@ To&nbsp;→</th>
 </tbody>
 </table>
 </div>
-<p>: Common Effect Size Statistics That <strong><em>Cannot</em></strong> Be Converted into Each Other {#tbl-effects_sizes_that_cannot_convert .striped .hover}</p>
 <section id="a-few-notes-on-conversions" class="level3" data-number="7.3.1">
 <h3 data-number="7.3.1" class="anchored" data-anchor-id="a-few-notes-on-conversions"><span class="header-section-number">7.3.1</span> A Few Notes on Conversions</h3>
 <p>In addition to simply listing the formulas for possible conversions, there are a few more points to make—and a couple more conversions that are worth knowing. Below are further considerations about converting Cohen’s <em>f</em> (and <em>f</em><sup>2</sup>) to Cohen’s <em>d</em> and about converting relevant effect size stats into the <em>t</em>-scores and <em>F</em>-scores used to test mean differences.</p>
 </section>
 <section id="cohens-f-and-f2-to-cohens-d" class="level3" data-number="7.3.2">
 <h3 data-number="7.3.2" class="anchored" data-anchor-id="cohens-f-and-f2-to-cohens-d"><span class="header-section-number">7.3.2</span> Cohen’s <em>f</em> (and <em>f</em><sup>2</sup>) to Cohen’s <em>d</em></h3>
-<p>Cohen’s <em>f</em><sup>2</sup> (and <em>f</em>) measures the effect size of an entire model (usually an ANOVA). Cohen’s <em>d</em> measures the effect size between two levels of single variable<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>. So, in order to convert between <em>f</em><sup>2</sup> and <em>d</em>, we have to know more about the model. For a one-way ANOVA with two groups<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>, <em>d</em> = 2<em>f</em> = 2<span class="math inline">\(\sqrt{f^2}\)</span>. In this particular case, then, <em>f</em> = <span class="math inline">\(\frac{d}{2}\)</span>.</p>
+<p>Cohen’s <em>f</em><sup>2</sup> (and <em>f</em>) measures the effect size of an entire model (usually an ANOVA). Cohen’s <em>d</em> measures the effect size between two levels of single variable<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. So, in order to convert between <em>f</em><sup>2</sup> and <em>d</em>, we have to know more about the model. For a one-way ANOVA with two groups<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>, <em>d</em> = 2<em>f</em> = 2<span class="math inline">\(\sqrt{f^2}\)</span>. In this particular case, then, <em>f</em> = <span class="math inline">\(\frac{d}{2}\)</span>.</p>
 <p>More generally, when there is only one term in the model:</p>
 <p><span class="math display">\[f^2 = \frac{d^2}{2k}\]</span></p>
 <p>It gets a bit more complicated when there are more than one terms in the model. <a href="https://www.ibm.com/support/pages/effect-size-relationship-between-partial-eta-squared-cohens-f-and-cohens-d">This site</a> covers some common situations.</p>
@@ -1160,7 +1159,7 @@ To&nbsp;→</th>
 </section>
 <section id="η2-and-f-scores" class="level3" data-number="7.3.4">
 <h3 data-number="7.3.4" class="anchored" data-anchor-id="η2-and-f-scores"><span class="header-section-number">7.3.4</span> η<sup>2</sup> and <em>F</em>-scores</h3>
-<p>This <em>F</em>-test score that is used in ANOVA-family models. Like the relationship between <em>d</em> and <em>t</em>, the only additional things we need to know to compute η<sup>2</sup> from <em>F</em> are degrees of freedom (which are closely related to sample size). Here, though, we have degrees of freedom in both the numerator (top) and denominator (bottom<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>):</p>
+<p>This <em>F</em>-test score that is used in ANOVA-family models. Like the relationship between <em>d</em> and <em>t</em>, the only additional things we need to know to compute η<sup>2</sup> from <em>F</em> are degrees of freedom (which are closely related to sample size). Here, though, we have degrees of freedom in both the numerator (top) and denominator (bottom<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>):</p>
 <p><span class="math display">\[\eta^2 = \frac{F \times df_{Effect}}{F \times (df_{Effect} + df_{Error})}\]</span></p>
 <p>So, η<sup>2</sup> is dependent on the ratio of the <em>df</em>s allotted to the given effect and the <em>df</em>s allotted to it’s corresponding error term. Since we have the effect’s <em>df</em>s in both the numerator and denominator, their effect will generally cancel out; this suggests that having more levels to a variable doesn’t appreciably affect the size of its effect. However, being able to allot more <em>df</em>s to error does help us see the size of whatever effect is there. Larger samples won’t really change the size of the effects we’re measuring, but they can help us see ones that are there.</p>
 <!-- The following sections give the formulas for converting between most effect size statistics. I've also included simple `R` functions to do these, for those few who will find that useful. -->
@@ -1300,9 +1299,10 @@ Okada, K. (2013). Is omega squared less biased? <span>A</span> comparison of thr
 <li id="fn7"><p>This is also true for, e.g., risk ratios, hazard ratios, means ratios, and hierarchical models.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn8"><p>Cohen also only directly considered these criteria as they applied to experimental psychology—not, e.g., the health sciences. Indeed, he <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=95">elsewhere</a> notes that what experimental psychologists would call a “large” effect would be paltry in the physical sciences.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn9"><p>With, say, the target level of outcome denoting a “medium” effect. Reaching <span class="math inline">\(\frac{1}{3}\)</span> of that target could denote a “small” effect, and reaching <span class="math inline">\(\frac{2}{3}\)</span>s more (167%) a “large” one. (This corresponds to the range between many of Cohen’s criteria. For example, criteria for <em>r</em> are .1, .3, and .5.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10"><p>Remember, Cohen’s <em>d</em> is just the difference between two means that is then standardized.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11"><p>Which is itself really just a <em>t</em>-test but using an ANOVA framework instead<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn12"><p>My mnemonic to remember which is which is to think of the saying, “The lowest common denominator.”<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>Hedges’ <span class="math inline">\(g\)</span> can be converted to any other effect size that Cohen’s <span class="math inline">\(d\)</span> can be be converted. To convert to Hedges’ <span class="math inline">\(g\)</span> instead of <span class="math inline">\(d\)</span>, multiply <span class="math inline">\(d\)</span> in the given equation by <span class="math inline">\(\left(1 - \frac{3}{4N - 9}\right)\)</span>.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Remember, Cohen’s <em>d</em> is just the difference between two means that is then standardized.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>Which is itself really just a <em>t</em>-test but using an ANOVA framework instead<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>My mnemonic to remember which is which is to think of the saying, “The lowest common denominator.”<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
