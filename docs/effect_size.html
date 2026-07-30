@@ -383,9 +383,9 @@ div.csl-indent {
 
 <p></p>
 <p>Effect size is a simple idea that is finally gaining traction. It refers to a class of statistics that quantify the magnitude of a relationship or difference, independent of sample size. Most effect size statistics are standardized, so a given effect size statistic can be compared directly with that same type of effect size statistic from other analyses—or even from other studies that sample the same or similar populations.</p>
-<p>The effect being measured can be either a difference (such as the difference between an experimental-group and a control-group mean, or the difference in number of events between groups) or an association (e.g., correlations). Different effect size statistics are computed in different ways; this means that we cannot usually directly compare one effect size statistic to an other type of effect size statistic. However, the same type of effect size can be compared across different analyses or studies, and in many cases, effect size measures can be converted from one form to another (see <a href="#sec-effect_size_conversions"><span>Section&nbsp;7.3</span></a>).</p>
+<p>The effect being measured can be either a difference (such as the difference between an experimental-group and a control-group mean, or the difference in number of events between groups) or an association (e.g., correlations). Different effect size statistics are computed in different ways; this means that we cannot usually directly compare one effect size statistic to an other type of effect size statistic. However, the same type of effect size can be compared across different analyses or studies, and in many cases, effect size measures can be converted from one form to another (see <a href="#sec-effect_size_conversions"><span class="quarto-unresolved-ref">sec-effect_size_conversions</span></a>).</p>
 <p>Effect sizes are descriptive statistics. For measures of the size of an association (like a correlation), an effect size statistic may assume a linear relationship<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, but they don’t assume, e.g., that the population is normally distributed. Since they make few assumptions, effect size statistics are inherently robust.</p>
-<p>Effect size statistics can complement significance tests. Significance is, of course, a yes-or-no indication of whether there is “enough” of a difference/association relative to noise: An effect is either significant or not; there are no gradations to significance. Effect size statistics do show gradations and so can be used to properly provide the nuance that people seek when they report that something is “very” or “slightly”—or even “<a href="https://www.explainxkcd.com/wiki/index.php/1478:_P-Values">almost</a>”—significant. (As noted in <a href="#sec-small-large-effects"><span>Section&nbsp;7.2</span></a> below, effect size statistics are often described as being “small,” “medium,” or “large,” but this valuation of them doesn’t—well, <em>shouldn’t</em>—carry anything but an arbitrary weight.)</p>
+<p>Effect size statistics can complement significance tests. Significance is, of course, a yes-or-no indication of whether there is “enough” of a difference/association relative to noise: An effect is either significant or not; there are no gradations to significance. Effect size statistics do show gradations and so can be used to properly provide the nuance that people seek when they report that something is “very” or “slightly”—or even “<a href="https://www.explainxkcd.com/wiki/index.php/1478:_P-Values">almost</a>”—significant. (As noted in <a href="#sec-small-large-effects"><span class="quarto-unresolved-ref">sec-small-large-effects</span></a> below, effect size statistics are often described as being “small,” “medium,” or “large,” but this valuation of them doesn’t—well, <em>shouldn’t</em>—carry anything but an arbitrary weight.)</p>
 <p>Effect sizes can also be reported with confidence intervals, providing an informal test of significance. Since an effect size measures magnitude, while a significance test determines whether an effect is “not zero,” an effect is likely significant if its 95% confidence interval does not include zero. However, statistical significance still depends on factors such as model specification and the inclusion of covariates.</p>
 <section id="common-effect-size-statistics" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="common-effect-size-statistics"><span class="header-section-number">7.1</span> Common Effect Size Statistics</h2>
@@ -616,7 +616,7 @@ div.csl-indent {
 </section>
 <section id="epsilon-squared-ε2" class="level4">
 <h4 class="anchored" data-anchor-id="epsilon-squared-ε2">Epsilon-squared (ε<sup>2</sup>) </h4>
-<p>The third and final member of our Greek-alphabet soup of stats to measure the proportion of variance explained is ε<sup>2</sup>. Everyone agrees that η<sup>2</sup> overestimates the effect. Some, like <span class="citation" data-cites="okada2013">Okada (<a href="references.html#ref-okada2013" role="doc-biblioref">2013</a>)</span>, argue that ω<sup>2</sup> is sometimes <em>too</em> conservative, underestimating the true size of an effect.</p>
+<p>The third and final member of our Greek-alphabet soup of stats to measure the proportion of variance explained is ε<sup>2</sup>. Everyone agrees that η<sup>2</sup> overestimates the effect. Some, like <span class="citation" data-cites="okada2013">Okada (<a href="#ref-okada2013" role="doc-biblioref">2013</a>)</span>, argue that ω<sup>2</sup> is sometimes <em>too</em> conservative, underestimating the true size of an effect.</p>
 <p>ε<sup>2</sup> (and partial ε<sup>2</sup>) may be closer to “just right,” giving what may be the least biased estimate. Anyway, its value is always between the other two (or equal to them).</p>
 <p>It’s worth noting that in a one-way ANOVA, ε<sup>2</sup> is equal to the <em>adjusted</em> <em>R</em><sup>2</sup>.</p>
 </section>
@@ -625,7 +625,7 @@ div.csl-indent {
 <h3 data-number="7.1.3" class="anchored" data-anchor-id="sec-or_rr_effect_size"><span class="header-section-number">7.1.3</span> Odds &amp; Risk Ratios</h3>
 <p></p>
 <p>Odds ratios (ORs) and risk ratios (RRs) are often treated as standardized measures of effect size. Under appropriate conditions—i.e., comparable outcome definitions and baseline rates—they can be used to compare the magnitude of associations across studies.</p>
-<p>Risk is simply another term for probability, and risk ratios represent the relative likelihood of an event between two groups. Both risks and risk ratios range from 0 to 1, much like proportion-of-variance metrics such as <span class="math inline">\(\eta^2\)</span> or <span class="math inline">\(R^2\)</span> <a href="#sec-prop_var_exp_effect_size"><span>Section&nbsp;7.1.2</span></a>.</p>
+<p>Risk is simply another term for probability, and risk ratios represent the relative likelihood of an event between two groups. Both risks and risk ratios range from 0 to 1, much like proportion-of-variance metrics such as <span class="math inline">\(\eta^2\)</span> or <span class="math inline">\(R^2\)</span> <a href="#sec-prop_var_exp_effect_size"><span class="quarto-unresolved-ref">sec-prop_var_exp_effect_size</span></a>.</p>
 <p>In contrast, odds and odds ratios are unbounded above and can exceed 1. This asymmetry may make them less intuitive for some audiences, especially when comparing across studies. Nonetheless, it is statistically valid to compare odds or odds ratios across studies—though in some contexts, interpretability may be improved by transforming them to effect size statistics bounded between 0 and 1.</p>
 <p>Two classic measures that do just this are the φ (phi) coefficient and Yule’s <em>Q</em>. Both are designed to quantify the strength of association between two binary variables—for example, the relationship between disease status (present/absent) and group membership (exposed/unexposed). When variables have more than two categories, related measures such as Cramér’s <em>V</em> are more appropriate.</p>
 <p>The φ coefficient is defined as:</p>
@@ -660,7 +660,7 @@ Q = \frac{\text{OR} - 1}{\text{OR} + 1}
 <section id="sec-small-large-effects" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="sec-small-large-effects"><span class="header-section-number">7.2</span> “Small,” “Medium,” &amp; “Large” Effects</h2>
 <p></p>
-<p>Like much of statistics, Cohen’s <em>d</em> in standardized into <em>z</em>-scores/<em>SD</em>s (remember, the formula for it is to divide it by <em>SD</em>s). However, simply reporting Cohen’s <em>d</em> without interpreting what that means has a couple of disadvantages: (a) <em>z</em>-scores are not intuitive for lay audiences, and (b) there are other measures of effect size than Cohen’s <em>d</em>—and they aren’t all measured on the same scale. Given both of these factors, in his seminal book, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf"><em>Statistical Power Analysis for the Behavioral Sciences</em></a>, Jacob <span class="citation" data-cites="cohen1988">Cohen (<a href="references.html#ref-cohen1988" role="doc-biblioref">1988</a>)</span> gave recommendations for how to interpret the magnitude of various effect size statistics in terms of “small,” “medium,” and “large” effects.</p>
+<p>Like much of statistics, Cohen’s <em>d</em> in standardized into <em>z</em>-scores/<em>SD</em>s (remember, the formula for it is to divide it by <em>SD</em>s). However, simply reporting Cohen’s <em>d</em> without interpreting what that means has a couple of disadvantages: (a) <em>z</em>-scores are not intuitive for lay audiences, and (b) there are other measures of effect size than Cohen’s <em>d</em>—and they aren’t all measured on the same scale. Given both of these factors, in his seminal book, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf"><em>Statistical Power Analysis for the Behavioral Sciences</em></a>, Jacob <span class="citation" data-cites="cohen1988">Cohen (<a href="#ref-cohen1988" role="doc-biblioref">1988</a>)</span> gave recommendations for how to interpret the magnitude of various effect size statistics in terms of “small,” “medium,” and “large” effects.</p>
 <p>These “criteria” for evaluating the magnitude of an effect size have become quite popular. Indeed, the adoption of effect size statistics seems to be regulated by people’s uses and understandings of them in relation to these criteria. They therefore deserve further consideration.</p>
 <section id="effect-size-criteria-as-percent-of-total-variance" class="level3" data-number="7.2.1">
 <h3 data-number="7.2.1" class="anchored" data-anchor-id="effect-size-criteria-as-percent-of-total-variance"><span class="header-section-number">7.2.1</span> Effect Size Criteria as Percent of Total Variance</h3>
@@ -700,12 +700,12 @@ Q = \frac{\text{OR} - 1}{\text{OR} + 1}
 </section>
 <section id="effect-size-criteria-for-odds-ratios" class="level3" data-number="7.2.3">
 <h3 data-number="7.2.3" class="anchored" data-anchor-id="effect-size-criteria-for-odds-ratios"><span class="header-section-number">7.2.3</span> Effect Size Criteria for Odds Ratios</h3>
-<p><span class="citation" data-cites="cohen1988">Cohen (<a href="references.html#ref-cohen1988" role="doc-biblioref">1988</a>)</span> discussed proportions (aka risks) and presented effect size measures for a proportion’s difference from .5 (<a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=160">Cohen’s <em>g</em></a>) and the difference between two proportions (<a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=194">Cohen’s <em>h</em></a>), which could be used to present the magnitude of a risk ratio; even though a risk ratio <em>per se</em> is already a fine effect size stat, Cohen didn’t give size criteria for risk ratios, but instead for his <em>h</em>.</p>
-<p>He didn’t, however, discuss odds or odds ratios directly, and thus didn’t give his opinion about what could be considered “small,”“medium,” and “large” values for odds or odds ratios. Yule’s <em>Q</em> (<a href="#sec-or_rr_effect_size"><span>Section&nbsp;7.1.3</span></a>) can be considered comparable to risk ratios, risk ratios weren’t given size criteria either.</p>
-<p><span class="citation" data-cites="chen2010a">Chen et al. (<a href="references.html#ref-chen2010a" role="doc-biblioref">2010</a>)</span> nonetheless gives some guidance by providing ranges of effect size criteria for odds ratios by comparing values with criteria for “small,” “medium,” and “large” Coden’s <em>d</em>s. Chen et al.’s (2010) rules of thumb for “small,” “medium,” and “large” odds ratios (below) deserve especial explanation.</p>
+<p><span class="citation" data-cites="cohen1988">Cohen (<a href="#ref-cohen1988" role="doc-biblioref">1988</a>)</span> discussed proportions (aka risks) and presented effect size measures for a proportion’s difference from .5 (<a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=160">Cohen’s <em>g</em></a>) and the difference between two proportions (<a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=194">Cohen’s <em>h</em></a>), which could be used to present the magnitude of a risk ratio; even though a risk ratio <em>per se</em> is already a fine effect size stat, Cohen didn’t give size criteria for risk ratios, but instead for his <em>h</em>.</p>
+<p>He didn’t, however, discuss odds or odds ratios directly, and thus didn’t give his opinion about what could be considered “small,”“medium,” and “large” values for odds or odds ratios. Yule’s <em>Q</em> (<a href="#sec-or_rr_effect_size"><span class="quarto-unresolved-ref">sec-or_rr_effect_size</span></a>) can be considered comparable to risk ratios, risk ratios weren’t given size criteria either.</p>
+<p><span class="citation" data-cites="chen2010a">Chen et al. (<a href="#ref-chen2010a" role="doc-biblioref">2010</a>)</span> nonetheless gives some guidance by providing ranges of effect size criteria for odds ratios by comparing values with criteria for “small,” “medium,” and “large” Coden’s <em>d</em>s. Chen et al.’s (2010) rules of thumb for “small,” “medium,” and “large” odds ratios (below) deserve especial explanation.</p>
 <p>The size of an odds ratio depends not just on the difference in outcomes in a group (e.g., the numbers of Black woman with and without pre-eclampsia), but also the difference in outcomes in a comparison group (e.g., the numbers of non-Black women with and without pre-eclampsia). It is thus not so easy to compute simple (simplistic) rules of thumbs for the sizes of odds ratios<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p>
 <p>In addition, the exact values for what to consider as a “small,” “medium,” and “large” effect depend on the overall frequency, with smaller events require larger odds ratios to equate to a given level of Cohen’s <em>d</em>.</p>
-<p>Nonetheless, <span class="citation" data-cites="chen2010a">Chen et al. (<a href="references.html#ref-chen2010a" role="doc-biblioref">2010</a>)</span> presents some guidelines that can serve as guides in most cases. Using the median values suggested by their results:</p>
+<p>Nonetheless, <span class="citation" data-cites="chen2010a">Chen et al. (<a href="#ref-chen2010a" role="doc-biblioref">2010</a>)</span> presents some guidelines that can serve as guides in most cases. Using the median values suggested by their results:</p>
 <ul>
 <li>“Small” <span class="math inline">\(\approx\)</span> 1.5</li>
 <li>“Medium” <span class="math inline">\(\approx\)</span> 2.75</li>
@@ -759,7 +759,7 @@ in Reference Group</th>
 <p>Therefore, effect size measures, including Cohen’s <em>d</em>, are best used objectively to compare effects between studies—not to establish some standardized gauge of the absolute value of an intervention. This is indeed part of what is done in meta-analyses.</p>
 <p>It is also what I suggest doing within your own realm of research: Just like Cohen himself did, review what appears to be generally agreed on as “small,” “medium,” and “large” effects within <em>your</em> research realm. These could, for example, correspond to levels of clinical significance<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. Unfortunately, though, Cohen’s suggestions for <em>his</em> realm of research have become themselves canonized as the criteria for most lines of research in the health and social sciences.</p>
 <p>Indeed, interventions and factors that have “small” effects can be quite important. This seems especially true for long-term changes, such as those one strives for in educational interventions or for the <a href="https://theconversation.com/racism-produces-subtle-brain-changes-that-lead-to-increased-disease-risk-in-black-populations-214053">subtle but persistent effects of racism</a>. Teaching a diabetic patient how to check their blood insulin may have only a small effect on their A1C levels in a given day, but can save their life (or at least a few toes) in the long run.</p>
-<p>Given this, <span class="citation" data-cites="kraft2020">Kraft (<a href="references.html#ref-kraft2020" role="doc-biblioref">2020</a>)</span> used a review of educational research to <a href="https://articles.viriya.net/interpreting_effect_sizes_of_education_interventions.pdf">suggest</a> different criteria for gauging what should be considered as “small,” “medium,” or “large” effects in education interventions. His recommendations are also presented below.</p>
+<p>Given this, <span class="citation" data-cites="kraft2020">Kraft (<a href="#ref-kraft2020" role="doc-biblioref">2020</a>)</span> used a review of educational research to <a href="https://articles.viriya.net/interpreting_effect_sizes_of_education_interventions.pdf">suggest</a> different criteria for gauging what should be considered as “small,” “medium,” or “large” effects in education interventions. His recommendations are also presented below.</p>
 </section>
 <section id="table-of-effect-size-statistics" class="level3" data-number="7.2.5">
 <h3 data-number="7.2.5" class="anchored" data-anchor-id="table-of-effect-size-statistics"><span class="header-section-number">7.2.5</span> Table of Effect Size Statistics</h3>
@@ -820,9 +820,9 @@ in Reference Group</th>
 <td style="text-align: left;">Cohen (1988, <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=243">p.&nbsp;227</a>)</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><strong>Cramer’s</strong> <strong><em>V</em></strong></td>
-<td style="text-align: left;">Similar to φ, Cramer’s <em>V</em> is used to measure the differences in larger contingency tables.<br>
-Like φ (and other correlations) it ranges between 0 and 1.</td>
+<td style="text-align: center;"><strong>Cramér’s</strong> <strong><em>V</em></strong></td>
+<td style="text-align: left;">Similar to φ—and somtimes abbreivate , Cramér’s <em>V</em> is used to measure the differences in larger contingency tables.<br>
+Like φ (and other correlations) it ranges between 0 and 1<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>.</td>
 <td style="text-align: center;">0.1</td>
 <td style="text-align: center;">0.3</td>
 <td style="text-align: center;">0.5</td>
@@ -896,127 +896,149 @@ Like φ (and other correlations) it ranges between 0 and 1.</td>
 <section id="sec-effect_size_conversions" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="sec-effect_size_conversions"><span class="header-section-number">7.3</span> Converting Between Effect Size Measures</h2>
 <p></p>
-<p>Most effect size statistics can be converted into other ones, but the process isn’t always possible or direct (or requires additional assumptions). <a href="#tbl-effects_sizes_that_can_convert">Table&nbsp;<span>7.5</span></a> presents the effect sizes statistics covered here that <em>can</em> be converted (and the conditions/assumptions required for that); <a href="#tbl-effects_sizes_that_cannot_convert">Table&nbsp;<span>7.6</span></a> presents the effect size statistics that can’t be meaningfully converted.</p>
-<p>More usefully, <a href="#tbl-effect_sizes_conversions">Table&nbsp;<span>7.4</span></a> presents the formulas for converting between the effect size statistics that can be readily &amp; meaningfully done.</p>
+<p>Most effect size statistics can be converted into other ones, but the process isn’t always possible or direct (or requires additional assumptions). <a href="#tbl-effects_sizes_that_can_convert">Table&nbsp;<span class="quarto-unresolved-ref">tbl-effects_sizes_that_can_convert</span></a> presents the effect sizes statistics covered here that <em>can</em> be converted (and the conditions/assumptions required for that); <a href="#tbl-effects_sizes_that_cannot_convert">Table&nbsp;<span class="quarto-unresolved-ref">tbl-effects_sizes_that_cannot_convert</span></a> presents the effect size statistics that can’t be meaningfully converted.</p>
+<p>More usefully, <a href="#tbl-effect_sizes_conversions">Table&nbsp;<span class="quarto-unresolved-ref">tbl-effect_sizes_conversions</span></a> presents the formulas for converting between the effect size statistics that can be readily &amp; meaningfully done.</p>
 <p>Perhaps even more useful is this <a href="https://wesamuels.net/courses/statistics/resources/Converting_effect_sizes_2009-06-25.xls">handy Excel spreadsheet</a> that can be used to convert between Cohen’s <em>d</em>, <em>r</em>, η<sup>2</sup>, odds ratios, and area under the curve.</p>
-<p>In <a href="https://articles.viriya.net/introduction_to_meta-analysis.pdf#page=65">Chapter 7</a> of their book on meta-analysis, <span class="citation" data-cites="borenstein2011">Borenstein et al. (<a href="references.html#ref-borenstein2011" role="doc-biblioref">2011</a>)</span> also cover well the conversions between measures. Finally, the <a href="https://cran.r-project.org/web/packages/effectsize/index.html"><code>effectsize</code></a> package for <code>R</code> can both compute and convert between many effect size measures, including all those mentioned here.</p>
+<p>In <a href="https://articles.viriya.net/introduction_to_meta-analysis.pdf#page=65">Chapter 7</a> of their book on meta-analysis, <span class="citation" data-cites="borenstein2011">Borenstein et al. (<a href="#ref-borenstein2011" role="doc-biblioref">2011</a>)</span> also cover well the conversions between measures. Finally, the <a href="https://cran.r-project.org/web/packages/effectsize/index.html"><code>effectsize</code></a> package for <code>R</code> can both compute and convert between many effect size measures, including all those mentioned here.</p>
 <div id="tbl-effect_sizes_conversions" class="anchored">
 <table class="table-striped table-hover table">
-<caption>Table&nbsp;7.4: Formulas to Convert Between Common Effect Size Statistics</caption>
+<caption>Table&nbsp;7.4: Formulas to Convert Between Common Effect Size Statistics. Note that Cohen’s <span class="math inline">\(f\)</span>, <span class="math inline">\(f^{2}\)</span>, <span class="math inline">\(\eta^{2}\)</span>, and Cramér’s <span class="math inline">\(V\)</span> are non-negative and therefore do not preserve direction. The ± entries require the direction to be recovered from the original group means, correlation, cell proportions, or odds ratio. For contingency-table results, calculating <span class="math inline">\(\phi\)</span> or <span class="math inline">\(V\)</span> directly from the observed table is preferable to converting from another effect-size family.</caption>
 <colgroup>
-<col style="width: 7%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">From&nbsp;↓<br>
 To&nbsp;→</th>
 <th style="text-align: center;">Cohen’s <span class="math inline">\(d\)</span></th>
-<th style="text-align: center;">Hedges’ <span class="math inline">\(g\)</span><a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></th>
+<th style="text-align: center;">Hedges’ <span class="math inline">\(g\)</span></th>
 <th style="text-align: center;">Pearson’s <span class="math inline">\(r\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(\eta^2\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(f\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(f^2\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\phi\)</span>, <span class="math inline">\(V\)</span><br>
-(2×2 only)</th>
+<th style="text-align: center;"><span class="math inline">\(\phi\)</span><br>
+(2×2)</th>
+<th style="text-align: center;">Cramer’s <span class="math inline">\(V\)</span></th>
 <th style="text-align: center;">OR<br>
-(logistic approx.)</th>
+(logistic approximation)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(d\)</span></td>
 <td style="text-align: center;">–</td>
-<td style="text-align: center;"><span class="math inline">\(g = d \cdot \left(1 - \frac{3}{4N - 9}\right)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(r = \frac{d}{\sqrt{d^2 + 4}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(g = Jd\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(r = \frac{d}{\sqrt{d^2 + 4}}\)</span><a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></td>
 <td style="text-align: center;"><span class="math inline">\(\eta^2 = \frac{d^2}{d^2 + 4}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(f = \frac{d}{2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f = \frac{\lvert d\rvert}{2}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(f^2 = \frac{d^2}{4}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\phi = \frac{d}{\sqrt{d^2 + 4}}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(d = \frac{\ln(\text{OR}) \cdot \sqrt{3}}{\pi}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\phi \approx \frac{d}{\sqrt{d^2 + 4}}\)</span><a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></td>
+<td style="text-align: center;"><span class="math inline">\(V \approx \frac{\lvert d\rvert}{\sqrt{d^2 + 4}}\)</span><a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></td>
+<td style="text-align: center;"><span class="math inline">\(\text{OR} \approx \exp\left(\frac{\pi d}{\sqrt{3}}\right)\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(g\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(d = \frac{g}{1 - \frac{3}{4N - 9}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = \frac{g}{J}\)</span></td>
 <td style="text-align: center;">–</td>
-<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
-<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
-<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
-<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
-<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
-<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">Convert to <span class="math inline">\(d\)</span>, then as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">Convert to <span class="math inline">\(d\)</span>, then as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">Convert to <span class="math inline">\(d\)</span>, then as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">Convert to <span class="math inline">\(d\)</span>, then as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">Convert to <span class="math inline">\(d\)</span>, then as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">Convert to <span class="math inline">\(d\)</span>, then as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">Convert to <span class="math inline">\(d\)</span>, then as <span class="math inline">\(d\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(r\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(d = \frac{2r}{\sqrt{1 - r^2}}\)</span></td>
-<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = \frac{2r}{\sqrt{1-r^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(g = Jd\)</span></td>
 <td style="text-align: center;">–</td>
 <td style="text-align: center;"><span class="math inline">\(\eta^2 = r^2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(f = \frac{r}{\sqrt{1 - r^2}}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(f^2 = \frac{r^2}{1 - r^2}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\phi = r\)</span></td>
-<td style="text-align: center;">–</td>
+<td style="text-align: center;"><span class="math inline">\(f = \frac{\lvert r\rvert}{\sqrt{1-r^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f^2 = \frac{r^2}{1-r^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\phi = r\)</span><a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a></td>
+<td style="text-align: center;"><span class="math inline">\(V = \lvert r\rvert\)</span><a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a></td>
+<td style="text-align: center;"><span class="math inline">\(\text{OR} \approx \exp\left(\frac{2\pi r}{\sqrt{3}\sqrt{1-r^2}}\right)\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\eta^2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(d = \sqrt{\frac{4 \eta^2}{1 - \eta^2}}\)</span></td>
-<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(r = \sqrt{\eta^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = \pm 2\sqrt{\frac{\eta^2}{1-\eta^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(g = Jd\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(r = \pm\sqrt{\eta^2}\)</span><a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a></td>
 <td style="text-align: center;">–</td>
-<td style="text-align: center;"><span class="math inline">\(f = \sqrt{\frac{\eta^2}{1 - \eta^2}}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(f^2 = \frac{\eta^2}{1 - \eta^2}\)</span></td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
+<td style="text-align: center;"><span class="math inline">\(f = \sqrt{\frac{\eta^2}{1-\eta^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f^2 = \frac{\eta^2}{1-\eta^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\phi \approx \pm\sqrt{\eta^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(V \approx \sqrt{\eta^2}\)</span></td>
+<td style="text-align: center;">Convert to <span class="math inline">\(d\)</span>, then as <span class="math inline">\(d\)</span>; direction is required</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(f\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(d = 2f\)</span></td>
-<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(r = \frac{f}{\sqrt{f^2 + 1}}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\eta^2 = \frac{f^2}{1 + f^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = \pm 2f\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(g = Jd\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(r = \pm\frac{f}{\sqrt{1+f^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\eta^2 = \frac{f^2}{1+f^2}\)</span></td>
 <td style="text-align: center;">–</td>
-<td style="text-align: center;"><span class="math inline">\((f)^2 = f^2\)</span></td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
+<td style="text-align: center;"><span class="math inline">\(f^2 = (f)^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\phi \approx \pm\frac{f}{\sqrt{1+f^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(V \approx \frac{f}{\sqrt{1+f^2}}\)</span></td>
+<td style="text-align: center;">Convert to <span class="math inline">\(d\)</span>, then as <span class="math inline">\(d\)</span>; direction is required</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(f^2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(d = 2\sqrt{f^2}\)</span></td>
-<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(r = \sqrt{\frac{f^2}{1 + f^2}}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\eta^2 = \frac{f^2}{1 + f^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = \pm 2\sqrt{f^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(g = Jd\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(r = \pm\sqrt{\frac{f^2}{1+f^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\eta^2 = \frac{f^2}{1+f^2}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(f = \sqrt{f^2}\)</span></td>
 <td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
+<td style="text-align: center;"><span class="math inline">\(\phi \approx \pm\sqrt{\frac{f^2}{1+f^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(V \approx \sqrt{\frac{f^2}{1+f^2}}\)</span></td>
+<td style="text-align: center;">Convert to <span class="math inline">\(d\)</span>, then as <span class="math inline">\(d\)</span>; direction is required</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\phi\)</span> or <span class="math inline">\(V\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(d = \frac{2\phi}{\sqrt{1 - \phi^2}}\)</span></td>
-<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\phi\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = \frac{2\phi}{\sqrt{1-\phi^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(g = Jd\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(r = \phi\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\eta^2 = \phi^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f = \frac{\lvert\phi\rvert}{\sqrt{1-\phi^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f^2 = \frac{\phi^2}{1-\phi^2}\)</span></td>
 <td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
+<td style="text-align: center;"><span class="math inline">\(V = \lvert\phi\rvert\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{OR} \approx \exp\left(\frac{2\pi\phi}{\sqrt{3}\sqrt{1-\phi^2}}\right)\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">OR</td>
-<td style="text-align: center;"><span class="math inline">\(d = \frac{\ln(\text{OR}) \cdot \sqrt{3}}{\pi}\)</span></td>
-<td style="text-align: center;">as <span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">Cramer’s <span class="math inline">\(V\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(d \approx \pm\frac{2V}{\sqrt{1-V^2}}\)</span><a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a></td>
+<td style="text-align: center;"><span class="math inline">\(g = Jd\)</span><a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a></td>
+<td style="text-align: center;"><span class="math inline">\(r \approx \pm V\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\eta^2 \approx V^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f \approx \frac{V}{\sqrt{1-V^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f^2 \approx \frac{V^2}{1-V^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\phi = \pm V\)</span><a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a></td>
 <td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
-<td style="text-align: center;">–</td>
+<td style="text-align: center;">Convert to <span class="math inline">\(d\)</span>, then as <span class="math inline">\(d\)</span>; direction is required</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">OR<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a></td>
+<td style="text-align: center;"><span class="math inline">\(d \approx \frac{\ln(\text{OR})\sqrt{3}}{\pi}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(g \approx J\frac{\ln(\text{OR})\sqrt{3}}{\pi}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(r \approx \frac{\sqrt{3}\ln(\text{OR})}{\sqrt{3[\ln(\text{OR})]^2+4\pi^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\eta^2 \approx \frac{3[\ln(\text{OR})]^2}{3[\ln(\text{OR})]^2+4\pi^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f \approx \frac{\sqrt{3}\lvert\ln(\text{OR})\rvert}{2\pi}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(f^2 \approx \frac{3[\ln(\text{OR})]^2}{4\pi^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\phi \approx \frac{\sqrt{3}\ln(\text{OR})}{\sqrt{3[\ln(\text{OR})]^2+4\pi^2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(V \approx \frac{\sqrt{3}\lvert\ln(\text{OR})\rvert}{\sqrt{3[\ln(\text{OR})]^2+4\pi^2}}\)</span></td>
 <td style="text-align: center;">–</td>
 </tr>
 </tbody>
@@ -1024,7 +1046,7 @@ To&nbsp;→</th>
 </div>
 <div id="tbl-effects_sizes_that_can_convert" class="anchored">
 <table class="table-striped table-hover table">
-<caption>Table&nbsp;7.5: Common Effect Size Statistics That Can Be Converted into Each Other</caption>
+<caption>Table&nbsp;7.5: Common Effect Size Statistics That Can Be Converted into Each Other.</caption>
 <colgroup>
 <col style="width: 21%">
 <col style="width: 21%">
@@ -1076,7 +1098,7 @@ To&nbsp;→</th>
 <tr class="even">
 <td style="text-align: center;">Cramér’s <em>V</em></td>
 <td style="text-align: center;">φ, <em>w</em></td>
-<td style="text-align: left;">Only for 2 <span class="math inline">\(\times\)</span> 2; not convertible to <em>d</em>, <em>f</em>, etc.</td>
+<td style="text-align: left;">φ is only for 2 <span class="math inline">\(\times\)</span> 2; not convertible to <em>d</em>, <em>f</em>, etc.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">φ</td>
@@ -1139,7 +1161,7 @@ To&nbsp;→</th>
 </section>
 <section id="cohens-f-and-f2-to-cohens-d" class="level3" data-number="7.3.2">
 <h3 data-number="7.3.2" class="anchored" data-anchor-id="cohens-f-and-f2-to-cohens-d"><span class="header-section-number">7.3.2</span> Cohen’s <em>f</em> (and <em>f</em><sup>2</sup>) to Cohen’s <em>d</em></h3>
-<p>Cohen’s <em>f</em><sup>2</sup> (and <em>f</em>) measures the effect size of an entire model (usually an ANOVA). Cohen’s <em>d</em> measures the effect size between two levels of single variable<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. So, in order to convert between <em>f</em><sup>2</sup> and <em>d</em>, we have to know more about the model. For a one-way ANOVA with two groups<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>, <em>d</em> = 2<em>f</em> = 2<span class="math inline">\(\sqrt{f^2}\)</span>. In this particular case, then, <em>f</em> = <span class="math inline">\(\frac{d}{2}\)</span>.</p>
+<p>Cohen’s <em>f</em><sup>2</sup> (and <em>f</em>) measures the effect size of an entire model (usually an ANOVA). Cohen’s <em>d</em> measures the effect size between two levels of single variable<a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a>. So, in order to convert between <em>f</em><sup>2</sup> and <em>d</em>, we have to know more about the model. For a one-way ANOVA with two groups<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a>, <em>d</em> = 2<em>f</em> = 2<span class="math inline">\(\sqrt{f^2}\)</span>. In this particular case, then, <em>f</em> = <span class="math inline">\(\frac{d}{2}\)</span>.</p>
 <p>More generally, when there is only one term in the model:</p>
 <p><span class="math display">\[f^2 = \frac{d^2}{2k}\]</span></p>
 <p>It gets a bit more complicated when there are more than one terms in the model. <a href="https://www.ibm.com/support/pages/effect-size-relationship-between-partial-eta-squared-cohens-f-and-cohens-d">This site</a> covers some common situations.</p>
@@ -1159,7 +1181,7 @@ To&nbsp;→</th>
 </section>
 <section id="η2-and-f-scores" class="level3" data-number="7.3.4">
 <h3 data-number="7.3.4" class="anchored" data-anchor-id="η2-and-f-scores"><span class="header-section-number">7.3.4</span> η<sup>2</sup> and <em>F</em>-scores</h3>
-<p>This <em>F</em>-test score that is used in ANOVA-family models. Like the relationship between <em>d</em> and <em>t</em>, the only additional things we need to know to compute η<sup>2</sup> from <em>F</em> are degrees of freedom (which are closely related to sample size). Here, though, we have degrees of freedom in both the numerator (top) and denominator (bottom<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>):</p>
+<p>This <em>F</em>-test score that is used in ANOVA-family models. Like the relationship between <em>d</em> and <em>t</em>, the only additional things we need to know to compute η<sup>2</sup> from <em>F</em> are degrees of freedom (which are closely related to sample size). Here, though, we have degrees of freedom in both the numerator (top) and denominator (bottom<a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a>):</p>
 <p><span class="math display">\[\eta^2 = \frac{F \times df_{Effect}}{F \times (df_{Effect} + df_{Error})}\]</span></p>
 <p>So, η<sup>2</sup> is dependent on the ratio of the <em>df</em>s allotted to the given effect and the <em>df</em>s allotted to it’s corresponding error term. Since we have the effect’s <em>df</em>s in both the numerator and denominator, their effect will generally cancel out; this suggests that having more levels to a variable doesn’t appreciably affect the size of its effect. However, being able to allot more <em>df</em>s to error does help us see the size of whatever effect is there. Larger samples won’t really change the size of the effects we’re measuring, but they can help us see ones that are there.</p>
 <!-- The following sections give the formulas for converting between most effect size statistics. I've also included simple `R` functions to do these, for those few who will find that useful. -->
@@ -1269,7 +1291,7 @@ To&nbsp;→</th>
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
 <div id="ref-borenstein2011" class="csl-entry" role="listitem">
 Borenstein, M., Hedges, L. V., Higgins, J. P. T., &amp; Rothstein, H. R. (2011). <em>Introduction to <span>Meta-Analysis</span></em> (1. Aufl., p. xxix). <span>Wiley</span>. <a href="https://doi.org/10.1002/9780470743386">https://doi.org/10.1002/9780470743386</a>
 </div>
@@ -1299,10 +1321,20 @@ Okada, K. (2013). Is omega squared less biased? <span>A</span> comparison of thr
 <li id="fn7"><p>This is also true for, e.g., risk ratios, hazard ratios, means ratios, and hierarchical models.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn8"><p>Cohen also only directly considered these criteria as they applied to experimental psychology—not, e.g., the health sciences. Indeed, he <a href="https://articles.viriya.net/Statistical_Power_Analysis_for_the_Behavioral_Sciences_Cohen_1988.pdf#page=95">elsewhere</a> notes that what experimental psychologists would call a “large” effect would be paltry in the physical sciences.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn9"><p>With, say, the target level of outcome denoting a “medium” effect. Reaching <span class="math inline">\(\frac{1}{3}\)</span> of that target could denote a “small” effect, and reaching <span class="math inline">\(\frac{2}{3}\)</span>s more (167%) a “large” one. (This corresponds to the range between many of Cohen’s criteria. For example, criteria for <em>r</em> are .1, .3, and .5.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10"><p>Hedges’ <span class="math inline">\(g\)</span> can be converted to any other effect size that Cohen’s <span class="math inline">\(d\)</span> can be be converted. To convert to Hedges’ <span class="math inline">\(g\)</span> instead of <span class="math inline">\(d\)</span>, multiply <span class="math inline">\(d\)</span> in the given equation by <span class="math inline">\(\left(1 - \frac{3}{4N - 9}\right)\)</span>.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11"><p>Remember, Cohen’s <em>d</em> is just the difference between two means that is then standardized.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn12"><p>Which is itself really just a <em>t</em>-test but using an ANOVA framework instead<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn13"><p>My mnemonic to remember which is which is to think of the saying, “The lowest common denominator.”<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>Note that Cramér;s <em>V</em> can overestimated effect sizes. <span class="citation" data-cites="wicher2013">(<a href="#ref-wicher2013" role="doc-biblioref"><strong>wicher2013?</strong></a>)</span> provides a potential correction for this.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Note that this <em>d</em>-to-<em>r</em> conversion is for equal samples. For unequal samples, use: <span class="math inline">\(r = \frac{d}{\sqrt{d^{2} + \frac{(n_{1} + n_{2})^{2}}{n_{1}n_{2}}}\)</span>.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>This conversion to <span class="math inline">\(\phi\)</span> is a standardized-equivalent approximation for a <span class="math inline">\(2 \times 2\)</span> setting. An actual <span class="math inline">\(\phi\)</span> coefficient requires two binary variables and is determined from their cell counts.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>This conversion to Cramer’s <span class="math inline">\(V\)</span> applies only to the corresponding <span class="math inline">\(2 \times 2\)</span> case. For larger contingency tables, calculate <span class="math inline">\(V\)</span> directly from <span class="math inline">\(\chi^2\)</span>, <span class="math inline">\(N\)</span>, and the table dimensions.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>This equality is exact when both variables are binary and <span class="math inline">\(r\)</span> is therefore the phi coefficient. It is not generally an exact conversion from a point-biserial or continuous-variable correlation.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>This equality applies to a <span class="math inline">\(2 \times 2\)</span> table in which <span class="math inline">\(r\)</span> is the phi coefficient.<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn16"><p>The equivalences involving <span class="math inline">\(\eta^{2}\)</span> and <em>r</em> assumes a simple, one-predictor comparison. They do not necessarily apply to partial <span class="math inline">\(\eta^{2}\)</span> from multifactor models.<a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn17"><p>This reverse conversion applies only to a <span class="math inline">\(2 \times 2\)</span> table. Because Cramer’s <span class="math inline">\(V\)</span> is nonnegative, the direction must be supplied separately.<a href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn18"><p>Here, <span class="math inline">\(J = 1 - \frac{3}{4N - 9}\)</span> where <span class="math inline">\(N\)</span> is the total sample size for the two-group comparison. For an <span class="math inline">\(R \times C\)</span> contingency table, Cramér’s <span class="math inline">\(V\)</span> should ordinarily be calculated directly as <span class="math inline">\(V = \sqrt{\frac{\chi^2}{N\min(R-1,C-1)}}\)</span>. For a 2 <span class="math inline">\(\times\)</span> 2 table, use <span class="math inline">\(V = \lvert\phi\rvert\qquad\text{and}\qquad\phi = \frac{n_{11}n_{00}-n_{10}n_{01}}{\sqrt{n_{1+}n_{0+}n_{+1}n_{+0}}}\)</span><a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn19"><p>For a <span class="math inline">\(2 \times 2\)</span> table, <span class="math inline">\(V=\lvert\phi\rvert\)</span>. The sign of <span class="math inline">\(\phi\)</span> depends on category coding and is not retained by <span class="math inline">\(V\)</span>.<a href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn20"><p>These OR conversions are logistic-to-normal approximations, not exact algebraic equivalences.<a href="#fnref20" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn21"><p>Remember, Cohen’s <em>d</em> is just the difference between two means that is then standardized.<a href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn22"><p>Which is itself really just a <em>t</em>-test but using an ANOVA framework instead<a href="#fnref22" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn23"><p>My mnemonic to remember which is which is to think of the saying, “The lowest common denominator.”<a href="#fnref23" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
