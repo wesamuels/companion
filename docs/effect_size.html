@@ -900,7 +900,7 @@ Like φ (and other correlations) it ranges between 0 and 1<a href="#fn10" class=
 <p></p>
 <p>Most effect size statistics can be converted into other ones, but the process isn’t always possible or direct (or requires additional assumptions). <a href="#tbl-effects_sizes_that_can_convert">Table&nbsp;<span>7.5</span></a> presents the effect sizes statistics covered here that <em>can</em> be converted (and the conditions/assumptions required for that); <a href="#tbl-effects_sizes_that_cannot_convert">Table&nbsp;<span>7.6</span></a> presents the effect size statistics that can’t be meaningfully converted.</p>
 <p>More usefully, <a href="#tbl-effect_sizes_conversions">Table&nbsp;<span>7.4</span></a> presents the formulas for converting between the effect size statistics that can be readily &amp; meaningfully done.</p>
-<p>Perhaps even more useful is this <a href="https://wesamuels.net/courses/statistics/resources/Converting_effect_sizes_2009-06-25.xls">handy Excel spreadsheet</a> that can be used to convert between Cohen’s <em>d</em>, <em>r</em>, η<sup>2</sup>, odds ratios, and area under the curve.</p>
+<p>Perhaps even more useful is this <a href="https://wesamuels.net/courses/statistics/materials/Converting_effect_sizes.xls">handy Excel spreadsheet</a> that can be used to convert between Cohen’s <em>d</em>, <em>r</em>, η<sup>2</sup>, odds ratios, and area under the curve.</p>
 <p>In <a href="https://articles.viriya.net/introduction_to_meta-analysis.pdf#page=65">Chapter 7</a> of their book on meta-analysis, <span class="citation" data-cites="borenstein2011">Borenstein et al. (<a href="references.html#ref-borenstein2011" role="doc-biblioref">2011</a>)</span> also cover well the conversions between measures. Finally, the <a href="https://cran.r-project.org/web/packages/effectsize/index.html"><code>effectsize</code></a> package for <code>R</code> can both compute and convert between many effect size measures, including all those mentioned here.</p>
 <div id="tbl-effect_sizes_conversions" class="anchored">
 <table class="table-striped table-hover table">
@@ -988,7 +988,7 @@ To&nbsp;→</th>
 <td style="text-align: center;"><span class="math inline">\(\eta^2 \approx \phi^2 = V^2\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(f^2 \approx \frac{\phi^2}{1-\phi^2} = \frac{V^2}{1-V^2}\)</span></td>
 <td style="text-align: center;">–</td>
-<td style="text-align: center;"><span class="math inline">\(\text{OR} \approx \exp\left(\frac{2\pi\phi}{\sqrt{3}\sqrt{1-\phi^2}}\right)\)</span>; positive/negative direction of effect is required for <span class="math inline">\(V\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{OR} \approx \exp\left(\frac{2\pi\phi}{\sqrt{3}\sqrt{1-\phi^2}}\right)\)</span>; direction is required for <span class="math inline">\(V\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">OR<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></td>
