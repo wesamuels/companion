@@ -8,7 +8,7 @@
 
 <meta name="description" content="A set of explanations, lectures, resources, and activities to complement the statistics curriculum that is part of Hunter College’s Ph.D.&nbsp;Program in Nursing Research and Health Equity and DNP Program.">
 
-<title>Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula - 9&nbsp; Linear Regression Modeling with SPSS, Part 1: Introduction</title>
+<title>Companion to the Nursing Ph.D.&nbsp;&amp; DNP Statistics Curricula - 9&nbsp; Linear Regression Modeling With SPSS, Part 1: Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./topics.html">“Statistical Concepts and Strategies”</a></li><li class="breadcrumb-item"><a href="./lrm_01.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 1: Introduction</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./topics.html">“Statistical Concepts and Strategies”</a></li><li class="breadcrumb-item"><a href="./lrm_01.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling With SPSS, Part 1: Introduction</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -183,13 +183,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lrm_01.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 1: Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling With SPSS, Part 1: Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lrm_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 2: More about ANOVAs and Dummy Coding</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">lrm_02.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -302,7 +302,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts"><span class="header-section-number">9.2</span> Core Concepts</a>
   <ul>
   <li><a href="#linear-relationships" id="toc-linear-relationships" class="nav-link" data-scroll-target="#linear-relationships"><span class="header-section-number">9.2.1</span> Linear Relationships</a></li>
-  <li><a href="#consider-removing-the-intercept" id="toc-consider-removing-the-intercept" class="nav-link" data-scroll-target="#consider-removing-the-intercept"><span class="header-section-number">9.2.2</span> Consider Removing the Intercept</a></li>
   </ul></li>
   <li><a href="#sec-intro_to_lrm" id="toc-sec-intro_to_lrm" class="nav-link" data-scroll-target="#sec-intro_to_lrm"><span class="header-section-number">9.3</span> Introduction to Linear Regression Models</a>
   <ul>
@@ -310,15 +309,15 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation">Correlation</a></li>
   <li><a href="#linear-regression" id="toc-linear-regression" class="nav-link" data-scroll-target="#linear-regression">Linear Regression</a></li>
-  <li><a href="#semipartial-correlation-vs.-multivariate-linear-regression" id="toc-semipartial-correlation-vs.-multivariate-linear-regression" class="nav-link" data-scroll-target="#semipartial-correlation-vs.-multivariate-linear-regression">Semipartial Correlation vs.&nbsp;Multivariate Linear Regression</a></li>
+  <li><a href="#semipartial-correlation-vs.-multiple-linear-regression" id="toc-semipartial-correlation-vs.-multiple-linear-regression" class="nav-link" data-scroll-target="#semipartial-correlation-vs.-multiple-linear-regression">Semipartial Correlation vs.&nbsp;Multiple Linear Regression</a></li>
   </ul></li>
-  <li><a href="#conducting-a-multivariate-linear-regression-using-forward-term-selection" id="toc-conducting-a-multivariate-linear-regression-using-forward-term-selection" class="nav-link" data-scroll-target="#conducting-a-multivariate-linear-regression-using-forward-term-selection"><span class="header-section-number">9.3.2</span> Conducting a Multivariate Linear Regression Using Forward Term Selection</a>
+  <li><a href="#conducting-a-multiple-linear-regression-using-forward-term-selection" id="toc-conducting-a-multiple-linear-regression-using-forward-term-selection" class="nav-link" data-scroll-target="#conducting-a-multiple-linear-regression-using-forward-term-selection"><span class="header-section-number">9.3.2</span> Conducting a Multiple Linear Regression Using Forward Term Selection</a>
   <ul>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
   <ul class="collapse">
-  <li><a href="#sec-into-to-stepwise" id="toc-sec-into-to-stepwise" class="nav-link" data-scroll-target="#sec-into-to-stepwise">Variables Entered/Removed and the “Stepwise” Strategy</a></li>
+  <li><a href="#sec-into-to-stepwise" id="toc-sec-into-to-stepwise" class="nav-link" data-scroll-target="#sec-into-to-stepwise">Variables Entered/Removed and the Stepwise Strategy</a></li>
   <li><a href="#model-summary" id="toc-model-summary" class="nav-link" data-scroll-target="#model-summary">Model Summary</a></li>
-  <li><a href="#anova-table" id="toc-anova-table" class="nav-link" data-scroll-target="#anova-table">ANOVA Table </a></li>
+  <li><a href="#anova-table" id="toc-anova-table" class="nav-link" data-scroll-target="#anova-table">ANOVA Table</a></li>
   <li><a href="#coefficients" id="toc-coefficients" class="nav-link" data-scroll-target="#coefficients">Coefficients</a></li>
   <li><a href="#excluded-variables" id="toc-excluded-variables" class="nav-link" data-scroll-target="#excluded-variables">Excluded Variables</a></li>
   <li><a href="#collinearity-diagnostics" id="toc-collinearity-diagnostics" class="nav-link" data-scroll-target="#collinearity-diagnostics">Collinearity Diagnostics</a></li>
@@ -327,7 +326,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#analyzing-residuals" id="toc-analyzing-residuals" class="nav-link" data-scroll-target="#analyzing-residuals"><span class="header-section-number">10</span> Analyzing Residuals</a>
   <ul>
-  <li><a href="#set-up-your-model" id="toc-set-up-your-model" class="nav-link" data-scroll-target="#set-up-your-model"><span class="header-section-number">10.1</span> Set up Your Model</a>
+  <li><a href="#set-up-your-model" id="toc-set-up-your-model" class="nav-link" data-scroll-target="#set-up-your-model"><span class="header-section-number">10.1</span> Set Up Your Model</a>
   <ul>
   <li><a href="#steps-to-evaluate-residuals" id="toc-steps-to-evaluate-residuals" class="nav-link" data-scroll-target="#steps-to-evaluate-residuals"><span class="header-section-number">10.1.1</span> Steps to Evaluate Residuals</a>
   <ul class="collapse">
@@ -337,19 +336,19 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#interpretation-of-outputs" id="toc-interpretation-of-outputs" class="nav-link" data-scroll-target="#interpretation-of-outputs"><span class="header-section-number">10.1.2</span> Interpretation of Outputs</a>
   <ul class="collapse">
   <li><a href="#histogram-of-residuals" id="toc-histogram-of-residuals" class="nav-link" data-scroll-target="#histogram-of-residuals">Histogram of Residuals</a></li>
-  <li><a href="#q-q-plot-normal-p-p-plot" id="toc-q-q-plot-normal-p-p-plot" class="nav-link" data-scroll-target="#q-q-plot-normal-p-p-plot">Q-Q Plot (Normal P-P Plot)</a></li>
+  <li><a href="#normal-p-p-plot" id="toc-normal-p-p-plot" class="nav-link" data-scroll-target="#normal-p-p-plot">Normal P-P Plot</a></li>
   <li><a href="#scatterplot-of-zresid-vs.-zpred" id="toc-scatterplot-of-zresid-vs.-zpred" class="nav-link" data-scroll-target="#scatterplot-of-zresid-vs.-zpred">Scatterplot of <code>ZRESID</code> vs.&nbsp;<code>ZPRED</code></a></li>
   <li><a href="#studentized-residuals" id="toc-studentized-residuals" class="nav-link" data-scroll-target="#studentized-residuals">Studentized Residuals</a></li>
   <li><a href="#cooks-distance" id="toc-cooks-distance" class="nav-link" data-scroll-target="#cooks-distance">Cook’s Distance</a></li>
   <li><a href="#leverage-values" id="toc-leverage-values" class="nav-link" data-scroll-target="#leverage-values">Leverage Values</a></li>
   </ul></li>
-  <li><a href="#best-practice-summary" id="toc-best-practice-summary" class="nav-link" data-scroll-target="#best-practice-summary"><span class="header-section-number">10.1.3</span> Best Practice Summary</a></li>
+  <li><a href="#best-practice-summary" id="toc-best-practice-summary" class="nav-link" data-scroll-target="#best-practice-summary"><span class="header-section-number">10.1.3</span> Best-Practice Summary</a></li>
   </ul></li>
-  <li><a href="#multivariate-linear-regression-with-three-predictors-using-enter-term-selection" id="toc-multivariate-linear-regression-with-three-predictors-using-enter-term-selection" class="nav-link" data-scroll-target="#multivariate-linear-regression-with-three-predictors-using-enter-term-selection"><span class="header-section-number">10.2</span> Multivariate Linear Regression with Three Predictors Using <code>Enter</code> Term Selection</a>
+  <li><a href="#multiple-linear-regression-with-three-predictors-using-enter-term-selection" id="toc-multiple-linear-regression-with-three-predictors-using-enter-term-selection" class="nav-link" data-scroll-target="#multiple-linear-regression-with-three-predictors-using-enter-term-selection"><span class="header-section-number">10.2</span> Multiple Linear Regression With Three Predictors Using <code>Enter</code> Term Selection</a>
   <ul>
   <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1"><span class="header-section-number">10.2.1</span> Results</a>
   <ul class="collapse">
-  <li><a href="#variables-entered-removed" id="toc-variables-entered-removed" class="nav-link" data-scroll-target="#variables-entered-removed">Variables Entered / Removed</a></li>
+  <li><a href="#variables-enteredremoved" id="toc-variables-enteredremoved" class="nav-link" data-scroll-target="#variables-enteredremoved">Variables Entered/Removed</a></li>
   <li><a href="#model-summary-1" id="toc-model-summary-1" class="nav-link" data-scroll-target="#model-summary-1">Model Summary</a></li>
   <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova">ANOVA</a></li>
   <li><a href="#coefficients-1" id="toc-coefficients-1" class="nav-link" data-scroll-target="#coefficients-1">Coefficients</a></li>
@@ -366,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-lrm_01" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 1: Introduction</span></span></h1>
+<h1 class="title"><span id="sec-lrm_01" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Linear Regression Modeling With SPSS, Part 1: Introduction</span></span></h1>
 </div>
 
 
@@ -381,206 +380,355 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><strong><em>Statistics</em></strong><em>: A subject which most statisticians find difficult but which many physicians are experts on.</em> – Stephen Senn, <em>Statistical Issues in Drug Development</em>, <a href="https://media.wiley.com/product_data/excerpt/71/04700187/0470018771.pdf">p.&nbsp;4</a></p>
+<p><strong><em>Statistics</em></strong>: <em>A subject which most statisticians find difficult but which many physicians are experts on.</em> – Stephen Senn, <em>Statistical Issues in Drug Development</em>, <a href="https://media.wiley.com/product_data/excerpt/71/04700187/0470018771.pdf">p.&nbsp;4</a></p>
 <section id="overview" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">9.1</span> Overview</h2>
-<p>This chapter covers the relationship between partial correlations and linear regressions before exploring and interpreting results of linear regressions conducted on the adolescent executive functioning data.</p>
+<p>This chapter covers the relationships among zero-order correlations, partial and semipartial correlations, and linear regression before exploring and interpreting the results of linear regressions conducted on adolescent executive-functioning data.</p>
 </section>
 <section id="core-concepts" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="core-concepts"><span class="header-section-number">9.2</span> Core Concepts</h2>
 <section id="linear-relationships" class="level3" data-number="9.2.1">
 <h3 data-number="9.2.1" class="anchored" data-anchor-id="linear-relationships"><span class="header-section-number">9.2.1</span> Linear Relationships</h3>
-<p>Very few relationships in healthcare are truly linear. There are sweet spots in how much or what sorts of care to give, sometimes diminishing returns, sometimes growing returns. This is, in fact, true for much outside of the physical sciences; even the effect of intelligence on income &amp; wealth appears to have a non-linear (<a href="https://www.sciencealert.com/worlds-wealthiest-may-actually-be-less-intelligent-than-those-who-dont-earn-as-much">diminshing</a>) effect.</p>
-<p>And yet, it many cases it’s good enough to assume relationships are linear. It can account for much of the relationship while being easy to model statistically. Even if we suspect that the relationships between predictors and outcome are non-linear, we often first test those relationships against a model that assumes linearity because that may well still be sufficient. In addition, seeing how well the data are fit by a linear model lets us then subsequently see <em>how much better</em> a given non-linear relationship explains it: We can even quantify and test the significance of the improvement of a non-linear model over a linear one.</p>
-</section>
-<section id="consider-removing-the-intercept" class="level3" data-number="9.2.2">
-<h3 data-number="9.2.2" class="anchored" data-anchor-id="consider-removing-the-intercept"><span class="header-section-number">9.2.2</span> Consider Removing the Intercept</h3>
-<p>O.K., removing the intercept isn’t a core concept, but it can be a good idea nonetheless. One of the best predictors of the future is the past<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, so simply knowing where participants are when they start participating is often among the most efficient and powerful ways of knowing where they will be later on in the study.</p>
-<p>But wouldn’t it be nice to know <em>what</em> about their initial state matters most later one? Leaving the intercept in lets it “suck up” a lot of information that could otherwise be explained by other terms in your model. Removing the intercept may allow that information to “flow back” into other predictors to allow those other predictors to explain more of your outcome.</p>
-<p>Removing the intercept also frees up the degree of freedom used to estimate its value. This gives our other analyses a bit more power. No, that’s not usually a lot, but it does help us maximize the information in our data, making us that much more efficient and conscious of the real value of data.</p>
+<p>Very few relationships in healthcare are truly linear. There are often sweet spots in how much care to provide or which types of care to provide, as well as diminishing returns, increasing returns, thresholds, and other nonlinear patterns. This is true well beyond the physical sciences; even the relationship of intelligence with income and wealth appears to show <a href="https://www.sciencealert.com/worlds-wealthiest-may-actually-be-less-intelligent-than-those-who-dont-earn-as-much">diminishing returns</a>.</p>
+<p>Nevertheless, it is often reasonable to begin by modeling a relationship as linear. A linear model may account for a useful proportion of the association while remaining relatively straightforward to estimate and interpret. Even when a relationship is suspected to be nonlinear, a linear model can provide a useful baseline. A later nonlinear model can then be evaluated according to whether it meaningfully improves fit beyond that baseline.</p>
 </section>
 </section>
 <section id="sec-intro_to_lrm" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="sec-intro_to_lrm"><span class="header-section-number">9.3</span> Introduction to Linear Regression Models</h2>
-<p>Correlation and linear regression are closely related tools that both describe the linear association between two variables. Correlations quantify the strength and direction of a linear relationship without making assumptions about the sources of error. A linear regression, on the other hand, models that relationship explicitly, allowing us to quantify and test different parts of that relationship. Linear regressions also allow us to model more complex relationships and—or course—to test the associations between more than two variables.</p>
-<p>Throughout this tutorial, we will use a subset of variables from the <a href="https://addhealth.cpc.unc.edu/">Add Health study</a>, which measured a set of “rich demographic, social, familial, behavioral, psychosocial, cognitive, and health survey data” for over 20,000 people in five waves of data collection from 1995 to 2018. It’s also worth investigating since their website now bears the <a href="images/mark_the_beasts.jpg">mark of MAGA</a>, stating that “[o]n March 31, 2025, as a sponsor of this project, NIH requested that the following language be added to this website: This repository is under review for potential modification in compliance with Administration directives.” I’ve preserved some of the data <a href="https://wesamuels.net/courses/statistics/activities/add_health/add_health.sav">here</a>; we will be using that data now with SPSS (v. 31). More about using SPSS through CUNY’s Apporto service is given in <a href="Intro_to_SPSS.html#sec-apporto"><span>Section&nbsp;16.2.1</span></a>.</p>
+<p>Correlation and linear regression are closely related tools for describing linear associations between variables.</p>
+<p>A correlation is symmetric: The correlation between (X) and (Y) is the same as the correlation between (Y) and (X). Neither variable is formally designated as the outcome.</p>
+<p>A regression is asymmetric in its formulation: One variable is designated as the outcome, and one or more others are designated as predictors. This allows the model to estimate expected differences in the outcome associated with differences in the predictors. This designation does not, by itself, establish that the predictors cause the outcome.</p>
+<p>Linear regression also allows more complex models containing several predictors, interactions, nonlinear terms, and other extensions.</p>
+<p>Throughout this tutorial, we will use a subset of variables from the <a href="https://addhealth.cpc.unc.edu/">Add Health study</a>, which collected “rich demographic, social, familial, behavioral, psychosocial, cognitive, and health survey data” for more than 20,000 people across five waves from 1995 to 2018.</p>
+<p>It is also worth investigating because its website now bears the <a href="images/mark_the_beasts.jpg">mark of MAGA</a>, stating that “[o]n March 31, 2025, as a sponsor of this project, NIH requested that the following language be added to this website: This repository is under review for potential modification in compliance with Administration directives.”</p>
+<p>I have preserved some of the data <a href="https://wesamuels.net/courses/statistics/activities/add_health/add_health.sav">here</a>. We will use those data with SPSS version 31. More information about accessing SPSS through CUNY’s Apporto service is provided in <a href="Intro_to_SPSS.html#sec-apporto"><span>Section&nbsp;16.2.1</span></a>.</p>
 <section id="correlation-vs.-simple-linear-regression" class="level3" data-number="9.3.1">
 <h3 data-number="9.3.1" class="anchored" data-anchor-id="correlation-vs.-simple-linear-regression"><span class="header-section-number">9.3.1</span> Correlation vs.&nbsp;Simple Linear Regression</h3>
-<p>Let’s begin by comparing the results of a simple linear regression against the results of a zero-order correlation containing the same variables. A simple linear regression is a linear regression that contains only one predictor (like a one-way ANOVA).</p>
-<p>The Add Health data are in <a href="https://www.statology.org/long-vs-wide-data/">long format</a>, so let’s first subset them to just the first wave—i.e., the first time data were collected. With the <code>add_health.sav</code> file open in SPSS:</p>
+<p>Let us begin by comparing a simple linear regression with a zero-order correlation containing the same two variables.</p>
+<p>A simple linear regression contains one predictor. When that predictor represents two groups, the model is also closely related to an independent-samples (t)-test and a one-way ANOVA.</p>
+<p>The Add Health data are in <a href="https://www.statology.org/long-vs-wide-data/">long format</a>, so first subset them to the first wave, meaning the first occasion on which data were collected.</p>
+<p>With the <code>add_health.sav</code> file open in SPSS:</p>
 <ol type="1">
-<li>From any window, click on <code>Data &gt; Select Cases...</code></li>
-<li>In the dialogue that opens, click the radio button next to <code>If condiciton is satisfied</code> and then click the <code>If...</code> button right below it.</li>
+<li>From any window, click <code>Data &gt; Select Cases...</code>.</li>
+<li>In the dialogue that opens, click the radio button next to <code>If condition is satisfied</code>, and then click the <code>If...</code> button immediately below it.</li>
 <li>Choose <code>Wave</code> from the list on the left and click the arrow button (<img src="images/arrow1.png" class="img-fluid">) to move it to the field on the right.</li>
-<li>Either type <code>= 1</code> or use the buttons to write that out<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</li>
+<li>Either type <code>= 1</code> or use the buttons to construct the condition.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
 <li>Click <code>Continue</code> and then <code>OK</code>.</li>
 </ol>
-<p>Note that we are leaving <code>Filter out unselected cases</code> selected (under <code>Options</code> in the main dialogue). This simply flags the unwanted rows but does not otherwise change the data. <code>Copy selected cases to a new dataset</code> or <code>Delete unselected cases</code> actually changes the data. I try to leave data as intact as I can to prevent mistakes and to be able to replicate what I did.</p>
-<p>After doing this, you will notice two things in the <code>Data Editor</code> window. First, in the <code>Data View</code> tab, rows where the <code>Wave</code> is <em>not</em> 1 have a line drawn through their row number:</p>
+<p>Leave <code>Filter out unselected cases</code> selected under <code>Options</code> in the main dialogue. This flags the unwanted rows without deleting or permanently changing them. <code>Copy selected cases to a new dataset</code> and <code>Delete unselected cases</code> alter the active data more substantially. I prefer to preserve the original data whenever practical so that the selection process remains reversible and reproducible.</p>
+<p>After doing this, two changes will be visible in the <code>Data Editor</code>.</p>
+<p>First, in the <code>Data View</code> tab, rows for which <code>Wave</code> is not 1 will have a line drawn through their row numbers:</p>
 <p><img src="images/subset_rows.png" class="img-fluid"></p>
-<p>Second, in the <code>Variable View</code> tab, there is now a new <code>filter_$</code> variable added to the end of the data<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. The <code>Label</code> for this variables summarizes what we did: <code>Wave = 1 (FILTER)</code>. This new variable in fact defines which rows to filter out; deleting this variable will remove the filter.</p>
+<p>Second, in the <code>Variable View</code> tab, a new <code>filter_$</code> variable will appear at the end of the data.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Its <code>Label</code> summarizes the selection condition: <code>Wave = 1 (FILTER)</code>. This variable defines which rows are filtered. Deleting it removes the filter.</p>
 <section id="correlation" class="level4">
 <h4 class="anchored" data-anchor-id="correlation">Correlation</h4>
 <ol type="1">
-<li><p>With the <code>add_health.sav</code> file open and subset to <code>Wave = 1</code>, choose <code>Analyze</code> from the menu bar (from any window), and click on <code>Correlate &gt; Bivariate</code><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p></li>
-<li><p>Select Participated in DBT [DBT] and Ball Executive Functions Slope – Student Self-Report [All_EFs_SR_Slope] to add to the Variables field.</p>
-<ol type="1">
-<li>This is a <a href="https://www.statisticssolutions.com/free-resources/directory-of-statistical-analyses/point-biserial-correlation/">point-biserial correlation</a> (i.e., a dichotomous variable correlated with a continuous), but the formula for that derives to be computationally the same as that for the Pearson, so select (or leave selected) that option under <code>Correlation Coefficients</code>.</li>
-<li>The default α-value for rejecting the null in SPSS is .05. i.e., we are accepting a 5% chance that any given hypothesis test will be a Type 1 error—here that the correlation is equal to zero (and the Type I error being that we think it isn’t equal to zero when in fact it is). We don’t really have an <em>a priori</em> reason to believe that this correlation will be above or below zero, so we will divide that α = .05 into two pieces, letting us test if it is above zero 2.5% of the time and below zero 2.5% of the time. This is called a two-tailed test, so let’s leave the <code>Test of Significance</code> to <code>Two-tailed</code>.</li>
-<li>Under the <code>Options</code> dialogue, we can include <code>Means and standard deviations</code> under <code>Statistics</code>. We also should leave the <code>Missing Values</code> option to <code>Exclude cases pairwise</code>. Pairwise exclusion in SPSS means that a given case (row) will be excluded from a given analysis if that row is missing data relevant to that analysis per se. <code>Listwise</code> exclusion in SPSS means that a row will be excluded if <em>any</em> data are missing for that case in any of the variables selected for that family of analyses—even if one values relevant to that particular analysis are both present. Listwise exclusion is nearly always too conservative a criterion, thus opening us up to biases in our analysis that come from biases introduced by variables that aren’t even in that analysis.</li>
-</ol></li>
-<li><p>In the <code>Descriptive Statistics</code> the <code>Output</code> window, we see that mean for the <code>DBT</code> variable is .19; since this is a dummy variable (where <code>1</code> = participating and <code>0</code> = not participating), this is also the proportion of cases that participated in the program: 19% of the students here participated in the DBT program.</p></li>
-<li><p>In the <code>Correlations</code> table, we see that the correlation between <code>DBT</code> and <code>All_EFs_SR_Slope</code> is -.165. This indicates that as we go from a DBT score of 0 to 1, the slope changes -.165<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. The <code>Sig. (2--tailed)</code> row in the table indicates that the <em>p</em>-value for that correlation is .003, which is less than the α–level we established (α = .05 / 2 = .025 for each tail), making this correlation significant3. We could write this in a Results section as:</p></li>
+<li><p>With the <code>add_health.sav</code> file open and filtered to <code>Wave = 1</code>, choose <code>Analyze</code> from the menu bar and click <code>Correlate &gt; Bivariate</code>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p></li>
+<li><p>Select Participated in DBT [<code>DBT</code>] and Ball Executive Functions Slope – Student Self-Report [<code>All_EFs_SR_Slope</code>] and add them to the <code>Variables</code> field.</p>
+<ul>
+<li>This is a <a href="https://www.statisticssolutions.com/free-resources/directory-of-statistical-analyses/point-biserial-correlation/">point-biserial correlation</a>, meaning a correlation between a dichotomous variable and a continuous variable. The point-biserial correlation is calculated using the same formula as Pearson’s correlation, so select, or leave selected, <code>Pearson</code> under <code>Correlation Coefficients</code>.</li>
+<li>Leave <code>Two-tailed</code> selected under <code>Test of Significance</code>. The overall Type I error rate is set to (=.05). In a two-sided test, the rejection region is divided between the two tails of the sampling distribution, with .025 in each tail. The two-sided (p)-value reported by SPSS is nevertheless compared directly with the overall (=.05), not with .025.</li>
+<li>Under <code>Options</code>, select <code>Means and standard deviations</code>.</li>
+</ul></li>
 </ol>
+<p>For this two-variable correlation, pairwise and listwise exclusion will ordinarily produce the same result because only two variables are included. In a larger correlation matrix, pairwise exclusion can preserve more observations for each separate correlation, but it can also cause different correlations to be based on different subsets of participants. That can complicate comparisons among the coefficients.</p>
+<ol start="3" type="1">
+<li><p>In the <code>Descriptive Statistics</code> table in the <code>Output</code> window, the mean for <code>DBT</code> is .19. Because <code>DBT</code> is coded <code>1</code> for participation and <code>0</code> for nonparticipation, its mean is also the proportion of students who participated: 19%.</p></li>
+<li><p>In the <code>Correlations</code> table, the point-biserial correlation between <code>DBT</code> and <code>All_EFs_SR_Slope</code> is (-.165).</p></li>
+</ol>
+<p>This indicates a small negative association: DBT participation was associated with more negative executive-function slopes. Because more negative slopes represent greater improvement here, students who participated in DBT tended to show greater improvement.</p>
+<p>The correlation coefficient itself should not be interpreted as the raw difference between the two groups. The raw group difference is given by the unstandardized regression coefficient when <code>DBT</code> is entered as a 0/1 predictor. In a simple regression, the standardized regression coefficient will equal the point-biserial correlation.</p>
+<p>The <code>Sig. (2-tailed)</code> value is (p=.003). Because .003 is below the overall (=.05), the association is statistically significant.</p>
+<p>This could be reported as:</p>
 <blockquote class="blockquote">
-<p>The point-biserial correlation between DBT participation and changes in all executive functions was significant (<em>r</em><sub>pb</sub> = -.165, <em>df</em> = 326, <em>p</em> = .003), indicating that participating in the DBT program was associated with significantly more negative slopes (i.e., significantly greater improvements) in total executive function scores.</p>
+<p>DBT participation was significantly associated with changes in total executive-function scores, (r_{pb}=-.165), (p=.003), with participants in the DBT program showing more negative slopes and therefore greater improvement.</p>
 </blockquote>
-<p>Which attempts to explain the relationship in simply terms that rely on little in-article jargon and acronyms. The support for this plainer-English description is supported (parenthetically) by the numerical statistics.</p>
+<p>The degrees of freedom for a Pearson or point-biserial correlation are:</p>
+<p><span class="math display">\[df=N-2\]</span></p>
+<p>Thus, (df=326) would imply (N=328). The correlation and corresponding simple regression should use the same analytic sample. If SPSS reports substantially different sample sizes for them, check the active filter and missing-data settings before comparing the results.</p>
+<p>The substantive interpretation is stated in relatively plain language, while the numerical statistics provide the evidence supporting that interpretation.</p>
 </section>
 <section id="linear-regression" class="level4">
 <h4 class="anchored" data-anchor-id="linear-regression">Linear Regression</h4>
-<p>Remember that in simple correlations, we assume that unique variance / error comes equally from both variables. We formalize this mathematically by having the variance they share—their <strong>co</strong>variance—divided by the unshared variance from both variables:</p>
-<p><span class="math display">\[\text{Correlation} = \frac{\text{Cov}{({X,Y})}}{\text{Var}{(X)}\text{Var}{(Y)}}\]</span></p>
-<p>Unlike a correlation, in a linear regression, unique variance / error is assumed to come from only the predictor variable(s):</p>
-<p><span class="math display">\[Y = bX + e\]</span></p>
-<p>where <span class="math inline">\(b\)</span> is the slope of the regression line that best fits the cluster of <span class="math inline">\(X\)</span> values plotted against <span class="math inline">\(Y\)</span> and <span class="math inline">\(e\)</span> is the average distance<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> of each individual <span class="math inline">\(X\)</span> value from that line—the variance unique to <span class="math inline">\(X\)</span> that is relegated to error:</p>
-<p><img src="images/lrm_02.png" class="img-fluid"></p>
-<p>Although our assumptions are different, we are still doing the same basic function: determining a line of best fit computed by minimizing the unique variance in our data—here in the values of our criterion, <span class="math inline">\(X\)</span><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p>
-<p>Separating out error like is done in a linear regression will eventually allow us more flexibility in how we deal with error. For now, I simply want to show the similarity between a correlation and a linear regression.</p>
-<ol type="1">
-<li><p>In whatever window you have active, click <code>Analyze &gt; Regression &gt; Linear...</code>.</p></li>
-<li><p>Add <code>ZAll_EFs_SR_Slope</code> to the <code>Dependent</code> field and <code>DBT</code> to the <code>Independent(s)</code> field. SPSS is calling the outcome “<code>Dependent</code>” and the predictor(s) “<code>Independent(s)</code>”, as in DVs and IVs.</p></li>
-<li><p>Under <code>Statistics</code>, have <code>Estimates and Confidence intervals</code> selected under <code>Regression Coefficients</code> (the latter since confidence intervals are slowly replacing up-and-down significance tests), and <code>Model fit</code>, <code>Part and partial correlations</code>, and—might as well—<code>Descriptives</code> also selected. For now, leave <code>R squared change</code> unselected.</p>
-<p>(<code>Casewise diagnostics</code> lets you evaluate whether there are extreme outliers in the data that may be skewing the results. <code>Durbin-Watson</code> tests whether there is nonignorable autocorrelation between the errors of longitudinal data, with a value of “2” indicating ignorable autocorrelation and values approaching either 0 or 4 indicating that error values are not independent of each other and thus that, e.g., one should consider the nested nature of the data, q.v. <a href="mlm.html"><span>Chapter&nbsp;11</span></a>.)</p></li>
-<li><p>Under <code>Options</code>, select <code>Exclude cases pairwise</code> under <code>Missing values</code> for the reasons discussed above; <code>Replace with mean</code> is a defensible strategy for handling missing data, although multiple imputation would be preferred in all ways … were it easy performed in SPSS.</p>
-<p>We will not be use any <code>Stepping Method Criteria</code>, so the default (or really any values since this doesn’t apply) are fine.</p>
-<p>Finally, leave <code>Include constant in equation</code> selected. The constant of which they speak is the intercept since not all of our variables are standardized.</p></li>
-<li><p>We will ignore, e.g., the <code>Method</code> of entering or removing terms from the model for now.</p></li>
-</ol>
-<p>For <code>Zscore: All Executive Functions Slope -- Student Self-Report</code> in the <code>Descriptive Statistics</code> table in the <code>Output</code> window, we see that the Mean is <code>.00000000</code> and the <code>Std Deviation</code> is <code>1.00000000</code>, as they should be since <em>that</em> variable is indeed standardized here<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</p>
-<p>For <code>Participation in DBT Program?</code>, the mean is .19 (sample size is 670); since this is a dummy variable, this means that 19% of the cases had 1s, i.e., that 19% of the students participated. The results for the <code>Correlation</code> also return the correlation (-.165) and that it is significant.</p>
-<p>After the <code>Variables Entered/Removed</code> table (which is not relevant now), the results present a <code>Model Summary</code> table. This table presents statistics about how well the model overall performs when trying to fit the data we fed it. Remember how one way of thinking about linear regression models is that they try to minimize unexplained variance in the data—that they try to account for as much of the variance / information in the data as possible. The <code>R</code> and <code>R Square</code> values in this table do just that; they describe how much variance in the data set are accounted for by this particular model (containing—for now—simply whether the student participated in the DBT program). We see from this table that the <code>R</code>-value is .165. This, of course, is the same absolute value as the correlation between <code>DBT</code> and <code>All_EFs_SR_Slope</code>. A linear regression will generate the same (or nearly same) values as a correlation on those same variables—the difference, though, is in the assumptions we’re making about the data: Correlations assume error is shared equally whereas linear regressions separate out error and explicitly model it s a term among the predictors.</p>
-<p>The <code>R Square</code> value in that table is just the <code>R</code> value squared. Squaring a correlation coefficient (i.e., computing <em>r</em><sup>2</sup> from <em>r</em>) computes the shared variance between the two variables. Similarly, <code>R Square</code> (i.e., <em>R</em><sup>2</sup>) computes the variance within that data set that is accounted for by this model. Capital <em>R</em><sup>2</sup> is used to denote the variance in the data accounted for by <em>all</em> of the model terms—intercept, main effects, interactions, etc., but not error. Lower-case <em>r</em><sup>2</sup> is used to denote the variance shared by just two variables—not the whole model. (The <code>Adjusted R Square</code> reduces the value a bit for each term added to the model since one can improve the <em>R</em><sup>2</sup> of a model even by adding non-significant or uninteresting terms to it.)</p>
-<p>The next table, <code>ANOVA</code>, presents the results of the linear regression in terms of just that. This presents the familiar <code>Sum of Squares</code> for the <code>DBT</code> term (when <code>DBT</code> = <code>1</code>, as it shows in the left-most column) as well as the <code>Residual (Sum of Squares)</code> which you should now recognize is the unexplained variance. The <em>F</em>-score and <em>p</em>-value (<code>Sig.</code>) both indicate the significance of the <code>DBT</code> term.</p>
-<p>One more thing to note about the <code>ANOVA</code> table … is that there even is one: The presence here of an <code>ANOVA</code> table—when we didn’t explicitly tell SPSS to run an ANOVA—underlines the fact that what we’re doing in a linear regression is the same as we would do in an ANOVA. Again, one reason to prefer a linear regression over an ANOVA is because of the greater flexibility of a linear regression. Of course, if you don’t need this greater flexibility, then this also means that running an ANOVA is just fine if that’s all you need; in addition, ANOVA source tables may also be more accessible to audiences without quite as much sophisticated understanding of statistics as you now have.</p>
-<p>The results of the ANOVA, correlation, and linear regression analyses are all quite similar. Indeed—to the extent that our underlying assumptions hold—the results of all three analyses will become even more similar as the sample size increases. Two things to infer from this that are most relevant here are:</p>
-<ol type="1">
-<li><p><strong>Assumptions matter</strong>. Although some assumptions (monotonicity of the data and that data are independently and identically distributed) tend to be more important than others (strict adherence to normality), knowing how well and in what ways our data meet our basic assumptions affect all analyses we do and all inferences we make from them. This remains true for data of all sizes—even if some assumptions become more important as sample size increases and others tend to become less important (e.g., sampling bias becomes more important; adherence to normality even less).</p></li>
-<li><p>(Nearly all) <strong>linear regressions do the same thing</strong>. The fundamental goal of a correlation, ANOVA, multilevel model, logistic regression, and structural equation model are the same. They all test a linear relationship between the variables by computing a slope, determining that slope is determined by computing a loss-limiting functioning (e.g., ordinary least squares or maximum likelihood), and parceling out variance into that which is explained by the model and that which remains unexplained (“error”).</p>
-<p>In fact, a main goal of demonstrating the relationship between, e.g., a one-way ANOVA and a zero-order correlation is to show that they can be seen as members of the same family of analyses.</p></li>
-</ol>
-</section>
-<section id="semipartial-correlation-vs.-multivariate-linear-regression" class="level4">
-<h4 class="anchored" data-anchor-id="semipartial-correlation-vs.-multivariate-linear-regression">Semipartial Correlation vs.&nbsp;Multivariate Linear Regression</h4>
-<p>Remember (e.g., from <a href="Variance_Covariance_Correlations_and_Partial_Correlations.html#sec-partial_semipartial_correlations"><span>Section&nbsp;6.3</span></a>) that a semipartial correlation removes the effect of a third variable<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> from <em>one</em> of the two variables in a correlation. Remember too that, as odd as this may seem to do, in fact it’s done all the time: It’s the basis for having two (or more) predictors in a linear model; the effects of each predictor are (mathematically) isolated from each other so that the effect of one is independent of the effect of the other.</p>
-<p>How does this work within linear regression? Imagine we have the following linear regression model:</p>
-<p><span class="math display">\[Y_{i} = b_{0} + b_{1}X_{1i} + b_{2}X_{2i} + e_{i}\]</span></p>
-<p>This model is predicting the outcome, <span class="math inline">\(Y\)</span>, for participant <span class="math inline">\(i\)</span> based on that person’s scores on predictors <span class="math inline">\(X_{1}\)</span> and <span class="math inline">\(X_{2}\)</span>. For example,</p>
-<p>Including another variable in a linear regression “controls for it” because the coefficient for the predictor of interest is estimated using only the part of that predictor that is not linearly associated with the control variable.</p>
-<p>Suppose the outcome is (Y), the main predictor is (X), and the control variable is (Z).</p>
-<p>A simple regression is:</p>
-<p>[</p>
-<p>]</p>
-<p>Here, (b_1) captures the association between (X) and (Y), but it may mix together:</p>
+<p>Pearson’s correlation is calculated as:</p>
+<p><span class="math display">\[r_{XY} = \frac{\operatorname{Cov}(X,Y)}{s_Xs_Y} = \frac{\operatorname{Cov}(X,Y)}{\sqrt{\operatorname{Var}(X)\operatorname{Var}(Y)}}\]</span></p>
+<p>The covariance indicates how the variables vary together. Dividing by their standard deviations places the relationship on a standardized scale ranging from (-1) to (1).</p>
+<p>A simple linear regression is written as:</p>
+<p><span class="math display">\[Y_i=\beta_0+\beta_1X_i+\varepsilon_i\]</span></p>
+<p>where:</p>
 <ul>
-<li>the part of (X) that is uniquely related to (Y)</li>
-<li>the part of (X) that overlaps with (Z)</li>
-<li>the part of (Z) that affects (Y), if (Z) and (X) are correlated</li>
+<li>(Y_i) is the observed outcome for participant (i)</li>
+<li>(_0) is the intercept</li>
+<li>(_1) is the slope</li>
+<li>(X_i) is the predictor value for participant (i)</li>
+<li>(_i) is the model error for participant (i)</li>
 </ul>
-<p>A multiple regression adds (Z):</p>
-<p>[ Y_i = b_0 + b_1X_i + b_2Z_i + e_i]</p>
-<p>Now (b_1) answers:</p>
-<p>[ Y X Z?]</p>
-<p>Or more precisely:</p>
-<p>[ b_1 = X Y Z.]</p>
-<p>Mathematically, this works through residualization.</p>
-<p>First, regress (X) on (Z):</p>
-<p>[ X_i = a_0 + a_1Z_i + r_{Xi}]</p>
-<p>The residual (r_{Xi}) is the part of (X) not explained by (Z).</p>
-<p>Second, regress (Y) on (Z):</p>
-<p>[ Y_i = c_0 + c_1Z_i + r_{Yi}]</p>
-<p>The residual (r_{Yi}) is the part of (Y) not explained by (Z).</p>
-<p>Then regress the residualized outcome on the residualized predictor:</p>
-<p>[ r_{Yi} = b_1r_{Xi} + u_i]</p>
-<p>That coefficient is the same (b_1) you get for (X) in the full multiple regression:</p>
-<p>[ Y_i = b_0 + b_1X_i + b_2Z_i + e_i]</p>
-<p>So “controlling for (Z)” means that the coefficient for (X) is calculated from the variation in (X) that remains after subtracting out the part predictable from (Z).</p>
-<p>A concrete example:</p>
-<p>[ = b_0 + b_1 + b_2 + e]</p>
-<p>The coefficient (b_1) estimates the association between resilience and academic performance after removing the portion of resilience that is linearly associated with SES. It is asking whether students who differ in resilience, but are otherwise comparable in SES, also differ in academic performance.</p>
-<p>This is why people often say “holding (Z) constant.” That phrase is slightly informal. The regression is not literally matching people into identical groups on (Z). Instead, it is estimating the expected difference in (Y) associated with (X) at the same value of (Z), based on the linear model.</p>
-<p>If the two predictors are strongly correlated with each other, then the model will perform quite differently if only one is included versus if both are. Exactly in what way it will “act differently” is hard to anticipate ahead of time, but act differently it will. Let’s look at examples of that now.</p>
-</section>
-</section>
-<section id="conducting-a-multivariate-linear-regression-using-forward-term-selection" class="level3" data-number="9.3.2">
-<h3 data-number="9.3.2" class="anchored" data-anchor-id="conducting-a-multivariate-linear-regression-using-forward-term-selection"><span class="header-section-number">9.3.2</span> Conducting a Multivariate Linear Regression Using Forward Term Selection</h3>
-<p>A <em>multivariate</em> linear regression is just a linear regression that has two or more predictors.</p>
+<p>The fitted model produces a predicted outcome:</p>
+<p><span class="math display">\[\widehat{Y}_i=b_0+b_1X_i\]</span></p>
+<p>The residual is:</p>
+<p><span class="math display">\[e_i=Y_i-\widehat{Y}_i\]</span></p>
+<p>Thus, a residual is the vertical difference between an observed outcome and the value predicted by the regression line. It represents outcome variation not accounted for by the model.</p>
+<p>Ordinary least squares selects the intercept and slope that minimize the sum of squared residuals:</p>
+<p><span class="math display">\[\sum_{i=1}^{N}e_i^2\]</span></p>
+<p>The residual is not the distance of an (X) value from the regression line, nor is regression based on the assumption that error “comes from” the predictor. Instead, the model represents unexplained variability in the outcome conditional on the predictors.</p>
+<p><img src="images/lrm_02.png" class="img-fluid"></p>
+<p>Regression and correlation are closely connected, but they emphasize different aspects of the relationship. Correlation provides a symmetric standardized association, whereas regression explicitly models an expected outcome from one or more predictors.</p>
 <ol type="1">
-<li>In SPSS, compute the correlation between <code>ZAll_EFs_SR_Slope</code> and <code>Adult_Sister_at_Home</code> (a dummy variable that indicates whether the teens if they lived with a sister who was over 18 years old). You’ll see that <em>r</em><sub>bp</sub> = -.11 (<em>df</em> = 319, <em>p</em> = .048). This correlation is small but significant (and, yes, cherry-picked for this example).</li>
-<li>Look, too, at the correlations between <code>DBT</code> and both <code>ZAll_EFs_SR_Slope</code> and <code>Adult_Sister_at_Home</code>. The zero-order correlation between <code>DBT</code> and <code>ZAll_EFs_SR_Slope</code> is -.165 and between <code>DBT</code> and <code>Adult_Sister_at_Home</code> is .04. Of course, this correlation between <code>DBT</code> and <code>Adult_Sister_at_Home</code> is not theoretically interesting since there is no reason to believe that participating in the DBT program really affects how many adult sisters one has or vice versa; nonetheless, it serves well as an example of how linear models change when correlated predictors are both included.</li>
-<li>Now, let us rerun the linear regression predicting <code>ZAll_EFs_SR_Slope</code> with DBT, but this time also add in <code>Adult_Sister_at_Home</code>. I.e., go to <code>Analyze &gt; Regression &gt; Linear...</code>, put <code>ZAll_EFs_SR_Slope</code> in the Dependent field, and put both <code>DBT</code> and <code>Adult_Sister_at_Home</code> in the <code>Independent(s)</code> field.</li>
-<li>Under <code>Statistics...</code>, make sure <code>Estimates</code>, <code>Model fit</code>, <code>R squared change</code>, and <code>Collinearity diagnostics</code> are all selected. These play into what we will be doing now.</li>
-<li>Leave everything under <code>Options</code> the same, viz., leave the <code>Stepping Method Criteria</code> to the default, keep <code>Include constant in equation</code> selected, and <code>Exclude cases pairwise</code>. Most of these inform our investigation here, too.</li>
-<li>Now, turn your attention to the <code>Method:</code> drop-down menu right under the <code>Independent(s)</code> field. This is the method SPSS will use to add or remove terms to the model. I’ll explain this further soon, but for right now, select <code>Forward Selection</code>.</li>
-<li>Hit <code>OK</code>.</li>
+<li><p>In whichever SPSS window is active, click <code>Analyze &gt; Regression &gt; Linear...</code>.</p></li>
+<li><p>Add <code>ZAll_EFs_SR_Slope</code> to the <code>Dependent</code> field and <code>DBT</code> to the <code>Independent(s)</code> field. SPSS uses the labels <code>Dependent</code> and <code>Independent(s)</code>, corresponding broadly to the terms outcome and predictor.</p></li>
+<li><p>Under <code>Statistics</code>, select:</p>
+<ul>
+<li><code>Estimates</code></li>
+<li><code>Confidence intervals</code></li>
+<li><code>Model fit</code></li>
+<li><code>Part and partial correlations</code></li>
+<li><code>Descriptives</code></li>
+</ul></li>
+</ol>
+<p>Leave <code>R squared change</code> unselected for now.</p>
+<p><code>Casewise diagnostics</code> can identify observations with unusually large residuals. These observations may warrant investigation, although a large residual does not automatically mean a case should be removed.</p>
+<p><code>Durbin-Watson</code> assesses serial correlation in ordered residuals. A value near 2 suggests little first-order autocorrelation, whereas values approaching 0 or 4 suggest positive or negative autocorrelation, respectively. This test is particularly relevant to time-ordered data. It does not, by itself, diagnose every form of dependence or determine whether a multilevel model is needed.</p>
+<ol start="4" type="1">
+<li>Under <code>Options</code>, use <code>Exclude cases listwise</code> for the regression.</li>
+</ol>
+<p>Listwise exclusion ensures that all coefficients in the fitted model are based on the same set of observations. Pairwise exclusion can construct the model from correlations or covariances based on different subsets of participants, which may produce a less coherent analysis.</p>
+<p>Neither listwise nor pairwise deletion eliminates bias when data are not missing completely at random. If missingness is appreciable, multiple imputation or another principled missing-data approach should be considered.</p>
+<p>Do not use <code>Replace with mean</code> as a routine solution. Single mean imputation artificially reduces variance, distorts correlations and regression coefficients, and understates uncertainty.</p>
+<p>The default <code>Stepping Method Criteria</code> do not matter here because no automated entry or removal method is being used.</p>
+<p>Leave <code>Include constant in equation</code> selected. The constant is the intercept. It should ordinarily remain in the model regardless of whether the predictors or outcome have been standardized. With standardized predictors, zero represents the sample mean, which often makes the intercept more interpretable.</p>
+<p>Removing the intercept would force the expected outcome to equal zero whenever all predictors equal zero. That restriction requires a specific substantive or design-based justification.</p>
+<ol start="5" type="1">
+<li>Leave the <code>Method</code> set to <code>Enter</code>. Other entry and removal methods will be discussed later.</li>
+</ol>
+<p>In the <code>Descriptive Statistics</code> table in the <code>Output</code> window, the mean for <code>Zscore: All Executive Functions Slope -- Student Self-Report</code> is approximately 0, and its standard deviation is approximately 1, as expected for a standardized variable.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>The mean for <code>Participation in DBT Program?</code> is .19. Because this is a dummy variable, 19% of participants in the analytic sample were coded 1 and therefore participated in DBT.</p>
+<p>The sample size displayed here should match the sample size used for the correlation if the same filter and missing-data rules were applied. If the correlation reports (df=326), its sample size is 328; a regression sample size of 670 would indicate that the two analyses were conducted on different cases.</p>
+<p>After the <code>Variables Entered/Removed</code> table, SPSS presents the <code>Model Summary</code> table. This table describes the overall performance of the model.</p>
+<p>One way to think about ordinary least-squares regression is that the model attempts to account for outcome variation while minimizing the residual variation left unexplained.</p>
+<p>In SPSS, (R) is the nonnegative correlation between the observed outcome values and the values predicted by the model. In a simple regression containing an intercept:</p>
+<p><span class="math display">\[R=|r_{XY}|\]</span></p>
+<p>Thus, an (R) of .165 is the absolute value of the zero-order correlation between <code>DBT</code> and <code>ZAll_EFs_SR_Slope</code>.</p>
+<p>This is an exact algebraic relationship when the correlation and regression use the same observations and coding; it is not merely an approximation that becomes closer as the sample increases.</p>
+<p>The <code>R Square</code> value is:</p>
+<p><span class="math display">\[R^2 = 1- \frac{SS_{\text{residual}}}{SS_{\text{total}}}\]</span></p>
+<p>It represents the proportion of observed outcome variance accounted for by the model.</p>
+<p>In a simple regression:</p>
+<p><span class="math display">\[R^2=r^2\]</span></p>
+<p>Thus:</p>
+<p><span class="math display">\[.165^2\approx.027\]</span></p>
+<p>The model accounts for approximately 2.7% of the observed variance in executive-function slopes.</p>
+<p>Lowercase (r^2) is commonly used for the squared association between two variables. Capital (R^2) refers to the proportion of outcome variance accounted for by the full model.</p>
+<p>The intercept is necessary for defining the fitted regression surface, but it is not ordinarily described as contributing a separate portion of the variance represented by (R^2).</p>
+<p><code>Adjusted R Square</code> adjusts (R^2) according to the sample size and number of predictors:</p>
+<p><span class="math display">\[R_{\text{adjusted}}^2 = 1-(1-R^2)\frac{N-1}{N-p-1}\]</span></p>
+<p>where (p) is the number of predictors, excluding the intercept.</p>
+<p>Adjusted (R^2) penalizes the addition of predictors that contribute little relative to the complexity they add. It can be useful when comparing models with different numbers of predictors, provided that the models use the same outcome and analytic sample. It does not directly measure external validity or guarantee that the model will generalize to another population.</p>
+<p>The next table is labeled <code>ANOVA</code>. Its presence emphasizes the close relationship between ANOVA and regression.</p>
+<p>The <code>Regression</code> sum of squares is the amount of outcome variation accounted for by the complete model relative to an intercept-only model. It is not the sum of squares for cases in which <code>DBT = 1</code>.</p>
+<p>The <code>Residual</code> sum of squares is the outcome variation left unexplained by the model.</p>
+<p>The (F)-test evaluates:</p>
+<p><span class="math display">\[H_0:\beta_1=0\]</span></p>
+<p>In a simple regression, this is equivalent to testing whether the point-biserial correlation is zero and whether the two group means differ.</p>
+<p>With one predictor:</p>
+<p><span class="math display">\[F=t^2\]</span></p>
+<p>The regression, independent-samples (t)-test, and one-way ANOVA are therefore alternative parameterizations of the same two-group comparison when they use the same observations and assumptions.</p>
+<p>One reason to prefer regression is its flexibility. Additional predictors, interaction terms, polynomial terms, and other extensions can be added within the same general framework. If a one-way ANOVA answers the research question adequately, however, there is nothing wrong with using it. ANOVA source tables may also be more familiar to some audiences.</p>
+<p>Two broader lessons are especially relevant:</p>
+<ol type="1">
+<li><p><strong>Assumptions matter.</strong></p>
+<p>Important considerations include linearity of the modeled association, independence of observations or residuals, homoscedasticity, influential observations, and the approximate normality of residuals for small-sample inference.</p>
+<p>The importance of particular assumptions varies with the model, design, and sample size. Large samples can make statistical tests less sensitive to modest departures from residual normality, but they do not correct sampling bias, dependence, poor measurement, omitted confounding, or model misspecification.</p></li>
+<li><p><strong>Many statistical procedures belong to related modeling families.</strong></p>
+<p>Correlation, ANOVA, and ordinary least-squares regression are especially closely connected and can often be expressed as forms of the general linear model.</p>
+<p>Logistic regression, multilevel models, and structural equation models share broader principles of parameter estimation, model comparison, and partitioning explained from unexplained information, but they do not all estimate the same kind of outcome, use ordinary least squares, or partition variance in precisely the same way.</p>
+<p>The goal of comparing a one-way ANOVA, zero-order correlation, and simple regression is to show both their exact mathematical connections and the different ways in which they frame the same basic association.</p></li>
+</ol>
+</section>
+<section id="semipartial-correlation-vs.-multiple-linear-regression" class="level4">
+<h4 class="anchored" data-anchor-id="semipartial-correlation-vs.-multiple-linear-regression">Semipartial Correlation vs.&nbsp;Multiple Linear Regression</h4>
+<p>Recall from <a href="Variance_Covariance_Correlations_and_Partial_Correlations.html#sec-partial_semipartial_correlations"><span>Section&nbsp;6.3</span></a> that a semipartial correlation removes the linear association of a third variable from one of the two variables being correlated.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>This idea is central to multiple regression. The coefficient for each predictor is estimated while accounting for the other predictors included in the model.</p>
+<p>Consider:</p>
+<p><span class="math display">\[Y_i=b_0+b_1X_i+b_2Z_i+e_i\]</span></p>
+<p>where:</p>
+<ul>
+<li><ol start="25" type="A">
+<li>is the outcome</li>
+</ol></li>
+<li><ol start="24" type="A">
+<li>is the predictor of primary interest</li>
+</ol></li>
+<li><ol start="26" type="A">
+<li>is a control variable or additional predictor</li>
+</ol></li>
+<li>(b_1) is the coefficient for (X), conditional on (Z)</li>
+</ul>
+<p>The coefficient (b_1) estimates the expected difference in (Y) associated with a one-unit difference in (X) among observations with the same modeled value of (Z).</p>
+<p>This is commonly described as “holding (Z) constant.” The regression does not literally match participants into groups with identical values of (Z); it estimates the conditional relationship specified by the model.</p>
+<p>A simple regression is:</p>
+<p><span class="math display">\[Y_i=b_0+b_1X_i+e_i\]</span></p>
+<p>Here, (b_1) describes the unadjusted association between (X) and (Y). If (X) is correlated with another relevant variable, (Z), the simple association may partly reflect variation shared with (Z).</p>
+<p>A multiple regression adds (Z):</p>
+<p><span class="math display">\[Y_i=b_0+b_1X_i+b_2Z_i+e_i\]</span></p>
+<p>Now (b_1) estimates the association between (X) and (Y) conditional on (Z).</p>
+<p>The mathematical connection can be demonstrated through residualization.</p>
+<p>First, regress (X) on (Z):</p>
+<p><span class="math display">\[X_i=a_0+a_1Z_i+r_{Xi}\]</span></p>
+<p>The residual (r_{Xi}) is the portion of (X) not linearly predictable from (Z).</p>
+<p>Second, regress (Y) on (Z):</p>
+<p><span class="math display">\[Y_i=c_0+c_1Z_i+r_{Yi}\]</span></p>
+<p>The residual (r_{Yi}) is the portion of (Y) not linearly predictable from (Z).</p>
+<p>Then regress the residualized outcome on the residualized predictor:</p>
+<p><span class="math display">\[r_{Yi}=b_1r_{Xi}+u_i\]</span></p>
+<p>The resulting slope is the same coefficient obtained for (X) in the full multiple regression:</p>
+<p><span class="math display">\[Y_i=b_0+b_1X_i+b_2Z_i+e_i\]</span></p>
+<p>This equivalence is known as the Frisch-Waugh-Lovell theorem.</p>
+<p>A <strong>partial correlation</strong> removes (Z) from both (X) and (Y):</p>
+<p><span class="math display">\[r_{YX\cdot Z} = \operatorname{Cor}(r_X,r_Y)\]</span></p>
+<p>A <strong>semipartial correlation</strong>, also called a part correlation, removes (Z) from (X) but not from (Y):</p>
+<p><span class="math display">\[r_{Y(X\cdot Z)} = \operatorname{Cor}(Y,r_X)\]</span></p>
+<p>The squared semipartial correlation represents the unique increase in (R^2) associated with adding that predictor after the other predictors are already in the model.</p>
+<p>The standardized regression coefficient, partial correlation, and semipartial correlation are related but are not generally identical.</p>
+<p>In SPSS:</p>
+<ul>
+<li><code>Beta</code> is the standardized regression coefficient.</li>
+<li><code>Partial</code> is the partial correlation.</li>
+<li><code>Part</code> is the semipartial correlation.</li>
+</ul>
+<p>In a simple regression, the standardized coefficient equals the zero-order correlation. That special equivalence does not generally persist after additional predictors are added.</p>
+<p>For example:</p>
+<p><span class="math display">\[\text{Academic Performance} = b_0 + b_1(\text{Resilience}) + b_2(\text{SES}) +e\]</span></p>
+<p>The coefficient (b_1) estimates the association between resilience and academic performance conditional on socioeconomic status. It asks whether students who differ in resilience but have the same modeled level of socioeconomic status also differ in expected academic performance.</p>
+<p>If two predictors are strongly correlated, their coefficients can change substantially when they are entered together. The direction and magnitude of those changes depend on how each predictor relates to the outcome and to the other predictor. Such changes can reflect confounding, suppression, shared predictive information, measurement error, or other model features. They should not automatically be described as mediation.</p>
+</section>
+</section>
+<section id="conducting-a-multiple-linear-regression-using-forward-term-selection" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="conducting-a-multiple-linear-regression-using-forward-term-selection"><span class="header-section-number">9.3.2</span> Conducting a Multiple Linear Regression Using Forward Term Selection</h3>
+<p>A <em>multiple</em> linear regression contains one outcome and two or more predictors. A <em>multivariate</em> regression, by contrast, models multiple outcomes simultaneously.</p>
+<ol type="1">
+<li><p>In SPSS, compute the correlation between <code>ZAll_EFs_SR_Slope</code> and <code>Adult_Sister_at_Home</code>, a dummy variable indicating whether the adolescent lived with a sister older than 18. The point-biserial correlation is (r_{pb}=-.11), (df=319), (p=.048). The association is small but statistically significant and, yes, was selected partly because it works for this example.</p></li>
+<li><p>Examine the correlations of <code>DBT</code> with both <code>ZAll_EFs_SR_Slope</code> and <code>Adult_Sister_at_Home</code>.</p>
+<p>The zero-order correlation between <code>DBT</code> and <code>ZAll_EFs_SR_Slope</code> is (-.165), and the association between <code>DBT</code> and <code>Adult_Sister_at_Home</code> is (=.04).</p>
+<p>There is no strong theoretical reason to expect DBT participation to be associated with the presence of an adult sister in the home. The variable nevertheless provides a useful example of how coefficients change when correlated predictors are entered together.</p></li>
+<li><p>Rerun the regression predicting <code>ZAll_EFs_SR_Slope</code>, this time including both <code>DBT</code> and <code>Adult_Sister_at_Home</code>.</p>
+<p>Go to <code>Analyze &gt; Regression &gt; Linear...</code>, place <code>ZAll_EFs_SR_Slope</code> in the <code>Dependent</code> field, and place both <code>DBT</code> and <code>Adult_Sister_at_Home</code> in the <code>Independent(s)</code> field.</p></li>
+<li><p>Under <code>Statistics...</code>, select:</p>
+<ul>
+<li><code>Estimates</code></li>
+<li><code>Model fit</code></li>
+<li><code>R squared change</code></li>
+<li><code>Collinearity diagnostics</code></li>
+</ul></li>
+<li><p>Under <code>Options</code>, leave <code>Include constant in equation</code> selected and use <code>Exclude cases listwise</code>.</p></li>
+<li><p>Turn to the <code>Method:</code> drop-down menu below the <code>Independent(s)</code> field. Select <code>Forward</code>.</p></li>
+<li><p>Click <code>OK</code>.</p></li>
 </ol>
 <section id="results" class="level4">
 <h4 class="anchored" data-anchor-id="results">Results</h4>
 <section id="sec-into-to-stepwise" class="level5">
-<h5 class="anchored" data-anchor-id="sec-into-to-stepwise">Variables Entered/Removed and the “Stepwise” Strategy</h5>
-<p><img src="images/lrm_03.png" class="img-fluid"> The <code>Variables Entered/Removed</code> table reports which variables are either entered or removed based on the <code>Method:</code> we selected to determine which variables ought to be selected for our final model. Let me first explain what is being done here and why before we explore more particularly the methods used.</p>
-<p>Second, we could think of the whole model and whether a predictor makes a significant contribution to the overall fit of the model. This latter method will (usually) produce the same results as the former, but has the advantages of both allowing us to test significance in more ways and of allowing us to test and consider contributions more flexibly and precisely.</p>
-<p>What SPSS is doing here is based on that second approach. It is trying to build the best model, picking from those we suggested to find the combination that has the largest number of significant terms<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>. Here, the only possible predictors SPSS could choose from are just <code>DBT</code> and <code>Adult_Sister_at_Home</code>. However, when exploring larger sets of data, there may be many more potential variables to add.</p>
-<p>The general strategy SPSS presumes we are following is to choose which variable(s) to add or remove from a model based on whether that variable significantly changes the fit of the overall model. One advantage of this strategy is that is considers whether predictors themselves are inter-correlated. If two predictors are strongly correlated, then it’s unlikely that both will be added to the model; instead, the one that is more strongly predictive of the criterion will be added and the other one won’t make the cut since most of its relationship with the criterion will be accounted for by the other predictor that made the cut first. This tends to create a more parsimonious model that is less affected by multicollinearity and yet is still effective.</p>
-<p>SPSS, in fact, offers five methods for deciding which predictors to add or remove<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> given this general strategy:</p>
+<h5 class="anchored" data-anchor-id="sec-into-to-stepwise">Variables Entered/Removed and the Stepwise Strategy</h5>
+<p><img src="images/lrm_03.png" class="img-fluid"></p>
+<p>The <code>Variables Entered/Removed</code> table reports which variables entered the model under the selected method.</p>
+<p>The goal of a theory-driven analysis is usually to specify predictors and their order based on the research question, study design, and prior evidence. Automated procedures such as <code>Forward</code>, <code>Backward</code>, and <code>Stepwise</code> instead allow features of the current sample to determine which predictors are retained.</p>
+<p>Here, the only possible predictors are <code>DBT</code> and <code>Adult_Sister_at_Home</code>, so the consequences are limited and easy to inspect. In larger datasets, automated selection can produce unstable and sample-specific models.</p>
+<p>Potential problems include:</p>
 <ul>
-<li><p><code>Enter:</code> The most theory-driven of the methods, <code>Enter</code> lets one add “block” or set of predictors and then add another block, continuing as one wants. In this way, one could, e.g., first add in all of the variables that are not of direct but that one expects will be important to control for when finally looking at the (other) predictors that are of theoretical interest; in other words, one could create a base model with the first block, and then in the second block start adding predictors of theoretical interest to see if those theoretically-interesting predictors prove to be important after all. This is the method I use nearly exclusively.</p></li>
-<li><p><code>Remove:</code> A similar strategy to <code>Enter</code>, SPSS first starts with all chosen predictors added to the model. It then removes those listed in the first block, then those listed in the second block, and continues until there are no more predictors (except the intercept, if present). <code>Enter</code> is used to test whether adding a block of predicts improves the model; <code>Remove</code> is used to test whether removing a block of predictors worsened the model. It’s a subtle distinction, and the choice of which to use is one determines based on one’s theory and research questions.</p></li>
-<li><p><code>Stepwise:</code> A method that both adds and removes predictors. SPSS does this in “steps.” In the first step, SPSS starts with no predictors in the model (except the intercept); it then tries out each predictor, seeing which of them would be most significant (has the smallest <em>p</em>-value<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>); if that predictor with the smallest <em>p</em>-value is also sufficiently significant<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>, then it is indeed added to the model in that first step.</p>
-<p>In the second step, SPSS first tries out all of the variables still not in the model, chooses the one with the smallest <em>p</em>-value, and adds that to the model if its <em>p</em>-value is smaller than the pre-set cut-off. Then, still in the second step, SPSS goes through the predictors that have been added to the model; if any of them have become sufficiently <em>non</em>-significant, SPSS removes them from the model. If no predictors were added or removed during the second step (if none met the criteria for entry or removal), then SPSS stops and reports this as the final model.</p>
-<p>The third and any subsequent steps follow the same procedure as the second step, explained just above. Note that it is possible (unlikely, but possible) that a variable that was previously removed is later re-entered as SPSS fiddles around finding the best set of predictors.</p></li>
-<li><p><code>Forward:</code> This method is like <code>Stepwise</code>, but in which predictors are only added (if they meet the pre-set cut-off) at each step; none are removed. (This is the method we used here because it’s simple and worked for what I wanted to show.)</p></li>
-<li><p><code>Backward:</code> This method is also like <code>Stepwise</code>; here SPSS starts with all chosen predictors in the model, and then only removes any at each step, stopping either when no more meet the pre-set cut-off or when there are no more predictors left in it.</p></li>
+<li>Small changes in the sample can change which predictors are selected.</li>
+<li>Coefficients and (R^2) may be biased upward.</li>
+<li>Conventional (p)-values and confidence intervals do not account for the selection process.</li>
+<li>Correlated predictors may be selected or omitted somewhat arbitrarily.</li>
+<li>A model selected in one sample may perform poorly in another.</li>
 </ul>
+<p>Thus, forward selection is useful here as a demonstration of automated model building, but it should generally be treated as exploratory rather than as a reliable method for identifying the single “best” or “true” model.</p>
+<p>SPSS offers five methods for entering or removing predictors:</p>
+<ul>
+<li><p><code>Enter</code>: Predictors in a block are entered simultaneously. Additional blocks can then be added in a prespecified order. This is usually the most theory-driven option because the investigator, rather than the observed (p)-values, decides which predictors belong in each model. This is the method I use nearly exclusively.</p></li>
+<li><p><code>Remove</code>: Predictors in a specified block are removed simultaneously from a model that already contains them. This can be used to test whether deleting a theoretically defined block worsens model fit.</p></li>
+<li><p><code>Stepwise</code>: SPSS begins with an intercept-only model. At each step, it evaluates predictors not yet in the model and adds the eligible predictor that best meets the entry criterion. It then reevaluates predictors already in the model and may remove those that no longer meet the retention criterion. A previously removed predictor can later reenter.</p>
+<p>The criteria are specified under <code>Options... &gt; Stepping Method Criteria</code>. They are commonly expressed as probabilities associated with (F)-tests for entry and removal.</p></li>
+<li><p><code>Forward</code>: This resembles stepwise selection, but predictors are only added. Once entered, they are not removed.</p></li>
+<li><p><code>Backward</code>: SPSS begins with all candidate predictors and removes those that fail the specified retention criterion.</p></li>
+</ul>
+<p>Automated selection does not solve multicollinearity. When predictors are strongly correlated, a procedure may retain one and omit another, but the selected variable can depend on small sample-specific differences. A parsimonious selected model is not necessarily stable, unbiased, or theoretically meaningful.</p>
 </section>
 <section id="model-summary" class="level5">
 <h5 class="anchored" data-anchor-id="model-summary">Model Summary</h5>
 <p><img src="images/lrm_04.png" class="img-fluid"></p>
-<p>This is the meat of the output. This table shows the performance of the overall model—not the individual predictors—at each step. The model statistics for the first step are given in the row labeled 1 in the Model column. Notice that the <em>R</em>-value for the first model (which contains only DBT) is the same as the zero-order correlation between <code>DBT</code> and <code>ZAll_EFs_SR_Slope</code>, again showing the similarity of the processes (again, as long as the same assumptions hold).</p>
-<p>Remember that squaring a correlation produces the proportion of variance explained. Similarly the model <em>R</em><sup>2</sup> (here <code>R Square</code>) indicates the proportion of variance in the criterion explained by this model. The <code>Adjusted R Square</code> is the model <em>R</em><sup>2</sup> adjusted for the number of terms in the model (predictors as well as intercept—if present—and error); as you can infer from the values here, it reduces the <em>R</em><sup>2</sup> ; this helps protect against inflated the model <em>R</em><sup>2</sup> simply adding a bunch of terms that have very little—if any—relationship with the criterion.</p>
-<p>Adjusted <em>R</em><sup>2</sup> also adjusted for the sample size; larger sample sizes are adjusted less since it is argued that they better represent the overall population. Given these adjustments, adjusted <em>R</em><sup>2</sup> values are best used as descriptive statistics when reporting how much, e.g., your model’s results and performance may apply to instances outside of your study—when making recommendations to the field, for example. However, adjusted <em>R</em><sup>2</sup> does not serve well for comparing between models within your analysis, as we will soon do.</p>
-<p>The <code>Std. Error of the Estimate</code> (standard error of the estimate, also called the root mean square error) is the standard deviation of the error term in the model; this simply shows how much residual error (variance) there is in the model. Our <em>R</em><sup>2</sup> value is small—only accounting for 2.7% of the variance in EF change scores—so it’s not surprising that there is a lot of residual error; this column reminds us that that is so.</p>
-<p>The <code>R Square Change</code> is how much change there is in the <code>R Square</code> value. For the first model, you’ll see that the <code>R Square Change</code> value is the same as the <code>R Square</code> value. Personally, I find this confusing since it’s not really a <em>change</em> in <em>R</em><sup>2</sup>, but simply the initial <em>R</em><sup>2</sup> value. The <code>F Change</code>, <em>df</em>s, and <code>Sig. F Change</code> for this first row are also simply the significance tests for this first model—not the change in the model. They do show that the model is significant (<em>p</em> = .003).</p>
-<p>The second row (where Model is 2) indeed shows the change in model fit made by adding <code>Adult_Sister_at_Home</code> to the model that already contains <code>DBT.</code> Now, the <code>R</code>, <code>R Square</code>, <code>Adjusted R Square</code>, and <code>Std. Error of the Estimate</code> values <em>are</em> for the whole model (showing that the model with both predictors does account for more of the variance in <code>ZAll_EFs_SR_Slope</code> than the one only containing <code>DBT</code>—even when adjusting for the fact there are simple more predictors there), but the other columns are all analyzing the change in the <em>R</em><sup>2</sup> value between the first and second models. Although the change in <em>R</em>2 is small (.041 – .027 = .014), it is significant (<em>F</em><sub>1,</sub> <sub>316</sub> = 4.51, <em>p</em> = .034); adding the <code>Adult_Sister_at_Home</code> term improved our model—and thus our understanding of EF changes; <code>DBT</code> and <code>Adult_Sister_at_Home</code> both make significant contributions to our understanding of changes in student-reported executive functioning, and these predictors—although mildly correlated (<em>r</em><sub>pb</sub> = .04)—make otherwise unique contributions to predictions of EF changes.</p>
-<p>It’s worth reiterating how testing for relationships in this way allows for more precise and nuanced insights into the relationships between our variables. We still test whether both predictors are significant, but do so through how much they contribute to our overall understanding: It’s not just if a term is significant, but how much it matters in light of everything else we know.</p>
+<p>This table summarizes the performance of the overall model at each step.</p>
+<p>For Model 1, which contains only <code>DBT</code>, (R=.165). Because this is a simple regression containing an intercept and using the same observations, (R) is exactly the absolute value of the zero-order correlation between <code>DBT</code> and <code>ZAll_EFs_SR_Slope</code>.</p>
+<p>The corresponding (R^2) is .027, indicating that the model accounts for 2.7% of the observed variance in executive-function slopes.</p>
+<p><code>Adjusted R Square</code> adjusts (R^2) according to the number of predictors and the sample size. It does not include the error term as a counted predictor, and the intercept is not included in (p) in the usual adjusted-(R^2) formula.</p>
+<p>Adjusted (R^2) is often useful when comparing models of different complexity, as long as they are fitted to the same outcome and analytic sample. It is not a direct measure of generalizability.</p>
+<p>The <code>Std. Error of the Estimate</code> is the residual standard deviation, also called the root mean square error under the usual regression calculation. It is expressed in the units of the outcome and indicates the typical distance between observed and predicted values.</p>
+<p><code>R Square Change</code> represents the improvement in explained variance relative to the preceding model.</p>
+<p>For Model 1, the preceding model is the intercept-only model. Thus, the first <code>R Square Change</code> is legitimately the increase from (R^2=0) in the intercept-only model to (R^2=.027) after adding <code>DBT</code>.</p>
+<p>The corresponding <code>F Change</code> and <code>Sig. F Change</code> test whether that increase is greater than would be expected by sampling error.</p>
+<p>Model 2 adds <code>Adult_Sister_at_Home</code> to the model already containing <code>DBT</code>.</p>
+<p>The overall (R), (R^2), adjusted (R^2), and standard error of the estimate describe the complete two-predictor model. The change statistics evaluate the additional contribution of <code>Adult_Sister_at_Home</code>.</p>
+<p>The increase is:</p>
+<p><span class="math display">\[\Delta R^2=.041-.027=.014\]</span></p>
+<p>Thus, <code>Adult_Sister_at_Home</code> accounts for an additional 1.4% of the observed outcome variance after <code>DBT</code> has already been entered.</p>
+<p>This change is statistically significant:</p>
+<p><span class="math display">\[F_{\text{change}}(1,316)=4.51,\quad p=.034\]</span></p>
+<p>This means that the two-predictor model fits the observed data better than the model containing only <code>DBT</code>.</p>
+<p>The result does not mean that the new predictor is necessarily important in a causal or practical sense. It means that it contributes statistically detectable predictive information in this sample after adjustment for <code>DBT</code>.</p>
 </section>
 <section id="anova-table" class="level5">
-<h5 class="anchored" data-anchor-id="anova-table">ANOVA Table </h5>
+<h5 class="anchored" data-anchor-id="anova-table">ANOVA Table</h5>
 <p><img src="images/lrm_05.png" class="img-fluid"></p>
-<p>Finally something familiar. The <code>ANOVA</code> table presents an ANOVA run on each of the models. This table doesn’t, however, show the tests of each of the terms in the model—just the overall model As such, this table really does little more than what was shown by the <em>F</em>-scores in the <code>Model Summary</code> table, just above.</p>
+<p>The <code>ANOVA</code> table evaluates the complete model at each step against an intercept-only model.</p>
+<p>It does not test each predictor separately. In Model 2, for example, the (F)-test evaluates the joint null hypothesis:</p>
+<p><span class="math display">\[H_0:\beta_{\text{DBT}}=\beta_{\text{Adult Sister}}=0\]</span></p>
+<p>The individual predictors are evaluated in the <code>Coefficients</code> table, while the incremental contribution of the newly entered predictor is evaluated by the (R^2)-change test.</p>
 </section>
 <section id="coefficients" class="level5">
 <h5 class="anchored" data-anchor-id="coefficients">Coefficients</h5>
 <p><img src="images/lrm_06.png" class="img-fluid"></p>
-<p>The <a href="https://stats.idre.ucla.edu/spss/output/regression-analysis/"><code>Coefficients</code></a> table also takes us back to more familiar ground, testing the effects of the predictor terms per se. Given how we’ve coded our variables, this table is a bit more confusing than it would otherwise be, though: Both <code>DBT</code> and <code>Adult_Sister_at_Home</code> are dichotomous variables, so the <code>Unstandardized Coefficients</code> don’t give us the insights that variables that have meaningful units would give; the main insights from the <code>Unstandardized Coefficients</code> is that the intercepts in both models are not significant, meaning that the sixth-grade EF scores for students were not different between those who participated or didn’t participate in the DBT program (<em>t</em> = 1.28, <em>p</em> = .20), even when accounting for whether they had adult sister(s) at home (<em>t</em> = -0.25, <em>p</em> = .80).</p>
-<p>Note, though, that the <span class="math inline">\(beta\)</span>-weight for the <code>DBT</code> term in the first model is the zero-order correlation between it and <code>ZAll_EFs_SR_Slope</code>. As the column heading makes clear, <span class="math inline">\(beta\)</span>-weights are the standardized regression weights, thus here the semipartial correlation (semipartialing out the intercept). In the second model, the <code>DBT</code> <span class="math inline">\(beta\)</span>-weight is -.169; this is the semipartial correlation between <code>DBT</code> and <code>ZAll_EFs_SR_Slope</code>; semipartialing out slightly improves—clarifies—the relationship between DBT participation and EF changes (as we knew from the <em>R</em><sup>2</sup> change tests, above). The zero-order correlation between <code>Adult_Sister_at_Home</code> and <code>ZAll_EFs_SR_Slope</code> is -.11 while the semipartial correlation between them is .117—stronger and in the opposite direction; the adult sister thing is hard to explain or interpret here, but what we can say is that its relationship with EF changes is certainly mediated by DBT participation, underlining the importance of considering other variables in one’s analyses.</p>
-<p>The <code>Collinearity Statistics</code> columns report two common tests of (multi)collinearity between predictors in the model:</p>
+<p>The <code>Coefficients</code> table evaluates the individual model terms.</p>
+<p>The unstandardized coefficient for a binary predictor coded 0 and 1 is directly interpretable as an adjusted difference between the two groups. Binary predictors thus have meaningful unstandardized coefficients.</p>
+<p>Because <code>ZAll_EFs_SR_Slope</code> is standardized, an unstandardized coefficient for <code>DBT</code> represents the difference between the DBT and non-DBT groups in outcome standard-deviation units.</p>
+<p>The intercept is the expected outcome when all predictors equal zero. In Model 1, it is the expected standardized executive-function slope among students with <code>DBT = 0</code>. Its (p)-value tests whether that expected value differs from zero.</p>
+<p>The intercept test does not test whether DBT participants differ from nonparticipants. That difference is tested by the <code>DBT</code> coefficient.</p>
+<p>In the simple first model, the standardized <code>Beta</code> for <code>DBT</code> equals its zero-order correlation with the outcome:</p>
+<p><span class="math display">\[\beta = r = -.165\]</span></p>
+<p>After <code>Adult_Sister_at_Home</code> is added, the <code>Beta</code> for <code>DBT</code> becomes an adjusted standardized regression coefficient. It is not the semipartial correlation.</p>
+<p>The <code>Part</code> column contains the semipartial correlation, and the <code>Partial</code> column contains the partial correlation.</p>
+<p>Compare the zero-order, partial, part, and standardized coefficients to understand how adjustment changes the estimated relationship. A modest change indicates that the added predictor shares some information with the predictor and outcome but does not radically alter the association.</p>
+<p>A change in a coefficient does not establish mediation. It may reflect confounding, suppression, shared predictive variation, measurement error, or another feature of the model. Mediation requires a theoretically plausible causal sequence and explicit estimation of an indirect pathway.</p>
+<p>The <code>Collinearity Statistics</code> columns report tolerance and the variance inflation factor:</p>
+<p><span class="math display">\[\text{Tolerance}_j = 1 - R_j^2\]</span></p>
+<p>where (R_j^2) is obtained by predicting predictor (j) from the other predictors.</p>
+<p>The variance inflation factor is:</p>
+<p><span class="math display">\[\text{VIF}_j = \frac{1}{\text{Tolerance}_j}\]</span></p>
 <ul>
-<li><code>Tolerance</code> ranges from 0 to 1, with numbers closer to zero indicating that that variable is stronger related to other predictors in the model. By convention (more than reason), tolerances of less than .1 are seen as problematic and should be addressed, e.g., by removing predictors from the model or explaining why there is such high <a href="https://articles.viriya.net/multicollinearity.pdf">multicollinearity</a>.</li>
-<li>The variance inflation factor (<code>VIF</code>) measure the effect of collinearity on the model. VIFs range from 1 to infinity, and values greater than 10 are typically seen as indicating that collinearity is unignorably affecting the performance of the model. This affect is usually to make the model terms unstable, meaning we can’t speak confidently about not only the absolute values of the <em>b</em>- or <span class="math inline">\(beta\)</span>-weights but that we can’t even be sure of significance tests on them.</li>
+<li><code>Tolerance</code> ranges from 0 to 1. Lower values indicate that more of the predictor is linearly predictable from the other predictors.</li>
+<li><code>VIF</code> begins at 1 and increases as collinearity increases. It represents how much the variance of a coefficient is inflated by linear relationships among the predictors.</li>
 </ul>
-<p>There is only one predictor in the first model, so the <code>Collinearity Statistics</code> expectedly show there is no collinearity. In the second model, both statistics are remain very good, indicating that the contributions of <code>DBT</code> and <code>Adult_Sister_at_Home</code> are largely independent of each other; the weak correlation between those two variables (<a href="https://www.andrews.edu/~calkins/math/edrm611/edrm13.htm#PHI">φ</a> = .04) makes us expect that any collinearity would be quite small.</p>
+<p>Thresholds such as tolerance below .10 or VIF above 10 are common conventions rather than universal rules. Values above 5 may warrant attention in some contexts.</p>
+<p>Collinearity is most important when it produces unstable coefficients, large standard errors, sensitivity to model specification, or difficulty separating the contributions of substantively overlapping predictors.</p>
+<p>With one predictor, Model 1 has no predictor-to-predictor collinearity. In Model 2, the tolerance and VIF values indicate little linear redundancy between <code>DBT</code> and <code>Adult_Sister_at_Home</code>, as expected from their weak association of (=.04).</p>
 </section>
 <section id="excluded-variables" class="level5">
 <h5 class="anchored" data-anchor-id="excluded-variables">Excluded Variables</h5>
 <p><img src="images/lrm_07.png" class="img-fluid"></p>
-<p>The <code>Excluded Variables</code> table reports what the statistics would have been for each term if they had indeed been added to it. We only have two predictors and the second predictor was all that was added to the second model, so there is no new information gained here fro this table. Has we been conducting a more data-driven investigation into a larger set of variables, this table could be used to look at how the model would have performed under different combinations of predictors, even if SPSS hasn’t selected to include them.</p>
+<p>The <code>Excluded Variables</code> table reports statistics for candidate predictors not included at a given step. These statistics show what each excluded predictor would contribute if it were entered next, conditional on the predictors already in the model.</p>
+<p>Because there are only two candidate predictors and both are eventually included, this table provides little additional information here.</p>
+<p>In a larger automated-selection analysis, the table can help explain why a variable was not entered at a particular step. It should not be treated as a substitute for prespecified model comparison or validation.</p>
 </section>
 <section id="collinearity-diagnostics" class="level5">
 <h5 class="anchored" data-anchor-id="collinearity-diagnostics">Collinearity Diagnostics</h5>
 <p><img src="images/lrm_08.png" class="img-fluid"></p>
-<p>We had told SPSS to include collinearity diagnostics above, so this table also doesn’t present much new, but it does give some more information about what we know already. The <code>Eigenvalue</code> column can be used to ascertain where most of the collinearity in a model resides; this is especially useful if there are more than two variables that share unignorable levels of multicollinearity. In investigating multicollinearity, Eigenvalues greater than 15 are generally seen as important; Eigenvalues less than 1 are always ignorable. The <code>Condition Index</code> essentially measures the cumulative effect of the various sources of multicollinearity; values greater than 15 for condition indices are seen as problematic.</p>
-<hr>
+<p>The <code>Collinearity Diagnostics</code> table provides additional information about near-linear dependencies among the predictors.</p>
+<p>The <code>Eigenvalue</code> column reflects how much independent information is associated with each dimension of the predictor matrix. Very small eigenvalues approaching zero indicate dimensions containing little independent information and therefore potential collinearity.</p>
+<p>The <code>Condition Index</code> is derived from the ratio between the largest eigenvalue and each dimension’s eigenvalue:</p>
+<p><span class="math display">\[\text{Condition Index}_j = \sqrt{\frac{\lambda_{\max}}{\lambda_j}}\]</span></p>
+<p>Common rough guidelines are:</p>
+<ul>
+<li>Values above approximately 15 may warrant attention.</li>
+<li>Values above approximately 30 may indicate serious collinearity.</li>
+</ul>
+<p>These thresholds are not absolute.</p>
+<p>A high condition index is most concerning when two or more predictors also have large variance proportions associated with the same dimension. The condition index should therefore be interpreted together with the variance proportions, tolerance, VIF, standard errors, and substantive relationships among the predictors.</p>
 </section>
 </section>
 </section>
@@ -588,25 +736,26 @@ ul.task-list li input[type="checkbox"] {
 <section id="analyzing-residuals" class="level1" data-number="10">
 <h1 data-number="10"><span class="header-section-number">10</span> Analyzing Residuals</h1>
 <section id="set-up-your-model" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="set-up-your-model"><span class="header-section-number">10.1</span> Set up Your Model</h2>
+<h2 data-number="10.1" class="anchored" data-anchor-id="set-up-your-model"><span class="header-section-number">10.1</span> Set Up Your Model</h2>
 <ol type="1">
-<li>Open your dataset in SPSS.</li>
+<li>Open the dataset in SPSS.</li>
 <li>Go to <code>Analyze &gt; Regression &gt; Linear</code>.</li>
-<li>Move your <code>dependent variable</code> into the <code>Dependent</code> box.</li>
-<li>Move your <code>independent variable(s)</code> into the <code>Independent(s)</code> box.</li>
-<li>Click <code>Plots</code> and <code>Save</code> (details below), then click <code>OK</code> to run the regression.</li>
+<li>Move the outcome into the <code>Dependent</code> box.</li>
+<li>Move the predictor or predictors into the <code>Independent(s)</code> box.</li>
+<li>Click <code>Plots</code> and <code>Save</code>, following the steps below, and then click <code>OK</code>.</li>
 </ol>
 <section id="steps-to-evaluate-residuals" class="level3" data-number="10.1.1">
 <h3 data-number="10.1.1" class="anchored" data-anchor-id="steps-to-evaluate-residuals"><span class="header-section-number">10.1.1</span> Steps to Evaluate Residuals</h3>
 <section id="request-residual-plots" class="level4">
 <h4 class="anchored" data-anchor-id="request-residual-plots">Request Residual Plots</h4>
 <ul>
-<li>In the <code>Linear Regression</code> dialogue:
+<li><p>In the <code>Linear Regression</code> dialogue:</p>
 <ul>
 <li>Click <code>Plots</code>.</li>
-<li>In the <code>Y</code> box, enter: <code>ZRESID</code> (standardized residuals).</li>
-<li>In the <code>X</code> box, enter: <code>ZPRED</code> (standardized predicted values).</li>
-<li>Check <code>Histogram</code> and <code>Normal probability plot</code>.</li>
+<li>In the <code>Y</code> box, enter <code>ZRESID</code>, representing standardized residuals.</li>
+<li>In the <code>X</code> box, enter <code>ZPRED</code>, representing standardized predicted values.</li>
+<li>Check <code>Histogram</code>.</li>
+<li>Check <code>Normal probability plot</code>.</li>
 <li>Click <code>Continue</code>.</li>
 </ul></li>
 </ul>
@@ -614,26 +763,26 @@ ul.task-list li input[type="checkbox"] {
 <section id="save-residuals-and-predicted-values" class="level4">
 <h4 class="anchored" data-anchor-id="save-residuals-and-predicted-values">Save Residuals and Predicted Values</h4>
 <ul>
-<li>In the <code>Linear Regression</code> dialogue:
+<li><p>In the <code>Linear Regression</code> dialogue:</p>
 <ul>
-<li>Click <code>Save</code>.</li>
-<li>Under <code>Predicted Values</code>, check:
+<li><p>Click <code>Save</code>.</p></li>
+<li><p>Under <code>Predicted Values</code>, check:</p>
 <ul>
 <li><code>Unstandardized</code></li>
 <li><code>Standardized</code></li>
 </ul></li>
-<li>Under <code>Residuals</code>, check:
+<li><p>Under <code>Residuals</code>, check:</p>
 <ul>
 <li><code>Unstandardized</code></li>
 <li><code>Standardized</code></li>
 <li><code>Studentized</code></li>
 </ul></li>
-<li>Optionally under <code>Influence Statistics</code>, check:
+<li><p>Optionally, under <code>Influence Statistics</code>, check:</p>
 <ul>
 <li><code>Cook's distance</code></li>
 <li><code>Leverage values</code></li>
 </ul></li>
-<li>Click <code>Continue</code>, then <code>OK</code>.</li>
+<li><p>Click <code>Continue</code>, and then click <code>OK</code>.</p></li>
 </ul></li>
 </ul>
 </section>
@@ -642,61 +791,63 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="10.1.2" class="anchored" data-anchor-id="interpretation-of-outputs"><span class="header-section-number">10.1.2</span> Interpretation of Outputs</h3>
 <section id="histogram-of-residuals" class="level4">
 <h4 class="anchored" data-anchor-id="histogram-of-residuals">Histogram of Residuals</h4>
-<ul>
-<li>Evaluates <strong>normality</strong> of residuals.</li>
-<li>Should appear approximately bell-shaped.</li>
-<li>For more rigorous assessment, use the <code>Normal P-P Plot</code> or a <code>Shapiro-Wilk test</code>.</li>
-</ul>
+<p>The histogram displays the distribution of residuals.</p>
+<p>Residuals should often appear approximately symmetric and bell-shaped, particularly when the sample is small and conventional (t)- and (F)-based inference depends more heavily on the normality approximation.</p>
+<p>Exact normality is not required for the least-squares coefficient estimates themselves to be unbiased. With large samples, modest departures from normality generally matter less for conventional inference.</p>
 </section>
-<section id="q-q-plot-normal-p-p-plot" class="level4">
-<h4 class="anchored" data-anchor-id="q-q-plot-normal-p-p-plot">Q-Q Plot (Normal P-P Plot)</h4>
-<ul>
-<li>Points should follow the 45-degree line.</li>
-<li>Deviations indicate non-normality.</li>
-</ul>
+<section id="normal-p-p-plot" class="level4">
+<h4 class="anchored" data-anchor-id="normal-p-p-plot">Normal P-P Plot</h4>
+<p>SPSS produces a normal P-P plot in this dialogue.</p>
+<p>If the residual distribution is approximately normal, the plotted points should generally follow the diagonal line.</p>
+<p>Systematic departures from the line may indicate skewness, heavy tails, or other departures from normality.</p>
+<p>Formal tests such as Shapiro-Wilk are not automatically more informative. In large samples, they can detect trivial departures from normality that have little practical consequence. Graphical assessment is often more useful.</p>
 </section>
 <section id="scatterplot-of-zresid-vs.-zpred" class="level4">
 <h4 class="anchored" data-anchor-id="scatterplot-of-zresid-vs.-zpred">Scatterplot of <code>ZRESID</code> vs.&nbsp;<code>ZPRED</code></h4>
+<p>This plot helps assess linearity and homoscedasticity.</p>
+<p>A reasonably specified linear model should produce a relatively random cloud of residuals centered around zero.</p>
 <ul>
-<li>Assesses <strong>linearity</strong> and <strong>homoscedasticity</strong>.</li>
-<li>Should display a random cloud of points.
-<ul>
-<li>Patterns (e.g., curves, funnels) suggest violations.</li>
-</ul></li>
+<li>Curvature may suggest that the modeled relationship is nonlinear.</li>
+<li>A funnel or fan shape may suggest heteroscedasticity.</li>
+<li>Clusters or bands may suggest omitted groups, discrete predictors, or other structure.</li>
 </ul>
 </section>
 <section id="studentized-residuals" class="level4">
 <h4 class="anchored" data-anchor-id="studentized-residuals">Studentized Residuals</h4>
-<ul>
-<li>Check for outliers, e.g., values above ±2 or ±3 may be influential.</li>
-</ul>
+<p>Studentized residuals indicate how unusual an observed outcome is relative to its predicted value and estimated residual variability.</p>
+<p>Values beyond approximately () deserve attention, and values beyond approximately () are more unusual.</p>
+<p>A large residual does not necessarily mean that an observation is influential. Influence also depends on leverage.</p>
 </section>
 <section id="cooks-distance" class="level4">
 <h4 class="anchored" data-anchor-id="cooks-distance">Cook’s Distance</h4>
-<ul>
-<li>Evaluates <strong>influence</strong> of observations on the regression model.</li>
-<li>Values &gt; 1 may indicate problematic cases.</li>
-</ul>
+<p>Cook’s distance summarizes how much the fitted model would change if an observation were removed.</p>
+<p>A value above 1 is a traditional warning criterion. A smaller sample-dependent value such as:</p>
+<p><span class="math display">\[\frac{4}{N}\]</span></p>
+<p>can be used as an initial screening threshold.</p>
+<p>Neither criterion should be used as an automatic deletion rule. Flagged observations should be investigated for data errors, unusual but valid characteristics, and sensitivity of the results.</p>
 </section>
 <section id="leverage-values" class="level4">
 <h4 class="anchored" data-anchor-id="leverage-values">Leverage Values</h4>
-<ul>
-<li>Identifies points with unusual predictor values.</li>
-<li>High leverage + large residual = influential observation.</li>
-</ul>
+<p>Leverage identifies observations with unusual combinations of predictor values.</p>
+<p>Approximate screening criteria include:</p>
+<p><span class="math display">\[\frac{2(p+1)}{N}\]</span></p>
+<p>or:</p>
+<p><span class="math display">\[\frac{3(p+1)}{N}\]</span></p>
+<p>where (p) is the number of predictors.</p>
+<p>An observation is most likely to be influential when it combines high leverage with a large residual.</p>
 </section>
 </section>
 <section id="best-practice-summary" class="level3" data-number="10.1.3">
-<h3 data-number="10.1.3" class="anchored" data-anchor-id="best-practice-summary"><span class="header-section-number">10.1.3</span> Best Practice Summary</h3>
+<h3 data-number="10.1.3" class="anchored" data-anchor-id="best-practice-summary"><span class="header-section-number">10.1.3</span> Best-Practice Summary</h3>
 <table class="table">
 <colgroup>
-<col style="width: 19%">
-<col style="width: 42%">
-<col style="width: 37%">
+<col style="width: 15%">
+<col style="width: 31%">
+<col style="width: 52%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Assumption</th>
+<th>Assumption or Concern</th>
 <th>Tool in SPSS</th>
 <th>Interpretation</th>
 </tr>
@@ -704,73 +855,138 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td><strong>Linearity</strong></td>
-<td>Scatterplot of ZRESID vs.&nbsp;ZPRED</td>
-<td>Random cloud indicates assumption met</td>
+<td>Scatterplot of <code>ZRESID</code> vs.&nbsp;<code>ZPRED</code></td>
+<td>Curvature may indicate that the linear form is inadequate</td>
 </tr>
 <tr class="even">
-<td><strong>Normality</strong></td>
-<td>Histogram &amp; P-P Plot</td>
-<td>Approx. normal shape and diagonal line</td>
+<td><strong>Homoscedasticity</strong></td>
+<td>Scatterplot of <code>ZRESID</code> vs.&nbsp;<code>ZPRED</code></td>
+<td>A reasonably even vertical spread is desirable</td>
 </tr>
 <tr class="odd">
-<td><strong>Homoscedasticity</strong></td>
-<td>Same scatterplot (ZRESID vs.&nbsp;ZPRED)</td>
-<td>Equal spread across values</td>
+<td><strong>Residual normality</strong></td>
+<td>Histogram and normal P-P plot</td>
+<td>Approximate symmetry and adherence to the diagonal support the assumption</td>
+</tr>
+<tr class="even">
+<td><strong>Unusual outcomes</strong></td>
+<td>Studentized residuals</td>
+<td>Large absolute values identify observations poorly predicted by the model</td>
+</tr>
+<tr class="odd">
+<td><strong>Leverage</strong></td>
+<td>Leverage values</td>
+<td>High values identify unusual combinations of predictors</td>
 </tr>
 <tr class="even">
 <td><strong>Influence</strong></td>
-<td>Cook’s Distance, Leverage, Studentized Resid</td>
-<td>Values near limits may need closer look</td>
+<td>Cook’s distance with residuals and leverage</td>
+<td>Flagged cases warrant investigation and sensitivity analysis</td>
 </tr>
 </tbody>
 </table>
 </section>
 </section>
-<section id="multivariate-linear-regression-with-three-predictors-using-enter-term-selection" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="multivariate-linear-regression-with-three-predictors-using-enter-term-selection"><span class="header-section-number">10.2</span> Multivariate Linear Regression with Three Predictors Using <code>Enter</code> Term Selection</h2>
-<p>Now that we (hopefully!) have some understanding of multivariate linear regression, we can look at a slightly more complex one. Here, we are considering three variables, two of which we know are themselves mildly but significantly interrelated: DBT participation and economic distress (φ = -.08, <em>p</em> = 0.48). We’ll also consider adult sisters at home to build upon what we did above.</p>
-<p>We will also move to what I believe is a more generally-defensible method of building and comparing models. Presuming we are interested in testing if DBT participation affects changes in students’ executive functioning, we are probably interested not only if DBT participation matters, but if it matters more than other, theoretically-uninteresting factors—like how many adult sisters one lives with. Controlling for economic distress also removes an important source of variance we couldn’t control through experimental design, and so is worth including here for that reason<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>. Therefore, we will add all (both) of the theoretically-uninteresting predictors to the first model. Although we can (and should) investigate the statistics of this first model, it is primarily intended to serve simply as the null model—the baseline of comparison—for testing the effect of DBT participation. Looked at this way, we see if DBT participation predicts changes in EF—while controlling for known sources of variance that could otherwise mislead our interpretation of the effects of the DBT program.</p>
+<section id="multiple-linear-regression-with-three-predictors-using-enter-term-selection" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="multiple-linear-regression-with-three-predictors-using-enter-term-selection"><span class="header-section-number">10.2</span> Multiple Linear Regression With Three Predictors Using <code>Enter</code> Term Selection</h2>
+<p>Now that there is, hopefully, some understanding of multiple linear regression, consider a slightly more complex model.</p>
+<p>The three predictors are:</p>
+<ul>
+<li>DBT participation</li>
+<li>Economic distress</li>
+<li>Presence of an adult sister in the home</li>
+</ul>
+<p>DBT participation and economic distress are mildly associated, with (=-.08). The statistical significance of that association should be taken directly from the relevant SPSS output and verified before being reported.</p>
+<p>This analysis uses a more generally defensible method of building and comparing models.</p>
+<p>Suppose the principal research question is whether DBT participation is associated with changes in executive functioning after accounting for other measured characteristics.</p>
+<p>Economic distress and the presence of an adult sister are not the primary theoretical predictors here, but they can be entered first as covariates. DBT participation can then be added in a second block to test whether it explains additional outcome variance beyond that base model.</p>
+<p>Analytic adjustment can help account for measured differences that were not controlled through the study design. It does not automatically eliminate confounding, and it cannot account for relevant variables that were not measured or included.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>The first model should be called the <strong>base model</strong> or <strong>reduced model</strong>, not the null model. A null model ordinarily contains only an intercept.</p>
+<p>The second model tests whether adding <code>DBT</code> significantly improves fit beyond the base model.</p>
 <ol type="1">
-<li>To conduct our analyses, again evoke the main linear regression dialogue box, e.g., via <code>Analyze &gt; Regression &gt; Linear...</code></li>
-<li>Again let <code>ZAll_EFs_SR_Slope</code> serve as the <code>Dependent(s)</code>, but this time first add <code>Economic_Distress</code> and <code>Adult_Sister_at_Home</code> to the <code>Independent(s)</code> field.</li>
-<li>Change the <code>Method:</code> to <code>Enter</code>.</li>
-<li>Click on the <code>Next</code> button just above the <code>Independent(s)</code> field. This allows us to now enter other predictors into what will be the second block of predictors. Add <code>DBT</code> to the now-blank <code>Independent(s)</code> field.</li>
-<li>Ensure that in the <code>Statistics</code> dialogue box <code>Model fit</code>, <code>R squared change</code>, and <code>Collinearity diagnostics</code> are selected as is <code>Estimates</code> under <code>Regression Coefficients</code>.</li>
-<li>In the <code>Options</code> dialogue box, makes sure <code>Include constant in equation</code> and <code>Exclude cases pairwise</code> are also selected.</li>
-<li>Hit <code>OK</code>.</li>
+<li><p>Open the main linear-regression dialogue through <code>Analyze &gt; Regression &gt; Linear...</code>.</p></li>
+<li><p>Place <code>ZAll_EFs_SR_Slope</code> in the <code>Dependent</code> field.</p></li>
+<li><p>Add <code>Economic_Distress</code> and <code>Adult_Sister_at_Home</code> to the <code>Independent(s)</code> field.</p></li>
+<li><p>Change the <code>Method:</code> to <code>Enter</code>.</p></li>
+<li><p>Click <code>Next</code> above the <code>Independent(s)</code> field. This creates a second block. Add <code>DBT</code> to the now-blank <code>Independent(s)</code> field.</p></li>
+<li><p>In the <code>Statistics</code> dialogue, select:</p>
+<ul>
+<li><code>Estimates</code></li>
+<li><code>Model fit</code></li>
+<li><code>R squared change</code></li>
+<li><code>Collinearity diagnostics</code></li>
+</ul></li>
+<li><p>In the <code>Options</code> dialogue, leave <code>Include constant in equation</code> selected and use <code>Exclude cases listwise</code>.</p></li>
+<li><p>Click <code>OK</code>.</p></li>
 </ol>
 <section id="results-1" class="level3" data-number="10.2.1">
 <h3 data-number="10.2.1" class="anchored" data-anchor-id="results-1"><span class="header-section-number">10.2.1</span> Results</h3>
-<section id="variables-entered-removed" class="level4">
-<h4 class="anchored" data-anchor-id="variables-entered-removed">Variables Entered / Removed</h4>
+<section id="variables-enteredremoved" class="level4">
+<h4 class="anchored" data-anchor-id="variables-enteredremoved">Variables Entered/Removed</h4>
 <p><img src="images/lrm_09.png" class="img-fluid"></p>
-<p>The <code>Variables Entered/Removed</code> table summarizes our steps and that we used the <code>Enter</code> method allowing us—not the data—to decide which predictors to add and when.</p>
+<p>The <code>Variables Entered/Removed</code> table summarizes the two blocks and confirms that the <code>Enter</code> method was used.</p>
+<p>The investigators, rather than an automated selection algorithm, determined which predictors entered and in which order.</p>
 </section>
 <section id="model-summary-1" class="level4">
 <h4 class="anchored" data-anchor-id="model-summary-1">Model Summary</h4>
 <p><img src="images/lrm_11.png" class="img-fluid"></p>
-<p>Given our goals here, this is the most telling part of the output. The base model in step one in fact predict EF changes well (for field-based data). More interesting, though, is that adding <code>DBT</code> to this already-significant model further improves it, increasing the proportion of variance explained by 2.4% (<code>R Square Change</code> = .024), which is a significant contribution here (<em>F</em><sub>1,</sub> <sub>315</sub> = 8.16, <em>p</em> = .005).</p>
+<p>The first model contains <code>Economic_Distress</code> and <code>Adult_Sister_at_Home</code>. It accounts for a modest but statistically significant proportion of the observed variance in executive-function slopes.</p>
+<p>The second model adds <code>DBT</code>.</p>
+<p>Adding <code>DBT</code> increases the proportion of explained variance by 2.4 percentage points:</p>
+<p><span class="math display">\[\Delta R^2=.024\]</span></p>
+<p>This incremental contribution is statistically significant:</p>
+<p><span class="math display">\[F_{\text{change}}(1,315)=8.16,\quad p=.005\]</span></p>
+<p>Thus, DBT participation contributes additional predictive information beyond economic distress and the presence of an adult sister in the home.</p>
+<p>This result supports an adjusted association between DBT participation and executive-function change. Causal language such as “DBT caused improvement” would require additional justification from the study design, including the process by which students entered the DBT program and the adequacy of control for alternative explanations.</p>
 </section>
 <section id="anova" class="level4">
 <h4 class="anchored" data-anchor-id="anova">ANOVA</h4>
 <p><img src="images/lrm_12.png" class="img-fluid"></p>
-<p>The <code>ANOVA</code> table simply reinforces what the <code>Model Summary</code> table contains, showing, e.g., not only that adding <code>DBT</code> made a significant improvement in model fit, but that the model containing all three predictors (<code>Model 2</code>) significantly predicted <code>ZAll_EFs_SR_Slope</code> scores. (<em>F</em><sub>3,</sub> <sub>315</sub> = 7.01, <em>p</em> &lt; .001).</p>
+<p>The <code>ANOVA</code> table tests each complete model against an intercept-only model.</p>
+<p>For Model 2:</p>
+<p><span class="math display">\[F(3,315) = 7.01,\quad p&lt;.001\]</span></p>
+<p>This indicates that the three predictors jointly account for statistically significant variation in <code>ZAll_EFs_SR_Slope</code>.</p>
+<p>It does not mean that all three individual predictors are statistically significant. Their separate coefficients and tests appear in the <code>Coefficients</code> table.</p>
 </section>
 <section id="coefficients-1" class="level4">
 <h4 class="anchored" data-anchor-id="coefficients-1">Coefficients</h4>
 <p><img src="images/lrm_13.png" class="img-fluid"></p>
-<p>Perhaps the most interesting thing to note from the <code>Coefficients</code> table for this family of analyses is that the <code>DBT</code> term’s <code>Beta</code>-weight is lower when including <code>Economic_Distress</code> (and <code>Adult_Sister_at_Home</code>), reflecting that the shared variance between <code>DBT</code> and <code>Economic_Distress</code> is also shared by <code>ZAll_EFs_SR_Slope</code>: Some of the effect of the DBT program is mediated by the adolescents’ levels of economic distress.</p>
-<p>The small levels of collinearity between <code>DBT</code> and <code>Economic_Distress</code> suggests that the variance they share is nearly entirely itself associated with <code>ZAll_EFs_SR_Slope</code>—that very little of their shared variance is left to create collinearity between them.</p>
+<p>The <code>Coefficients</code> table shows how each predictor is associated with the outcome after adjustment for the other predictors in the same model.</p>
+<p>The <code>DBT</code> coefficient in Model 2 represents the adjusted difference in standardized executive-function slopes between students who did and did not participate in DBT, conditional on economic distress and the presence of an adult sister in the home.</p>
+<p>If the standardized <code>Beta</code> for <code>DBT</code> changes after the covariates are added, that change indicates that the variables share some information relevant to the outcome.</p>
+<p>It does not establish that economic distress mediates the association between DBT and executive-function change.</p>
+<p>Mediation would require:</p>
+<ul>
+<li>A theoretically plausible causal order</li>
+<li>Evidence that DBT influences the proposed mediator</li>
+<li>Evidence that the mediator influences the outcome</li>
+<li>Estimation of the indirect pathway</li>
+<li>Consideration of confounding in both component relationships</li>
+</ul>
+<p>If economic distress preceded DBT participation, it is more plausibly treated as a possible confounder or prognostic covariate than as a mediator of DBT’s effect.</p>
+<p>The collinearity statistics indicate whether the predictors are sufficiently redundant to destabilize their coefficients. Low VIFs suggest that the predictors are not strongly linearly predictable from one another.</p>
+<p>Low collinearity does not mean that the variance shared by two predictors is necessarily associated with the outcome. It only indicates that the predictors retain substantial independent variation within the model.</p>
 </section>
 <section id="excluded-variables-1" class="level4">
 <h4 class="anchored" data-anchor-id="excluded-variables-1">Excluded Variables</h4>
 <p><img src="images/lrm_14.png" class="img-fluid"></p>
-<p>Since we chose which predictors to add and when—and since there were only two steps—the <code>Excluded Variables</code> table is again uninteresting.</p>
+<p>Because the <code>Enter</code> method was used, predictor inclusion was specified in advance rather than determined by an automated selection criterion.</p>
+<p>The <code>Excluded Variables</code> table is therefore not central to interpreting this analysis.</p>
 </section>
 <section id="collinearity-diagnostics-1" class="level4">
 <h4 class="anchored" data-anchor-id="collinearity-diagnostics-1">Collinearity Diagnostics</h4>
 <p><img src="images/lrm_15.png" class="img-fluid"></p>
-<p>The multicollinearity between the predictors is greater in this family of models than it was in the previous family. Nonetheless, it is negligible.</p>
+<p>The collinearity among the three predictors is greater than in the earlier two-predictor model, but the diagnostic values indicate that it remains negligible.</p>
+<p>Interpret this conclusion using the complete set of evidence:</p>
+<ul>
+<li>Tolerance</li>
+<li>VIF</li>
+<li>Condition indices</li>
+<li>Variance proportions</li>
+<li>Standard errors</li>
+<li>Stability of the coefficients across reasonable model specifications</li>
+</ul>
+<p>No single threshold should determine whether a predictor is removed.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/croc.png" class="img-fluid figure-img" style="width:30.0%"></p>
@@ -785,21 +1001,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>An interesting take on this—albeit one that’s tangential to what we’re talking about—is given in this quote from Funk’s (<a href="https://www.nytimes.com/2023/09/22/magazine/hank-asher-data.html?unlocked_article_code=1We_UxVXHFbRKCYKCogInk0FqPtcm24qUr2MZ14WLJ7igbG9tQkBEfdGQ_Hh6-6SRbQluxlR_W2w9qo1EuXs1xjVyWb21L9LpT-t8JebNqigFx88IKJVNFCVpHkpTserNEG5HcVeS6WXpqQNQvN6cXenOlz4i_57tNY8_7Y2fM0zKSf4bLfkvzpeN4VmxThpVyyJBKHu8uD0LQMb4IRRWpKyGwV9ji-ewuVHLfw-9AT9omGH6Kc_Hy-ETtWUh3oD0D9Lhp3oIjWR3XcMcUcBVBlvwkgoDf49aLuF1cMz2iG8yRV-FncOLNvlLKZm6sp8n0nu3QsWG1jl&amp;smid=url-share">2023</a>) <em>New York Times</em> article:<br>
-“A world in which computers accurately collect and remember and increasingly make decisions based on every little thing you have ever done is a world in which your past is ever more determinant of your future. It’s a world tailored to who you have been and not who you plan to be, one that could perpetuate the lopsided structures we have, not promote those we want. It’s a world in which lenders and insurers charge you more if you’re poor or Black and less if you’re rich or white, and one in which advertisers and political campaigners know exactly how to press your buttons by serving ads meant just for you. It’s a more perfect feedback loop, a lifelong echo chamber, a life-size version of the Facebook News Feed. And insofar as it cripples social mobility because you’re stuck in your own pattern, it could further hasten the end of the American dream. What may be scariest is not when the machines are wrong about you — but when they’re right.”<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>You can also simply type out <code>Wave = 1</code>. Choosing the variable from the list simply helps prevent typos.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Yeah, it’s also there to the far right in the <code>Data View</code> tab.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Note that in SPSS the “<code>A</code>” in <code>Analyze</code> is underlined, that the “<code>C</code>” in <code>Correlate</code> is underlined, and the “<code>B</code>” in <code>Bivariate</code> is underlined. You will notice that all menu options have one letter underlined; once you are let enough to use keyboard instead of the mouse, this is the key you will type to select that option. So, to access this analysis, you could simply hold down the <code>Alt</code> key and type <code>A</code> then <code>C</code> then <code>B</code> instead of using the mouse.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>The reverse interpretation—that a 1–point decrease in slope makes it 16.% more likely that that student was a member of the DBT group—is plausible for a correlation, but doesn’t really make sense practically since whether a child participated depended only on the year they were admitted to the school.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>In ordinary least squares, it’s the square root of the mean squared distance—just as the standard deviation is square root of the deviance, which is itself the sum of squared distances from the mean.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>By minimizing the variance relegated to error, we are trying to minimize the amount of information in the data that is lost—unexplained—by the model. The better that a model is at explaining the variance—the information—in the data, then the less information is lost to error.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>Note that the mean and standard deviation for standardized variables won’t always be reported by stats software as always equal to exactly 9 and 1, respectively. Sometime there is rounding error or only a subset of the standardized values are being used to re-calculate the mean &amp; standard deviation.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>Or the effects of both a third and fourth variable, etc.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10"><p>There are other ways to go about doing this than what SPSS is doing here—ways I prefer—but what we’re doing here is easy and still useful strategy to know and use.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11"><p>More about these methods can be found, e.g., in IBM’s <a href="https://wesamuels.net/NURS_71200/Lectures_&amp;_Materials/02_Intro_to_Linear_Models/More%20about%20these%20methods%20can%20be%20found,%20e.g.,%20in%20IBM%E2%80%99s%20Knowledge%20Center">Knowledge Center</a>.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn12"><p>Instead of choosing the predictor with the smallest <em>p</em>-value, SPSS can choose the value with the largest <em>F</em>-value. A small distinction, but worth a footnote.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn13"><p>The criterion used to decide whether the <em>p</em>-value is sufficiently significant is determined by the values used under <code>Options... &gt; Stepping Method Criteria</code>. The default is to include a predictor if the <em>p</em>-value is less than .05 and to exclude a predictor if its <em>p</em>-value is greater than .10.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn14"><p>There are really three, general ways to address noise in one’s studies: group assignment (e.g., experimental vs.&nbsp;control), randomization, and what we’re doing here: adding possibly-confounding variables to a model to isolate their effect on the variables of interest. What we’re doing here tends to get short shrift when discussing experimental design, and—in my opinion—that’s too bad since we can’t always create the groups we want and randomization doesn’t always work and isn’t always easy to tell if it did.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>You can also type <code>Wave = 1</code> directly. Choosing the variable from the list helps prevent typographical errors.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>It will also appear at the far right of the <code>Data View</code> tab.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>In SPSS, one letter in each menu option is underlined. Once comfortable using the keyboard, you can hold <code>Alt</code> and type the underlined letters to navigate the menus. For this analysis, the sequence is <code>Alt</code>, <code>A</code>, <code>C</code>, <code>B</code>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>The mean and standard deviation of a standardized variable may not be exactly 0 and 1 after filtering, listwise deletion, or rounding because the displayed subset may differ from the sample used when the variable was originally standardized.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>The same principle can be extended to several control variables.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Design-based strategies include randomization, restriction, matching, and standardized measurement. Regression adjustment can account for measured covariates under the assumptions of the model, but it is not a substitute for successful randomization and cannot remove bias from unmeasured confounding.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -1160,7 +1367,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./lrm_02.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Linear Regression Modeling with SPSS, Part 2: More about ANOVAs and Dummy Coding</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">lrm_02.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
